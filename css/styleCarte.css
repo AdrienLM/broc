@@ -20,7 +20,7 @@ a{
 }
 
 body{
-    background-image: url(images/foret2-min.jpg);
+    background-image: url(../images/foret2-min.jpg);
     background-size: cover;
 	background-attachment: fixed;
 }
@@ -53,7 +53,7 @@ section {
 	margin : auto;
 	width : 90vw;
 	overflow : visible;
-	background-image : url("images/carte3D2.svg");
+	background-image : url("../images/carte3D2.svg");
 	margin : 0;
 	height : calc(1015200vw / 46696);/*21.741vw;*/ /*calc(1015200vw / 46696)*/
 	/*width="46695.9" height="11279.2"*/
@@ -77,43 +77,53 @@ h1 span{
 .pointeur {
 	position: absolute;
 	display : inline-block;
-	background-image : url("images/maps-and-flags.svg");
+	background-image : url("../images/maps-and-flags.svg");
+	background-repeat: no-repeat;
+	background-position: center;
 	width : 50px;
-	height : 50px;
+	height : 52px;
 		/* transform permet d'être 100% responsive */
 	transform : translate(-50%,-100%);
 }
 #rochesTreban {
 	left : 51%;
 	top : 13%;
+	background-image : url("../images/pointeur1.svg");
 }
 #tombeauMerlin {
 	left : 60%;
 	top : 16%;
+	background-image : url("../images/pointeur2.svg");
 }
 #egliseGraal {
 	left : 26%;
 	top : 31%;
+	background-image : url("../images/pointeur3.svg");
 }
 #arbreOr {
 	left : 28%;
 	top : 34%;
+	background-image : url("../images/pointeur4.svg");
 }
 #fontaineBarenton {
 	left : 32%;
 	top : 36%;
+	background-image : url("../images/pointeur5.svg");
 }
 #fauxAmants {
 	left : 26%;
 	top : 44%;
+	background-image : url("../images/pointeur6.svg");
 }
 #chateauTrecesson {
 	left : 31%;
 	top : 51%;
+	background-image : url("../images/pointeur7.svg");
 }
 #miroirFees {
 	left : 37%;
 	top : 50%;
+	background-image : url("../images/pointeur8.svg");
 }
 
 footer{
