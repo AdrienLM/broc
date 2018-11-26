@@ -1,0 +1,140 @@
+@font-face {
+ font-family: "Qurany";
+ src: url("Qurany.ttf");
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+p{
+    font-family: 'Open Sans';
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Open Sans';
+}
+
+body{
+    background-image: url(images/foret2-min.jpg);
+    background-size: cover;
+	background-attachment: fixed;
+}
+
+header{
+    margin: 60px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header nav a{
+    margin: 0px 25px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+header #logo{
+    height: 70px;
+}
+
+section {
+	position : relative;
+	margin : auto;
+	width : 90vw;
+	overflow : visible;
+	background-image : url("images/carte3D2.svg");
+	margin : 0;
+	height : calc(1015200vw / 46696);/*21.741vw;*/ /*calc(1015200vw / 46696)*/
+	/*width="46695.9" height="11279.2"*/
+    margin-left: calc(50% - 45vw);
+    margin-top: 20px;
+}
+
+h1{
+    font-family: 'Qurany';
+    width: 30vw;
+    margin-left: calc(50% - 25vw);
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    font-size: 30pt;
+}
+
+h1 span{
+    font-size: 60pt;
+}
+
+.pointeur {
+	position: absolute;
+	display : inline-block;
+	background-image : url("images/maps-and-flags.svg");
+	width : 50px;
+	height : 50px;
+		/* transform permet d'être 100% responsive */
+	transform : translate(-50%,-100%);
+}
+#rochesTreban {
+	left : 51%;
+	top : 13%;
+}
+#tombeauMerlin {
+	left : 60%;
+	top : 16%;
+}
+#egliseGraal {
+	left : 26%;
+	top : 31%;
+}
+#arbreOr {
+	left : 28%;
+	top : 34%;
+}
+#fontaineBarenton {
+	left : 32%;
+	top : 36%;
+}
+#fauxAmants {
+	left : 26%;
+	top : 44%;
+}
+#chateauTrecesson {
+	left : 31%;
+	top : 51%;
+}
+#miroirFees {
+	left : 37%;
+	top : 50%;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    width: 90%;
+    margin-left: calc(50% - 45%);
+    font-size: 12px;
+}
+
+footer div a{
+    margin: 0 10px;
+}
+
+footer .reseaux img{
+    width: 30px;
+}
+
+footer .reseaux a{
+    margin: 0;
+}
