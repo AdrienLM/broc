@@ -11,7 +11,7 @@ class HerbierManage
   public function add(Herbier $bete)
   {
     //var_dump($bete);
-    $q = $this->_db->prepare('INSERT INTO kleiz.dataherbier (nom,image,description,position,imageUnlock) VALUES(:nom, :image, :description, :position, :imageUnlock)');
+    $q = $this->_db->prepare('INSERT INTO 18mmi2pj02.dataherbier (nom,image,description,position,imageUnlock) VALUES(:nom, :image, :description, :position, :imageUnlock)');
 
     $q->bindValue(':nom', $bete->nom());
     $q->bindValue(':image', $bete->image());
@@ -28,12 +28,12 @@ class HerbierManage
 
   public function delete(Herbier $bete) // on efface la bete avec cette id
   {
-    $this->_db->exec('DELETE FROM kleiz.dataherbier WHERE idHerbier = '.$bete->idHerbier());
+    $this->_db->exec('DELETE FROM 18mmi2pj02.dataherbier WHERE idHerbier = '.$bete->idHerbier());
   }
 
   public function deleteAll() 
   {
-    $this->_db->exec('TRUNCATE TABLE kleiz.dataherbier');
+    $this->_db->exec('TRUNCATE TABLE 18mmi2pj02.dataherbier');
   }
 
 
@@ -41,7 +41,7 @@ class HerbierManage
   {
     $id = (int) $id;
 
-    $q = $this->_db->query('SELECT idHerbier, nom, image, description,position, imageUnlock FROM kleiz.dataherbier WHERE idHerbier = '.$id);
+    $q = $this->_db->query('SELECT idHerbier, nom, image, description,position, imageUnlock FROM 18mmi2pj02.dataherbier WHERE idHerbier = '.$id);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
 
     return new Herbier($donnees);
@@ -51,7 +51,7 @@ class HerbierManage
   {
     $bete = [];
 
-    $q = $this->_db->query('SELECT idHerbier, nom, image, description,position, imageUnlock FROM kleiz.dataherbier ORDER BY position');
+    $q = $this->_db->query('SELECT idHerbier, nom, image, description,position, imageUnlock FROM 18mmi2pj02.dataherbier ORDER BY position');
 
     while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
     {
@@ -63,7 +63,7 @@ class HerbierManage
 
   public function update(Herbier $bete)
   {
-    $q = $this->_db->prepare('UPDATE kleiz.dataherbier SET nom = :nom, image = :image, description = :description, position = :position , imageUnlock = :imageUnlock WHERE idHerbier = :idHerbier');
+    $q = $this->_db->prepare('UPDATE 18mmi2pj02.dataherbier SET nom = :nom, image = :image, description = :description, position = :position , imageUnlock = :imageUnlock WHERE idHerbier = :idHerbier');
 
     $q->bindValue(':nom', $bete->nom());
     $q->bindValue(':image', $bete->image());

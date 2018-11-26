@@ -11,7 +11,7 @@ class BestiaireManage
   public function add(Bestiaire $bete)
   {
     //var_dump($bete);
-    $q = $this->_db->prepare('INSERT INTO kleiz.databestiaire (nom,image,description,position,imageUnlock) VALUES(:nom, :image, :description, :position, :imageUnlock)');
+    $q = $this->_db->prepare('INSERT INTO 18mmi2pj02.databestiaire (nom,image,description,position,imageUnlock) VALUES(:nom, :image, :description, :position, :imageUnlock)');
 
     $q->bindValue(':nom', $bete->nom());
     $q->bindValue(':image', $bete->image());
@@ -28,19 +28,19 @@ class BestiaireManage
 
   public function delete(Bestiaire $bete) // on efface la bete avec cette id
   {
-    $this->_db->exec('DELETE FROM kleiz.databestiaire WHERE idBestiaire = '.$bete->idBestiaire());
+    $this->_db->exec('DELETE FROM 18mmi2pj02.databestiaire WHERE idBestiaire = '.$bete->idBestiaire());
   }
 
   public function deleteAll() 
   {
-    $this->_db->exec('TRUNCATE TABLE kleiz.databestiaire');
+    $this->_db->exec('TRUNCATE TABLE 18mmi2pj02.databestiaire');
   }
 
   public function get($id)  // en fct d'un id on recupère tous les paramètres 
   {
     $id = (int) $id;
 
-    $q = $this->_db->query('SELECT idBestiaire, nom, image, description,position, imageUnlock FROM kleiz.databestiaire WHERE idBestiaire = '.$id);
+    $q = $this->_db->query('SELECT idBestiaire, nom, image, description,position, imageUnlock FROM 18mmi2pj02.databestiaire WHERE idBestiaire = '.$id);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
 
     return new Bestiaire($donnees);
@@ -50,7 +50,7 @@ class BestiaireManage
   {
     $bete = [];
 
-    $q = $this->_db->query('SELECT idBestiaire, nom, image, description,position, imageUnlock FROM kleiz.databestiaire ORDER BY position');
+    $q = $this->_db->query('SELECT idBestiaire, nom, image, description,position, imageUnlock FROM 18mmi2pj02.databestiaire ORDER BY position');
 
     while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
     {
@@ -62,7 +62,7 @@ class BestiaireManage
 
   public function update(Bestiaire $bete)
   {
-    $q = $this->_db->prepare('UPDATE kleiz.databestiaire SET nom = :nom, image = :image, description = :description, position = :position , imageUnlock = :imageUnlock WHERE idBestiaire = :idBestiaire');
+    $q = $this->_db->prepare('UPDATE 18mmi2pj02.databestiaire SET nom = :nom, image = :image, description = :description, position = :position , imageUnlock = :imageUnlock WHERE idBestiaire = :idBestiaire');
 
     $q->bindValue(':nom', $bete->nom());
     $q->bindValue(':image', $bete->image());

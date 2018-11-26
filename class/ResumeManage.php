@@ -11,7 +11,7 @@ class ResumeManage
   public function add(Resume $bete)
   {
     //var_dump($bete);
-    $q = $this->_db->prepare('INSERT INTO kleiz.dataresume (nom,image,description,position,imageUnlock) VALUES(:nom, :image, :description, :position, :imageUnlock)');
+    $q = $this->_db->prepare('INSERT INTO 18mmi2pj02.dataresume (nom,image,description,position,imageUnlock) VALUES(:nom, :image, :description, :position, :imageUnlock)');
 
     $q->bindValue(':nom', $bete->nom());
     $q->bindValue(':image', $bete->image());
@@ -28,19 +28,19 @@ class ResumeManage
 
   public function delete(Resume $bete) // on efface la bete avec cette id
   {
-    $this->_db->exec('DELETE FROM kleiz.dataresume WHERE idResume = '.$bete->idResume());
+    $this->_db->exec('DELETE FROM 18mmi2pj02.dataresume WHERE idResume = '.$bete->idResume());
   }
 
   public function deleteAll() 
   {
-    $this->_db->exec('TRUNCATE TABLE kleiz.dataresume');
+    $this->_db->exec('TRUNCATE TABLE 18mmi2pj02.dataresume');
   }
 
   public function get($id)  // en fct d'un id on recupère tous les paramètres 
   {
     $id = (int) $id;
 
-    $q = $this->_db->query('SELECT idResume, nom, image, description,position, imageUnlock FROM kleiz.dataresume WHERE idResume = '.$id);
+    $q = $this->_db->query('SELECT idResume, nom, image, description,position, imageUnlock FROM 18mmi2pj02.dataresume WHERE idResume = '.$id);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
 
     return new Resume($donnees);
@@ -50,7 +50,7 @@ class ResumeManage
   {
     $bete = [];
 
-    $q = $this->_db->query('SELECT idResume, nom, image, description,position, imageUnlock FROM kleiz.dataresume ORDER BY position');
+    $q = $this->_db->query('SELECT idResume, nom, image, description,position, imageUnlock FROM 18mmi2pj02.dataresume ORDER BY position');
 
     while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
     {
@@ -62,7 +62,7 @@ class ResumeManage
 
   public function update(Resume $bete)
   {
-    $q = $this->_db->prepare('UPDATE kleiz.dataresume SET nom = :nom, image = :image, description = :description, position = :position , imageUnlock = :imageUnlock WHERE idResume = :idResume');
+    $q = $this->_db->prepare('UPDATE 18mmi2pj02.dataresume SET nom = :nom, image = :image, description = :description, position = :position , imageUnlock = :imageUnlock WHERE idResume = :idResume');
 
     $q->bindValue(':nom', $bete->nom());
     $q->bindValue(':image', $bete->image());

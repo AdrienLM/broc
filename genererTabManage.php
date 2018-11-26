@@ -15,7 +15,7 @@ spl_autoload_register('chargerClasse');
  try
 {
 	// On se connecte à la base de donnée
-	$bdd = new PDO('mysql:host=localhost;dbname=kleiz;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=18mmi2pj02;charset=utf8', 'root', '');
 }
 catch(Exception $e)
 {

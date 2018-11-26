@@ -10,7 +10,7 @@ spl_autoload_register('chargerClasse');
  try
 {
   // On se connecte à MySQL
-  $bdd = new PDO('mysql:host=localhost;dbname=kleiz;charset=utf8', 'root', '');
+  $bdd = new PDO('mysql:host=localhost;dbname=18mmi2pj02;charset=utf8', 'root', '');
 }
 catch(Exception $e)
 {
@@ -42,7 +42,7 @@ $Herbier[2] = new Herbier([
 aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
 dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
 , sunt in culpa qui officia deserunt mollit anim id est laborum',
-  'position' => 1,
+  'position' => 2,
   'imageUnlock' => 'images/gantianeUnlock.png',
   ]);
 

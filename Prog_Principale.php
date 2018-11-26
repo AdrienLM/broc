@@ -29,7 +29,7 @@ spl_autoload_register('chargerClasse');
  try
 {
 	// On se connecte à la base de donnée
-	$bdd = new PDO('mysql:host=localhost;dbname=kleiz;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=localhost;dbname=18mmi2pj02;charset=utf8','root', '');
 }
 catch(Exception $e)
 {
@@ -41,7 +41,7 @@ catch(Exception $e)
 /* Ajout du compte à la base */
 /*****************************/
 
-$idCompte=1;  // valeur fixée pour le test
+$idCompte=1;  // valeur fixée pour le test//mettre le IdUser
 $managerTabBestiaire = new TabBestiaireManage($bdd);  // Connexion à la bdd
 $managerTabHerbier = new TabHerbierManage($bdd);  // Connexion à la bdd
 $managerTabResume = new TabResumeManage($bdd);  // Connexion à la bdd
@@ -66,6 +66,7 @@ $ResumeResumeCompte=$managerTabResume->getEtatResumes($idCompte); // Récupérat
 if($debugQWMain) var_dump($ResumeResumeCompte[1]);  // Etat du Resume 1
 
 // Selon l'état des sticks on range les tableaux à afficher */
+
 for($i=1;$i<=5;$i++) 
 { 
   if((bool)$stickHerbierCompte[$i]) 
@@ -74,6 +75,10 @@ for($i=1;$i<=5;$i++)
       $imageHerbier[$i]=$managerHerbier->get($idCompte)->imageUnlock(); 
       $descriptionHerbier[$i]=$managerHerbier->get($idCompte)->description(); 
       $positionHerbier[$i]=$managerHerbier->get($idCompte)->position(); 
+        
+      //  var_dump($stickHerbierCompte[$i]);
+      //  var_dump($i);
+       
     }
   else 
     {
@@ -81,14 +86,32 @@ for($i=1;$i<=5;$i++)
       $imageHerbier[$i]=$managerHerbier->get($idCompte)->image();
       $descriptionHerbier[$i]='';
       $positionHerbier[$i]='';
+       //  var_dump($i);
+        
+       // var_dump($stickHerbierCompte[$i]);
+   
     }
 
 }
 
+    var_dump($stickHerbierCompte[1]); // Etat du stick 1 Bestiaire
+ var_dump($stickHerbierCompte[2]); // Etat du stick 2 Bestiaire
+var_dump($stickHerbierCompte[3]); // Etat du stick 3 Bestiaire
+var_dump($stickHerbierCompte[4]); // Etat du stick 4 Bestiaire
+var_dump($stickHerbierCompte[5]);
+    
+    
+    
+    
+    
+    
+    
+    
 // Faire de même pour nomBestiaire en remplaçant Herbier par bestiaire et idem pour resume mais là pas de stick  mais resume
 // ligne type ici $i est remplacé par 1 pour l'exemple
-if((bool) $stickBestiaireCompte[1] ) $nomBestiaire[$i]=$managerBestiaire->get($idCompte)->nom(); else $nomBestiaire[1]='';
-if((bool) $ResumeResumeCompte[1] ) $nomResume[$i]=$managerResume->get($idCompte)->nom(); else $nomResume[1]='';
+
+//if((bool) $stickBestiaireCompte[1] ) $nomBestiaire[$i]=$managerBestiaire->get($idCompte)->nom(); else $nomBestiaire[1]='';
+//if((bool) $ResumeResumeCompte[1] ) $nomResume[$i]=$managerResume->get($idCompte)->nom(); else $nomResume[1]='';
 
 ?>
 
