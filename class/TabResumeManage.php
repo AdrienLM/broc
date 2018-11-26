@@ -15,13 +15,13 @@ class TabResumeManage
   {
 
     // vérifier si idCompte déjà créé
-    $q = $this->_db->prepare('SELECT * FROM kleiz.tabresume WHERE idCompte = '.$idCompte);
+    $q = $this->_db->prepare('SELECT * FROM .tabresume WHERE idCompte = '.$idCompte);
     $q->execute();
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
     
     if($donnees==false)  // l'idCompte n'existe pas 
     {
-    $q = $this->_db->prepare('INSERT INTO kleiz.tabresume (idCompte,resume1,resume2,resume3,resume4,resume5) VALUES(:idCompte,:resume1, :resume2, :resume3, :resume4, :resume5)');
+    $q = $this->_db->prepare('INSERT INTO .tabresume (idCompte,resume1,resume2,resume3,resume4,resume5) VALUES(:idCompte,:resume1, :resume2, :resume3, :resume4, :resume5)');
     for($i=1;$i<=5;$i++) { $q->bindValue(':resume'.$i, 0); }
     $q->bindValue(':idCompte', $idCompte);
     $q->execute();
@@ -32,19 +32,19 @@ class TabResumeManage
 
   public function delete($idCompte) // on efface idCompte de la base si il existe sinon RAS
   {
-    $this->_db->exec('DELETE FROM kleiz.tabresume WHERE idCompte = '. $idCompte);
+    $this->_db->exec('DELETE FROM .tabresume WHERE idCompte = '. $idCompte);
   }
 
    public function deleteAll() // on efface idCompte de la base si il existe sinon RAS
   {
-    $this->_db->exec('TRUNCATE TABLE kleiz.tabresume');
+    $this->_db->exec('TRUNCATE TABLE .tabresume');
   }
 
   public function get($idCompte)  // en fct d'un id on recupère tous les paramètres avec la clé de la base
   {
     $idCompte = (int) $idCompte;
     
-    $q = $this->_db->query('SELECT idCompte, resume1, resume2, resume3, resume4 ,resume5 FROM kleiz.tabresume WHERE idCompte = '.$idCompte);
+    $q = $this->_db->query('SELECT idCompte, resume1, resume2, resume3, resume4 ,resume5 FROM .tabresume WHERE idCompte = '.$idCompte);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
 
     return $donnees;
@@ -57,7 +57,7 @@ class TabResumeManage
     $data=[];
     global $debugQWClass;
     
-    $q = $this->_db->query('SELECT idCompte, resume1, resume2, resume3, resume4 ,resume5 FROM kleiz.tabresume WHERE idCompte = '.$idCompte);
+    $q = $this->_db->query('SELECT idCompte, resume1, resume2, resume3, resume4 ,resume5 FROM .tabresume WHERE idCompte = '.$idCompte);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
     if(!empty($donnees)) 
     {
@@ -81,7 +81,7 @@ public function getEtatResumes($idCompte)  // en fct d'un id on recupère tous l
     $data=[];
     global $debugQWClass;
 
-    $q = $this->_db->query('SELECT idCompte, resume1, resume2, resume3, resume4 ,resume5 FROM kleiz.tabresume WHERE idCompte = '.$idCompte);
+    $q = $this->_db->query('SELECT idCompte, resume1, resume2, resume3, resume4 ,resume5 FROM .tabresume WHERE idCompte = '.$idCompte);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
     
     if(!empty($donnees)) 
@@ -105,7 +105,7 @@ public function getEtatResumes($idCompte)  // en fct d'un id on recupère tous l
   {
     $listedonnees = [];
 
-    $q = $this->_db->query('SELECT idCompte,resume1, resume2, resume3, resume4, resume5 FROM kleiz.tabresume ORDER BY idCompte');
+    $q = $this->_db->query('SELECT idCompte,resume1, resume2, resume3, resume4, resume5 FROM .tabresume ORDER BY idCompte');
 
     while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
     {
@@ -119,7 +119,7 @@ public function getEtatResumes($idCompte)  // en fct d'un id on recupère tous l
   public function updates($idCompte,array $resume) // Mise à jour de tous les resume
   {
     //$this->resume=$resume;
-    $q = $this->_db->prepare('UPDATE kleiz.tabresume SET resume1 = :resume1, resume2 = :resume2, resume3 = :resume3, resume4 = :resume4, resume5 = :resume5 WHERE idCompte = :idCompte');
+    $q = $this->_db->prepare('UPDATE .tabresume SET resume1 = :resume1, resume2 = :resume2, resume3 = :resume3, resume4 = :resume4, resume5 = :resume5 WHERE idCompte = :idCompte');
      for($i=1;$i<=5;$i++) { $q->bindValue(':resume'.$i, (int) $resume[$i] );}
 
     

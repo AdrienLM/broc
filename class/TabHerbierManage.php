@@ -15,13 +15,13 @@ class TabHerbierManage
   {
 
     
-    $q = $this->_db->prepare('SELECT * FROM kleiz.tabherbier WHERE idCompte = '.$idCompte);
+    $q = $this->_db->prepare('SELECT * FROM 18mmi2pj02.tabherbier WHERE idCompte = '.$idCompte);
     $q->execute();
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
     
     if($donnees==false)  // l'idCompte n'existe pas 
     {
-    $q = $this->_db->prepare('INSERT INTO kleiz.tabherbier (idCompte,stick1,stick2,stick3,stick4,stick5) VALUES(:idCompte,:stick1, :stick2, :stick3, :stick4, :stick5)');
+    $q = $this->_db->prepare('INSERT INTO 18mmi2pj02.tabherbier (idCompte,stick1,stick2,stick3,stick4,stick5) VALUES(:idCompte,:stick1, :stick2, :stick3, :stick4, :stick5)');
     for($i=1;$i<=5;$i++) { $q->bindValue(':stick'.$i, 0); }
     $q->bindValue(':idCompte', $idCompte);
     $q->execute();
@@ -32,19 +32,19 @@ class TabHerbierManage
 
   public function delete($idCompte) // on efface idCompte de la base si il existe sinon RAS
   {
-    $this->_db->exec('DELETE FROM kleiz.tabherbier WHERE idCompte = '. $idCompte);
+    $this->_db->exec('DELETE FROM 18mmi2pj02.tabherbier WHERE idCompte = '. $idCompte);
   }
 
    public function deleteAll() // on efface idCompte de la base si il existe sinon RAS
   {
-    $this->_db->exec('TRUNCATE TABLE kleiz.tabherbier');
+    $this->_db->exec('TRUNCATE TABLE 18mmi2pj02.tabherbier');
   }
 
   public function get($idCompte)  // en fct d'un id on recupère tous les paramètres avec la clé de la base
   {
     $idCompte = (int) $idCompte;
     
-    $q = $this->_db->query('SELECT idCompte, stick1, stick2, stick3, stick4 ,stick5 FROM kleiz.tabherbier WHERE idCompte = '.$idCompte);
+    $q = $this->_db->query('SELECT idCompte, stick1, stick2, stick3, stick4 ,stick5 FROM 18mmi2pj02.tabherbier WHERE idCompte = '.$idCompte);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
 
     return $donnees;
@@ -57,7 +57,7 @@ class TabHerbierManage
     $data=[];
     global $debugQWClass;
     
-    $q = $this->_db->query('SELECT idCompte, stick1, stick2, stick3, stick4 ,stick5 FROM kleiz.tabherbier WHERE idCompte = '.$idCompte);
+    $q = $this->_db->query('SELECT idCompte, stick1, stick2, stick3, stick4 ,stick5 FROM 18mmi2pj02.tabherbier WHERE idCompte = '.$idCompte);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
     if(!empty($donnees)) 
     {
@@ -81,7 +81,7 @@ public function getEtatSticks($idCompte)  // en fct d'un id on recupère tous le
     $data=[];
     global $debugQWClass;
 
-    $q = $this->_db->query('SELECT idCompte, stick1, stick2, stick3, stick4 ,stick5 FROM kleiz.tabherbier WHERE idCompte = '.$idCompte);
+    $q = $this->_db->query('SELECT idCompte, stick1, stick2, stick3, stick4 ,stick5 FROM 18mmi2pj02.tabherbier WHERE idCompte = '.$idCompte);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
     
     if(!empty($donnees)) 
@@ -105,7 +105,7 @@ public function getEtatSticks($idCompte)  // en fct d'un id on recupère tous le
   {
     $listedonnees = [];
 
-    $q = $this->_db->query('SELECT idCompte,stick1, stick2, stick3, stick4, stick5 FROM kleiz.tabherbier ORDER BY idCompte');
+    $q = $this->_db->query('SELECT idCompte,stick1, stick2, stick3, stick4, stick5 FROM 18mmi2pj02.tabherbier ORDER BY idCompte');
 
     while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
     {
@@ -117,7 +117,7 @@ public function getEtatSticks($idCompte)  // en fct d'un id on recupère tous le
 
   //public function update($idCompte,$stickNumber)
   //{
-   // $q = $this->_db->prepare('UPDATE kleiz.tabherbier SET stick'.$stickNumber.' = :stick'.$stickNumber.WHERE idCompte = '.$idCompte');
+   // $q = $this->_db->prepare('UPDATE 18mmi2pj02.tabherbier SET stick'.$stickNumber.' = :stick'.$stickNumber.WHERE idCompte = '.$idCompte');
   // $q->bindValue(':stick'.$stickNumber, (int) 1);}
 
     //$q->bindValue(':stick1', (int) ($stickNumber==1));
@@ -133,7 +133,7 @@ public function getEtatSticks($idCompte)  // en fct d'un id on recupère tous le
   public function updates($idCompte,array $stick) // Mise à jour de tous les sticks
   {
     //$this->stick=$stick;
-    $q = $this->_db->prepare('UPDATE kleiz.tabherbier SET stick1 = :stick1, stick2 = :stick2, stick3 = :stick3, stick4 = :stick4, stick5 = :stick5 WHERE idCompte = :idCompte');
+    $q = $this->_db->prepare('UPDATE 18mmi2pj02.tabherbier SET stick1 = :stick1, stick2 = :stick2, stick3 = :stick3, stick4 = :stick4, stick5 = :stick5 WHERE idCompte = :idCompte');
      for($i=1;$i<=5;$i++) { $q->bindValue(':stick'.$i, (int) $stick[$i] );}
 
     //$q->bindValue(':stick1', (int) ($stick[1]));
