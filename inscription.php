@@ -139,6 +139,7 @@ if(isset($_POST['forminscription']))
                             <input type="checkbox" required>
                            <span class="checkmark"></span>
                        </label>
+
                     </div>
                     <li class="centrer">
                         <input type="submit" name="forminscription" value="S'inscrire &nbsp; &nbsp; &rarr;" class="boutonInput" />
