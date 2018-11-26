@@ -1,0 +1,57 @@
+body {
+	min-height : 100vh;
+	margin : 0;
+}
+
+main {
+	position : relative;
+	margin : auto;
+	width : 90vw;
+	overflow : visible;
+	background-image : url("images/carte3D.svg");
+	margin : 0;
+	height : calc(1015200vw / 46696);/*21.741vw;*/ /*calc(1015200vw / 46696)*/
+	/*width="46695.9" height="11279.2"*/
+}
+
+.pointeur {
+	position: absolute;
+	display : inline-block;
+	background-image : url("images/maps-and-flags.svg");
+	width : 50px;
+	height : 50px;
+		/* transform permet d'être 100% responsive */
+	transform : translate(-50%,-100%);
+}
+#rochesTreban {
+	left : 53%;
+	top : 16%;
+}
+#tombeauMerlin {
+	left : 65%;
+	top : 19%;
+}
+#egliseGraal {
+	left : 24%;
+	top : 38%;
+}
+#arbreOr {
+	left : 26%;
+	top : 41%;
+}
+#fontaineBarenton {
+	left : 32%;
+	top : 39%;
+}
+#fauxAmants {
+	left : 23%;
+	top : 54%;
+}
+#chateauTrecesson {
+	left : 29%;
+	top : 60%;
+}
+#miroirFees {
+	left : 36%;
+	top : 59%;
+}
