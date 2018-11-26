@@ -14,9 +14,9 @@ catch(Exception $e)
 /////////////////////////////////////////////////////////////////////////////////
 /*
 ///////////////////Code Des Retour Ajout Utilisateur grimoire////////////////////
-1xxx = tabresume
-2xxx = tabherbier
-3xxx = tabbestiaire
+1xx = tabresume
+2xx = tabherbier
+3xx = tabbestiaire
 
 x1x = stick1
 x2x = stick2

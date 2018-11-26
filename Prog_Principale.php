@@ -71,10 +71,10 @@ for($i=1;$i<=5;$i++)
 { 
   if((bool)$stickHerbierCompte[$i]) 
     { 
-      $nomHerbier[$i]=$managerHerbier->get($idCompte)->nom(); 
-      $imageHerbier[$i]=$managerHerbier->get($idCompte)->imageUnlock(); 
-      $descriptionHerbier[$i]=$managerHerbier->get($idCompte)->description(); 
-      $positionHerbier[$i]=$managerHerbier->get($idCompte)->position(); 
+      $nomHerbier[$i]=$managerHerbier->get($i)->nom(); 
+      $imageHerbier[$i]=$managerHerbier->get($i)->imageUnlock(); 
+      $descriptionHerbier[$i]=$managerHerbier->get($i)->description(); 
+      $positionHerbier[$i]=$managerHerbier->get($i)->position(); 
         
       //  var_dump($stickHerbierCompte[$i]);
       //  var_dump($i);
@@ -83,7 +83,7 @@ for($i=1;$i<=5;$i++)
   else 
     {
       $nomHerbier[$i]='';
-      $imageHerbier[$i]=$managerHerbier->get($idCompte)->image();
+      $imageHerbier[$i]=$managerHerbier->get($i)->image();
       $descriptionHerbier[$i]='';
       $positionHerbier[$i]='';
        //  var_dump($i);
