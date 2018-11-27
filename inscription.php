@@ -163,6 +163,12 @@ if(isset($_POST['forminscription']))
             </div>
             <p class="footer">KLEIZ | Projet MMI2 2018-2019</p>
             </div>
+            <div id="retour">
+            <p>Retour</p>
+            <a href="accueil.html">
+                <img src="images/flecheG.svg" alt="flèche vers la gauche">
+            </a>
+        </div>
         </section>
         <section>
             <h1>Les legendes de <br><span>Broceliande</span></h1>
