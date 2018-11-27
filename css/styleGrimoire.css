@@ -1,0 +1,51 @@
+@font-face {
+	font-family: "greatVibes";
+	src: url("../font/greatVibesRegular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "bradleyHandITC";
+	src: url("../font/bradleyHandITC.ttf") format("truetype");
+}
+
+body {
+	margin : 0;
+}
+
+header, main, footer {
+	width : 100%;
+}
+main>div {
+	width : 12.5%;
+	display : inline-block;
+}
+
+#pageGrimoire {
+	display : inline-block;
+	background-image : url("../images/grimoire.png");
+	background-size : contain;
+	background-repeat : no-repeat;
+	box-sizing : border-box;
+	margin : 0;
+	width : 75%;
+	height : calc(66225% / 1471);
+	padding : 3% 7%;
+	font-family : bradleyHandITC;
+}
+
+#pageGrimoire>h1, #pageGrimoire>h2 {
+	text-align : center;
+	width : 43%;
+}
+#pageGrimoire>h1 {
+	font-family : greatVibes;
+}
+
+.elementGrimoire {
+	display : flex;
+	width : 43%;
+	flex-direction : row-reverse;
+}
+.elementGrimoire>img {
+	width : 20%;
+	height : 20%;
+}
