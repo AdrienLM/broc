@@ -33,6 +33,9 @@ body{
 
 h1{
     margin: 0;
+    font-family: 'Qurany';
+    font-size: 50pt;
+    margin-bottom: 100px;
 }
 
 p{
@@ -68,34 +71,80 @@ header #logo{
     height: 70px;
 }
 
-#titre{
-    width: 40%;
+main{
+    display: flex;
+    justify-content: space-around;
+}
+
+#texte{
+    width: 35%;
     border: 2px solid red;
+    padding-top: 50px;
 }
 
-#titre>p{
+#texte h2{
+    margin: 0;
+    font-family: 'Qurany-light';
+    font-size: 25pt;
+    font-weight: lighter;
+}
+
+#texte>p{
     font-size: 8pt;
+    margin-bottom: 5px;
 }
 
-#param{
+#texte #param{
     display: flex;
     font-size: 10pt;
 }
 
-#param img{
-    width: 50px;
+#texte #param img{
+    width: 40px;
     margin: 0 10px 0 20px;
     cursor: pointer;
 }
 
-#param div{
+#texte #param div{
     display: flex;
     align-items: center;
 }
 
+#texte #param div:first-child img{
+    margin-left: 0;
+}
+
 #carte{
     width: 40%;
-    border: 2px solid yellow;
+    border-bottom: 15px solid white;
+    background-color: #232323;
+    box-shadow: 5px 8px 10px rgba(0,0,0,0.18);
+}
+
+#carte h2{
+    font-family: 'Qurany';
+    font-size: 30pt;
+    margin: 0;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+#carte img{
+    max-height: 400px;
+    margin-bottom: 20px;
+    margin-top: -30px;
+}
+
+#carte p{
+    background-image: url(../images/pointeur.svg);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: top left;
+    padding-left: 40px;
+    padding-top: 5px;
+    font-size: 10pt;
+    height: 31px;
+    margin-left: 30px;
 }
 
 footer{
