@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45">
+  <defs>
+    <style>
+      .cls-1, .cls-4 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #fff;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Groupe_1" data-name="Groupe 1" transform="translate(-87 -696)">
+    <g id="Rectangle_1" data-name="Rectangle 1" class="cls-1" transform="translate(87 696)">
+      <rect class="cls-3" width="45" height="45" rx="22.5"/>
+      <rect class="cls-4" x="1" y="1" width="43" height="43" rx="21.5"/>
+    </g>
+    <g id="download" transform="translate(191.219 639.484) rotate(180)">
+      <path id="Tracé_1" data-name="Tracé 1" class="cls-2" d="M.971,16.11a.569.569,0,1,0-.8.8l5.678,5.678a.562.562,0,0,0,.4.167l.012,0,.012,0a.558.558,0,0,0,.452-.241l5.628-5.628a.569.569,0,0,0-.8-.8L6.839,20.793V.569A.569.569,0,1,0,5.7.569V20.841Z" transform="translate(70.479 -72.998) rotate(-90)"/>
+    </g>
+  </g>
+</svg>

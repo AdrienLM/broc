@@ -41,6 +41,7 @@ section:first-child{
     width: 40%;
     border-right: 10px solid white;
     box-sizing: border-box;
+    position: relative;
 }
 
 section:last-child{
@@ -181,10 +182,10 @@ input[type="checkbox"]{
 }
 
 .check{
-    margin:15px 0 0 20px
+    margin: 15px 0 0 20px;
 }
 .checkmark{
-    position:absolute;
+    position: absolute;
     top: 0;
     left: 0;
     height: 25px;
@@ -236,8 +237,75 @@ input[type="checkbox"]{
     text-align: center;
     width: 100%;
     font-size: 8pt;
+    position: absolute;
+    bottom: 20px;
 }
 
 #contenu{
     margin-top: 5%;
+}
+
+#ou{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12pt;
+    width: 60%;
+    margin-left: calc(50% - 30%);
+    margin-top: 5%;
+}
+
+#ou div{
+    width: 40%;
+    border-bottom: 2px solid white;
+}
+
+#sous-titre{
+    font-size: 10pt;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 3%;
+}
+
+#contenu a{
+    text-decoration: none;
+    font-size: 10pt;
+    width: 100%;
+    text-align: center;
+}
+
+#contenu a:hover p{
+    text-decoration: underline;
+}
+
+#contenu a p{
+    margin-top: 1%;
+}
+
+p{
+    padding: 0;
+}
+
+#retour{
+    position: absolute;
+    background-color: #393939;
+    z-index: 50;
+    left: 0;
+    bottom: 10%;
+    width: 10%;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0 13px 13px 0;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+}
+
+#retour img{
+    width: 70%;
+    margin-left: calc(50% - 35%);
 }
