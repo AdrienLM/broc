@@ -1,12 +1,13 @@
 @font-face {
  font-family: "Qurany";
- src: url("Qurany.ttf");
+ src: url("../font/Qurany.ttf");
 }
 
 html, body{
     margin: 0;
     padding: 0;
     color: white;
+    overflow-y: hidden;
 }
 
 p{
@@ -20,7 +21,7 @@ a{
 }
 
 body{
-    background-image: url(images/foret.jpg);
+    background-image: url(../images/foret.jpg);
     background-size: cover;
 	background-attachment: fixed;
 }

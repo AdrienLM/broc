@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>KLEIZ | ACCUEIL</title>
         <meta name="description" content="">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
@@ -26,7 +26,7 @@
     </head>
     <body>
         <header>
-           <a href="accueil.html"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
+           <a href="accueil.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
             <nav>
                 <a href="guide.html">accueil</a>
                 <a href="choixModes.html">guide</a>
@@ -60,7 +60,7 @@
         <main>
             <h1>Les legendes de <br><span>Broceliande</span></h1>
             <p>Découvrez la forêt de Brocéliande à travers ses légendes, ses histoires et des secrets. Informez-vous, partez à la quête du Graal ou découvrez des créatures fantastiques. A chacun son mode et sa façon de vivre l'aventure.</p>
-            <a href="choixModes.html">découvrir &nbsp; &nbsp; &nbsp; &rarr;</a>
+            <a href="choixModes.php">découvrir &nbsp; &nbsp; &nbsp; &rarr;</a>
         </main>
         <footer>
             <p>KLEIZ | Projet MMI2 2018-2019</p>

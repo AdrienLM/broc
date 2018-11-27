@@ -1,0 +1,128 @@
+@font-face {
+ font-family: "Qurany";
+ src: url("../font/Qurany.ttf");
+}
+
+@font-face {
+ font-family: "Qurany-light";
+ src: url("../font/Qurany-light.ttf");
+}
+
+@font-face {
+ font-family: "Qurany-italic";
+ src: url("../font/Qurany-italic.ttf");
+}
+
+@font-face {
+ font-family: "Qurany-light-italic";
+ src: url("../font/Qurany-light-italic.ttf");
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body{
+    background-image: url(../images/foret2-min.jpg);
+    background-size: cover;
+	background-attachment: fixed;
+    color: white;
+}
+
+h1{
+    margin: 0;
+}
+
+p{
+    font-family: 'Open Sans';
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Open Sans';
+}
+
+header{
+    margin: 30px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header nav a{
+    margin: 0px 25px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+header #logo{
+    height: 70px;
+}
+
+#titre{
+    width: 40%;
+    border: 2px solid red;
+}
+
+#titre>p{
+    font-size: 8pt;
+}
+
+#param{
+    display: flex;
+    font-size: 10pt;
+}
+
+#param img{
+    width: 50px;
+    margin: 0 10px 0 20px;
+    cursor: pointer;
+}
+
+#param div{
+    display: flex;
+    align-items: center;
+}
+
+#carte{
+    width: 40%;
+    border: 2px solid yellow;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    font-size: 12px;
+    color: white;
+    width: 90%;
+    left: calc(50% - 45%);
+}
+
+footer div a{
+    margin: 0 10px;
+}
+
+footer .reseaux img{
+    width: 30px;
+}
+
+footer .reseaux a{
+    margin: 0;
+}
+
+#menuFlottant{
+    position: absolute;
+    display: none;
+}

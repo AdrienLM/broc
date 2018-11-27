@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>KLEIZ | ARBRE D'OR | MODE DÉCOUVERTE</title>
+        <title>KLEIZ | ARBRE D'OR | MODE AVENTURE</title>
         <meta name="description" content="">
-        <link rel="stylesheet" href="styleDecouverte.css">
+        <link rel="stylesheet" href="css/styleAventure.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
@@ -27,67 +27,66 @@
     </head>
     <body>
         <header>
+           <a href="accueil.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
             <nav>
                 <a href="guide.html">accueil</a>
                 <a href="choixModes.html">guide</a>
                 <a href="profil.html">modes</a>
                 <a href="profil.html"><img src="images/imgProfil.png" alt="image profil"></a>
-                <div>
-                    <img src="images/depliant.png" alt="dépliant">
-                    <!--
-                    <div class="menuFlottant">
-                        <div>
-                            <img src="images/quitter.png" alt="quitter">
-                            <p>Quitter</p>
-                        </div>
-                        <div>
-                            <img src="images/param.png" alt="engrenage">
-                            <p>Paramètres</p>
-                        </div>
-                        <div>
-                            <img src="images/carte.png" alt="pointeur">
-                            <p>Carte</p>
-                        </div>
-                    </div>-->
-                </div>
+                <img src="images/depliant.png" alt="dépliant">
+                <!--
+                <ul id="menuFlottant">
+                    <li>
+                       <a href="deconnexion.php">
+                           <img src="images/quitter.png" alt="quitter">
+                       </a>
+                        <p>Quitter</p>
+                    </li>
+                    <li>
+                       <a href="parametres.html">
+                           <img src="images/param.png" alt="engrenage">
+                       </a>
+                        <p>Paramètres</p>
+                    </li>
+                    <li>
+                       <a href="carte.html">
+                           <img src="images/carte.png" alt="pointeur">
+                       </a>
+                        <p>Carte</p>
+                    </li>
+                </ul>
+                -->
             </nav>
         </header>
         <main>
-            <div class="partGauche">
-                <a href="accueil.html"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
-                <div>
-                    <h1>Le symbole du souvenir d'autrefois</h1>
-                    <div class="avis">
-                        <p>Forêt de Paimpont</p>
-                        <p>Avis visiteurs (89)</p>
+            <div id="texte">
+                <h2>Scene 2</h2>
+                <h1>L'arbre d'or</h1>
+                <div>lecteur</div>
+                <p>Paramètres</p>
+                <div id="param">
+                    <div>
+                        <img src="images/pleinEcran.svg" alt="icone plein écran">
+                        <p>Plein écran</p>
+                    </div>
+                    <div>
+                        <img src="images/flecheD.svg" alt="flèche vers la droite">
+                        <p>Découvrir</p>
+                    </div>
+                    <div>
+                        <img src="images/croix.svg" alt="croix">
+                        <p>Passer</p>
                     </div>
                 </div>
-                <p class="desc">L’arbre d’or serait apparu un jour dans la clairière. Les lutins se servaient de ses feuilles pour créer une potion magique soignant les arbres abîmés par les Hommes. Un jour, une petite fille toucha l’arbre et se transforma en tronc calciné, trois de ses amis firent de même et se transformèrent à leur tour. Il est dit pour inverser le maléfice, un enfant doit reproduire la potion des lutins afin de libérer les êtres piégés.</p>
-                <h2>L'arbre</h2>
-                <h3>d'or</h3>
-                <img src="images/boussole.png" alt="boussole" class="imageFond">
-                <p class="pied">KLEIZ | Projet MMI2 2018-2019</p>
-                <img src="images/coeur.png" alt="coeur" class="coeur">
             </div>
-            <div class="partDroite">
-                <img src="images/arbreOr.jpg" alt="l'arbre d'or">
-                <div></div>
-                <img src="images/carte.png" alt="carte de Brocéliande" class="carte">
-            </div>
-            <div>
-                <p>Retour</p>
-                <a href="chateauTrecesson.html">
-                    <img src="images/flecheG.png" alt="flèche vers la gauche">
-                </a>
-            </div>
-            <div>
-                <p>Suivant</p>
-                <a href="tombeauMerlin.html">
-                    <img src="images/flecheG.png" alt="flèche vers la droite">
-                </a>
+            <div id="carte">
+                <h2>Localisation</h2>
+                <p>Forêt de Paimpont</p>
+                <img src="images/carteArbreOr" alt="carte de Brocéliande">
             </div>
         </main>
         <footer>
+           <p>KLEIZ | Projet MMI2 2018-2019</p>
             <div class="reseaux">
                <a href="https://www.facebook.com/kleiz3" target="_blank">
                    <img src="images/fb.png" alt="logo Facebook">
