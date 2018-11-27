@@ -42,7 +42,7 @@ section:first-child {
     width: 40%;
     border-right: 10px solid white;
     box-sizing: border-box;
-    position: relative;
+    position: relative
 }
 
 section:last-child {
@@ -85,12 +85,22 @@ h1 span {
     margin-bottom: 30px;
 }
 
+
+
 section:first-child #titre {
     width: 60%;
     margin-left: calc(50% - 30%);
     border-left: 2px solid white;
     padding-left: 15px;
     margin-top: 2%;
+}
+
+
+.margeHaute {
+     margin-top: 10%;
+}
+
+
 }
 
 h2 {
@@ -149,6 +159,11 @@ form li + li {
 
 a {
     color: white;
+    
+}
+
+.rectif {
+    margin-left: -10px; 
 }
 
 .centrer input {
@@ -226,15 +241,16 @@ input[type="checkbox"] {
     background-color: #2E515B;
 }
 
-.check{
-    margin: 15px 0 0 20px;
+.check {
+    margin: 30px 0 10 13px
 }
-.checkmark{
+
+.checkmark {
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
+    top: -4px;
+    left: -1px;
+    height: 29px;
+    width: 29px;
     background-color: #2E515B;
     border-radius: 50%;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
@@ -289,7 +305,7 @@ input[type="checkbox"] {
     width: 100%;
     font-size: 8pt;
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
 }
 
 #contenu {
@@ -339,6 +355,7 @@ p{
     padding: 0;
 }
 
+
 #retour{
     position: absolute;
     background-color: #393939;
@@ -348,6 +365,33 @@ p{
     width: 10%;
     color: white;
     padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0 13px 13px 0;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+}
+
+#retour img{
+    width: 60%;
+    margin-left: calc(50% - 30%);
+}
+
+#retour p{
+    margin-bottom: 10px;
+}
+
+#retour{
+    position: absolute;
+    background-color: #393939;
+    z-index: 50;
+    left: 0;
+    bottom: 10%;
+    width: 10%;
+    color: white;
+    padding: 18px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;

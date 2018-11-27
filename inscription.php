@@ -170,7 +170,7 @@ if(isset($_POST['forminscription']))
             </div>
             <div id="retour">
             <p>Retour</p>
-            <a href="accueil.html">
+            <a href="accueil.php">
                 <img src="images/flecheG.svg" alt="flèche vers la gauche">
             </a>
         </div>

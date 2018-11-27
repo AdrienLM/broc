@@ -46,6 +46,7 @@ if(isset($_POST['formconnexion']))
         <title>KLEIZ | CONNEXION</title>
         <meta name="description" content="">
         <link rel="stylesheet" href="css/styleInscription.css">
+        <link rel="stylesheet" href="css/animation.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
@@ -68,14 +69,17 @@ if(isset($_POST['formconnexion']))
     <body>
        <section>
           <div id="contenu">
+              <div class="conteneur">
+              
               <?php
                 if(isset($erreur)) 
                 {
-                    echo '<div class="message animated bounceIn"><img class="logoError" src="image/error.svg" width="20" height="20" />' .$erreur. '</div>';
+                    echo '<div class="message animated fadeInDown"><img class="logoError" src="images/warning.svg" width="20" height="20" />' .$erreur. '</div>';
                 }
                 ?>
-            <img src="images/logo.png" alt="logo kleiz" id="logo">
-           <div id="titre">
+            <img src="images/logo.png" alt="logo kleiz" id="logo" >
+           <div class="margeHaute"> </div>
+            <div id="titre">
                <h2>Connexion</h2>
                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. Consectetur adipiscing elit, sed do.</p>
            </div>
@@ -91,7 +95,7 @@ if(isset($_POST['formconnexion']))
                     </li>
                     <div class="check">
                         <label class="container">Rester connecté avec ces identifiants
-                            <input type="checkbox" required>
+                            <input type="checkbox">
                            <span class="checkmark"></span>
                        </label>
                     </div>
@@ -109,26 +113,27 @@ if(isset($_POST['formconnexion']))
               <a href=""><p>Mot de passe perdu ?</p></a>
             <div class="reseaux">
                <a href="https://www.facebook.com/kleiz3" target="_blank">
-                   <img src="images/fb.png" alt="logo Facebook">
+                   <img src="images/facebook.svg" alt="logo Facebook">
                </a>
                 <a href="https://twitter.com/Kleizbro" target="_blank">
-                   <img src="images/twitter.png" alt="logo Twitter">
+                   <img src="images/twitter.svg" alt="logo Twitter">
                </a>
                <a href="https://www.instagram.com/kleiz3" target="_blank">
-                   <img src="images/insta.png" alt="logo Instagram">
+                   <img src="images/instagram.svg" alt="logo Instagram">
                </a>
                <a href="images/snapchat.jpg" target="_blank">
-                   <img src="images/snap.png" alt="logo Snapchat">
+                   <img src="images/snapchat.svg" alt="logo Snapchat">
                </a>
             </div>
             <p class="footer">KLEIZ | Projet MMI2 2018-2019</p>
           </div>
           <div id="retour">
             <p>Retour</p>
-            <a href="accueil.html">
+            <a href="accueil.php">
                 <img src="images/flecheG.svg" alt="flèche vers la gauche">
             </a>
         </div>
+              </div>
        </section>
         <section>
             <h1>Les legendes de <br><span>Broceliande</span></h1>
