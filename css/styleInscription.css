@@ -239,6 +239,5 @@ input[type="checkbox"]{
 }
 
 #contenu{
-    height: 80%;
-    margin-top: calc(50% - 40%);
+    margin-top: 5%;
 }
