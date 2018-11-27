@@ -1,15 +1,6 @@
 <?php 
-try
-{
-	// On se connecte à la base de donnée
-	$bdd = new PDO('mysql:host=localhost;dbname=18mmi2pj02;charset=utf8','root', '');
-}
-catch(Exception $e)
-{
-	// En cas d'erreur, on affiche un message et on arrête tout
-        die('Erreur : '.$e->getMessage());
-}
 
+require 'connexionBDD.php';
 
 /////////////////////////////////////////////////////////////////////////////////
 /*
@@ -27,6 +18,9 @@ x3x = stick3
 xx1 = Unlock
 xx0 = Lock
 
+
+
+Posibilité apres le projet de mettre en alphanumérique pour etre a plus que 9 image
 */
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -104,7 +98,7 @@ if($codeGrimoire == 350){ $tabUpdate = "tabbestiaire";     $imageModif = "stick5
 
 
 //requete pour mettre a jour les compte//
-$requser = $bdd->prepare("UPDATE ".$tabUpdate." SET ".$imageModif." = ".$ajoutImage." WHERE idCompte = ".$idCompteUp);
+$requser = $pdo->prepare("UPDATE ".$tabUpdate." SET ".$imageModif." = ".$ajoutImage." WHERE idCompte = ".$idCompteUp);
 
 
 //echo 'UPDATE tabherbier SET stick2 = 1 WHERE idCompte = 1';//

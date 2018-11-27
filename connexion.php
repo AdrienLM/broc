@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-require("param.inc.php");
-$pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB,MYUSER,MYPASS);
-$pdo ->query("SET NAMES utf8");
-$pdo ->query("SET CHARACTER SET 'utf-8'");
+require 'connexionBDD.php';
 
 if(isset($_POST['formconnexion']))
 {
