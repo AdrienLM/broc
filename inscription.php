@@ -165,7 +165,7 @@ if(isset($_POST['forminscription']))
             </div>
         </section>
         <section>
-            <h1>Les legendes de <span>Broceliande</span></h1>
+            <h1>Les legendes de <br><span>Broceliande</span></h1>
         </section>
     </body>
 </html>

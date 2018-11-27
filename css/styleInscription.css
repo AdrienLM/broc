@@ -41,6 +41,7 @@ section:first-child{
     width: 40%;
     border-right: 10px solid white;
     box-sizing: border-box;
+    position: relative;
 }
 
 section:last-child{
@@ -181,10 +182,10 @@ input[type="checkbox"]{
 }
 
 .check{
-    margin:15px 0 0 20px
+    margin: 15px 0 0 20px;
 }
 .checkmark{
-    position:absolute;
+    position: absolute;
     top: 0;
     left: 0;
     height: 25px;
@@ -236,8 +237,48 @@ input[type="checkbox"]{
     text-align: center;
     width: 100%;
     font-size: 8pt;
+    position: absolute;
+    bottom: 20px;
 }
 
 #contenu{
     margin-top: 5%;
+}
+
+#ou{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12pt;
+    width: 60%;
+    margin-left: calc(50% - 30%);
+    margin-top: 5%;
+}
+
+#ou div{
+    width: 40%;
+    border-bottom: 2px solid white;
+}
+
+#sous-titre{
+    font-size: 10pt;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 3%;
+}
+
+#contenu a{
+    text-decoration: none;
+    font-size: 10pt;
+    width: 100%;
+    text-align: center;
+}
+
+#contenu a p{
+    margin-top: 1%;
+}
+
+p{
+    padding: 0;
 }
