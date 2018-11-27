@@ -98,7 +98,7 @@ main .partGauche .avis{
 }
 
 main .partGauche .avis p{
-    background-image: url(images/star.svg);
+    background-image: url(../images/star.svg);
     background-size: 15px;
     background-repeat: no-repeat;
     background-position: center left;
@@ -107,7 +107,7 @@ main .partGauche .avis p{
 
 main .partGauche div .avis p:first-child{
     margin-right: 10px;
-	background-image: url(images/pointeur.svg);
+	background-image: url(../images/pointeur.svg);
 }
 
 main .partGauche .desc{
@@ -216,6 +216,11 @@ main div:nth-child(3){
     box-shadow: 0px 3px 6px 0px rgba(255,255,255,0.16);
 }
 
+main div:nth-child(3) img{
+    width: 60%;
+    margin-left: calc(50% - 30%);
+}
+
 main>div:last-child{
     position: absolute;
     background-color: #393939;
@@ -236,6 +241,8 @@ main>div:last-child{
 
 main>div:last-child img{
     transform: rotateZ(180deg);
+    width: 60%;
+    margin-left: calc(50% - 30%);
 }
 
 main h1{

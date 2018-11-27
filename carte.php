@@ -61,14 +61,14 @@
         <main>
            <h1>La carte de <br><span>Broceliande</span></h1>
            <section>
-               <a href="rochesTreban.html" class="pointeur" id="rochesTreban"></a>
-                <a href="tombeauMerlin.html" class="pointeur" id="tombeauMerlin"></a>
-                <a href="egliseGraal.html" class="pointeur" id="egliseGraal"></a>
-                <a href="arbreOr.html" class="pointeur" id="arbreOr"></a>
-                <a href="fontaineBarenton.html" class="pointeur" id="fontaineBarenton"></a>
-                <a href="rocherFauxAmants.html" class="pointeur" id="fauxAmants"></a>
-                <a href="chateauTrecesson.html" class="pointeur" id="chateauTrecesson"></a>
-                <a href="miroirFees.html" class="pointeur" id="miroirFees"></a>
+               <a href="rochesTreban.php" class="pointeur" id="rochesTreban"></a>
+                <a href="tombeauMerlin.php" class="pointeur" id="tombeauMerlin"></a>
+                <a href="egliseGraal.php" class="pointeur" id="egliseGraal"></a>
+                <a href="arbreOr.php" class="pointeur" id="arbreOr"></a>
+                <a href="fontaineBarenton.php" class="pointeur" id="fontaineBarenton"></a>
+                <a href="rocherFauxAmants.php" class="pointeur" id="fauxAmants"></a>
+                <a href="chateauTrecesson.php" class="pointeur" id="chateauTrecesson"></a>
+                <a href="miroirFees.php" class="pointeur" id="miroirFees"></a>
            </section>
         </main>
         <footer>

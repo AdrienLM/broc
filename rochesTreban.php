@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>KLEIZ | ROCHES DE TREBAN | MODE DÉCOUVERTE</title>
         <meta name="description" content="">
-        <link rel="stylesheet" href="styleDecouverte.css">
+        <link rel="stylesheet" href="css/styleDecouverte.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
@@ -54,7 +54,7 @@
         </header>
         <main id="rochesTreban">
             <div class="partGauche">
-                <a href="accueil.html"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
+                <a href="accueil.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
                 <div>
                     <h1>LA MERVEILLE DU MONT-SAINT-MICHEL APPARUE PAR MAGIE</h1>
                     <div class="avis">
@@ -76,14 +76,14 @@
             </div>
             <div>
                 <p>Retour</p>
-                <a href="rocherFauxAmants.html">
-                    <img src="images/flecheG.png" alt="flèche vers la gauche">
+                <a href="rocherFauxAmants.php">
+                    <img src="images/flecheG.svg" alt="flèche vers la gauche">
                 </a>
             </div>
             <div>
                 <p>Suivant</p>
-                <a href="carte.html">
-                    <img src="images/flecheG.png" alt="flèche vers la droite">
+                <a href="carte.php">
+                    <img src="images/flecheG.svg" alt="flèche vers la droite">
                 </a>
             </div>
         </main>
