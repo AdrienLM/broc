@@ -27,6 +27,9 @@ x3x = stick3
 xx1 = Unlock
 xx0 = Lock
 
+
+
+Posibilité apres le projet de mettre en alphanumérique pour etre a plus que 9 image
 */
 ////////////////////////////////////////////////////////////////////////////////
 
