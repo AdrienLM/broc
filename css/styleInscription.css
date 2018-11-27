@@ -306,6 +306,10 @@ p{
 }
 
 #retour img{
-    width: 70%;
-    margin-left: calc(50% - 35%);
+    width: 60%;
+    margin-left: calc(50% - 30%);
+}
+
+#retour p{
+    margin-bottom: 10px;
 }
