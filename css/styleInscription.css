@@ -40,7 +40,6 @@ section:first-child{
     height: 100%;
     width: 40%;
     border-right: 10px solid white;
-    padding-top: 3%;
     box-sizing: border-box;
 }
 
@@ -240,6 +239,6 @@ input[type="checkbox"]{
 }
 
 #contenu{
-    height: 100%;
-    margin: auto 0;
+    height: 90%;
+    margin-top: calc(50% - 45%);
 }
