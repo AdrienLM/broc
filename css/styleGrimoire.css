@@ -12,9 +12,6 @@ body {
 	background-color : #393939;
 }
 
-header, main, footer {
-	width : 100%;
-}
 main {
 	display : flex;
 	justify-content : space-between;
@@ -22,6 +19,11 @@ main {
 }
 
 #pageGrimoire {
+	display : flex;
+	flex-wrap : wrap;
+	flex-direction : column;
+
+	position : relative;
 	background-image : url("../images/grimoire.png");
 	background-size : contain;
 	background-repeat : no-repeat;
@@ -29,31 +31,83 @@ main {
 	margin : 0;
 	width : 77vw;
 	height : calc(67991vw / 1471);
-	padding : 3% 7%;
+	padding : 2% 6%;
 	font-family : bradleyHandITC;
 	color : #414141;
 }
 
-#pageGrimoire>h1, #pageGrimoire>h2 {
+#pageGrimoire h1, #pageGrimoire h2 {
 	text-align : center;
-	width : 43%;
 	font-weight : normal;
 }
-#pageGrimoire>h1 {
+#pageGrimoire h1 {
 	font-size : 2.5em;
 	margin-bottom : 0;
-	margin-top : 2%;
-}
-#pageGrimoire>h1 {
+	margin-top : 8%;
 	font-family : greatVibes;
 }
-
-.elementGrimoire {
-	display : flex;
-	width : 43%;
-	flex-direction : row-reverse;
+#pageGrimoire header {
+	width : 47%;
+	height : 25%;
+	margin : 0 6% 5% 0;
 }
-.elementGrimoire>img {
-	width : 15vw;
-	height : 15vw;
+article {
+	display : flex;
+	flex-direction : row-reverse;
+	width : 47%;
+	height : 25%;
+	overflow : hidden;
+	margin : 0 6% 5% 0;
+}
+article h3 {
+	text-indent : 11%;
+	margin : 0 0 0 3px;
+}
+article h3::before {
+	content : "";
+	background : url("../images/lock-1.svg") no-repeat;
+	min-width : 10%;
+}
+.debloque h3::before {
+	content : url("../images/lock.svg");
+	width : 10%;
+}
+article p {
+	margin : 6px 0 0 3px;
+	font-size : 0.8em;
+}
+article>img {
+	margin-left : 2%;
+	width : 34.5%;
+	height : 100%;
+}
+
+#pageGrimoire>div:last-child a {
+	width : 12%;
+	height : 3%;/*calc(525% / 173)*/
+	position : absolute;
+	text-align : center;
+	color : #ffffff;
+	transform : rotate(-90deg) translateY(-50%);
+	right : 88.8%;
+	text-decoration : none;
+}
+#pageGrimoire>div:last-child a:first-child {
+	background : url("../images/languetteResumeDev") no-repeat top;
+	background-size : cover;
+	top : 23%;
+}
+#pageGrimoire>div:last-child a:nth-child(2) {
+	background : url("../images/languetteHerbierDev") no-repeat top;
+	background-size : cover;
+	top : 48.5%;
+}
+#pageGrimoire>div:last-child a:last-child {
+	background : url("../images/languetteBestiaireDev") no-repeat top;
+	background-size : cover;
+	top : 73.5%;
+}
+
+#pageGrimoire>div:last-child .pageActiveGrimoire {
+	height : 4%;
 }
