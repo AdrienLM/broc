@@ -62,7 +62,12 @@
             <div id="texte">
                 <h2>Scene 2</h2>
                 <h1>L'arbre d'or</h1>
-                <div>lecteur</div>
+                <audio controls>
+                  <source src="sons/arbreOr.wav" type="audio/wav">
+                  <p>Votre navigateur ne prend pas en charge l'audio HTML. Voici un
+                     un <a href="sons/arbreOr.wav">lien vers le fichier audio</a> pour le 
+                     télécharger.</p>
+                </audio>
                 <p>Paramètres</p>
                 <div id="param">
                     <div>
@@ -83,6 +88,12 @@
                 <h2>Localisation</h2>
                 <p>Forêt de Paimpont</p>
                 <img src="images/carteArbreOr" alt="carte de Brocéliande">
+            </div>
+            <div id="retour">
+                <p>Retour</p>
+                <a href="accueil.php">
+                    <img src="images/flecheG.svg" alt="flèche vers la gauche">
+                </a>
             </div>
         </main>
         <footer>
