@@ -43,21 +43,12 @@ if(isset($_POST['formconnexion']))
 
 ?>
 
-
-
-    <html lang="fr">
-
+<html lang="fr">
     <head>
         <title>KLEIZ | CONNEXION</title>
         <meta charset="utf-8">
     </head>
-
     <body>
-
-
-
-      
-
             <?php
 			if(isset($erreur)) 
 			{
@@ -87,9 +78,5 @@ if(isset($_POST['formconnexion']))
                         </li>
                     </ul>
                 </form>
-
-
-
     </body>
-
-    </html>
+</html>
