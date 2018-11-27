@@ -7,21 +7,9 @@ function chargerClasse($classname)
 
 spl_autoload_register('chargerClasse');
 
- try
-{
-	// On se connecte à la base de donnée
-    require("param.inc.php");
-	$bdd = new PDO("mysql:host=".MYHOST.";dbname=".MYDB,MYUSER,MYPASS);
-    $bdd ->query("SET NAMES utf8");
-    $bdd ->query("SET CHARACTER SET 'utf-8'");
-}
-catch(Exception $e)
-{
-	// En cas d'erreur, on affiche un message et on arrête tout
-        die('Erreur : '.$e->getMessage());
-}
+require 'connexionBDD.php';
 
-$manager = new HerbierManage($bdd);   // creation de la gestion des Herbiers pour la table de la bdd
+$manager = new HerbierManage($pdo);   // creation de la gestion des Herbiers pour la table de la pdo
 $manager->deleteAll();
 
 $Herbier[1] = new Herbier([   // Mise en mémoire de l'instant 

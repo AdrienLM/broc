@@ -7,21 +7,9 @@ function chargerClasse($classname)
 
 spl_autoload_register('chargerClasse');
 
- try
-{
-	// On se connecte à la base de donnée
-    require("param.inc.php");
-	$bdd = new PDO("mysql:host=".MYHOST.";dbname=".MYDB,MYUSER,MYPASS);
-    $bdd ->query("SET NAMES utf8");
-    $bdd ->query("SET CHARACTER SET 'utf-8'");
-}
-catch(Exception $e)
-{
-	// En cas d'erreur, on affiche un message et on arrête tout
-        die('Erreur : '.$e->getMessage());
-}
+require 'connexionBDD.php';
 
-$manager = new BestiaireManage($bdd);   // creation de la gestion des bestiaires pour la table de la bdd
+$manager = new BestiaireManage($pdo);   // creation de la gestion des bestiaires pour la table de la pdo
 $manager->deleteAll();
 
 $Bestiaire[1] = new Bestiaire([  // mise en mémoire de l'instant $Bestiaire[1]
@@ -36,7 +24,7 @@ dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla par
   ]);
 
 
-$manager->add($Bestiaire[1]);	// Ajout d'une Bestaire dans la table de la bdd
+$manager->add($Bestiaire[1]);	// Ajout d'une Bestaire dans la table de la pdo
 
 
 
@@ -52,7 +40,7 @@ dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla par
   ]);
 
 
-$manager->add($Bestiaire[2]);	// Ajout d'une Bestaire dans la table de la bdd
+$manager->add($Bestiaire[2]);	// Ajout d'une Bestaire dans la table de la pdo
 
 
 
@@ -68,7 +56,7 @@ dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla par
   ]);
 
 
-$manager->add($Bestiaire[3]);	// Ajout d'une Bestaire dans la table de la bdd
+$manager->add($Bestiaire[3]);	// Ajout d'une Bestaire dans la table de la pdo
 
 
 
@@ -84,7 +72,7 @@ dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla par
   ]);
 
 
-$manager->add($Bestiaire[4]);	// Ajout d'une Bestaire dans la table de la bdd
+$manager->add($Bestiaire[4]);	// Ajout d'une Bestaire dans la table de la pdo
 
 
 
@@ -100,7 +88,7 @@ dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla par
   ]);
 
 
-$manager->add($Bestiaire[5]);	// Ajout d'une Bestaire dans la table de la bdd
+$manager->add($Bestiaire[5]);	// Ajout d'une Bestaire dans la table de la pdo
 
 
 var_dump($manager->getList());  // list des Bestaire;

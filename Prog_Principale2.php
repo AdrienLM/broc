@@ -26,33 +26,21 @@ function chargerClasse($classname)
 
 spl_autoload_register('chargerClasse');
 
- try
-{
-	// On se connecte à la base de donnée
-    require("param.inc.php");
-	$bdd = new PDO("mysql:host=".MYHOST.";dbname=".MYDB,MYUSER,MYPASS);
-    $bdd ->query("SET NAMES utf8");
-    $bdd ->query("SET CHARACTER SET 'utf-8'");
-}
-catch(Exception $e)
-{
-	// En cas d'erreur, on affiche un message et on arrête tout
-        die('Erreur : '.$e->getMessage());
-}
+require 'connexionBDD.php';
 
 /*****************************/
 /* Ajout du compte à la base */
 /*****************************/
 
 $idCompte=1;  // valeur fixée pour le test//mettre le IdUser
-$managerTabBestiaire = new TabBestiaireManage($bdd);  // Connexion à la bdd
-$managerTabHerbier = new TabHerbierManage($bdd);  // Connexion à la bdd
-$managerTabResume = new TabResumeManage($bdd);  // Connexion à la bdd
+$managerTabBestiaire = new TabBestiaireManage($pdo);  // Connexion à la pdo
+$managerTabHerbier = new TabHerbierManage($pdo);  // Connexion à la pdo
+$managerTabResume = new TabResumeManage($pdo);  // Connexion à la pdo
 //if(!$managerTabBestiaire->add($idCompte)) echo 'cette id existe déjà'.'<br>';            // Ajout d'une ligne pour le compte $idCompte
 //else echo 'nouvelle table Bestaire créé avec succès'.'<br>';
-$managerBestiaire = new BestiaireManage($bdd);
-$managerHerbier = new HerbierManage($bdd);
-$managerResume = new ResumeManage($bdd);
+$managerBestiaire = new BestiaireManage($pdo);
+$managerHerbier = new HerbierManage($pdo);
+$managerResume = new ResumeManage($pdo);
 
 
 $stickBestiaireCompte=$managerTabBestiaire->getEtatSticks($idCompte); // Récupération dans $stickBestiaireCompte[5] de l'état des sticks

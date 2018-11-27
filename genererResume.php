@@ -7,20 +7,9 @@ function chargerClasse($classname)
 
 spl_autoload_register('chargerClasse');
 
- try
-{
-	// On se connecte à la base de donnée
-    require("param.inc.php");
-	$bdd = new PDO("mysql:host=".MYHOST.";dbname=".MYDB,MYUSER,MYPASS);
-    $bdd ->query("SET NAMES utf8");
-    $bdd ->query("SET CHARACTER SET 'utf-8'");
-}
-catch(Exception $e)
-{
-	// En cas d'erreur, on affiche un message et on arrête tout
-        die('Erreur : '.$e->getMessage());
-}
-$manager = new ResumeManage($bdd);   // creation de la gestion des Resume
+require 'connexionBDD.php';
+
+$manager = new ResumeManage($pdo);   // creation de la gestion des Resume
 $manager->deleteAll();
 
 

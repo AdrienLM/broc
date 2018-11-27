@@ -1,18 +1,6 @@
 <?php 
- try
-{
-	// On se connecte à la base de donnée
-    require("param.inc.php");
-	$bdd = new PDO("mysql:host=".MYHOST.";dbname=".MYDB,MYUSER,MYPASS);
-    $bdd ->query("SET NAMES utf8");
-    $bdd ->query("SET CHARACTER SET 'utf-8'");
-}
-catch(Exception $e)
-{
-	// En cas d'erreur, on affiche un message et on arrête tout
-        die('Erreur : '.$e->getMessage());
-}
 
+require 'connexionBDD.php';
 
 /////////////////////////////////////////////////////////////////////////////////
 /*
@@ -110,7 +98,7 @@ if($codeGrimoire == 350){ $tabUpdate = "tabbestiaire";     $imageModif = "stick5
 
 
 //requete pour mettre a jour les compte//
-$requser = $bdd->prepare("UPDATE ".$tabUpdate." SET ".$imageModif." = ".$ajoutImage." WHERE idCompte = ".$idCompteUp);
+$requser = $pdo->prepare("UPDATE ".$tabUpdate." SET ".$imageModif." = ".$ajoutImage." WHERE idCompte = ".$idCompteUp);
 
 
 //echo 'UPDATE tabherbier SET stick2 = 1 WHERE idCompte = 1';//
