@@ -15,7 +15,10 @@ spl_autoload_register('chargerClasse');
  try
 {
 	// On se connecte à la base de donnée
-	$bdd = new PDO('mysql:host=localhost;dbname=18mmi2pj02;charset=utf8', 'root', '');
+    require("param.inc.php");
+	$bdd = new PDO("mysql:host=".MYHOST.";dbname=".MYDB,MYUSER,MYPASS);
+    $bdd ->query("SET NAMES utf8");
+    $bdd ->query("SET CHARACTER SET 'utf-8'");
 }
 catch(Exception $e)
 {
