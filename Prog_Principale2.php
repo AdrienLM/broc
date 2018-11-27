@@ -206,7 +206,7 @@ if($debugQWMain) var_dump($stickBestiaireCompte[5]); // Etat du stick 5 Bestiair
         
         <p id="herbier_<?php echo '"'.$i.'"' ?>">
         <?php echo $nomHerbier[$i] ?>
-        <img width="100" src=<?php echo '"'.$imageHerbier[$i].'"' ?> /> 
+        <img width="100px" src=<?php echo '"'.$imageHerbier[$i].'"' ?> /> 
         <?php echo $descriptionHerbier[$i] ?>
         </p>
        <?php } ?>
