@@ -98,6 +98,7 @@ if(isset($_POST['forminscription']))
     </head>
     <body>
         <section>
+           <div id="contenu">
             <?php
 			if(isset($erreur)) 
 			{
@@ -142,10 +143,26 @@ if(isset($_POST['forminscription']))
 
                     </div>
                     <li class="centrer">
-                        <input type="submit" name="forminscription" value="S'inscrire &nbsp; &nbsp; &rarr;" class="boutonInput" />
+                        <input type="submit" name="forminscription" value="S'inscrire" class="boutonInput" />
                     </li>
                 </ul>
             </form>
+            <div class="reseaux">
+               <a href="https://www.facebook.com/kleiz3" target="_blank">
+                   <img src="images/fb.png" alt="logo Facebook">
+               </a>
+                <a href="https://twitter.com/Kleizbro" target="_blank">
+                   <img src="images/twitter.png" alt="logo Twitter">
+               </a>
+               <a href="https://www.instagram.com/kleiz3" target="_blank">
+                   <img src="images/insta.png" alt="logo Instagram">
+               </a>
+               <a href="images/snapchat.jpg" target="_blank">
+                   <img src="images/snap.png" alt="logo Snapchat">
+               </a>
+            </div>
+            <p class="footer">KLEIZ | Projet MMI2 2018-2019</p>
+            </div>
         </section>
         <section>
             <h1>Les legendes de <span>Broceliande</span></h1>

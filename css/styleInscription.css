@@ -1,3 +1,23 @@
+@font-face {
+ font-family: "Qurany";
+ src: url("../font/Qurany.ttf");
+}
+
+@font-face {
+ font-family: "Qurany-light";
+ src: url("../font/Qurany-light.ttf");
+}
+
+@font-face {
+ font-family: "Qurany-italic";
+ src: url("../font/Qurany-italic.ttf");
+}
+
+@font-face {
+ font-family: "Qurany-light-italic";
+ src: url("../font/Qurany-light-italic.ttf");
+}
+
 html, body{
     margin: 0;
     padding: 0;
@@ -46,8 +66,8 @@ h1 span{
 }
 
 #logo{
-    width: 30%;
-    margin-left: calc(50% - 15%);
+    width: 25%;
+    margin-left: calc(50% - 12.5%);
     margin-bottom: 30px;
 }
 
@@ -56,30 +76,31 @@ section:first-child #titre{
     margin-left: calc(50% - 30%);
     border-left: 2px solid white;
     padding-left: 15px;
+    margin-top: 2%;
 }
 
 h2{
     text-transform: uppercase;
     margin: 0;
-    font-size: 32px;
+    font-size: 20pt;
 }
 
 p{
     margin: 0;
     padding: 10px 0;
-    font-size: 14px;
+    font-size: 10pt;
 }
 
 form{
     width: 60%;
-    margin-left: calc(50% - 30%);
+    margin-left: calc(50% - 33%);
     margin-top: 30px;
 }
 
 input{
 	border: none;
     border-radius: 32px;
-    background: url("../images/user.svg") no-repeat 15px/5%, linear-gradient(to right, #416068 0%, #416068 15%, #2e515b 15%, #2e515b 20%, #2e515b 100%);
+    background: url("../images/user.svg") no-repeat 6%/5%, linear-gradient(to right, #416068 0%, #416068 15%, #2e515b 15%, #2e515b 20%, #2e515b 100%);
     outline: none;
     text-indent: 20%;
     width: 100%;
@@ -92,6 +113,10 @@ input{
 input::placeholder{
     color: white;
     text-transform: uppercase;
+}
+
+input:focus::placeholder{
+    color: rgba(255,255,255,0.5);
 }
 
 form li{
@@ -107,13 +132,16 @@ a{
 }
 
 .centrer input{
-    background-color: #0C6581;
     background-image: none;
+    background: url(../images/flecheSuivant.png) no-repeat 85%/10%, #0C6581;
     width: 40%;
     margin-left: calc(50% - 20%);
     text-indent: 0;
     box-shadow: 0 5px 15px #112F39;
     cursor: pointer;
+    padding-right: 10%;
+    text-transform: uppercase;
+    margin-top: 5%;
 }
 
 .container{
@@ -134,16 +162,84 @@ a{
     margin: 20px 0;
 }
 
+.check label{
+    font-size: 10pt;
+}
+
 input[type="email"]{
-    background: url("../images/arroba.svg") no-repeat 15px/5%, linear-gradient(to right, #416068 0%, #416068 15%, #2e515b 15%, #2e515b 20%, #2e515b 100%);
+    background: url("../images/arroba.svg") no-repeat 6%/5%, linear-gradient(to right, #416068 0%, #416068 15%, #2e515b 15%, #2e515b 20%, #2e515b 100%);
 }
 
 input[type="password"]{
-    background: url("../images/key.svg") no-repeat 15px/5%, linear-gradient(to right, #416068 0%, #416068 15%, #2e515b 15%, #2e515b 20%, #2e515b 100%);
+    background: url("../images/key.svg") no-repeat 6%/5%, linear-gradient(to right, #416068 0%, #416068 15%, #2e515b 15%, #2e515b 20%, #2e515b 100%);
 }
 
 input[type="checkbox"]{
     position: absolute;
     left: 0;
     top: 0;
+    background-color: #2E515B;
+}
+
+.check{
+    margin:15px 0 0 20px
+}
+.checkmark{
+    position:absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #2E515B;
+    border-radius: 50%;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
+}
+.container:hover input~.checkmark{
+    /*background-color:#efefef;*/
+}
+.container input:checked~.checkmark{
+    background-color: #416068;
+}
+.checkmark:after{
+    content:"";
+    position:absolute;
+    display:none;
+}
+.container input:checked~.checkmark:after{
+    display:block;
+}
+.container .checkmark:after{
+    left:9px;
+    top:5px;
+    width:5px;
+    height:10px;
+    border:solid #fff;
+    border-width:0 3px 3px 0;
+    -webkit-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.reseaux{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.reseaux img{
+    width: 30px;
+}
+
+.reseaux a{
+    text-decoration: none;
+}
+
+.footer{
+    text-align: center;
+    width: 100%;
+    font-size: 8pt;
+}
+
+#contenu{
+    height: 100%;
+    margin: auto 0;
 }

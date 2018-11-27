@@ -1,21 +1,21 @@
 @font-face {
  font-family: "Qurany";
- src: url("Qurany.ttf");
+ src: url("../font/Qurany.ttf");
 }
 
 @font-face {
  font-family: "Qurany-light";
- src: url("Qurany-light.ttf");
+ src: url("../font/Qurany-light.ttf");
 }
 
 @font-face {
  font-family: "Qurany-italic";
- src: url("Qurany-italic.ttf");
+ src: url("../font/Qurany-italic.ttf");
 }
 
 @font-face {
  font-family: "Qurany-light-italic";
- src: url("Qurany-light-italic.ttf");
+ src: url("../font/Qurany-light-italic.ttf");
 }
 
 html, body{
