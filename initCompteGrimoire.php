@@ -12,10 +12,11 @@ function chargerClasse($classname)
 
 spl_autoload_register('chargerClasse');
 
-require 'connexionBDD.php';
+//require 'connexionBDD.php';
 
 //valeur test à modifié par la id de la session
-$idCompte=1;
+//$idCompte = 1;
+$idCompte = $_SESSION['id'];
 $managerTabBestiaire = new TabBestiaireManage($pdo);   // creation de la gestion des Bestaire
 $managerTabBestiaire->deleteAll();
 

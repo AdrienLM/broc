@@ -18,7 +18,7 @@ $Resume[1] = new Resume([
   'image' => 'images/imageresume1.png',
   'description' => 'Ce chêne majestueux et quasi millénaire se situe en bordure de la voie menant à Tréhorenteuc. On raconte qu’un abbé traqué par les sans-culottes s’est caché à l’intérieur de l’arbre.',
   'position' => 1,
-  'imageUnlock' => 'images/imageresume1.png',
+  'imageUnlock' => 'images/imageresume1Unlock.png',
   ]);
 
 
@@ -31,7 +31,7 @@ $Resume[2] = new Resume([
   'image' => 'images/imageresume2.png',
   'description' => 'L’Hôtié de Viviane est un coffre funéraire se trouvant à l’est du Val sans retour. Ce serait la demeure de la fée Viviane où elle retiendrait Merlin dans une prison d’air. Auparavant, le monument était situé près du tombeau de Merlin.',
   'position' => 2,
-  'imageUnlock' => 'images/imageresume2.png',
+  'imageUnlock' => 'images/imageresume2Unlock.png',
   ]);
 
 
@@ -44,7 +44,7 @@ $Resume[3] = new Resume([
   'image' => 'images/imageresume3.png',
   'description' => 'Les Menhirs de Monteneuf est un site archéologique composé de 443 menhirs. Tous les menhirs ont été décrits, photographiés puis photographiés. Le site peut être visité par le biais d’un sentier de découverte.',
   'position' => 3,
-  'imageUnlock' => 'images/imageresume3.png',
+  'imageUnlock' => 'images/imageresume3Unlock.png',
   ]);
 
 
