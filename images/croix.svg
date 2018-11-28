@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45">
+  <defs>
+    <style>
+      .cls-1, .cls-4 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #fff;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Groupe_345" data-name="Groupe 345" transform="translate(-525 -696)">
+    <g id="Groupe_1" data-name="Groupe 1" transform="translate(438)">
+      <g id="Rectangle_1" data-name="Rectangle 1" class="cls-1" transform="translate(87 696)">
+        <rect class="cls-3" width="45" height="45" rx="22.5"/>
+        <rect class="cls-4" x="1" y="1" width="43" height="43" rx="21.5"/>
+      </g>
+    </g>
+    <g id="close" transform="translate(540.837 710.838)">
+      <g id="Groupe_259" data-name="Groupe 259" transform="translate(0 0)">
+        <g id="Groupe_258" data-name="Groupe 258" transform="translate(0 0)">
+          <path id="Tracé_118" data-name="Tracé 118" class="cls-2" d="M14.59.175a.6.6,0,0,0-.843,0L.175,13.747a.6.6,0,1,0,.843.843L14.59,1.018A.6.6,0,0,0,14.59.175Z" transform="translate(0 0)"/>
+        </g>
+      </g>
+      <g id="Groupe_261" data-name="Groupe 261" transform="translate(0 0)">
+        <g id="Groupe_260" data-name="Groupe 260" transform="translate(0 0)">
+          <path id="Tracé_119" data-name="Tracé 119" class="cls-2" d="M14.59,13.748,1.018.176a.6.6,0,0,0-.843.843L13.747,14.591a.6.6,0,1,0,.843-.843Z" transform="translate(0 -0.001)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

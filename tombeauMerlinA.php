@@ -59,11 +59,7 @@
         <main>
             <div id="texte">
                 <h2>Scene 3</h2>
-                <h1>Le tombeau de Merin</h1>
-                <audio controls>
-                    <source src="sons/tombeauMerlin.wav" type="audio/wav">
-                    <p>Votre navigateur ne prend pas en charge l'audio HTML. Voici un <a href="sons/tombeauMerlin.wav">lien vers le fichier audio</a> pour le télécharger.</p>
-                </audio>
+                <h1>Le tombeau de Merlin</h1>
                 <p>Paramètres</p>
                 <div id="param">
                     <div>
@@ -109,5 +105,8 @@
                 </a>
             </div>
         </footer>
+
+
+        <script type="text/javascript" src="js/audio.js"></script>
     </body>
 </html>

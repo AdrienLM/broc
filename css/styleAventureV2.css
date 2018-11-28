@@ -79,7 +79,6 @@ main{
 
 #texte{
     width: 35%;
-    border: 2px solid red;
     padding-top: 50px;
 }
 
@@ -198,4 +197,51 @@ footer .reseaux a{
 #menuFlottant{
     position: absolute;
     display: none;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1438px) {
+    #texte>p {
+        font-size: 0.8em;
+        margin-bottom: 5px;
+    }
+    h1 {
+        font-size : 4em;
+        margin-bottom : 50px;
+    }
+    #texte>h2 {
+        font-size : 1.75em;
+    }
+    audio {
+        background-image : none;
+        width : 100%;
+    }
+}
+
+/* LECTEUR AUDIO */
+.barreTemps {
+    position : relative;
+    background-color : red;
+    height : 10px;
+    width : 100%;
+}
+
+.tempsPasse {
+    background-color : green;
+    height : 10px;
+}
+
+.curseur {
+    position : absolute;
+    top : 50%;
+    transform : translateX(-50%) translateY(-50%);
+    height : 20px;
+    width : 5px;
+    background-color : blue;
 }
