@@ -90,6 +90,7 @@ main{
 }
 
 #texte>p{
+    color : #d6d6d6;
     font-size: 8pt;
     margin-bottom: 5px;
 }
@@ -207,13 +208,16 @@ footer .reseaux a{
 
 
 @media screen and (max-width: 1438px) {
+    #texte #param{
+        font-size: 1.1em;
+    }
     #texte>p {
-        font-size: 0.8em;
+        font-size: 0.9em;
         margin-bottom: 5px;
     }
     h1 {
         font-size : 4em;
-        margin-bottom : 50px;
+        margin-bottom : 40px;
     }
     #texte>h2 {
         font-size : 1.75em;
@@ -225,23 +229,35 @@ footer .reseaux a{
 }
 
 /* LECTEUR AUDIO */
+.player {
+    margin-bottom : 40px;
+}
+.player>span {
+    font-family : "Open Sans";
+    color : #d6d6d6;
+    font-size : 0.9em;
+}
 .barreTemps {
     position : relative;
-    background-color : red;
-    height : 10px;
+    background-color : #f2f2f2;
+    height : 4px;
     width : 100%;
+    border-radius : 2px;
+    margin-top : 9px;
 }
 
 .tempsPasse {
-    background-color : green;
-    height : 10px;
+    background-color : #a8a8a8;
+    height : 4px;
+    border-radius : 4px;
 }
 
 .curseur {
     position : absolute;
     top : 50%;
     transform : translateX(-50%) translateY(-50%);
-    height : 20px;
-    width : 5px;
-    background-color : blue;
+    height : 15px;
+    width : 6px;
+    border-radius : 3px;
+    background-color : #ffffff;
 }

@@ -7,7 +7,7 @@
 	var timer;
 
 	/* Visualisation des éléments dans le DOM :
-		<div nomJS="player">
+		<div nomJS="player" class="player">
 			<span nomJS="containerTexte">Lecture : 0:00 / 2:02</span>
 			<div nomJS="barreTemps" class="barreTemps">
 				<div nomJS="divTempsPasse" class="tempsPasse"></div>
@@ -17,6 +17,7 @@
 	*/
 		/* Créer les éléments, leurs attribuer un style (dynamique) et une calsse si besoin */
 	var player = document.createElement("div");
+	player.classList.add("player");
 	var containerTexte = document.createElement("span");
 	var barreTemps = document.createElement("div");
 	barreTemps.classList.add("barreTemps");
