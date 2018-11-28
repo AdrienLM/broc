@@ -246,3 +246,4 @@ if($debugQWMain) var_dump($stickBestiaireCompte[5]); // Etat du stick 5 Bestiair
 
 
 </body>
+</html>
