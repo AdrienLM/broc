@@ -97,6 +97,20 @@
                     <img src="images/flecheG.svg" alt="flèche vers la gauche">
                 </a>
             </div>
+            <div id="jeu">
+                <img src="images/arbreDOr.png" alt="arbre d'or">
+                <div id="narrateur">
+                   <div>
+                      <img src="images/casque.svg">
+                       <h3>Narrateur</h3> 
+                   </div> 
+                   <p class="histoire">Dans une petite clairière près de Trehorenteuc, un arbre en or avait prit racine. Chaque nuit les branches de cet arbre fabuleux s’ornaient de magnifiques feuilles d’or. Les lutins de la forêt venaient chaque matin les récolter pour leurs propriétés magiques.</p>
+                   <div>
+                       <img src="images/flecheD.svg">
+                       <p>Suivant</p>
+                   </div>
+                </div>
+            </div>
         </main>
         <footer>
            <p>KLEIZ | Projet MMI2 2018-2019</p>

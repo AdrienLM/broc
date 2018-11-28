@@ -165,6 +165,64 @@ main{
     margin-left: 30px;
 }
 
+#jeu{
+    background-image: url("../images/scene2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;
+    position: absolute;
+    right: 0;
+    top: 10%;
+    height: 100%;
+    width: 80%;
+    border: 1px solid blue;
+    display: none;
+}
+
+#jeu img{
+    height: 60%;
+    margin-top: 10%;
+    margin-left: 50%;
+}
+
+#narrateur{
+    background-color: #3E3E3E;
+    border-bottom: 10px solid white;
+    box-shadow: 5px 8px 10px rgba(0,0,0,0.18);
+    width: 20%;
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+
+#narrateur img{
+    width: 30px;
+}
+
+#narrateur div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#narrateur div:first-child{
+    width: 90%;
+    margin-left: calc(50% - 45%);
+}
+
+#narrateur>p{
+    width: 80%;
+    margin-left: calc(50% - 40%);
+    font-family: 'Segoe UI';
+}
+
+#narrateur h3{
+    font-size: 16pt;
+    font-family: 'Open Sans';
+}
+
+/*----------------------------------------------------------------*/
+
 footer{
     display: flex;
     justify-content: space-between;

@@ -8,5 +8,9 @@
             $("#retour").remove();
             $("#carte").css("transform", "scale(0.6) translate(-255%, 40%)");
             $("#carte").css("transition", "all 1s linear");
+            setTimeout(function(){
+                $("#jeu").fadeIn(500);
+            }, 500);
+            $("#jeu").css("transition", "all 1s linear");
         });
     });
