@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>KLEIZ | TOMBEAU DE MERLIN | MODE AVENTURE</title>
         <meta name="description" content="">
-        <link rel="stylesheet" href="css/styleAventure.css">
+        <link rel="stylesheet" href="css/styleAventureV2.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
@@ -60,8 +60,8 @@
         </header>
         <main>
             <div id="texte">
-                <h2>Scene 2</h2>
-                <h1>L'arbre d'or</h1>
+                <h2>Scene 3</h2>
+                <h1>Le tombeau de Merin</h1>
                 <audio controls>
                   <source src="sons/tombeauMerlin.wav" type="audio/wav">
                   <p>Votre navigateur ne prend pas en charge l'audio HTML. Voici un
@@ -100,16 +100,16 @@
            <p>KLEIZ | Projet MMI2 2018-2019</p>
             <div class="reseaux">
                <a href="https://www.facebook.com/kleiz3" target="_blank">
-                   <img src="images/fb.png" alt="logo Facebook">
+                   <img src="images/facebook.svg" alt="logo Facebook">
                </a>
                 <a href="https://twitter.com/Kleizbro" target="_blank">
-                   <img src="images/twitter.png" alt="logo Twitter">
+                   <img src="images/twitter.svg" alt="logo Twitter">
                </a>
                <a href="https://www.instagram.com/kleiz3" target="_blank">
-                   <img src="images/insta.png" alt="logo Instagram">
+                   <img src="images/instagram.svg" alt="logo Instagram">
                </a>
                <a href="images/snapchat.jpg" target="_blank">
-                   <img src="images/snap.png" alt="logo Snapchat">
+                   <img src="images/snapchat.svg" alt="logo Snapchat">
                </a>
             </div>
         </footer>
