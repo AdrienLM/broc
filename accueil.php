@@ -33,8 +33,12 @@
             <nav>
                 <a href="accueil.php">accueil</a>
                 <a href="duide.php">guide</a>
-                <a href="choixModes.php">modes</a>
-                <a href="profil.php"><img src="images/imgProfil.png" alt="image profil"></a>
+                <a href="profil.php">
+                <div class="profil">
+                    <p>profil</p>
+                    <img src="images/imgProfil.png" alt="image profil">
+                </div>
+                </a>
                 <img src="images/depliant.svg" alt="dépliant" id="depliant">
                 <ul id="menuFlottant">
                     <li>
