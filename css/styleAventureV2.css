@@ -1,16 +1,16 @@
 @font-face {
- font-family: "Qurany";
- src: url("../font/Qurany.ttf");
+    font-family: "Qurany";
+    src: url("../font/Qurany.ttf");
 }
 
 @font-face {
- font-family: "Qurany-light";
- src: url("../font/Qurany-light.ttf");
+    font-family: "Qurany-light";
+    src: url("../font/Qurany-light.ttf");
 }
 
 @font-face {
- font-family: "Qurany-italic";
- src: url("../font/Qurany-italic.ttf");
+    font-family: "Qurany-italic";
+    src: url("../font/Qurany-italic.ttf");
 }
 
 @font-face {
@@ -25,7 +25,7 @@ html, body{
 }
 
 body{
-    background-image: url(../images/foret2-min.jpg);
+    background-image: url("../images/foret2-min.jpg");
     background-size: cover;
 	background-attachment: fixed;
     color: white;
@@ -160,7 +160,7 @@ main{
 }
 
 #carte p{
-    background-image: url(../images/pointeur.svg);
+    background-image: url("../images/pointeur.svg");
     background-size: 30px;
     background-repeat: no-repeat;
     background-position: top left;

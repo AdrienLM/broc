@@ -27,35 +27,33 @@
     </head>
     <body>
         <header>
-           <a href="accueil.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
+            <a href="accueil.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
             <nav>
                 <a href="guide.html">accueil</a>
                 <a href="choixModes.html">guide</a>
                 <a href="profil.html">modes</a>
                 <a href="profil.html"><img src="images/imgProfil.png" alt="image profil"></a>
                 <img src="images/depliant.png" alt="dépliant">
-                <!--
                 <ul id="menuFlottant">
                     <li>
-                       <a href="deconnexion.php">
-                           <img src="images/quitter.png" alt="quitter">
-                       </a>
+                        <a href="deconnexion.php">
+                            <img src="images/quitter.png" alt="quitter">
+                        </a>
                         <p>Quitter</p>
                     </li>
                     <li>
-                       <a href="parametres.html">
-                           <img src="images/param.png" alt="engrenage">
-                       </a>
+                        <a href="parametres.html">
+                            <img src="images/param.png" alt="engrenage">
+                        </a>
                         <p>Paramètres</p>
                     </li>
                     <li>
-                       <a href="carte.html">
-                           <img src="images/carte.png" alt="pointeur">
-                       </a>
+                        <a href="carte.html">
+                            <img src="images/carte.png" alt="pointeur">
+                        </a>
                         <p>Carte</p>
                     </li>
                 </ul>
-                -->
             </nav>
         </header>
         <main>
@@ -63,10 +61,8 @@
                 <h2>Scene 3</h2>
                 <h1>Le tombeau de Merin</h1>
                 <audio controls>
-                  <source src="sons/tombeauMerlin.wav" type="audio/wav">
-                  <p>Votre navigateur ne prend pas en charge l'audio HTML. Voici un
-                     un <a href="sons/tombeauMerlin.wav">lien vers le fichier audio</a> pour le 
-                     télécharger.</p>
+                    <source src="sons/tombeauMerlin.wav" type="audio/wav">
+                    <p>Votre navigateur ne prend pas en charge l'audio HTML. Voici un <a href="sons/tombeauMerlin.wav">lien vers le fichier audio</a> pour le télécharger.</p>
                 </audio>
                 <p>Paramètres</p>
                 <div id="param">
@@ -87,7 +83,7 @@
             <div id="carte">
                 <h2>Localisation</h2>
                 <p>Forêt de Paimpont</p>
-                <img src="images/carteTombeauMerlin" alt="carte de Brocéliande">
+                <img src="images/carteTombeauMerlin.svg" alt="carte de Brocéliande">
             </div>
             <div id="retour">
                 <p>Retour</p>
@@ -97,20 +93,20 @@
             </div>
         </main>
         <footer>
-           <p>KLEIZ | Projet MMI2 2018-2019</p>
+            <p>KLEIZ | Projet MMI2 2018-2019</p>
             <div class="reseaux">
-               <a href="https://www.facebook.com/kleiz3" target="_blank">
-                   <img src="images/facebook.svg" alt="logo Facebook">
-               </a>
+                <a href="https://www.facebook.com/kleiz3" target="_blank">
+                    <img src="images/facebook.svg" alt="logo Facebook">
+                </a>
                 <a href="https://twitter.com/Kleizbro" target="_blank">
-                   <img src="images/twitter.svg" alt="logo Twitter">
-               </a>
-               <a href="https://www.instagram.com/kleiz3" target="_blank">
-                   <img src="images/instagram.svg" alt="logo Instagram">
-               </a>
-               <a href="images/snapchat.jpg" target="_blank">
-                   <img src="images/snapchat.svg" alt="logo Snapchat">
-               </a>
+                    <img src="images/twitter.svg" alt="logo Twitter">
+                </a>
+                <a href="https://www.instagram.com/kleiz3" target="_blank">
+                    <img src="images/instagram.svg" alt="logo Instagram">
+                </a>
+                <a href="images/snapchat.jpg" target="_blank">
+                    <img src="images/snapchat.svg" alt="logo Snapchat">
+                </a>
             </div>
         </footer>
     </body>
