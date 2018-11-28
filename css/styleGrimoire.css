@@ -7,6 +7,7 @@
 	src: url("../font/bradleyHandITC.ttf") format("truetype");
 }
 
+/* GÉNÉRAL */
 body {
 	margin : 0;
 	background-color : #393939;
@@ -18,10 +19,60 @@ main {
 	align-items : center;
 }
 
+a {
+	text-decoration : none;
+}
+
+/* HEADER */
+body>header{
+    margin: 30px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body>header nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+body>header nav a{
+    margin: 0px 25px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: 'Open Sans';
+    color: white;
+}
+
+body>header #logo{
+    height: 70px;
+}
+
+/* BOUTONS SUIVANT/PRÉCÉDENT */
+main>a {
+	color : #ffffff;
+	font-family : "Open Sans";
+	text-align : center;
+	dispalay : flex;
+	flex-direction : column;
+	margin : auto;
+	text-transform : capitalize;
+	max-width : 86px;
+}
+
+main>a img {
+	transform : scale(0.8);
+}
+
+.nonCliquable {
+	opacity : 0.3;
+}
+
+/* GRIMOIRE */
 #pageGrimoire {
 	display : flex;
-	flex-wrap : wrap;
-	flex-direction : column;
+	flex-flow : column wrap;
 
 	position : relative;
 	background-image : url("../images/grimoire.png");
@@ -48,66 +99,78 @@ main {
 }
 #pageGrimoire header {
 	width : 47%;
-	height : 25%;
-	margin : 0 6% 5% 0;
+	height : 30%;
+	margin : 0 6% 1% 0;
 }
 article {
 	display : flex;
 	flex-direction : row-reverse;
+	align-items : center;
 	width : 47%;
-	height : 25%;
+	height : 30%;
 	overflow : hidden;
-	margin : 0 6% 5% 0;
+	margin : 0 6% 1% 0;
+}
+article:nth-child(3n) {
+	margin : 0;
+}
+article>div {
+	flex-grow : 1;
 }
 article h3 {
-	text-indent : 11%;
-	margin : 0 0 0 3px;
+	margin : 0 0 0 5%;
 }
 article h3::before {
-	content : "";
+	content : "<<";
+	color : rgba(0, 0, 0, 0);
+	font-size : 0.7em;
 	background : url("../images/lock-1.svg") no-repeat;
 	min-width : 10%;
 }
 .debloque h3::before {
-	content : url("../images/lock.svg");
+	content : "<<";
+	color : rgba(0, 0, 0, 0);
+	font-size : 0.7em;
+	background : url("../images/lock.svg") no-repeat;
 	width : 10%;
 }
 article p {
-	margin : 6px 0 0 3px;
-	font-size : 0.8em;
+	font-family : "Open Sans";
+	margin : 6px 0 0 5%;
+	font-size : 0.7em;
 }
 article>img {
 	margin-left : 2%;
-	width : 34.5%;
+	width : calc(13600% / 339);
 	height : 100%;
 }
 
+/*  LANGUETTES */
 #pageGrimoire>div:last-child a {
 	width : 12%;
-	height : 3%;/*calc(525% / 173)*/
+	height : 3%;
 	position : absolute;
 	text-align : center;
 	color : #ffffff;
 	transform : rotate(-90deg) translateY(-50%);
 	right : 88.8%;
-	text-decoration : none;
+	border-radius: 10px 10px 0px 0px;
+	box-shadow : -5px -2px 8px 2px rgba(20, 20, 20, 0.2);
 }
 #pageGrimoire>div:last-child a:first-child {
-	background : url("../images/languetteResumeDev") no-repeat top;
-	background-size : cover;
+	background : #5C3E64;
 	top : 23%;
 }
 #pageGrimoire>div:last-child a:nth-child(2) {
-	background : url("../images/languetteHerbierDev") no-repeat top;
-	background-size : cover;
+	background : #11771B;
 	top : 48.5%;
 }
 #pageGrimoire>div:last-child a:last-child {
-	background : url("../images/languetteBestiaireDev") no-repeat top;
-	background-size : cover;
+	background : #A23535;
 	top : 73.5%;
 }
 
 #pageGrimoire>div:last-child .pageActiveGrimoire {
+	box-shadow : -5px -2px 8px 0 rgba(20, 20, 20, 0.6);
 	height : 4%;
 }
