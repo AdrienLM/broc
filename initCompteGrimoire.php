@@ -65,13 +65,13 @@ if($grimExiste)
     
     //$idCompte = $_SESSION['id'];
     $managerTabBestiaire = new TabBestiaireManage($pdo);   // creation de la gestion des Bestaire
-    $managerTabBestiaire->deleteAll();
+    //$managerTabBestiaire->deleteAll();
 
     $managerTabHerbier = new TabHerbierManage($pdo);   // creation de la gestion des herbier
-    $managerTabHerbier->deleteAll();
+    //$managerTabHerbier->deleteAll();
 
     $managerTabResume = new TabResumeManage($pdo);   // creation de la gestion des Resume
-    $managerTabResume->deleteAll();
+    //$managerTabResume->deleteAll();
 
     // Ajout du nouveau idCompte en tant ligne à la table 
     $managerTabBestiaire->add($idCompte);

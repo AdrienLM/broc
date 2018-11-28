@@ -17,7 +17,7 @@
 
     require 'connexionBDD.php';
 
-    $_SESSION['id'] = 2;
+    $_SESSION['id'] = 1000;
     //$idCompte = 1;
   
     require 'avancementAventure.php';
