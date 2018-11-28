@@ -1,5 +1,6 @@
 
 <?php
+/*
 $debugQWMain = false;
 global $debugQWClass;
   $debugQWClass = false;
@@ -24,7 +25,7 @@ $managerTabHerbier->deleteAll();
 $managerTabResume = new TabResumeManage($pdo);   // creation de la gestion des Resume
 $managerTabResume->deleteAll();
 
-/* Ajout du nouveau idCompte en tant ligne à la table */
+// Ajout du nouveau idCompte en tant ligne à la table 
 $managerTabBestiaire->add($idCompte);
 $managerTabHerbier->add($idCompte);
 $managerTabResume->add($idCompte);
@@ -39,7 +40,7 @@ $EtatstickHerbier[$i]='0';
 $EtatResume[$i]='0';
 }
 
-/* Mise à jour de la ligne idCompte de la table */
+// Mise à jour de la ligne idCompte de la table 
 $managerTabBestiaire->updates($idCompte,$EtatstickBestaire);
 $managerTabHerbier->updates($idCompte,$EtatstickHerbier);
 $managerTabResume->updates($idCompte,$EtatResume);
@@ -48,5 +49,5 @@ var_dump($managerTabBestiaire->getEtatSticks($idCompte));
 var_dump($managerTabHerbier->getEtatSticks($idCompte));
 var_dump($managerTabResume->getEtatResumes($idCompte));
  
-
+*/
 ?>

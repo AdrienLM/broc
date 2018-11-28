@@ -97,9 +97,9 @@
                 
 
                 <div> <!-- Languettes -->
-                    <a href="#">Résumé</a>
-                    <a href="#">Herbier</a>
-                    <a href="#" class="pageActiveGrimoire">Bestiaire</a>
+                    <a href="grimResume.php" class="pageActiveGrimoire">Résumé</a>
+                    <a href="grimHerbier.php">Herbier</a>
+                    <a href="grimBestiaire.php">Bestiaire</a>
                 </div>
             </section>
 
