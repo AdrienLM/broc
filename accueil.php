@@ -5,6 +5,7 @@
         <title>KLEIZ | ACCUEIL</title>
         <meta name="description" content="">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/styleMenu.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
@@ -23,6 +24,8 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <script src="js/jquery.js"></script>
+        <script src="js/scriptMenuFlottant.js"></script>
     </head>
     <body>
         <header>
@@ -32,8 +35,7 @@
                 <a href="choixModes.html">guide</a>
                 <a href="profil.html">modes</a>
                 <a href="profil.html"><img src="images/imgProfil.png" alt="image profil"></a>
-                <img src="images/depliant.png" alt="dépliant">
-                <!--
+                <img src="images/depliant.png" alt="dépliant" id="depliant">
                 <ul id="menuFlottant">
                     <li>
                        <a href="deconnexion.php">
@@ -54,7 +56,6 @@
                         <p>Carte</p>
                     </li>
                 </ul>
-                -->
             </nav>
         </header>
         <main>

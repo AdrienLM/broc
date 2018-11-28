@@ -24,6 +24,8 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <script src="js/jquery.js"></script>
+        <script src="js/audioPlayer.js"></script>
     </head>
     <body>
         <header>
@@ -62,11 +64,10 @@
             <div id="texte">
                 <h2>Scene 2</h2>
                 <h1>L'arbre d'or</h1>
-                <audio controls>
-                  <source src="sons/arbreOr.wav" type="audio/wav">
-                  <p>Votre navigateur ne prend pas en charge l'audio HTML. Voici un
-                     un <a href="sons/arbreOr.wav">lien vers le fichier audio</a> pour le 
-                     télécharger.</p>
+                <audio preload="auto" controls>
+                   <source src="sons/arbreOr.wav" />
+                   <source src="sons/arbreOr.mp3" />
+                   <source src="sons/arbreOr.ogg" />
                 </audio>
                 <p>Paramètres</p>
                 <div id="param">
