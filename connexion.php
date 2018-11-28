@@ -130,7 +130,7 @@ if(isset($_POST['formconnexion']))
           <div id="retour">
             <p>Retour</p>
             <a href="accueil.php">
-                <img src="images/flecheG.svg" alt="flèche vers la gauche">
+                <img src="images/flecheG.svg" class="rectif" alt="flèche vers la gauche">
             </a>
         </div>
               </div>
