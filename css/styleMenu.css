@@ -21,8 +21,17 @@ header #logo{
     height: 70px;
 }
 
+.footerCentre {
+    font-style: bold;
+}
+
+.reseaux img {
+    width: 17px;
+    margin: 0 7px 0 7px;
+}   
+
 #depliant{
-    width: 60px;
+    width: 70px;
     cursor: pointer;
 }
 
@@ -33,10 +42,11 @@ header #logo{
     right: 25px;
     top: 150px;
     display: none;
+    z-index: 50
 }
 
 #menuFlottant img{
-    width: 50px;
+    width: 60px;
     margin: 0;
     padding: 0;
 }
@@ -60,15 +70,16 @@ header #logo{
 }
 
 #menuFlottant li:first-child{
-    margin-top: -20px;
+    margin-top: -30px;
+    margin-left: -100px;
 }
 
 #menuFlottant li:nth-child(2){
-    margin-top: 10px;
+    margin-top: -7px;
     margin-left: -10px;
 }
 
 #menuFlottant li:last-child{
-    margin-top: -20px;
+    margin-top: -30px;
     margin-left: -10px;
 }
