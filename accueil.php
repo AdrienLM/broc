@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+require 'connexionBDD.php';
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -62,6 +69,8 @@
                 </ul>
             </nav>
         </header>
+        
+        <?php require 'header.php'; ?>
         <main>
             <h1>Les legendes de <br><span>Broceliande</span></h1>
             <p>Découvrez la forêt de Brocéliande à travers ses légendes, ses histoires et des secrets. Informez-vous, partez à la quête du Graal ou découvrez des créatures fantastiques. A chacun son mode et sa façon de vivre l'aventure.</p>
