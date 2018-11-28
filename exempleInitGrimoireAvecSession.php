@@ -17,9 +17,9 @@
 
     require 'connexionBDD.php';
 
-    $_SESSION['id'] = 2 ;
+    $_SESSION['id'] = 2;
     //$idCompte = 1;
-
+  
     require 'initCompteGrimoire.php';
     ?>
 

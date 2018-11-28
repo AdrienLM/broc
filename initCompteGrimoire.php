@@ -1,29 +1,50 @@
 
 <?php
 
-a finalisé avec la boucle if a la ligne 26
+// a avoir en page au dessus pour que la page marche la varible $_SESSION['id'] 
 
+
+//query
 
 $idCompte = $_SESSION['id'];
-echo '$idCompte '.$idCompte.'  ';
+//echo '$idCompte '.$idCompte.'  '.'<br />';
 
 $requete = "SELECT idCompte FROM tabbestiaire WHERE idCompte = ".$idCompte;
-echo $requete;
+//echo $requete;
 $ifGrimoireExist = $pdo->query($requete);
 $grimExiste = $ifGrimoireExist->fetch(PDO::FETCH_ASSOC);
 
-echo '<br />'.$grimExiste["idCompte"];
+//echo '<br />'.$grimExiste["idCompte"];
+
+
+/*
+//prepare
+$idCompte = $_SESSION['id'];
+$grimExiste = $pdo->prepare("SELECT idCompte FROM tabbestiaire WHERE idCompte = (idCompte) VALUES (:idCompte)");
+$grimExiste->bindParam(':idCompte', $idCompte);
+ echo '<br />'.$ifGrimoireExist.'';
+$ifGrimoireExist = $grimExiste->execute();
+ echo '<br />'.$ifGrimoireExist.'';
+*/
+
+
+
+
+
+
+
+
 
 if($grimExiste)
 {
- echo 'existe dans if ';
+ //echo 'existe dans if ';
     
 }else{
- echo 'existe pas else';
+ //echo 'existe pas else';
     
-}
+//}
 
-if(1 == 1){
+//if(1 == 1){
     
     $debugQWMain = false;
     global $debugQWClass;
