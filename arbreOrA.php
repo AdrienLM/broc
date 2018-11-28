@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>KLEIZ | ARBRE D'OR | MODE AVENTURE</title>
         <meta name="description" content="">
+        <link rel="stylesheet" href="css/styleMenu.css">
         <link rel="stylesheet" href="css/styleAventure.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -26,38 +27,37 @@
         <meta name="theme-color" content="#ffffff">
         <script src="js/jquery.js"></script>
         <script src="js/audioPlayer.js"></script>
+        <script src="js/scriptMenuFlottant.js"></script>
     </head>
     <body>
         <header>
            <a href="accueil.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
             <nav>
-                <a href="guide.html">accueil</a>
-                <a href="choixModes.html">guide</a>
-                <a href="profil.html">modes</a>
-                <a href="profil.html"><img src="images/imgProfil.png" alt="image profil"></a>
-                <img src="images/depliant.png" alt="dépliant">
-                <!--
+                <a href="accueil.php">accueil</a>
+                <a href="duide.php">guide</a>
+                <a href="choixModes.php">modes</a>
+                <a href="profil.php"><img src="images/imgProfil.png" alt="image profil"></a>
+                <img src="images/depliant.svg" alt="dépliant" id="depliant">
                 <ul id="menuFlottant">
                     <li>
                        <a href="deconnexion.php">
-                           <img src="images/quitter.png" alt="quitter">
-                       </a>
-                        <p>Quitter</p>
-                    </li>
-                    <li>
-                       <a href="parametres.html">
-                           <img src="images/param.png" alt="engrenage">
-                       </a>
-                        <p>Paramètres</p>
-                    </li>
-                    <li>
-                       <a href="carte.html">
-                           <img src="images/carte.png" alt="pointeur">
+                           <img src="images/carte.svg" alt="carte">
                        </a>
                         <p>Carte</p>
                     </li>
+                    <li>
+                       <a href="parametres.php">
+                           <img src="images/power.svg" alt="quitter">
+                       </a>
+                        <p>Déconnexion</p>
+                    </li>
+                    <li>
+                       <a href="carte.php">
+                           <img src="images/engrenage.svg" alt="engrenage">
+                       </a>
+                        <p>Paramètres</p>
+                    </li>
                 </ul>
-                -->
             </nav>
         </header>
         <main>
