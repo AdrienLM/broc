@@ -52,6 +52,7 @@ if($AvancementUserExist["AvancementUser"] > 0)
     
     if($AvancementUserExist["AvancementUser"] == 1){
         //redirection première
+        //header ('location: page.php');
     }
     
     
