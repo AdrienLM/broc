@@ -61,15 +61,15 @@ header #logo{
 }
 
 #menuFlottant li:first-child{
-    margin-top: -60px;
+    margin-top: -30px;
 }
 
 #menuFlottant li:nth-child(2){
-    margin-top: -30px;
+    margin-top: 0;
     margin-left: -10px;
 }
 
 #menuFlottant li:last-child{
-    margin-top: -60px;
+    margin-top: -30px;
     margin-left: -10px;
 }

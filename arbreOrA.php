@@ -28,6 +28,7 @@
         <script src="js/jquery.js"></script>
         <script src="js/audioPlayer.js"></script>
         <script src="js/scriptMenuFlottant.js"></script>
+        <script src="js/scriptArbreOr.js"></script>
     </head>
     <body>
         <header>
@@ -76,7 +77,7 @@
                         <p>Plein écran</p>
                     </div>
                     <div>
-                        <img src="images/flecheD.svg" alt="flèche vers la droite">
+                        <img src="images/flecheD.svg" alt="flèche vers la droite" class="decouvrir">
                         <p>Découvrir</p>
                     </div>
                     <div>

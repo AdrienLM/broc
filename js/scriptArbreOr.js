@@ -1,19 +1,12 @@
     $(document).ready(function(){
-        $("#depliant").click(function(){
-            $("#menuFlottant").slideToggle();
-            var display = $("#menuFlottant").css("display");
-            if(display == "block"){
-                $("#menuFlottant").css("display", "flex");
-            }else if(display == "flex"){
-                $("#menuFlottant").css("display", "none");
-            }
-            $("#menuFlottant").css("display", "flex");
-            var image = $(this).attr("src");
-            if(image == "images/depliant.svg"){
-                $(this).attr("src", "images/croixMenu.svg");
-            }else{
-                $(this).attr("src", "images/depliant.svg");
-            }
-            //$("#menuFlottant").css("transition", "all 0.2s linear");
+        $(".decouvrir").click(function(){
+            $("#texte").css("transform", "scale(0.7) translate(-40%, -35%)");
+            $("#texte").css("transition", "all 1s linear");
+            $("#param div:last-child p").text("Son");
+            $("#param div:last-child img").attr("src", "images/hautParleur.svg");
+            $("#texte div:nth-child(2)").remove();
+            $("#retour").remove();
+            $("#carte").css("transform", "scale(0.6) translate(-255%, 40%)");
+            $("#carte").css("transition", "all 1s linear");
         });
     });
