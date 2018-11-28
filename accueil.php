@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <title>KLEIZ | ACCUEIL</title>
         <meta name="description" content="">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/styleMenu.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
@@ -23,44 +24,44 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <script src="js/jquery.js"></script>
+        <script src="js/scriptMenuFlottant.js"></script>
     </head>
     <body>
         <header>
-           <a href="accueil.html"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
+           <a href="accueil.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
             <nav>
-                <a href="guide.html">accueil</a>
-                <a href="choixModes.html">guide</a>
-                <a href="profil.html">modes</a>
-                <a href="profil.html"><img src="images/imgProfil.png" alt="image profil"></a>
-                <img src="images/depliant.png" alt="dépliant">
-                <!--
+                <a href="accueil.php">accueil</a>
+                <a href="duide.php">guide</a>
+                <a href="choixModes.php">modes</a>
+                <a href="profil.php"><img src="images/imgProfil.png" alt="image profil"></a>
+                <img src="images/depliant.svg" alt="dépliant" id="depliant">
                 <ul id="menuFlottant">
                     <li>
                        <a href="deconnexion.php">
-                           <img src="images/quitter.png" alt="quitter">
-                       </a>
-                        <p>Quitter</p>
-                    </li>
-                    <li>
-                       <a href="parametres.html">
-                           <img src="images/param.png" alt="engrenage">
-                       </a>
-                        <p>Paramètres</p>
-                    </li>
-                    <li>
-                       <a href="carte.html">
-                           <img src="images/carte.png" alt="pointeur">
+                           <img src="images/carte.svg" alt="carte">
                        </a>
                         <p>Carte</p>
                     </li>
+                    <li>
+                       <a href="parametres.php">
+                           <img src="images/power.svg" alt="quitter">
+                       </a>
+                        <p>Déconnexion</p>
+                    </li>
+                    <li>
+                       <a href="carte.php">
+                           <img src="images/engrenage.svg" alt="engrenage">
+                       </a>
+                        <p>Paramètres</p>
+                    </li>
                 </ul>
-                -->
             </nav>
         </header>
         <main>
             <h1>Les legendes de <br><span>Broceliande</span></h1>
             <p>Découvrez la forêt de Brocéliande à travers ses légendes, ses histoires et des secrets. Informez-vous, partez à la quête du Graal ou découvrez des créatures fantastiques. A chacun son mode et sa façon de vivre l'aventure.</p>
-            <a href="choixModes.html">découvrir &nbsp; &nbsp; &nbsp; &rarr;</a>
+            <a href="choixModes.php">découvrir &nbsp; &nbsp; &nbsp; &rarr;</a>
         </main>
         <footer>
             <p>KLEIZ | Projet MMI2 2018-2019</p>

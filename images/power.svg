@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 74.466 74.466">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e8e8e8;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #4b4b4b;
+      }
+
+      .cls-3 {
+        stroke: #e8e8e8;
+        stroke-linejoin: round;
+        stroke-miterlimit: 1.414;
+      }
+
+      .cls-4 {
+        filter: url(#benjamin-parker-736167-unsplash);
+      }
+    </style>
+    <filter id="benjamin-parker-736167-unsplash" x="0" y="0" width="74.466" height="74.466" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Groupe_211" data-name="Groupe 211" transform="translate(-104.034 -81.5)">
+    <g class="cls-4" transform="matrix(1, 0, 0, 1, 104.03, 81.5)">
+      <circle id="benjamin-parker-736167-unsplash-2" data-name="benjamin-parker-736167-unsplash" class="cls-1" cx="23.733" cy="23.733" r="23.733" transform="translate(10.5 8.5)"/>
+    </g>
+    <g id="information" transform="translate(-69.92 -164.719)">
+      <path id="Tracé_67" data-name="Tracé 67" class="cls-2" d="M208.639,395.833a10.719,10.719,0,1,0,10.719,10.719A10.713,10.713,0,0,0,208.639,395.833Zm0,20.009a9.29,9.29,0,1,1,9.29-9.29A9.3,9.3,0,0,1,208.639,415.842Z" transform="translate(0 -126.956)"/>
+      <path id="Tracé_68" data-name="Tracé 68" class="cls-3" d="M996.729,265.737c-.647,0-1.172.334-1.172.745v6.287c0,.412.525.745,1.172.745s1.172-.334,1.172-.745v-6.287C997.9,266.071,997.376,265.737,996.729,265.737Z" transform="translate(-788.298 0.853)"/>
+    </g>
+  </g>
+</svg>
