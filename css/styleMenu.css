@@ -25,6 +25,15 @@ header #logo{
     font-style: bold;
 }
 
+
+
+.imgUser {
+    width: 46px;
+    border-radius: 50px;
+    background-color: #eaeaea;
+    border: 2px solid #fff;
+}
+
 .reseaux img {
     width: 17px;
     margin: 0 7px 0 7px;
@@ -76,12 +85,12 @@ header #logo{
 
 #menuFlottant li:nth-child(2){
     margin-top: -7px;
-    margin-left: -10px;
+    margin-left: -5px;
 }
 
 #menuFlottant li:last-child{
     margin-top: -30px;
-    margin-left: -10px;
+    margin-left: -5px;
 }
 
 .profil{
@@ -94,7 +103,7 @@ header #logo{
 
 .profil p{
     margin-right: 25px;
-    margin-left: 14px;
+    margin-left: 11px;
     font-size: 16px;
     font-weight: bold;
 }
