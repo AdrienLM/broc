@@ -2,8 +2,7 @@
 	"use strict";
 	window.addEventListener("DOMContentLoaded", initialiser);
 
-	let tempsTotalS = 84;
-	let tempsTotalDS = 840;
+	let tempsTotal = 84;
 	let tempsPasseS = 0;
 	let tempsPasseDS = 0;
 	let tempsDePause = new Array(56, 157, 341, 561, 774);
@@ -36,14 +35,14 @@
 
 	function initialiser(evt) {
 			/* Placer les éléments dans le DOM */
-		containerTexte.appendChild(document.createTextNode("Lecture : "+transformerSecondesEnMinutesSecondes(tempsPasseS)+" / "+transformerSecondesEnMinutesSecondes(tempsTotalS)));
+		containerTexte.appendChild(document.createTextNode("Lecture : 0:00 / "+transformerSecondesEnMinutesSecondes(tempsTotal)));
 		divPlayer.appendChild(containerTexte);
 		barreTemps.appendChild(divTempsPasse);
 		barreTemps.appendChild(curseur);
 		divPlayer.appendChild(barreTemps);
 		document.getElementById("texte").insertBefore(divPlayer, document.getElementById("texte").querySelector("p"));
 		
-			/* Lancer le son (à déplacer ?) */
+			/* Lancer le son */
 		playerAudio = document.getElementById("playerAudio");
 		playerAudio.play();
 
@@ -53,15 +52,15 @@
 	}
 
 	function affichageTemps() {
-		tempsPasseS++;
+		tempsPasseS = Math.floor(playerAudio.currentTime);
 			/* Arrêter le timer à la fin */
 		if(tempsPasseS > tempsTotalS) {
 			window.clearInterval(timerAffichage);
 		}
 			/* Mettre à jour le texte affiché */
-		containerTexte.textContent = "Lecture : "+transformerSecondesEnMinutesSecondes(tempsPasseS)+" / "+transformerSecondesEnMinutesSecondes(tempsTotalS);
+		containerTexte.textContent = "Lecture : "+transformerSecondesEnMinutesSecondes(tempsPasseS)+" / "+transformerSecondesEnMinutesSecondes(tempsTotal);
 			/* Calculer le pourcentage de temps passé et agrandir/déplacer les éléments dynamiques en conséquence */
-		let pourcentage = (tempsPasseS * 100 / tempsTotalS);
+		let pourcentage = (tempsPasseS * 100 / tempsTotal);
 		divTempsPasse.style.width = pourcentage+"%";
 		curseur.style.left = pourcentage+"%";
 
