@@ -51,7 +51,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
     <body>
 
 
-        <?php require 'header.php'; ?>
+        <?php require 'header.php'; require 'initCompteGrimoire.php'; ?>
 
 
         <main>
