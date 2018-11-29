@@ -1,5 +1,5 @@
 <?php
-
+/*
 function chargerClasse($classname)
 {
   require 'class/'.$classname.'.php';
@@ -8,7 +8,7 @@ function chargerClasse($classname)
 spl_autoload_register('chargerClasse');
 
 require 'connexionBDD.php';
-
+*/
 $manager = new ResumeManage($pdo);   // creation de la gestion des Resume
 $manager->deleteAll();
 

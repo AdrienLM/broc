@@ -1,5 +1,5 @@
 <?php
-
+/*
 function chargerClasse($classname)
 {
   require 'class/'.$classname.'.php';
@@ -8,7 +8,7 @@ function chargerClasse($classname)
 spl_autoload_register('chargerClasse');
 
 require 'connexionBDD.php';
-
+*/
 $manager = new HerbierManage($pdo);   // creation de la gestion des Herbiers pour la table de la pdo
 $manager->deleteAll();
 
