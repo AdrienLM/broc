@@ -26,9 +26,9 @@
         <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <script src="js/jquery.js"></script>
-        <script src="js/audioPlayer.js"></script>
         <script src="js/scriptMenuFlottant.js"></script>
         <script src="js/scriptArbreOr.js"></script>
+        <script src="js/audio.js"></script>
     </head>
     <body>
         <header>
@@ -65,10 +65,9 @@
             <div id="texte">
                 <h2>Scene 2</h2>
                 <h1>L'arbre d'or</h1>
-                <audio preload="auto" controls>
-                   <source src="sons/arbreOr.wav" />
-                   <source src="sons/arbreOr.mp3" />
-                   <source src="sons/arbreOr.ogg" />
+                <audio id="playerAudio">
+                      <source src="./sons/aventureTombeauMerlin.mp3">
+                      <source src="./sons/aventureTombeauMerlin.ogg">
                 </audio>
                 <p>Paramètres</p>
                 <div id="param">

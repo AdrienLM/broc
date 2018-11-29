@@ -36,7 +36,7 @@ h1{
     margin: 0;
     font-family: 'Qurany';
     font-size: 50pt;
-    margin-bottom: 100px;
+    margin-bottom: 5%;
 }
 
 p{
@@ -76,6 +76,7 @@ main{
 #texte{
     width: 35%;
     padding-top: 50px;
+    z-index: 10;
 }
 
 #texte h2{
@@ -138,6 +139,7 @@ main{
     border-bottom: 15px solid white;
     background-color: #232323;
     box-shadow: 5px 8px 10px rgba(0,0,0,0.18);
+    z-index: 20;
 }
 
 #carte h2{
@@ -180,7 +182,7 @@ main{
     display: none;
 }
 
-#jeu img{
+#jeu>img{
     height: 60%;
     margin-top: 10%;
     margin-left: 50%;
@@ -190,7 +192,7 @@ main{
     background-color: #3E3E3E;
     border-bottom: 10px solid white;
     box-shadow: 5px 8px 10px rgba(0,0,0,0.18);
-    width: 20%;
+    width: 250px;
     position: absolute;
     right: 10px;
     top: 20px;
@@ -198,17 +200,22 @@ main{
 
 #narrateur img{
     width: 30px;
+    margin-right: 10px;
 }
 
 #narrateur div{
     display: flex;
-    justify-content: space-around;
     align-items: center;
 }
 
 #narrateur div:first-child{
-    width: 90%;
-    margin-left: calc(50% - 45%);
+    width: 60%;
+    margin-left: calc(50% - 30%);
+}
+
+#narrateur div:last-child{
+    width: 40%;
+    margin-left: calc(50% - 20%);
 }
 
 #narrateur>p{
@@ -220,6 +227,40 @@ main{
 #narrateur h3{
     font-size: 16pt;
     font-family: 'Open Sans';
+}
+
+/*------------- LECTEUR AUDIO-------------------- */
+.player {
+    margin-bottom : 40px;
+}
+.player>span {
+    font-family : "Open Sans";
+    color : #d6d6d6;
+    font-size : 0.9em;
+}
+.barreTemps {
+    position : relative;
+    background-color : #f2f2f2;
+    height : 4px;
+    width : 100%;
+    border-radius : 2px;
+    margin-top : 9px;
+}
+
+.tempsPasse {
+    background-color : #a8a8a8;
+    height : 4px;
+    border-radius : 4px;
+}
+
+.curseur {
+    position : absolute;
+    top : 50%;
+    transform : translateX(-50%) translateY(-50%);
+    height : 15px;
+    width : 6px;
+    border-radius : 3px;
+    background-color : #ffffff;
 }
 
 /*----------------------------------------------------------------*/
