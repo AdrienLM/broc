@@ -72,7 +72,7 @@
             <div class="partDroite">
                 <img src="images/egliseGraal.JPG" alt="tombeau de Merlin">
                 <div></div>
-                <img src="images/carte.png" alt="carte de Brocéliande" class="carte">
+                <img src="images/carteEgliseGraalD.svg" alt="carte de Brocéliande" class="carte">
             </div>
             <div>
                 <p>Retour</p>
