@@ -1,3 +1,26 @@
+<?php
+
+session_start();
+//PseudoUser, EmailUser, MdpUser, AvatarUser, BanniereUser
+require("param.inc.php");
+$pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB,MYUSER,MYPASS);
+$pdo ->query("SET NAMES utf8");
+$pdo ->query("SET CHARACTER SET 'utf-8'");
+
+
+
+if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
+{
+	$getid = intval($_SESSION['id']);
+	$requser = $pdo->prepare('SELECT * FROM membres WHERE IdUser = ?');
+	$requser->execute(array($getid));
+	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);   
+    $_SESSION['val1'] = 0;
+require 'connexionBDD.php';
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,43 +51,18 @@
         <script src="js/scriptMenuFlottant.js"></script>
     </head>
     <body>
-        <header>
-           <a href="accueil.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
-            <nav>
-                <a href="accueil.php">accueil</a>
-                <a href="duide.php">guide</a>
-                <a href="profil.php">
-                <div class="profil">
-                    <p>profil</p>
-                    <img src="images/imgProfil.png" alt="image profil">
-                </div>
-                </a>
-                <img src="images/depliant.svg" alt="dépliant" id="depliant">
-                <ul id="menuFlottant">
-                    <li>
-                       <a href="deconnexion.php">
-                           <img src="images/carte.svg" alt="carte">
-                       </a>
-                        <p>Carte</p>
-                    </li>
-                    <li>
-                       <a href="parametres.php">
-                           <img src="images/power.svg" alt="quitter">
-                       </a>
-                        <p>Déconnexion</p>
-                    </li>
-                    <li>
-                       <a href="carte.php">
-                           <img src="images/engrenage.svg" alt="engrenage">
-                       </a>
-                        <p>Paramètres</p>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        
+        
+        <?php require 'header.php'; ?>
+        
+        
         <main>
             <h1>Les legendes de <br><span>Broceliande</span></h1>
             <p>Découvrez la forêt de Brocéliande à travers ses légendes, ses histoires et des secrets. Informez-vous, partez à la quête du Graal ou découvrez des créatures fantastiques. A chacun son mode et sa façon de vivre l'aventure.</p>
+            
+            
+            
+            
             <a href="choixModes.php">découvrir &nbsp; &nbsp; &nbsp; &rarr;</a>
         </main>
         <footer>
@@ -91,3 +89,8 @@
         </footer>
     </body>
 </html>
+
+<?php
+
+
+?>
