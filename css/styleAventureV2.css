@@ -299,10 +299,6 @@ footer .reseaux a{
     #texte>h2 {
         font-size : 1.75em;
     }
-    audio {
-        background-image : none;
-        width : 100%;
-    }
 }
 
 /* LECTEUR AUDIO */
