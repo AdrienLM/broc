@@ -188,6 +188,78 @@ main{
     margin-left: 50%;
 }
 
+#fille{
+    height: 60%;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
+#arbre1{
+    height: 50%;
+    position: absolute;
+    bottom: 10%;
+    left: 35%;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
+#arbre2{
+    height: 30%;
+    position: absolute;
+    bottom: 20%;
+    left: 40%;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
+#arbre3{
+    height: 40%;
+    position: absolute;
+    bottom: 9%;
+    right: 27%;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
+#arbre4{
+    height: 35%;
+    position: absolute;
+    bottom: 15%;
+    right: 17%;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
+#feuille1{
+    height: 35%;
+    position: absolute;
+    bottom: 15%;
+    right: 17%;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
+#feuille2{
+    height: 35%;
+    position: absolute;
+    bottom: 15%;
+    right: 17%;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
+#feuille3{
+    height: 35%;
+    position: absolute;
+    bottom: 15%;
+    right: 17%;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
 #narrateur{
     background-color: #3E3E3E;
     border-bottom: 10px solid white;
@@ -231,11 +303,6 @@ main{
 #narrateur h3{
     font-size: 16pt;
     font-family: 'Open Sans';
-}
-
-#fille{
-    position: absolute;
-    top: 100px;
 }
 
 /*------------- LECTEUR AUDIO-------------------- */

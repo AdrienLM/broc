@@ -99,6 +99,13 @@
             <div id="jeu">
                 <img src="images/arbreDOr.png" alt="arbre d'or" id="arbreOr">
                 <img src="images/petiteFille.png" alt="petite fille" id="fille">
+                <img src="images/tronc1.png" alt="tronc d'arbre calciné" id="arbre1">
+                <img src="images/tronc2.png" alt="tronc d'arbre calciné" id="arbre2">
+                <img src="images/tronc3.png" alt="tronc d'arbre calciné" id="arbre3">
+                <img src="images/tronc4.png" alt="tronc d'arbre calciné" id="arbre4">
+                <img src="images/feuille1OrUnlock.png" alt="feuille d'or" id="feuille1">
+                <img src="images/feuille1OrUnlock.png" alt="feuille d'or" id="feuille2">
+                <img src="images/feuille1OrUnlock.png" alt="feuille d'or" id="feuille3">
                 <div id="narrateur">
                    <div>
                       <img src="images/casque.svg">

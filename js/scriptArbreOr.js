@@ -35,14 +35,20 @@
                 $("#narrateur div:last-child img").click(function(){
                     //changement texte
                     $("#narrateur .histoire").replaceWith('<p class="histoire">Ne la voyant pas revenir, ses trois amis s’inquiétèrent.<br><br>Les jeunes hommes partirent donc à sa recherche. Après quelques inspections, ils retrouvèrent sa trace.<br><br>C’est ainsi qu’ils virent à leur tour l’incroyable arbre d’or.<br><br>Hélas, ils firent la même erreur que leur amie et le touchèrent. Ils rejoignirent celle-ci aux côtés de l’arbre magique.</p>');
+                    //disparition de la petite fille
+                    $("#fille").css("opacity", "0");
                     //ajout d'un arbre calciné
-                    
+                    setTimeout(function(){
+                        $("#arbre1").css("opacity", "1");
+                    }, 100);
                     //écouteur sur le bouton suivant
                     $("#narrateur div:last-child img").click(function(){
                         //changement texte
                         $("#narrateur .histoire").replaceWith('<p class="histoire">Depuis ce jour, le lieu est resté figé. Des arbres calcinés et des pierres entourent un arbre d’or sur lequel plus une seule feuille ne pousse.<br><br>Cependant, il existerait un moyen de conjurer le sort.<br><br>Si quelqu’un perçait le secret de la potion magique (gardé par les lutins), la petite fille et ses trois amis seraient délivrés.');
                         //ajout des trois autres arbres calcinés
-                        
+                        $("#arbre2").css("opacity", "1");
+                        $("#arbre3").css("opacity", "1");
+                        $("#arbre4").css("opacity", "1");
                         //écouteur sur le bouton suivant
                         $("#narrateur div:last-child img").click(function(){
                             //changement texte
@@ -50,6 +56,10 @@
                             //écouteur sur le bouton suivant
                             $("#narrateur div:last-child img").click(function(){
                                 //jeu pour retrouver les feuilles d'or
+                                //changement de la boite de dialogue narrateur
+                                
+                                //ajout des feuilles d'or
+                                
                             })
                         })
                     })
