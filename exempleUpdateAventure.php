@@ -17,10 +17,14 @@
 
     require 'connexionBDD.php';
 
-    $_SESSION['id'] = 999;
+    $_SESSION['id'] = 1000;
     //$idCompte = 1;
+    
+    
+    if(isset($boolAventureUp))
+    $boolAventureUp = true;
   
-    require 'initCompteGrimoire.php';
+    require 'updateAventure.php';
     ?>
 
     

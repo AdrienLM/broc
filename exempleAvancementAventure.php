@@ -17,10 +17,10 @@
 
     require 'connexionBDD.php';
 
-    $_SESSION['id'] = 999;
+    $_SESSION['id'] = 1000;
     //$idCompte = 1;
   
-    require 'initCompteGrimoire.php';
+    require 'avancementAventure.php';
     ?>
 
     
