@@ -26,40 +26,7 @@
         <meta name="theme-color" content="#ffffff">
     </head>
     <body>
-        <header>
-           <a href="accueil.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
-            <nav>
-                <a href="accueil.php">accueil</a>
-                <a href="duide.php">guide</a>
-                <a href="profil.php">
-                <div class="profil">
-                    <p>profil</p>
-                    <img src="images/imgProfil.png" alt="image profil">
-                </div>
-                </a>
-                <img src="images/depliant.svg" alt="dépliant" id="depliant">
-                <ul id="menuFlottant">
-                    <li>
-                       <a href="deconnexion.php">
-                           <img src="images/carte.svg" alt="carte">
-                       </a>
-                        <p>Carte</p>
-                    </li>
-                    <li>
-                       <a href="parametres.php">
-                           <img src="images/power.svg" alt="quitter">
-                       </a>
-                        <p>Déconnexion</p>
-                    </li>
-                    <li>
-                       <a href="carte.php">
-                           <img src="images/engrenage.svg" alt="engrenage">
-                       </a>
-                        <p>Paramètres</p>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <?php include("header.php") ?>
         <main>
             <div id="texte">
                 <h2>Scene 3</h2>
