@@ -72,7 +72,7 @@
             <div class="partDroite">
                 <img src="images/arbreOr.jpg" alt="l'arbre d'or">
                 <div></div>
-                <img src="images/carte.png" alt="carte de Brocéliande" class="carte">
+                <img src="images/carteArbreOrD.svg" alt="carte de Brocéliande" class="carte">
             </div>
             <div>
                 <p>Retour</p>
