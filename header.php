@@ -29,7 +29,6 @@
                     <a href="connexion.php">
                         <div class="profil">
                             <p>Connexion</p>
-                            <img class="imgUser" src="images/userNonLog2.svg" alt="image du profil utilisateur">
                         </div>
                     </a>
                     <?php

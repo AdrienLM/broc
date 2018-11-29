@@ -31,7 +31,7 @@ if(isset($_POST['forminscription']))
 						{
 							$insertmbr = $pdo->prepare("INSERT INTO membres(PseudoUser, EmailUser, MdpUser, AvatarUser, BanniereUser) VALUES(?, ?, ?, ?, ?)");
 							$insertmbr->execute(array($pseudo, $mail, $mdp, "default.jpg", "defaultb.jpg"));
-							$valide = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
+							$valide = header('Location: connexion.php');
 						} 
 						else 
 						{
@@ -101,13 +101,7 @@ if(isset($_POST['forminscription']))
             <?php
 			if(isset($erreur)) 
 			{
-				echo '<div class="message animated fadeInDown"><img class="logoError" src="images/warning.svg" width="20" height="20" />' .$erreur. '</div>';
-			}
-			?>
-                <?php
-			if(isset($valide)) 
-			{
-				echo '<div class="messageV animated fadeInDown"><img class="logoError" src="images/valide.svg" width="20" height="20" />' .$valide. '</div>';
+				echo '<div class="message animated fadeInLeft"><img class="logoError" src="images/warning.svg" width="20" height="20" />' .$erreur. '</div>';
 			}
 			?>
                </div>
@@ -170,14 +164,15 @@ if(isset($_POST['forminscription']))
             </div>
             <div id="retour">
             <p>Retour</p>
-            <a href="accueil.php">
+            <a href="javascript:history.go(-1)">
                 <img src="images/flecheG.svg" alt="flèche vers la gauche">
             </a>
         </div>
         </section>
         <section>
             <h1>Les legendes de <br><span>Broceliande</span></h1>
+            
         </section>
-            </div>   
+              </div> 
     </body>
 </html>

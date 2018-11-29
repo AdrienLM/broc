@@ -74,7 +74,7 @@ if(isset($_POST['formconnexion']))
               <?php
                 if(isset($erreur)) 
                 {
-                    echo '<div class="message animated fadeInDown"><img class="logoError" src="images/warning.svg" width="20" height="20" />' .$erreur. '</div>';
+                    echo '<div class="message animated fadeInLeft"><img class="logoError" src="images/warning.svg" width="20" height="20" />' .$erreur. '</div>';
                 }
                 ?>
             <img src="images/logo.png" alt="logo kleiz" id="logo" >
@@ -109,7 +109,7 @@ if(isset($_POST['formconnexion']))
                 <p>OU</p>
                 <div></div>
             </div>
-            <p id="sous-titre">Inscrivez-vous dès à présent</p>
+            <p id="sous-titre"><a href="inscription.php">Inscrivez-vous dès à présent</a></p>
               <a href=""><p>Mot de passe perdu ?</p></a>
             <div class="reseaux">
                <a href="https://www.facebook.com/kleiz3" target="_blank">
@@ -129,7 +129,7 @@ if(isset($_POST['formconnexion']))
           </div>
           <div id="retour">
             <p>Retour</p>
-            <a href="index.php">
+            <a href="javascript:history.go(-1)">
                 <img src="images/flecheG.svg" class="rectif" alt="flèche vers la gauche">
             </a>
         </div>
