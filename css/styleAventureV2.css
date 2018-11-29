@@ -50,7 +50,7 @@ a{
 
 header{
     margin: 30px 80px;
-    display: flex;
+    /*display: flex;
     justify-content: space-between;
     align-items: center;
 }
@@ -68,7 +68,7 @@ header nav a{
 }
 
 header #logo{
-    height: 70px;
+    height: 70px;*/
 }
 
 main{
@@ -206,6 +206,71 @@ footer .reseaux a{
 
 
 
+#jeu{
+    background-image: url("../images/fondScene4.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;
+    display : none;
+    position: absolute;
+    justify-content : flex-end;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 80%;
+}
+
+
+#narrateur{
+    background-color: #3E3E3E;
+    border-bottom: 10px solid white;
+    box-shadow: 5px 8px 10px rgba(0,0,0,0.18);
+    width: 250px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+#narrateur img{
+    width: 30px;
+    margin-right: 10px;
+}
+
+#narrateur div{
+    display: flex;
+    align-items: center;
+}
+
+#narrateur div:first-child{
+    width: 60%;
+    margin-left: calc(50% - 30%);
+}
+
+#narrateur div:last-child{
+    width: 40%;
+    margin-left: calc(50% - 20%);
+}
+
+#narrateur>p{
+    width: 80%;
+    margin-left: calc(50% - 40%);
+    font-family: 'Segoe UI';
+}
+
+#narrateur h3{
+    font-size: 16pt;
+    font-family: 'Open Sans';
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -224,7 +289,23 @@ footer .reseaux a{
     #texte>h2 {
         font-size : 1.75em;
     }
+
+
 }
+
+
+#param>div, #narrateur>div:last-child {
+    cursor : pointer;
+}
+
+#narrateur>p:not(:first-child) {
+    margin-top : 0;
+}
+#narrateur>p:not(:first-child) {
+    margin-bottom : 0;
+}
+
+
 
 /* LECTEUR AUDIO */
 .player {
@@ -260,12 +341,3 @@ footer .reseaux a{
     background-color : #ffffff;
 }
 
-
-
-#jeu {
-    height : 80vh;
-    width : 55vw;
-    background : #ffffff;
-    opacity : 0;
-    display : none;
-}

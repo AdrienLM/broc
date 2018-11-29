@@ -2,10 +2,11 @@
 	"use strict";
 	window.addEventListener("DOMContentLoaded", initialiser);
 
-	let tempsTotal = 84;
+	let tempsTotal = 84; /* DONNÉE À MODIFIER */
 	let tempsPasseS = 0;
 	let tempsPasseDS = 0;
-	let tempsDePause = new Array(56, 157, 341, 561, 774);
+	let tempsDePause = new Array(80, 291, 561, 774); /* DONNÉE À MODIFIER */
+	let tempsDeDepart = new Array(157, 301, 561, 774); /* DONNÉE À MODIFIER */
 	let indiceParagrapheCourant = 0;
 	let timerAffichage;
 	let timerPause;
@@ -43,9 +44,14 @@
 		document.getElementById("texte").insertBefore(divPlayer, document.getElementById("texte").querySelector("p"));
 			/* Ajouter les écouteurs d'événements */
 		document.querySelector("#param>div:nth-child(2)").addEventListener("click", lancementSon);
+		document.querySelector("#narrateur>div:last-child").addEventListener("click", paragrapheSuivant);
 	}
 
 	function lancementSon(evt) {
+		window.setTimeout(timerLancementSon, 1000);
+	}
+
+	function timerLancementSon() {
 			/* Lancer le son */
 		playerAudio = document.getElementById("playerAudioConteur");
 		playerAudio.play();
@@ -87,5 +93,13 @@
 			window.clearInterval(timerAffichage);
 			window.clearInterval(timerPause);
 		}
+	}
+
+	function paragrapheSuivant(evt) {
+		playerAudio.currentTime = (tempsDeDepart[indiceParagrapheCourant - 1] / 10);
+		tempsPasseDS = tempsDeDepart[indiceParagrapheCourant - 1];
+		playerAudio.play();
+		timerAffichage = window.setInterval(affichageTemps, 1000);
+		timerPause = window.setInterval(pause, 100);
 	}
 }());

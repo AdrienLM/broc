@@ -1,38 +1,30 @@
-/*$(document).ready(function(){
-        /$("#param div:first-child img").click(function(){
-            if(!document.fullscreenElement){
-                document.documentElement.requestFullscreen();
-            })
-        }/
-
-        $(".decouvrir").click(function(){
-            $("#texte").css("transform", "scale(0.7) translate(-40%, -35%)");
-            $("#texte").css("transition", "all 1s linear");
-            $("#param div:last-child p").text("Son");
-            $("#param div:last-child img").attr("src", "images/hautParleur.svg");
-            $("#texte div:nth-child(2)").remove();
-            $("#retour").remove();
-            $("#carte").css("transform", "scale(0.6) translate(-255%, 40%)");
-            $("#carte").css("transition", "all 1s linear");
-            setTimeout(function(){
-                $("#jeu").fadeIn(500);
-            }, 500);
-            $("#jeu").css("transition", "all 1s linear");
-            $("#playerAudio").css("transform", "scale(1)");
-        });
-    });*/
-
-
-
 (function() {
     "use strict";
     window.addEventListener("DOMContentLoaded", initialiser);
 
+    let divJeu;
+    let divNarrateur;
+    let brouillard;
+    let vivianeEtMerlin;
+
     function initialiser(evt) {
+            /* Ecouteur animation début */
         document.querySelector("#param>div:first-child>img").addEventListener("click", pleinEcran);
         document.querySelector("#param>div:nth-child(2)").addEventListener("click", transitionDebut);
+
+            /*  */
+        divJeu = document.getElementById("jeu");
+        divNarrateur = document.getElementById("narrateur");
+        brouillard = document.createElement("img");
+        brouillard.setAttribute("src", "images/brouillardTombeauMerlin.png");
+        brouillard.setAttribute("alt", "Brouillard épais");
+        /*brouillard.style.width = "100%";*/
+        brouillard.style.height = "100%";
+        divJeu.insertBefore(brouillard, divNarrateur);
     }
 
+
+        /* Animation début */
     function transitionDebut(evt) {
         let divTexte = document.getElementById("texte");
         divTexte.style.transform = "scale(0.7) translate(-40%, -35%)";
@@ -48,15 +40,60 @@
         window.setTimeout(fondu, 500);
     }
 
+    let booleanPleinEcran = false;
     function pleinEcran(evt) {
-         if(!document.fullscreenElement){
-                document.documentElement.requestFullscreen();
+        if(!booleanPleinEcran) {
+            booleanPleinEcran = true;
+            let html = document.querySelector("html");
+            if (html.requestFullscreen) {
+                html.requestFullscreen();
+            } else if (html.mozRequestFullScreen) { /* Firefox */
+                html.mozRequestFullScreen();
+            } else if (html.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                html.webkitRequestFullscreen();
+            } else if (html.msRequestFullscreen) { /* IE/Edge */
+                html.msRequestFullscreen();
             }
+        } else {
+            booleanPleinEcran = false;
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) { /* Firefox */
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { /* IE/Edge */
+                document.msExitFullscreen();
+            }
+        }
+        /*function openFullscreen() {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { /* Firefox */
+            /*    elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+            /*    elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE/Edge */
+            /*    elem.msRequestFullscreen();
+            }
+        }
+         /*if(!document.fullscreenElement) {
+                window.requestFullscreen("hide");
+            } else {
+                window.requestFullscreen("show");
+            }*/
+
+            /*if (!document.fullscreenElement) {
+                document.requestFullscreen().then({}).catch(err => {
+                    alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                });
+            } else {
+                document.exitFullscreen();
+            }*/
     }
 
     function fondu() {
-        let divJeu = document.getElementById("jeu");
-        divJeu.style.display = "block";
+        divJeu.style.display = "flex";
         divJeu.style.opacity = "1";
         divJeu.style.transition = "all 1s linear";
     }
