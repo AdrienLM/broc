@@ -103,9 +103,9 @@
                 <img src="images/tronc2.png" alt="tronc d'arbre calciné" id="arbre2">
                 <img src="images/tronc3.png" alt="tronc d'arbre calciné" id="arbre3">
                 <img src="images/tronc4.png" alt="tronc d'arbre calciné" id="arbre4">
-                <img src="images/feuille1OrUnlock.png" alt="feuille d'or" id="feuille1">
-                <img src="images/feuille1OrUnlock.png" alt="feuille d'or" id="feuille2">
-                <img src="images/feuille1OrUnlock.png" alt="feuille d'or" id="feuille3">
+                <img src="images/feuilleOr.png" alt="feuille d'or" id="feuille1" class="feuilles">
+                <img src="images/feuilleOr.png" alt="feuille d'or" id="feuille2" class="feuilles">
+                <img src="images/feuilleOr.png" alt="feuille d'or" id="feuille3" class="feuilles">
                 <div id="narrateur">
                    <div>
                       <img src="images/casque.svg">

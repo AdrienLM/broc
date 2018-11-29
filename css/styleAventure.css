@@ -233,31 +233,29 @@ main{
     transition: all 0.2s linear;
 }
 
-#feuille1{
-    height: 35%;
+.feuilles{
+    height: 5%;
     position: absolute;
-    bottom: 15%;
-    right: 17%;
     opacity: 0;
     transition: all 0.2s linear;
+    cursor: pointer;
+}
+
+#feuille1{
+    bottom: 15%;
+    right: 17%;
+    transform: rotate(60deg);
 }
 
 #feuille2{
-    height: 35%;
-    position: absolute;
-    bottom: 15%;
-    right: 17%;
-    opacity: 0;
-    transition: all 0.2s linear;
+    bottom: 5%;
+    left: 30%;
 }
 
 #feuille3{
-    height: 35%;
-    position: absolute;
     bottom: 15%;
-    right: 17%;
-    opacity: 0;
-    transition: all 0.2s linear;
+    right: 50%;
+    transform: rotate(-15deg);
 }
 
 #narrateur{

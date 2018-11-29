@@ -29,7 +29,7 @@
             $("#narrateur div:last-child img").click(function(){
                 //changement texte
                 $("#narrateur .histoire").replaceWith('<p class="histoire">Par une belle journée de printemps, une petite fille était partie ramasser du bois dans la forêt.<br><br>Lors de sa recherche, elle trouva l’arbre d’or, brillant et mystérieux.<br><br>Fascinée par cet arbre extraordinaire, elle s’en approcha et le toucha.<br><br>Malheur ! L’arbre ensorcelle ceux qui le touche, les transformant en arbres calcinés. La petite fille subit ce maléfice et est encore aujourd’hui un simple tronc carbonisé.</p>');
-                //ajout de la petite fille
+                //apparition de la petite fille
                 $("#fille").css("opacity", "1");
                 //écouteur sur le bouton suivant
                 $("#narrateur div:last-child img").click(function(){
@@ -37,7 +37,7 @@
                     $("#narrateur .histoire").replaceWith('<p class="histoire">Ne la voyant pas revenir, ses trois amis s’inquiétèrent.<br><br>Les jeunes hommes partirent donc à sa recherche. Après quelques inspections, ils retrouvèrent sa trace.<br><br>C’est ainsi qu’ils virent à leur tour l’incroyable arbre d’or.<br><br>Hélas, ils firent la même erreur que leur amie et le touchèrent. Ils rejoignirent celle-ci aux côtés de l’arbre magique.</p>');
                     //disparition de la petite fille
                     $("#fille").css("opacity", "0");
-                    //ajout d'un arbre calciné
+                    //apparition d'un arbre calciné
                     setTimeout(function(){
                         $("#arbre1").css("opacity", "1");
                     }, 100);
@@ -45,7 +45,7 @@
                     $("#narrateur div:last-child img").click(function(){
                         //changement texte
                         $("#narrateur .histoire").replaceWith('<p class="histoire">Depuis ce jour, le lieu est resté figé. Des arbres calcinés et des pierres entourent un arbre d’or sur lequel plus une seule feuille ne pousse.<br><br>Cependant, il existerait un moyen de conjurer le sort.<br><br>Si quelqu’un perçait le secret de la potion magique (gardé par les lutins), la petite fille et ses trois amis seraient délivrés.');
-                        //ajout des trois autres arbres calcinés
+                        //apparition des trois autres arbres calcinés
                         $("#arbre2").css("opacity", "1");
                         $("#arbre3").css("opacity", "1");
                         $("#arbre4").css("opacity", "1");
@@ -57,9 +57,24 @@
                             $("#narrateur div:last-child img").click(function(){
                                 //jeu pour retrouver les feuilles d'or
                                 //changement de la boite de dialogue narrateur
-                                
-                                //ajout des feuilles d'or
-                                
+                                $("#narrateur").css("width", "20%");
+                                $("#narrateur div:first-child").css("width", "30%");
+                                $("#narrateur div:first-child").css("margin-left", "calc(50% - 15%)");
+                                $("#narrateur h3").text("Jeu");
+                                $("#narrateur div:first-child img").attr("src", "images/console.svg");
+                                $("#narrateur div:first-child img").attr("alt", "manette de console");
+                                $("#narrateur div:last-child p").text("Terminé");
+                                $("#narrateur .histoire").replaceWith('<p class="histoire">Retrouvez les feuilles d\'or dissimulées dans le décor</p>');
+                                //apparition des feuilles d'or
+                                $("#feuille1").css("opacity", "1");
+                                $("#feuille2").css("opacity", "1");
+                                $("#feuille3").css("opacity", "1");
+                                //écouteur sur le bouton terminé
+                                $("#narrateur div:last-child img").replaceWith('<a href="tombeauMerlinA.php"><img src="images/check.svg" alt="icone check"></a>');
+                                //écouteur sur les feuilles d'or
+                                $(".feuilles").click(function(){
+                                    $(this).remove();
+                                })
                             })
                         })
                     })
