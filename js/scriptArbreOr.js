@@ -1,4 +1,10 @@
     $(document).ready(function(){
+        $("#param div:first-child img").click(function(){
+            if(!document.fullscreenElement){
+                document.documentElement.requestFullscreen();
+            })
+        }
+            
         $(".decouvrir").click(function(){
             $("#texte").css("transform", "scale(0.7) translate(-40%, -35%)");
             $("#texte").css("transition", "all 1s linear");
