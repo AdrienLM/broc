@@ -41,11 +41,14 @@
 		barreTemps.appendChild(curseur);
 		divPlayer.appendChild(barreTemps);
 		document.getElementById("texte").insertBefore(divPlayer, document.getElementById("texte").querySelector("p"));
-		
-			/* Lancer le son */
-		playerAudio = document.getElementById("playerAudio");
-		playerAudio.play();
+			/* Ajouter les écouteurs d'événements */
+		document.querySelector("#param>div:nth-child(2)").addEventListener("click", lancementSon);
+	}
 
+	function lancementSon(evt) {
+			/* Lancer le son */
+		playerAudio = document.getElementById("playerAudioConteur");
+		playerAudio.play();
 			/* Lancer les timers */
 		timerAffichage = window.setInterval(affichageTemps, 1000);
 		timerPause = window.setInterval(pause, 100);
@@ -54,7 +57,7 @@
 	function affichageTemps() {
 		tempsPasseS = Math.floor(playerAudio.currentTime);
 			/* Arrêter le timer à la fin */
-		if(tempsPasseS > tempsTotalS) {
+		if(tempsPasseS > tempsTotal) {
 			window.clearInterval(timerAffichage);
 		}
 			/* Mettre à jour le texte affiché */
@@ -63,7 +66,6 @@
 		let pourcentage = (tempsPasseS * 100 / tempsTotal);
 		divTempsPasse.style.width = pourcentage+"%";
 		curseur.style.left = pourcentage+"%";
-
 	}
 
 	function transformerSecondesEnMinutesSecondes(tempsInitial) {
@@ -87,25 +89,3 @@
 		}
 	}
 }());
-
-
-
-
-/*function play(idPlayer, control) {
-    var player = document.querySelector('#' + idPlayer);
-	
-    if (player.paused) {
-        player.play();
-        control.textContent = 'Pause';
-    } else {
-        player.pause();	
-        control.textContent = 'Play';
-    }
-}
-
-function resume(idPlayer) {
-    var player = document.querySelector('#' + idPlayer);
-	
-    player.currentTime = 0;
-    player.pause();
-}*/

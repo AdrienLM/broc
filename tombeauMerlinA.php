@@ -31,7 +31,7 @@
             <div id="texte">
                 <h2>Scene 3</h2>
                 <h1>Le tombeau de Merlin</h1>
-                <audio id="playerAudio">
+                <audio id="playerAudioConteur">
                     <source src="./sons/aventureTombeauMerlin.mp3">
                     <source src="./sons/aventureTombeauMerlin.ogg">
                 </audio>
@@ -55,6 +55,9 @@
                 <h2>Localisation</h2>
                 <p>Forêt de Paimpont</p>
                 <img src="images/carteTombeauMerlin.svg" alt="carte de Brocéliande">
+            </div>
+            <div id="jeu">
+                
             </div>
             <div id="retour">
                 <p>Retour</p>
@@ -83,6 +86,7 @@
 
 
         <script type="text/javascript" src="js/audio.js"></script>
+        <script type="text/javascript" src="js/tombeauMerlinA.js"></script>
     </body>
 </html>
 
