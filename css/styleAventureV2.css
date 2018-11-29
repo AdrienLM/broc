@@ -259,3 +259,13 @@ footer .reseaux a{
     border-radius : 3px;
     background-color : #ffffff;
 }
+
+
+
+#jeu {
+    height : 80vh;
+    width : 55vw;
+    background : #ffffff;
+    opacity : 0;
+    display : none;
+}

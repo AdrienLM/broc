@@ -56,6 +56,7 @@
 
     function fondu() {
         let divJeu = document.getElementById("jeu");
+        divJeu.style.display = "block";
         divJeu.style.opacity = "1";
         divJeu.style.transition = "all 1s linear";
     }
