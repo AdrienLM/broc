@@ -18,14 +18,31 @@
     src: url("../font/Qurany-light-italic.ttf");
 }
 
+@font-face {
+    font-family: "Google-sans";
+    src: url("../font/GoogleSans-Medium");
+}
+
+@font-face {
+    font-family: "Google-sansBold";
+    src: url("../font/GoogleSans-Bold");
+}
+
+@font-face {
+    font-family: "Google-sansReg";
+    src: url("../font/GoogleSans-Regular");
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
+    
 }
 
 html {
     height: 100%;
+    font-family: 'Google-sansReg', 'Arial';
 }
 
 body {
@@ -33,7 +50,7 @@ body {
     display: flex;
     position: relative;
     color: white;
-    font-family: 'Open Sans';
+    font-family: 'Google-sansReg', 'Arial';
 }
 
 section:first-child {
@@ -62,6 +79,7 @@ section:last-child {
 
 #titre {
     margin-left: 20px;
+    font-family: 'Google-sansReg', 'Arial';
 }
 
 
@@ -106,7 +124,9 @@ section:first-child #titre {
 h2 {
     text-transform: uppercase;
     margin: 0;
+    padding: 0 0 -10px 0;
     font-size: 20pt;
+    
 }
 
 p {
@@ -119,6 +139,7 @@ form {
     width: 60%;
     margin-left: calc(50% - 33%);
     margin-top: 30px;
+    font-family: 'Google-sansReg', 'Arial';
 }
 
 input {
@@ -132,6 +153,7 @@ input {
     color: white;
     font-size: 11px;
     box-shadow: 4px 4px 14px rgba(17, 47, 57, 0.74);
+    font-family: 'Google-sansReg', 'Arial';
 }
 
 input:focus {
@@ -191,15 +213,14 @@ a {
     position: absolute;
     background-color: #222;
     padding: 15px 40px 15px 40px;
-    border-radius: 50px;
+    border-radius: 0 50px 50px 0 ;
     top: 10px;
 }
 
 .messageCentre {
    position: absolute;
-    width: 500px;
-        left: 50%;
-        margin-left: -250px;
+   left: 0;
+    width: 550px;
 
   
     
