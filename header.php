@@ -1,7 +1,7 @@
 <header>
-    <a href="accueil.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
+    <a href="index.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
     <nav>
-        <a href="accueil.php">accueil</a>
+        <a href="index.php">accueil</a>
         <a href="duide.php">guide</a>
 
 
