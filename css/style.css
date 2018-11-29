@@ -34,17 +34,17 @@ main{
 
 h1{
     font-family: 'Qurany';
-    font-size: 40pt;
+    font-size: 35pt;
     margin-bottom: 30px;
 }
 
 h1 span{
-    font-size: 90pt;
+    font-size: 80pt;
 }
 
 main p{
     width: 40%;
-    font-size: 20px;
+    font-size: 17px;
     margin-bottom: 40px;
 }
 

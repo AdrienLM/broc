@@ -128,25 +128,3 @@ h1 span{
 	background-image : url("../images/pointeur2.svg");
 }
 
-footer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    bottom: 20px;
-    width: 90%;
-    margin-left: calc(50% - 45%);
-    font-size: 12px;
-}
-
-footer div a{
-    margin: 0 10px;
-}
-
-footer .reseaux img{
-    width: 30px;
-}
-
-footer .reseaux a{
-    margin: 0;
-}
