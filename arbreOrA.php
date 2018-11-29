@@ -80,7 +80,7 @@
                         <p>Découvrir</p>
                     </div>
                     <div>
-                        <img src="images/croix.svg" alt="croix">
+                        <a href="tombeauMerlinA.php"><img src="images/croix.svg" alt="croix"></a>
                         <p>Passer</p>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                       <img src="images/casque.svg">
                        <h3>Narrateur</h3> 
                    </div> 
-                   <p class="histoire">Dans une petite clairière près de Trehorenteuc, un arbre en or avait prit racine. Chaque nuit les branches de cet arbre fabuleux s’ornaient de magnifiques feuilles d’or. Les lutins de la forêt venaient chaque matin les récolter pour leurs propriétés magiques.</p>
+                   <p class="histoire">Dans une petite clairière près de Trehorenteuc, un arbre en or avait prit racine.<br><br> Chaque nuit les branches de cet arbre fabuleux s’ornaient de magnifiques feuilles d’or. <br><br>Les lutins de la forêt venaient chaque matin les récolter pour leurs propriétés magiques.</p>
                    <div>
                        <img src="images/flecheD.svg">
                        <p>Suivant</p>

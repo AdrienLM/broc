@@ -192,10 +192,10 @@ main{
     background-color: #3E3E3E;
     border-bottom: 10px solid white;
     box-shadow: 5px 8px 10px rgba(0,0,0,0.18);
-    width: 250px;
+    width: 25%;
     position: absolute;
     right: 10px;
-    top: 20px;
+    top: 5%;
 }
 
 #narrateur img{
@@ -216,6 +216,10 @@ main{
 #narrateur div:last-child{
     width: 40%;
     margin-left: calc(50% - 20%);
+}
+
+#narrateur div:last-child img{
+    cursor: pointer;
 }
 
 #narrateur>p{
