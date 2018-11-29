@@ -97,7 +97,8 @@
                 </a>
             </div>
             <div id="jeu">
-                <img src="images/arbreDOr.png" alt="arbre d'or">
+                <img src="images/arbreDOr.png" alt="arbre d'or" id="arbreOr">
+                <img src="images/petiteFille.png" alt="petite fille" id="fille">
                 <div id="narrateur">
                    <div>
                       <img src="images/casque.svg">

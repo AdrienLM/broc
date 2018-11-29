@@ -182,7 +182,7 @@ main{
     display: none;
 }
 
-#jeu>img{
+#jeu #arbreOr{
     height: 60%;
     margin-top: 10%;
     margin-left: 50%;
@@ -231,6 +231,11 @@ main{
 #narrateur h3{
     font-size: 16pt;
     font-family: 'Open Sans';
+}
+
+#fille{
+    position: absolute;
+    top: 100px;
 }
 
 /*------------- LECTEUR AUDIO-------------------- */
