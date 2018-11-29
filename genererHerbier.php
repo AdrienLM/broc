@@ -9,7 +9,7 @@ spl_autoload_register('chargerClasse');
 
 require 'connexionBDD.php';
 */
-
+if
 
         $idCompte = $_SESSION['id'];
         $requete = "SELECT isAdmin FROM membres WHERE IdUser = ".$idCompte;
