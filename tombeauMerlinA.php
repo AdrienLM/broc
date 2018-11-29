@@ -64,6 +64,10 @@
             <div id="texte">
                 <h2>Scene 3</h2>
                 <h1>Le tombeau de Merlin</h1>
+                <audio id="playerAudio">
+                    <source src="./sons/aventureTombeauMerlin.mp3">
+                    <source src="./sons/aventureTombeauMerlin.ogg">
+                </audio>
                 <p>Paramètres</p>
                 <div id="param">
                     <div>
