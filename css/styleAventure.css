@@ -254,8 +254,31 @@ main{
 
 #feuille3{
     bottom: 15%;
-    right: 50%;
+    right: 40%;
     transform: rotate(-15deg);
+}
+
+.pierres{
+    position: absolute;
+    height: 10%;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
+#pierre1{
+    left: 50%;
+    bottom: 20%;
+}
+
+#pierre2{
+    right: 50%;
+    bottom: 10%;
+}
+
+#pierre3{
+    right: 35%;
+    bottom: 20%;
+    height: 8%;
 }
 
 #narrateur{

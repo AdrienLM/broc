@@ -106,6 +106,9 @@
                 <img src="images/feuilleOr.png" alt="feuille d'or" id="feuille1" class="feuilles">
                 <img src="images/feuilleOr.png" alt="feuille d'or" id="feuille2" class="feuilles">
                 <img src="images/feuilleOr.png" alt="feuille d'or" id="feuille3" class="feuilles">
+                <img src="images/pierreLutin.png" alt="pierre" id="pierre1" class="pierres">
+                <img src="images/pierreLutin.png" alt="pierre" id="pierre2" class="pierres">
+                <img src="images/pierreLutin.png" alt="pierre" id="pierre3" class="pierres">
                 <div id="narrateur">
                    <div>
                       <img src="images/casque.svg">
