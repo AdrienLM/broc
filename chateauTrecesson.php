@@ -72,7 +72,7 @@
             <div class="partDroite">
                 <img src="images/chateauTrecesson.jpg" alt="tombeau de Merlin">
                 <div></div>
-                <img src="images/carte.png" alt="carte de Brocéliande" class="carte">
+                <img src="images/carteChateauTrecessonD.svg" alt="carte de Brocéliande" class="carte">
             </div>
             <div>
                 <p>Retour</p>

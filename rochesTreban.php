@@ -72,7 +72,7 @@
             <div class="partDroite">
                 <img src="images/rochesTreban.jpg" alt="roches de Treban">
                 <div></div>
-                <img src="images/carte.png" alt="carte de Brocéliande" class="carte">
+                <img src="images/carteRochesTrebanD.svg" alt="carte de Brocéliande" class="carte">
             </div>
             <div>
                 <p>Retour</p>

@@ -72,7 +72,7 @@
             <div class="partDroite">
                 <img src="images/fontaineBarenton.jpg" alt="fontaine de Barenton">
                 <div></div>
-                <img src="images/carte.png" alt="carte de Brocéliande" class="carte">
+                <img src="images/carteFontaineBarentonD.svg" alt="carte de Brocéliande" class="carte">
             </div>
             <div>
                 <p>Retour</p>
