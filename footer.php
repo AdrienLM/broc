@@ -17,4 +17,3 @@
         </footer>
         <script src="js/jquery.js"></script>
         <script src="js/scriptMenuFlottant.js"></script>
-</body>
