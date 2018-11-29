@@ -20,7 +20,7 @@ if(isset($_POST['formconnexion']))
 				$_SESSION['id'] = $userinfo['IdUser']; 
 				$_SESSION['pseudo'] = $userinfo['PseudoUser'];
 				$_SESSION['mail'] = $userinfo['EmailUser'];
-                header("Location: accueil.php?id=".$_SESSION['id']);
+                header("Location: index.php?id=".$_SESSION['id']);
             }
 			else
 			{
@@ -129,7 +129,7 @@ if(isset($_POST['formconnexion']))
           </div>
           <div id="retour">
             <p>Retour</p>
-            <a href="accueil.php">
+            <a href="index.php">
                 <img src="images/flecheG.svg" class="rectif" alt="flèche vers la gauche">
             </a>
         </div>

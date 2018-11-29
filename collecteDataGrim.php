@@ -22,7 +22,7 @@ spl_autoload_register('chargerClasse');
 /* Ajout du compte à la base */
 /*****************************/
 
-$idCompte = $_SESSION['id'] = 2;;  // valeur fixée pour le test//mettre le IdUser
+$idCompte = $_SESSION['id'] ; // valeur fixée pour le test//mettre le IdUser
 $managerTabBestiaire = new TabBestiaireManage($pdo);  // Connexion à la pdo
 $managerTabHerbier = new TabHerbierManage($pdo);  // Connexion à la pdo
 $managerTabResume = new TabResumeManage($pdo);  // Connexion à la pdo

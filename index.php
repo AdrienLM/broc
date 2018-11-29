@@ -1,12 +1,7 @@
 <?php
 
 session_start();
-//PseudoUser, EmailUser, MdpUser, AvatarUser, BanniereUser
-require("param.inc.php");
-$pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB,MYUSER,MYPASS);
-$pdo ->query("SET NAMES utf8");
-$pdo ->query("SET CHARACTER SET 'utf-8'");
-
+require 'connexionBDD.php';
 
 
 if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
@@ -16,8 +11,10 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 	$requser->execute(array($getid));
 	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);   
     $_SESSION['val1'] = 0;
-require 'connexionBDD.php';
+
+   // require ' initCompteGrimoire.php';
 }
+
 
 ?>
 
