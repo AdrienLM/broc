@@ -38,8 +38,6 @@ body {
     margin: 0;
     padding: 0;
     color: white;
-    overflow-y: hidden;
-    
 }
 
 .conteneur {
@@ -53,6 +51,7 @@ body {
     background-color: #eaeaea;
     margin: 0 30px 0 85px;
     border-radius: 8px;
+    position: relative;
 }
 .partie2 {
   grid-column: 2; grid-row: 1;
@@ -119,7 +118,132 @@ body {
     width: 13px;
 }
 
+.succesCont{
+    width: 80%;
+    margin-left: calc(50% - 40%);
+    text-align: center;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 13px;
+}
 
+.succes{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.succes img{
+    border-radius: 50%;
+    border: 1px solid #333;
+    width: 50px;
+    height: 50px;
+}
+
+.progresCont{
+    width: 80%;
+    margin-left: calc(50% - 40%);
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+}
+
+.progresCont>p{
+    text-transform: uppercase;
+}
+
+.progresCont>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.anecdotes{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    font-size: 8px;
+}
+
+.anecdotes p{
+    margin: 0;
+    padding: 0;
+}
+
+.anecdotes p:first-child{
+    margin-top: 10px;
+}
+
+.anecdotes p:nth-child(2){
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.stickers{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    font-size: 8px;
+}
+
+.stickers p{
+    margin: 0;
+    padding: 0;
+}
+
+.stickers p:first-child{
+    margin-top: 10px;
+}
+
+.stickers p:nth-child(2){
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.avancement{
+    width: 100px;
+    height: 100px;
+    border: 10px solid #333;
+    border-radius: 50%;
+    font-size: 10px;
+}
+
+.avancement p{
+    margin: 0;
+    padding: 0;
+}
+
+.avancement p:first-child{
+    margin-top: 30px;
+}
+
+.avancement p:nth-child(2){
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#btnGrim {
+    background: url(../images/flecheSuivant.png) no-repeat 90%/10%, rgb(12, 101, 129);
+    width: 35%;
+    padding: 10px 40px 10px 20px;
+    box-shadow: 0 5px 15px rgba(17, 47, 57, 0.67);
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 20px;
+    bottom: 5vh;
+    left: calc(50% - 25%);
+    position: absolute;
+    font-size: 15px;
+}
+
+#btnGrim:hover {
+    box-shadow: 0 5px 15px rgb(17, 47, 57);
+    background: url(../images/flecheSuivant.png) no-repeat 90%/10%, #145e76;
+    transform: scale(1.03);
+    transition: 0.5s ease-in-out;
+}
 
 p {
     font-family: 'Google-sansReg';
