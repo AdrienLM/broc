@@ -113,7 +113,7 @@ if(isset($_POST['forminscription']))
             <img src="images/logo.png" alt="logo kleiz" id="logo">
            <div id="titre">
                <h2>Inscription</h2>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. Consectetur adipiscing elit, sed do.</p>
+               <p>Inscrivez-vous pour pouvoir participer au mode aventure, obtenir votre grimoire, et bien d'autres encore.</p>
            </div>
             <form method="POST" action="">
                 <ul class="form-style-1">
