@@ -38,14 +38,12 @@ body {
     margin: 0;
     padding: 0;
     color: white;
-    overflow-y: hidden;
-    
 }
 
 .conteneur {
     display: grid;
-  grid-template-columns: 30% 70%;
-    grid-template-rows: 650px 300px;
+  grid-template-columns: 30% 65%;
+    grid-template-rows: 600px 100px;
 }
 
 .partie1 {
@@ -53,12 +51,15 @@ body {
     background-color: #eaeaea;
     margin: 0 30px 0 85px;
     border-radius: 8px;
+    position: relative;
+    box-shadow: 0px 12px 13px rgba(0,0,0,0.16);
 }
 .partie2 {
   grid-column: 2; grid-row: 1;
     background-color: #222;
     margin: 0 85px 0 20px;
     border-radius: 8px;
+    box-shadow: 0px 12px 13px rgba(0,0,0,0.16);
 }
 
 .banniere {
@@ -119,7 +120,183 @@ body {
     width: 13px;
 }
 
+.succesCont{
+    width: 80%;
+    margin-left: calc(50% - 40%);
+    text-align: center;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 13px;
+}
 
+.succes{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.succes img{
+    border-radius: 50%;
+    border: 1px solid #333;
+    width: 50px;
+    height: 50px;
+}
+
+.progresCont{
+    width: 80%;
+    margin-left: calc(50% - 40%);
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+}
+
+.progresCont>p{
+    text-transform: uppercase;
+}
+
+.progresCont>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.anecdotes{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    font-size: 8px;
+}
+
+.anecdotes p{
+    margin: 0;
+    padding: 0;
+}
+
+.anecdotes p:first-child{
+    margin-top: 10px;
+}
+
+.anecdotes p:nth-child(2){
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.stickers{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    font-size: 8px;
+}
+
+.stickers p{
+    margin: 0;
+    padding: 0;
+}
+
+.stickers p:first-child{
+    margin-top: 10px;
+}
+
+.stickers p:nth-child(2){
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.avancement{
+    width: 100px;
+    height: 100px;
+    border: 10px solid #333;
+    border-radius: 50%;
+    font-size: 10px;
+}
+
+.avancement p{
+    margin: 0;
+    padding: 0;
+}
+
+.avancement p:first-child{
+    margin-top: 30px;
+}
+
+.avancement p:nth-child(2){
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#btnGrim {
+    background: url(../images/flecheSuivant.png) no-repeat 90%/10%, rgb(12, 101, 129);
+    width: 35%;
+    padding: 10px 40px 10px 20px;
+    box-shadow: 0 5px 15px rgba(17, 47, 57, 0.67);
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 20px;
+    bottom: 5vh;
+    left: calc(50% - 25%);
+    position: absolute;
+    font-size: 15px;
+}
+
+#btnGrim:hover {
+    box-shadow: 0 5px 15px rgb(17, 47, 57);
+    background: url(../images/flecheSuivant.png) no-repeat 90%/10%, #145e76;
+    transform: scale(1.03);
+    transition: 0.5s ease-in-out;
+}
+
+.partie2{
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+}
+
+.ligne:first-child div:first-child{
+    border-top-left-radius: 8px;
+}
+
+.ligne:first-child div:last-child{
+    border-top-right-radius: 8px;
+}
+
+.ligne:last-child div:first-child{
+    border-bottom-left-radius: 8px;
+}
+
+.ligne:last-child div:last-child{
+    border-bottom-right-radius: 8px;
+}
+
+.ligne{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.ligne p{
+    padding-top: 40%;
+    text-transform: uppercase;
+}
+
+.ligne div{
+    width: 33%;
+    height: 100%;
+    background-color: #333;
+}
+
+.ligne div+div{
+    border-left: 2px solid white;
+}
+
+.ligne:first-child div{
+    border-bottom: 2px solid white;
+}
 
 p {
     font-family: 'Google-sansReg';

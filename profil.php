@@ -92,8 +92,64 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                     </div>
                     <img class="imgBan" src="membres/banniere/<?php echo $userinfo['BanniereUser']; ?>" alt="banniere utilisateur">  
                 </div>
+                <div class="succesCont">
+                    <p>Succès obtenus</p>
+                    <div class="succes">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="progresCont">
+                    <p>Progression du jeu</p>
+                    <div>
+                        <div class="anecdotes">
+                            <div>
+                                <p>Anecdotes</p>
+                                <p>7</p>
+                            </div>
+                        </div>
+                        <div class="avancement">
+                            <div>
+                                <p>Avancement</p>
+                                <p>100%</p>
+                            </div>
+                        </div>
+                        <div class="stickers">
+                            <div>
+                                <p>Stickers</p>
+                                <p>4</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a id="btnGrim" href="grimBestiaire.php">Mon grimoire</a>
             </div>
-            <div class="partie2">nav</div>
+            <div class="partie2">
+               <div class="ligne">
+                   <div>
+                       <p>Lieu à découvrir</p>
+                   </div>
+                    <div>
+                       <p>Lieu à découvrir</p>
+                   </div>
+                    <div>
+                       <p>Lieu à découvrir</p>
+                   </div>
+               </div>
+                <div class="ligne">
+                   <div>
+                       <p>Lieu à découvrir</p>
+                   </div>
+                    <div>
+                       <p>Lieu à découvrir</p>
+                   </div>
+                    <div>
+                       <p>Lieu à découvrir</p>
+                   </div>
+               </div>
+            </div>
         </div>
         <?php require 'footer.php'; ?>
     </body>
