@@ -2,6 +2,9 @@
 
 session_start();
 require 'connexionBDD.php';
+unset($_SESSION['aventureSur']);
+unset($_SESSION['antiRep']);
+unset($_SESSION['AventureProv']);
 
 
 if(isset($_SESSION['id']) && $_SESSION['id'] > 0)

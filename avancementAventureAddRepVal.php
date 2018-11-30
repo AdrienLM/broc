@@ -2,7 +2,7 @@
 session_start();
 require 'connexionBDD.php';
     
-$debugQWMain = true;
+$debugQWMain = false;
 
 
 
