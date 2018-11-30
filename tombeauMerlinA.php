@@ -120,7 +120,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         </main>
         <?php include("./footer.php"); ?>
         <script type="text/javascript" src="js/audioTombeauMerlin.js"></script>
-        <script type="text/javascript" src="js/tombeauMerlinA.js"></script>
     </body>
 </html>
 

@@ -206,7 +206,7 @@ footer .reseaux a{
 
 
 
-#jeu{
+#jeu {
     background-image: url("../images/fondScene4.jpg");
     background-size: contain;
     background-repeat: no-repeat;
@@ -219,7 +219,6 @@ footer .reseaux a{
     height: 100%;
     width: 80%;
 }
-
 
 #narrateur{
     background-color: #3E3E3E;
@@ -296,19 +295,22 @@ footer .reseaux a{
 #narrateur .divReponses:last-child {
     width : 100%;
     display : flex;
-    justify-content : space-around;
+    justify-content : space-evenly;
     flex-wrap : wrap;
     margin : 0;
     margin-top : 10px;
-    cursor : normal;
+    cursor : default;
+    padding-bottom : 10px;
 }
 .divReponses>button {
+    font-family : "Open Sans";
+    font-size : 1.2em;
     border : none;
     height : 6vh;
+    display : none;
     border-radius : 3vh;
-    width : 45%;
-    background-color : red;
-    opacity : 0;
+    width : 40%;
+    background-color : #f2f2f2;
     margin-bottom : 10px;
     cursor : pointer;
 }
@@ -320,12 +322,6 @@ footer .reseaux a{
     cursor : pointer;
 }
 
-#narrateur>p:not(:first-child) {
-    margin-top : 0;
-}
-#narrateur>p:not(:first-child) {
-    margin-bottom : 0;
-}
 
 
 
