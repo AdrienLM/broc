@@ -114,6 +114,7 @@ function transformerSecondesEnMinutesSecondes(tempsInitial) {
     }
 function paragrapheSuivant() {
         if(!playerAudio.paused) {
+            window.clearInterval(timerPause);
             playerAudio.pause();
             indiceParagrapheCourant++;
         }

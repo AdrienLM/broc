@@ -126,7 +126,30 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 </div>
                 <a id="btnGrim" href="grimBestiaire.php">Mon grimoire</a>
             </div>
-            <div class="partie2">nav</div>
+            <div class="partie2">
+               <div class="ligne">
+                   <div>
+                       <p>Lieu à découvrir</p>
+                   </div>
+                    <div>
+                       <p>Lieu à découvrir</p>
+                   </div>
+                    <div>
+                       <p>Lieu à découvrir</p>
+                   </div>
+               </div>
+                <div class="ligne">
+                   <div>
+                       <p>Lieu à découvrir</p>
+                   </div>
+                    <div>
+                       <p>Lieu à découvrir</p>
+                   </div>
+                    <div>
+                       <p>Lieu à découvrir</p>
+                   </div>
+               </div>
+            </div>
         </div>
         <?php require 'footer.php'; ?>
     </body>
