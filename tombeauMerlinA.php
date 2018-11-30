@@ -1,3 +1,21 @@
+<?php 
+session_start();
+require 'connexionBDD.php';
+
+
+
+if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
+{
+	$getid = intval($_SESSION['id']);
+	$requser = $pdo->prepare('SELECT * FROM membres WHERE IdUser = ?');
+	$requser->execute(array($getid));
+	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);   
+    $_SESSION['val1'] = 0;
+
+           
+?>
+
+
 <!DOCTYPE html>
 <html allowfullscreen>
     <head>
@@ -27,7 +45,12 @@
         <meta name="theme-color" content="#ffffff" />
     </head>
     <body>
-        <?php include("header.php") ?>
+        <?php include("header.php");
+        
+            $_SESSION['aventureSur'] = 1;  
+            $_SESSION['antiRep'] = 1;
+            $_SESSION['AventureProv'] = 2;
+        ?>
         <main>
             <div id="texte">
                 <h2>Scene 4</h2>
@@ -75,7 +98,7 @@
                 <img src="images/carteTombeauMerlin.svg" alt="carte de Brocéliande" />
             </div>
             <div id="jeu">
-                <div id="narrateur" />
+                <div id="narrateur">
                    <div>
                         <img src="images/casque.svg" alt="Casque" />
                         <h3>Narrateur</h3> 
@@ -100,3 +123,12 @@
         <script type="text/javascript" src="js/tombeauMerlinA.js"></script>
     </body>
 </html>
+
+
+
+ <?php
+}else{
+    header('Location: connexion.php');
+}
+
+?>
