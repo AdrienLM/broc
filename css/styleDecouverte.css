@@ -45,7 +45,6 @@ header{
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    width: 30%;
     right: 20px;
     z-index: 100;
 }
@@ -136,7 +135,7 @@ main .partGauche h2{
     font-size: 30px;
     font-family: 'Qurany-light';
     position: absolute;
-    bottom: calc(2% + 160px);
+    bottom: calc(2vh + 160px);
     margin: 0;
     margin-left: 25%;
     width: 100%;
@@ -147,7 +146,7 @@ main .partGauche h3{
     font-size: 160px;
     font-family: 'Qurany';
     position: absolute;
-    bottom: 4%;
+    bottom: 4vh;
     margin: 0;
     margin-left: 25%;
 }
