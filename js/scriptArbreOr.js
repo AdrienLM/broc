@@ -1,4 +1,32 @@
     $(document).ready(function(){
+        $("#param vi:first-child img").click(function(){
+            let booleanPleinEcran = false;
+            if(!booleanPleinEcran) {
+                booleanPleinEcran = true;
+                let html = document.querySelector("html");
+                if (html.requestFullscreen) {
+                    html.requestFullscreen();
+                } else if (html.mozRequestFullScreen) { /* Firefox /
+                    html.mozRequestFullScreen();
+                } else if (html.webkitRequestFullscreen) { / Chrome, Safari & Opera /
+                    html.webkitRequestFullscreen();
+                } else if (html.msRequestFullscreen) { / IE/Edge /
+                    html.msRequestFullscreen();
+                }
+            } else {
+                booleanPleinEcran = false;
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) { / Firefox /
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) { / Chrome, Safari and Opera /
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { / IE/Edge */
+                    document.msExitFullscreen();
+                }
+            }
+        })
+
         $(".decouvrir").click(function(){
             $("#texte").css("transform", "scale(0.7) translate(-40%, -35%)");
             $("#texte").css("transition", "all 1s linear");
@@ -34,7 +62,7 @@
                 //écouteur sur le bouton suivant
                 $("#narrateur div:last-child img").click(function(){
                     //changement texte
-                    $("#narrateur .histoire").replaceWith('<p class="histoire">Ne la voyant pas revenir, ses trois amis s’inquiétèrent.<br><br>Les jeunes hommes partirent donc à sa recherche. Après quelques inspections, ils retrouvèrent sa trace.<br><br>C’est ainsi qu’ils virent à leur tour l’incroyable arbre d’or.<br><br>Hélas, ils firent la même erreur que leur amie et le touchèrent. Ils rejoignirent celle-ci aux côtés de l’arbre magique.</p>');
+                    $("#narrateur .histoire").replaceWith('<p class="histoire">Ne voyant la petite fille revenir, ses trois amis s’inquiétèrent.<br><br>Les jeunes hommes partirent donc à sa recherche. Après quelques inspections, ils retrouvèrent sa trace.<br><br>C’est ainsi qu’ils virent à leur tour l’incroyable arbre d’or.<br><br>Hélas, ils firent la même erreur que leur amie et le touchèrent. Ils rejoignirent celle-ci aux côtés de l’arbre magique.</p>');
                     //apparition des trois autres arbres calcinés
                     $("#arbre2").css("opacity", "1");
                     $("#arbre3").css("opacity", "1");
@@ -52,7 +80,7 @@
                             //écouteur sur le bouton suivant
                             $("#narrateur div:last-child img").click(function(){
                                 //changement texte
-                                $("#narrateur .histoire").replaceWith('<p class="histoire">Voudrais-tu essayer de les libérer ?<br><br>Si tu le souhaites, des feuilles d’or se trouvent dans les environs…</p>');
+                                $("#narrateur .histoire").replaceWith('<p class="histoire">Voudrais-tu essayer de les libérer ?<br><br>Si tu le souhaites, des feuilles d’or se trouveraient dans les environs…</p>');
                                 //écouteur sur le bouton suivant
                                 $("#narrateur div:last-child img").click(function(){
                                     //jeu pour retrouver les feuilles d'or

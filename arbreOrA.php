@@ -59,9 +59,9 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             <div id="texte">
                 <h2>Scene 2</h2>
                 <h1>L'arbre d'or</h1>
-                <audio id="playerAudio">
-                      <source src="./sons/aventureTombeauMerlin.mp3">
-                      <source src="./sons/aventureTombeauMerlin.ogg">
+                <audio id="playerAudioConteur">
+                      <source src="./sons/aventureArbreOr.mp3">
+                      <source src="./sons/aventureArbreOr.ogg">
                 </audio>
                 <p>Paramètres</p>
                 <div id="param">
