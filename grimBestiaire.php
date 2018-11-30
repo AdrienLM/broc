@@ -50,7 +50,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
        
 
         <main>
-            <a href="herbier.html"> <!-- Flèche page précédente -->
+            <a href="grimHerbier.php"> <!-- Flèche page précédente -->
                 <div>
                     <p>Page précédente</p>
                     <img src="images/flecheG.png" alt="flèche vers la gauche">
@@ -88,14 +88,14 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 </div>
             </section>
 
-            <a href="#"> <!-- Flèche page suivante -->
+            <a> <!-- Flèche page suivante -->
                 <div class="nonCliquable">
                     <p>Page suivante</p>
                     <img src="images/flecheD.png" alt="flèche vers la droite">
                 </div>
             </a>
         </main>
-        <?php require 'footer.php'; ?>
+        <?php //require 'footer.php'; ?>
     </body>
     
     
