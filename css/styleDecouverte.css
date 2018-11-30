@@ -135,7 +135,7 @@ main .partGauche h2{
     font-size: 30px;
     font-family: 'Qurany-light';
     position: absolute;
-    bottom: calc(2vh + 160px);
+    bottom: 25vh;
     margin: 0;
     margin-left: 25%;
     width: 100%;
