@@ -63,18 +63,25 @@
                                     $("#narrateur h3").text("Jeu");
                                     $("#narrateur div:first-child img").attr("src", "images/console.svg");
                                     $("#narrateur div:first-child img").attr("alt", "manette de console");
-                                    $("#narrateur div:last-child p").text("Terminé");
                                     $("#narrateur .histoire").replaceWith('<p class="histoire">Retrouvez les feuilles d\'or dissimulées dans le décor</p>');
                                     //apparition des feuilles d'or
                                     $("#feuille1").css("opacity", "1");
                                     $("#feuille2").css("opacity", "1");
                                     $("#feuille3").css("opacity", "1");
-                                    //écouteur sur le bouton terminé
-                                    $("#narrateur div:last-child img").replaceWith('<a href="tombeauMerlinA.php"><img src="images/check.svg" alt="icone check"></a>');
+                                    //changement du bouton suivant en passer
+                                    $("#narrateur div:last-child img").replaceWith('<a href="tombeauMerlinA.php"><img src="images/flecheD.svg" alt="flèche vers la droite"></a>');
+                                    $("#narrateur div:last-child p").text("Passer");
                                     //écouteur sur les feuilles d'or
                                     $(".feuilles").click(function(){
                                         $(this).remove();
                                     })
+                                    //écouteur sur le bouton terminé
+                                    while($(".feuilles")){
+                                        //ne rien faire
+                                    }
+                                    //changement du bouton passer en terminé
+                                    $("#narrateur div:last-child img").replaceWith('<a href="tombeauMerlinA.php"><img src="images/check.svg" alt="icone check"></a>');
+                                    $("#narrateur div:last-child p").text("Terminé");
                                 })
                             })
                         })
