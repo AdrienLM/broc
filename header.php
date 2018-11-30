@@ -79,7 +79,8 @@
                                 
                             
                             <li>
-                                <a href="parametres.php">
+                                <!-- <a href="parametres.php"> -->
+                                <a href="soon.php">
                            <img src="images/engrenage.svg" alt="engrenage">
                        </a>
                                 <p>Paramètres</p>
