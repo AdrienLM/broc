@@ -117,7 +117,7 @@ if(isset($_POST['forminscription']))
            </div>
             <form method="POST" action="">
                 <ul class="form-style-1">
-                    <li><label for="pseudo"></label><input id="pseudo" type="text" name="pseudo" class="field-divided" title="Caractères spéciaux interdits" pattern="^([0-9a-zA-Z]{3,12})$" placeholder="Pseudo" value="<?php if(isset($pseudo)) { echo $pseudo; } ?>" /></li>
+                    <li><label for="pseudo"></label><input id="pseudo" type="text" name="pseudo" class="field-divided" title="Caractères spéciaux interdits" pattern="^([0-9a-zA-Z]{3,12})$" placeholder="Pseudo" title="Votre pseudo doit faire entre 3 et 12 caractères et ne doit pas contenir de caractères spéciaux" value="<?php if(isset($pseudo)) { echo $pseudo; } ?>" /></li>
                     <li>
                         <label for="mail"></label>
                         <input id="email" type="email" name="mail" class="field-long" placeholder="Email" onpaste="return false;" required="required" pattern="^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$" title="Adresse mail trop courte" value="<?php if(isset($mail)) { echo $mail; } ?>" />
@@ -128,11 +128,11 @@ if(isset($_POST['forminscription']))
                     </li>
                     <li>
                         <label for="mdp"></label>
-                        <input id="mdp" type="password" name="mdp" minlength="6" maxlength="32" class="field-long" onpaste="return false;" required="required" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,32}$" placeholder="Mot de passe" title="Votre mot de passe doit contenir au moins une majuscule, une miniscule et un chiffre" />
+                        <input id="mdp" type="password" name="mdp" minlength="6" maxlength="32" class="field-long" onpaste="return false;" required="required" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,32}$" placeholder="Mot de passe" title="Votre mot de passe doit faire entre 6 et 32 caractères et contenir au moins une majuscule, une miniscule et un chiffre" />
                     </li>
                     <li>
                         <label for="mdp2"></label>
-                        <input id="mdp2" type="password" name="mdp2" minlength="6" maxlength="32" class="field-long" onpaste="return false;" required="required" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,32}$" placeholder="Confirmation du mot de passe" title="Votre mot de passe doit contenir au moins une majuscule, une miniscule et un chiffre" />
+                        <input id="mdp2" type="password" name="mdp2" minlength="6" maxlength="32" class="field-long" onpaste="return false;" required="required" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,32}$" placeholder="Confirmation du mot de passe" title="Votre mot de passe doit faire entre 6 et 32 caractères et contenir au moins une majuscule, une miniscule et un chiffre" />
                     </li>
                     <div class="check">
                         <label class="container">J'accepte les <a href="conditionUtilisation.php">conditions générales d'utilisation de Kleiz</a>

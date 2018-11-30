@@ -81,7 +81,7 @@ if(isset($_POST['formconnexion']))
            <div class="margeHaute"> </div>
             <div id="titre">
                <h2>Connexion</h2>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. Consectetur adipiscing elit, sed do.</p>
+               <p>Connectez-vous pour pouvoir accéder au mode aventure, à votre grimoire, et bien d'autres encore.</p>
            </div>
             <form method="POST" action="">
                 <ul class="form-style-1">
