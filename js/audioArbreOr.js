@@ -2,7 +2,7 @@
     "use strict";
     window.addEventListener("DOMContentLoaded", initialiser);
 
-    let tempsTotal = 137; /* DONNÉE À MODIFIER */
+    let tempsTotal = 148; /* DONNÉE À MODIFIER */
     let tempsPasseS = 0;
     let tempsPasseDS = 0;
     let tempsDePause = new Array(174, 404, 687, 919, 1192, 1409, 1499); /* DONNÉE À MODIFIER */
