@@ -5,7 +5,7 @@
     let tempsTotal = 137; /* DONNÉE À MODIFIER */
     let tempsPasseS = 0;
     let tempsPasseDS = 0;
-    let tempsDePause = new Array(166, 384, 647, 860, 1112, 1319, 1369); /* DONNÉE À MODIFIER */
+    let tempsDePause = new Array(166, 384, 647, 860, 1112, 1319, 1387); /* DONNÉE À MODIFIER */
     let tempsDeDepart = new Array(166, 384, 647, 860, 1112, 1319); /* DONNÉE À MODIFIER */
     let indiceParagrapheCourant = 0;
     let timerAffichage;
@@ -121,6 +121,6 @@ function paragrapheSuivant() {
         tempsPasseDS = tempsDeDepart[indiceParagrapheCourant - 1];
         playerAudio.play();
         timerAffichage = window.setInterval(affichageTemps, 1000);
-        timerPause = window.setInterval(pause, 100);
+        timerPause = window.setInterval(arretSon, 100);
     }
 }());

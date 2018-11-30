@@ -1,5 +1,5 @@
     $(document).ready(function(){
-        $("#param vi:first-child img").click(function(){
+        $("#param div:first-child img").click(function(){
             let booleanPleinEcran = false;
             if(!booleanPleinEcran) {
                 booleanPleinEcran = true;
@@ -100,16 +100,20 @@
                                     $("#narrateur div:last-child img").replaceWith('<a href="lancementAventure.php"><img src="images/flecheD.svg" alt="flèche vers la droite"></a>');
                                     $("#narrateur div:last-child p").text("Passer");
                                     //écouteur sur les feuilles d'or
-                                    $(".feuilles").click(function(){
+                                   var nbFeuilles = 0; $(".feuilles").click(function(){
                                         $(this).remove();
+                                       nbFeuilles++;
+                                        
                                     })
                                     //écouteur sur le bouton terminé
-                                    /*do{
+                                    while(nbFeuilles>3){
                                         //ne rien faire
-                                    }while($(".feuilles").length>0);
+                                        $("#narrateur div:last-child img").replaceWith('<a href="lancementAventure.php"><img src="images/flecheD.svg" alt="flèche vers la droite"></a>');
+                                        $("#narrateur div:last-child p").text("Passer");
+                                    }
                                     //changement du bouton passer en terminé
                                     $("#narrateur div:last-child img").replaceWith('<a href="tombeauMerlinA.php"><img src="images/check.svg" alt="icone check"></a>');
-                                    $("#narrateur div:last-child p").text("Terminé");*/
+                                    $("#narrateur div:last-child p").text("Terminé");
                                 })
                             })
                         })
