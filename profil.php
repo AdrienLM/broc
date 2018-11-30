@@ -3,6 +3,7 @@
 session_start();
 require 'connexionBDD.php';
 
+$debugQWMain = false;
 
 if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 {
@@ -56,9 +57,59 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <?php require 'header.php'; require 'initCompteGrimoire.php'; ?>
 
         <div class="conteneur">
-            <div class="partie1">nav</div>
-             <div class="partie2">nav</div>
-      </div>
+            <div class="partie1">
+
+                <div class="banniere">
+
+                    <div class="imageProfil"><img class="imgProfil" src="membres/avatars/<?php echo $userinfo['AvatarUser']; ?>" alt="image du profil utilisateur"></div>
+                    <div class="nomProfil">
+                        <h4 class="nomProfil">
+                            <?php echo $userinfo['PseudoUser']; ?>
+                        </h4>
+                    </div>
+                    
+                    <div class="roleProfil">  <img class="imgRole" src="images/icoRole.svg" alt="image du profil utilisateur"> <?php if($userinfo['GroupeUser'] != null){
+      ///////////////////////////////////groupeUser de l'utilisateur////////////////////////////////////////////////////
+     if($debugQWMain)   var_dump ($userinfo['GroupeUser']);
+    echo '<p>'.$userinfo['GroupeUser'].'</p>';
+    
+    }else{
+          echo ' Non attribué';
+    }
+    
+        ?>.</div>
+                    <div class="descriptionProfil">
+
+                        <?php   if($userinfo['DescriptionUser'] != null){
+          ///////////////////////////////////DescriptionUser de l'utilisateur////////////////////////////////////////////////////
+         if($debugQWMain)    var_dump ($userinfo['DescriptionUser']);
+                        echo '<p>'.$userinfo['DescriptionUser'].'</p>'; 
+    
+   }else{
+        echo '<p>Editer description ?</p>';
+    }
+            ?>       
+                    </div>
+                    <img class="imgBan" src="membres/banniere/<?php echo $userinfo['BanniereUser']; ?>" alt="banniere utilisateur">
+
+                    
+                    
+                </div>
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+            <div class="partie2">nav</div>
+        </div>
 
 
         <?php require 'footer.php'; ?>

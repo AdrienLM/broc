@@ -3,32 +3,126 @@
     src: url("../font/Qurany.ttf");
 }
 
+@font-face {
+    font-family: "Qurany-light";
+    src: url("../font/Qurany-light.ttf");
+}
+
+@font-face {
+    font-family: "Qurany-italic";
+    src: url("../font/Qurany-italic.ttf");
+}
+
+@font-face {
+    font-family: "Qurany-light-italic";
+    src: url("../font/Qurany-light-italic.ttf");
+}
+
+@font-face {
+    font-family: "Google-sans";
+    src: url("../font/GoogleSans-Medium");
+}
+
+@font-face {
+    font-family: "Google-sansBold";
+    src: url("../font/GoogleSans-Bold");
+}
+
+@font-face {
+    font-family: "Google-sansReg";
+    src: url("../font/GoogleSans-Regular");
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
     color: white;
     overflow-y: hidden;
+    
+}
+
+.conteneur {
     display: grid;
-  grid-template-columns: 200px 400px;
-    grid-template-rows: 100px 300px;
+  grid-template-columns: 30% 70%;
+    grid-template-rows: 650px 300px;
 }
 
 .partie1 {
   grid-column: 1; grid-row: 1;
+    background-color: #eaeaea;
+    margin: 0 30px 0 85px;
+    border-radius: 8px;
 }
 .partie2 {
   grid-column: 2; grid-row: 1;
-}
-article {
-  grid-column: 1; grid-row: 2;
-}
-aside {
-  grid-column: 2; grid-row: 2;
+    background-color: #222;
+    margin: 0 85px 0 20px;
+    border-radius: 8px;
 }
 
+.banniere {
+    height: 230px;
+    background-color: #aaaaaa;
+    border-radius: 8px 8px 0 0;
+}
+
+.imgBan {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    position: relative;
+    background-color: #a3a3a3;
+     border-radius: 8px 8px 0 0;
+}
+
+.imgProfil {
+    width: 120px;
+    position: absolute;
+    z-index: 2;
+    margin: 55px 0 0 38px;
+    border-radius: 80px;
+    border: 3px solid #fff;
+    background-color: #e8e8e8;
+}
+
+.nomProfil {
+    font-size: 20px;
+    position: absolute;
+    z-index: 3;
+    font-family: 'Google-sansBold';
+    margin: 33px 0 0 90px;
+}
+
+.descriptionProfil {
+    position: absolute;
+    z-index: 3;
+    margin: 103px 0 0 180px;
+}
+
+.descriptionProfil p {
+    font-size: 13px;
+    width: 240px;
+    position: absolute;
+}
+
+.roleProfil {
+    position: absolute;
+    z-index: 3;
+    font-size: 13px;
+    margin: 93px 0 0 180px;
+    font-family: 'Google-sans';
+
+}
+
+.roleProfil img {
+    width: 13px;
+}
+
+
+
 p {
-    font-family: 'Open Sans';
+    font-family: 'Google-sansReg';
 }
 
 a {
