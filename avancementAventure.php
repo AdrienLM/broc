@@ -111,11 +111,11 @@
                     header ('location: arbreOrA.php');
                 }else if($AvancementUserExist["AvancementUser"] == 2){
                         if($debugQWMain) echo '<br />'.'aventure 2';
-                    echo 'header (location: tombeauMerlinA.php)';
-                    //header ('location: tombeauMerlinA.php');
+                    //echo 'header (location: tombeauMerlinA.php)';
+                    header ('location: tombeauMerlinA.php');
                 }else if($AvancementUserExist["AvancementUser"] == 3){
                         if($debugQWMain) echo '<br />'.'aventure 3';
-                    echo 'header (location: page3.php)';
+                    echo 'header (location: page3.php)'.'page pas encore présente dévelopement';
                     //header ('location: page3.php');
                 }
                 else{
