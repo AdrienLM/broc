@@ -69,7 +69,7 @@
                                     $("#feuille2").css("opacity", "1");
                                     $("#feuille3").css("opacity", "1");
                                     //changement du bouton suivant en passer
-                                    $("#narrateur div:last-child img").replaceWith('<a href="tombeauMerlinA.php"><img src="images/flecheD.svg" alt="flèche vers la droite"></a>');
+                                    $("#narrateur div:last-child img").replaceWith('<a href="lancementAventure.php"><img src="images/flecheD.svg" alt="flèche vers la droite"></a>');
                                     $("#narrateur div:last-child p").text("Passer");
                                     //écouteur sur les feuilles d'or
                                     $(".feuilles").click(function(){
