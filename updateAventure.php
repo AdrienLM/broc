@@ -48,7 +48,9 @@
             //header ('location: accueil.php');
 
         }
-}
+    }else{
+       // header('Location: index.php');
+    }
 
 
 ?>
