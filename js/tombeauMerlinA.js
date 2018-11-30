@@ -20,6 +20,7 @@
         brouillard.setAttribute("alt", "Brouillard épais");
         /*brouillard.style.width = "100%";*/
         brouillard.style.height = "100%";
+        brouillard.style.textAlign = "right";
         divJeu.insertBefore(brouillard, divNarrateur);
     }
 
@@ -66,30 +67,6 @@
                 document.msExitFullscreen();
             }
         }
-        /*function openFullscreen() {
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.mozRequestFullScreen) { /* Firefox */
-            /*    elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-            /*    elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { /* IE/Edge */
-            /*    elem.msRequestFullscreen();
-            }
-        }
-         /*if(!document.fullscreenElement) {
-                window.requestFullscreen("hide");
-            } else {
-                window.requestFullscreen("show");
-            }*/
-
-            /*if (!document.fullscreenElement) {
-                document.requestFullscreen().then({}).catch(err => {
-                    alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-                });
-            } else {
-                document.exitFullscreen();
-            }*/
     }
 
     function fondu() {

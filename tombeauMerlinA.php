@@ -36,6 +36,23 @@
                     <source src="./sons/aventureTombeauMerlin.mp3" />
                     <source src="./sons/aventureTombeauMerlin.ogg" />
                 </audio>
+
+                <audio id="playerAudioRep0">
+                    <source src="./sons/reponsesEnigmes/morgane.mp3" />
+                    <source src="./sons/reposesEnigmes/morgane.ogg" />
+                </audio>
+                <audio id="playerAudioRep1">
+                    <source src="./sons/reponsesEnigmes/viviane.mp3" />
+                    <source src="./sons/reponsesEnigmes/viviane.ogg" />
+                </audio>
+                <audio id="playerAudioRep2">
+                    <source src="./sons/reponsesEnigmes/guenievre.mp3" />
+                    <source src="./sons/reponsesEnigmes/guenievre.ogg" />
+                </audio>
+                <audio id="playerAudioRep3">
+                    <source src="./sons/reponsesEnigmes/melusine.mp3" />
+                    <source src="./sons/reponsesEnigmes/melusine.ogg" />
+                </audio>
                 <p>Paramètres</p>
                 <div id="param">
                     <div>
@@ -60,14 +77,14 @@
             <div id="jeu">
                 <div id="narrateur" />
                    <div>
-                      <img src="images/casque.svg" />
-                       <h3>Narrateur</h3> 
+                        <img src="images/casque.svg" alt="Casque" />
+                        <h3>Narrateur</h3> 
                    </div>
                    <p class="histoire">Pour acquérir le droit d’arpenter cet endroit, il te faudra répondre à une question...</p>
                    <p class="histoire">Quelle est la bien aimée de Merlin ?</p>
                    <div>
-                       <img src="images/flecheD.svg" />
-                       <p>Suivant</p>
+                       <img src="images/flecheD.svg" alt="Flèche vers la droite" />
+                       <p>Répondre</p>
                    </div>
                 </div>
             </div>
