@@ -76,12 +76,12 @@
                                         $(this).remove();
                                     })
                                     //écouteur sur le bouton terminé
-                                    while($(".feuilles")){
+                                    /*do{
                                         //ne rien faire
-                                    }
+                                    }while($(".feuilles").length>0);
                                     //changement du bouton passer en terminé
                                     $("#narrateur div:last-child img").replaceWith('<a href="tombeauMerlinA.php"><img src="images/check.svg" alt="icone check"></a>');
-                                    $("#narrateur div:last-child p").text("Terminé");
+                                    $("#narrateur div:last-child p").text("Terminé");*/
                                 })
                             })
                         })
