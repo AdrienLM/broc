@@ -87,9 +87,9 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <footer>
             <p>KLEIZ | Projet MMI2 2018-2019</p>
             <div>
-                <a href="plan.html">Plan du site</a>
-                <a href="cU.html">Conditions d'utilisation</a>
-                <a href="equipe.html">Notre équipe</a>
+                <a href="soon.php">Plan du site</a>
+                <a href="cgu.php">Conditions d'utilisation</a>
+                <a href="soon.php">Notre équipe</a>
             </div>
             <div class="reseaux">
                 <a href="https://www.facebook.com/kleiz3" target="_blank">
