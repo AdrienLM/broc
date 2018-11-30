@@ -117,7 +117,7 @@ if(isset($_POST['forminscription']))
            </div>
             <form method="POST" action="">
                 <ul class="form-style-1">
-                    <li><label for="pseudo"></label><input id="pseudo" type="text" name="pseudo" class="field-divided" title="Caractères spéciaux interdits" pattern="^([0-9a-zA-Z]{3,12})$" placeholder="Pseudo" title="Votre pseudo doit faire entre 3 et 12 caractères et ne doit pas contenir de caractères spéciaux" value="<?php if(isset($pseudo)) { echo $pseudo; } ?>" /></li>
+                    <li><label for="pseudo"></label><input id="pseudo" type="text" name="pseudo" class="field-divided" title="Caractères spéciaux interdits" pattern="^([0-9a-zA-Z]{3,12})$" placeholder="Pseudo" value="<?php if(isset($pseudo)) { echo $pseudo; } ?>" /></li>
                     <li>
                         <label for="mail"></label>
                         <input id="email" type="email" name="mail" class="field-long" placeholder="Email" onpaste="return false;" required="required" pattern="^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$" title="Adresse mail trop courte" value="<?php if(isset($mail)) { echo $mail; } ?>" />
