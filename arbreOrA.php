@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>KLEIZ | ARBRE D'OR | MODE AVENTURE</title>
         <meta name="description" content="">
+        <link rel="stylesheet" href="css/styleMenu.css">
         <link rel="stylesheet" href="css/styleAventure.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -25,49 +26,48 @@
         <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <script src="js/jquery.js"></script>
-        <script src="js/audioPlayer.js"></script>
+        <script src="js/scriptMenuFlottant.js"></script>
+        <script src="js/scriptArbreOr.js"></script>
+        <script src="js/audio.js"></script>
     </head>
     <body>
         <header>
            <a href="accueil.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
             <nav>
-                <a href="guide.html">accueil</a>
-                <a href="choixModes.html">guide</a>
-                <a href="profil.html">modes</a>
-                <a href="profil.html"><img src="images/imgProfil.png" alt="image profil"></a>
-                <img src="images/depliant.png" alt="dépliant">
-                <!--
+                <a href="accueil.php">accueil</a>
+                <a href="duide.php">guide</a>
+                <a href="choixModes.php">modes</a>
+                <a href="profil.php"><img src="images/imgProfil.png" alt="image profil"></a>
+                <img src="images/depliant.svg" alt="dépliant" id="depliant">
                 <ul id="menuFlottant">
                     <li>
                        <a href="deconnexion.php">
-                           <img src="images/quitter.png" alt="quitter">
-                       </a>
-                        <p>Quitter</p>
-                    </li>
-                    <li>
-                       <a href="parametres.html">
-                           <img src="images/param.png" alt="engrenage">
-                       </a>
-                        <p>Paramètres</p>
-                    </li>
-                    <li>
-                       <a href="carte.html">
-                           <img src="images/carte.png" alt="pointeur">
+                           <img src="images/carte.svg" alt="carte">
                        </a>
                         <p>Carte</p>
                     </li>
+                    <li>
+                       <a href="parametres.php">
+                           <img src="images/power.svg" alt="quitter">
+                       </a>
+                        <p>Déconnexion</p>
+                    </li>
+                    <li>
+                       <a href="carte.php">
+                           <img src="images/engrenage.svg" alt="engrenage">
+                       </a>
+                        <p>Paramètres</p>
+                    </li>
                 </ul>
-                -->
             </nav>
         </header>
         <main>
             <div id="texte">
                 <h2>Scene 2</h2>
                 <h1>L'arbre d'or</h1>
-                <audio preload="auto" controls>
-                   <source src="sons/arbreOr.wav" />
-                   <source src="sons/arbreOr.mp3" />
-                   <source src="sons/arbreOr.ogg" />
+                <audio id="playerAudio">
+                      <source src="./sons/aventureTombeauMerlin.mp3">
+                      <source src="./sons/aventureTombeauMerlin.ogg">
                 </audio>
                 <p>Paramètres</p>
                 <div id="param">
@@ -76,11 +76,11 @@
                         <p>Plein écran</p>
                     </div>
                     <div>
-                        <img src="images/flecheD.svg" alt="flèche vers la droite">
+                        <img src="images/flecheD.svg" alt="flèche vers la droite" class="decouvrir">
                         <p>Découvrir</p>
                     </div>
                     <div>
-                        <img src="images/croix.svg" alt="croix">
+                        <a href="tombeauMerlinA.php"><img src="images/croix.svg" alt="croix"></a>
                         <p>Passer</p>
                     </div>
                 </div>
@@ -95,6 +95,31 @@
                 <a href="accueil.php">
                     <img src="images/flecheG.svg" alt="flèche vers la gauche">
                 </a>
+            </div>
+            <div id="jeu">
+                <img src="images/arbreDOr.png" alt="arbre d'or" id="arbreOr">
+                <img src="images/petiteFille.png" alt="petite fille" id="fille">
+                <img src="images/tronc1.png" alt="tronc d'arbre calciné" id="arbre1">
+                <img src="images/tronc2.png" alt="tronc d'arbre calciné" id="arbre2">
+                <img src="images/tronc3.png" alt="tronc d'arbre calciné" id="arbre3">
+                <img src="images/tronc4.png" alt="tronc d'arbre calciné" id="arbre4">
+                <img src="images/feuilleOr.png" alt="feuille d'or" id="feuille1" class="feuilles">
+                <img src="images/feuilleOr.png" alt="feuille d'or" id="feuille2" class="feuilles">
+                <img src="images/feuilleOr.png" alt="feuille d'or" id="feuille3" class="feuilles">
+                <img src="images/pierreLutin.png" alt="pierre" id="pierre1" class="pierres">
+                <img src="images/pierreLutin.png" alt="pierre" id="pierre2" class="pierres">
+                <img src="images/pierreLutin.png" alt="pierre" id="pierre3" class="pierres">
+                <div id="narrateur">
+                   <div>
+                      <img src="images/casque.svg">
+                       <h3>Narrateur</h3> 
+                   </div> 
+                   <p class="histoire">Dans une petite clairière près de Trehorenteuc, un arbre en or avait prit racine.<br><br> Chaque nuit les branches de cet arbre fabuleux s’ornaient de magnifiques feuilles d’or. <br><br>Les lutins de la forêt venaient chaque matin les récolter pour leurs propriétés magiques.</p>
+                   <div>
+                       <img src="images/flecheD.svg">
+                       <p>Suivant</p>
+                   </div>
+                </div>
             </div>
         </main>
         <footer>
