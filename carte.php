@@ -42,7 +42,7 @@
            </section>
            <div id="retour">
             <p>Retour</p>
-            <a href="chateauTrecesson.php">
+            <a href="javascript:history.go(-1)">
                 <img src="images/flecheG.svg" alt="flèche vers la gauche">
             </a>
         </div>
