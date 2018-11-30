@@ -1,6 +1,6 @@
 
 <?php
-if($_SESSION['aventureSur']){
+
 
     $idCompte = $_SESSION['id'];
     $debugQWMain = false;
@@ -56,31 +56,29 @@ if($_SESSION['aventureSur']){
     
     
     
+  
     
-    
-    if(isset($_SESSION['AventureProv'])){
-    
-        $modifdata = $pdo->prepare('UPDATE membres SET AvancementUser= :numAvance WHERE IdUser= :idCompte');
-            try
-            {
-                $numAvancement = $_SESSION['AventureProv']+1;
-                //$modifdata->bindParam(':datedec', $_POST['datedec'], PDO:: PARAM_STR); // date
-                $modifdata->bindParam(':numAvance', $numAvancement, PDO:: PARAM_INT); // entier
-                $modifdata->bindParam(':idCompte', $idCompte, PDO:: PARAM_INT); // entier
-                $modifdata->execute();
-                //header ('location: avancementAventure.php');
+        if(isset($_SESSION['AventureProv'])){
 
-            }
-            catch ( Exception $e )
-            {
+            $modifdata = $pdo->prepare('UPDATE membres SET AvancementUser= :numAvance WHERE IdUser= :idCompte');
+                try
+                {
+                    $numAvancement = $_SESSION['AventureProv']+1;
+                    //$modifdata->bindParam(':datedec', $_POST['datedec'], PDO:: PARAM_STR); // date
+                    $modifdata->bindParam(':numAvance', $numAvancement, PDO:: PARAM_INT); // entier
+                    $modifdata->bindParam(':idCompte', $idCompte, PDO:: PARAM_INT); // entier
+                    $modifdata->execute();
+                    //header ('location: avancementAventure.php');
 
-                if($debugQWMain) echo 'Erreur de requête : ', $e->getMessage();
-                //header ('location: index.php');
+                }
+                catch ( Exception $e )
+                {
 
-            }
+                    if($debugQWMain) echo 'Erreur de requête : ', $e->getMessage();
+                    //header ('location: index.php');
+
+                }
         
-        
-    
     }
 
 
@@ -127,5 +125,5 @@ if($_SESSION['aventureSur']){
     
     
     
-}
+
 ?>
