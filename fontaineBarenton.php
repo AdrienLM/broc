@@ -1,3 +1,23 @@
+<?php
+
+session_start();
+require 'connexionBDD.php';
+
+$debugQWMain = false;
+
+if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
+{
+	$getid = intval($_SESSION['id']);
+	$requser = $pdo->prepare('SELECT * FROM membres WHERE IdUser = ?');
+	$requser->execute(array($getid));
+	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);   
+    $_SESSION['val1'] = 0;
+
+   // require ' initCompteGrimoire.php';
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,6 +25,7 @@
         <title>KLEIZ | FONTAINE DE BARENTON | MODE DÉCOUVERTE</title>
         <meta name="description" content="">
         <link rel="stylesheet" href="css/styleDecouverte.css">
+        <link rel="stylesheet" href="css/styleMenuDecouverte.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
@@ -26,35 +47,11 @@
         <meta name="theme-color" content="#ffffff">
     </head>
     <body>
-        <header>
-            <nav>
-                <a href="guide.html">accueil</a>
-                <a href="choixModes.html">guide</a>
-                <a href="profil.html">modes</a>
-                <a href="profil.html"><img src="images/imgProfil.png" alt="image profil"></a>
-                <div>
-                    <img src="images/depliant.png" alt="dépliant">
-                    <!--
-                    <div class="menuFlottant">
-                        <div>
-                            <img src="images/quitter.png" alt="quitter">
-                            <p>Quitter</p>
-                        </div>
-                        <div>
-                            <img src="images/param.png" alt="engrenage">
-                            <p>Paramètres</p>
-                        </div>
-                        <div>
-                            <img src="images/carte.png" alt="pointeur">
-                            <p>Carte</p>
-                        </div>
-                    </div>-->
-                </div>
-            </nav>
-        </header>
+        <?php require 'headerDecouverte.php'; ?>
+
         <main id="fontaineBarenton">
             <div class="partGauche">
-                <a href="accueil.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
+                <a href="index.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
                 <div>
                     <h1>UNE SOURCE D’EAU NATURELLE AU CŒUR DE LA FORÊT</h1>
                     <div class="avis">
@@ -76,32 +73,17 @@
             </div>
             <div>
                 <p>Retour</p>
-                <a href="rocherFauxAmants.php">
+                <a href="tombeauMerlin.php">
                     <img src="images/flecheG.svg" alt="flèche vers la gauche">
                 </a>
             </div>
             <div>
                 <p>Suivant</p>
-                <a href="egliseGraal.php">
+                <a href="chateauTrecesson.php">
                     <img src="images/flecheG.svg" alt="flèche vers la droite">
                 </a>
             </div>
         </main>
-        <footer>
-            <div class="reseaux">
-               <a href="https://www.facebook.com/kleiz3" target="_blank">
-                   <img src="images/fb.png" alt="logo Facebook">
-               </a>
-                <a href="https://twitter.com/Kleizbro" target="_blank">
-                   <img src="images/twitter.png" alt="logo Twitter">
-               </a>
-               <a href="https://www.instagram.com/kleiz3" target="_blank">
-                   <img src="images/insta.png" alt="logo Instagram">
-               </a>
-               <a href="images/snapchat.jpg" target="_blank">
-                   <img src="images/snap.png" alt="logo Snapchat">
-               </a>
-            </div>
-        </footer>
+        <?php require 'footerDecouverte.php'; ?>
     </body>
 </html>
