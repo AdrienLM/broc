@@ -115,11 +115,12 @@
                     header ('location: tombeauMerlinA.php');
                 }else if($AvancementUserExist["AvancementUser"] == 3){
                         if($debugQWMain) echo '<br />'.'aventure 3';
-                    echo 'header (location: page3.php)'.'page pas encore présente dévelopement';
+                    header ('location: soon.php');
+                    //echo 'header (location: page3.php)'.'page pas encore présente dévelopement';
                     //header ('location: page3.php');
                 }
                 else{
-                    echo '<br />'.'aventure pas encore présente';
+                    //echo '<br />'.'aventure pas encore présente';
                     //header ('location: index.php');
                  }
 
