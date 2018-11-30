@@ -39,6 +39,7 @@
         divCarte.style.transform = "scale(0.6) translate(-255%, 40%)";
         divCarte.style.transition = "all 1s linear";
         window.setTimeout(fondu, 500);
+        this.removeEventListener("click", transitionDebut);
     }
 
     let booleanPleinEcran = false;

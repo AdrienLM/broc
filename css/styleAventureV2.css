@@ -293,8 +293,30 @@ footer .reseaux a{
 
 }
 
+#narrateur .divReponses:last-child {
+    width : 100%;
+    display : flex;
+    justify-content : space-around;
+    flex-wrap : wrap;
+    margin : 0;
+    margin-top : 10px;
+    cursor : normal;
+}
+.divReponses>button {
+    border : none;
+    height : 6vh;
+    border-radius : 3vh;
+    width : 45%;
+    background-color : red;
+    opacity : 0;
+    margin-bottom : 10px;
+    cursor : pointer;
+}
 
-#param>div, #narrateur>div:last-child {
+#param>div {
+    cursor : pointer;
+}
+#narrateur>div:last-child {
     cursor : pointer;
 }
 

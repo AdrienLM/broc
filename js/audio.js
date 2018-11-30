@@ -2,15 +2,16 @@
 	"use strict";
 	window.addEventListener("DOMContentLoaded", initialiser);
 
-	let tempsTotal = 84; /* DONNÉE À MODIFIER */
+	let tempsTotal = 76; /* DONNÉE À MODIFIER */
 	let tempsPasseS = 0;
 	let tempsPasseDS = 0;
-	let tempsDePause = new Array(85, 289, 528, 760); /* DONNÉE À MODIFIER */
-	let tempsDeDepart = new Array(157, 301, 561, 774); /* DONNÉE À MODIFIER */
+	let tempsDePause = new Array(85, 289, 528/*, 760*/); /* DONNÉE À MODIFIER */
+	let tempsDeDepart = new Array(157, 301, 561/*, 774*/); /* DONNÉE À MODIFIER */
 	let indiceParagrapheCourant = 0;
 	let timerAffichage;
 	let timerPause;
 	let playerAudio;
+	let tousLesSons;
 
 	/* Visualisation des éléments dans le DOM :
 		<div nomJS="divPlayer" class="player">
@@ -42,14 +43,30 @@
 		barreTemps.appendChild(curseur);
 		divPlayer.appendChild(barreTemps);
 		document.getElementById("texte").insertBefore(divPlayer, document.getElementById("texte").querySelector("p"));
+
+
+		tousLesSons = document.querySelectorAll("audio");
 			/* Ajouter les écouteurs d'événements */
 		document.querySelector("#param>div:nth-child(2)").addEventListener("click", lancementSon);
 		document.querySelector("#narrateur>div:last-child").addEventListener("click", lancerEnigme);
-		//document.querySelector("#narrateur>div:last-child").addEventListener("click", paragrapheSuivant);
+		//document.querySelector("#narrateur>div:last-child").addEventListener("click", paragrapheSuivantEvt);
+
+
+	}
+
+	function interrupteurSon(evt) {
+		for(let unSon of tousLesSons) {
+			if(unSon.volume == 1) {
+				unSon.volume = 0;
+			} else {
+				unSon.volume = 1;
+			}
+		}
 	}
 
 	function lancementSon(evt) {
 		window.setTimeout(timerLancementSon, 1000);
+		document.querySelector("#param>div:last-child").addEventListener("click", interrupteurSon);
 	}
 
 	function timerLancementSon() {
@@ -58,7 +75,7 @@
 		playerAudio.play();
 			/* Lancer les timers */
 		timerAffichage = window.setInterval(affichageTemps, 1000);
-		timerPause = window.setInterval(pause, 100);
+		timerPause = window.setInterval(arretSon, 100);
 	}
 
 	function affichageTemps() {
@@ -86,7 +103,7 @@
 		return tempsTransforme;
 	}
 
-	function pause() {
+	function arretSon() {
 		tempsPasseDS++;
 		if(tempsPasseDS == tempsDePause[indiceParagrapheCourant]) {
 			playerAudio.pause();
@@ -96,9 +113,14 @@
 		}
 	}
 
-	function paragrapheSuivant(evt) {
+	function paragrapheSuivantEvt(evt) {
+		paragrapheSuivant();
+	}
+
+	function paragrapheSuivant() {
 		if(!playerAudio.paused) {
 			playerAudio.pause();
+			indiceParagrapheCourant++;
 		}
 		playerAudio.currentTime = (tempsDeDepart[indiceParagrapheCourant - 1] / 10);
 		tempsPasseDS = tempsDeDepart[indiceParagrapheCourant - 1];
@@ -107,10 +129,19 @@
 		timerPause = window.setInterval(pause, 100);
 	}
 
+
+
+
+
+
+
 	function lancerEnigme(evt) {
 		if(!playerAudio.paused) {
 			playerAudio.pause();
+			indiceParagrapheCourant++;
 		}
+		document.querySelector("#narrateur>div:last-child").removeEventListener("click", lancerEnigme);
+
 		let divNarrateur = document.getElementById("narrateur");
 		document.querySelector("#narrateur>div:first-child>img").setAttribute("src", "images/manette.svg");
 		document.querySelector("#narrateur>div:first-child>img").setAttribute("alt", "Manette de jeu");
@@ -118,14 +149,19 @@
 		document.querySelector(".histoire").remove();
 		document.querySelector("#narrateur>div:last-child").style.display = "none";
 		document.querySelector("#narrateur>div:last-child>p").textContent = "Suivant";
+		let divReponses = document.createElement("div");
+		divReponses.classList.add("divReponses");
+		divNarrateur.appendChild(divReponses);
+
+
 
 		let i=0;
 		let nbChoisis = new Array();
 		nbChoisis.push(4);
 		let booleanEnigme = true;
 		let rep;
-		while(i < 3) {
-			let nbAleatoire = Math.floor(Math.random() * 3);
+		while(i <= 3) {
+			let nbAleatoire = Math.floor(Math.random() * 4);
 			for(let unNbChoisi of nbChoisis) {
 				if(unNbChoisi == nbAleatoire) {
 					booleanEnigme = false;
@@ -138,36 +174,36 @@
 				switch(nbAleatoire) {
 					case 0 : rep = document.createElement("button");
 							rep.textContent = "Morgane";
-							rep.style.opacity = "0";
-							divNarrateur.appendChild(rep);
-							rep.style.transition = "opacity 1s linear";
+							rep.style.opacity = "1";
+							divReponses.appendChild(rep);
+							rep.style.transition = "all 1s linear";
 							document.getElementById("playerAudioRep0").play();
 							window.setTimeout(attendre, 1500);
 							rep.addEventListener("click", verificationReponse);
 						break;
 					case 1 : rep = document.createElement("button");
 							rep.textContent = "Viviane";
-							rep.style.opacity = "0";
-							divNarrateur.appendChild(rep);
-							rep.style.transition = "opacity 1s linear";
+							rep.style.opacity = "1";
+							divReponses.appendChild(rep);
+							rep.style.transition = "all 1s linear";
 							document.getElementById("playerAudioRep1").play();
 							window.setTimeout(attendre, 1500);
 							rep.addEventListener("click", verificationReponse);
 						break;
 					case 2 : rep = document.createElement("button");
 							rep.textContent = "Guenièvre";
-							rep.style.opacity = "0";
-							divNarrateur.appendChild(rep);
-							rep.style.transition = "opacity 1s linear";
+							rep.style.opacity = "1";
+							divReponses.appendChild(rep);
+							rep.style.transition = "all 1s linear";
 							document.getElementById("playerAudioRep2").play();
 							window.setTimeout(attendre, 1500);
 							rep.addEventListener("click", verificationReponse);
 						break;
 					case 3 : rep = document.createElement("button");
 							rep.textContent = "Mélusine";
-							rep.style.opacity = "0";
-							divNarrateur.appendChild(rep);
-							rep.style.transition = "opacity 1s linear";
+							rep.style.opacity = "1";
+							divReponses.appendChild(rep);
+							rep.style.transition = "all 1s linear";
 							document.getElementById("playerAudioRep3").play();
 							window.setTimeout(attendre, 1500);
 							rep.addEventListener("click", verificationReponse);
@@ -178,68 +214,80 @@
 		}
 	}
 
-	function attendre() {
-		let attendre;
-	}
+	function attendre() {}
 
 	function verificationReponse(evt) {
 		if(this.textContent == "Viviane") {
-			document.querySelector("#narrateur>div:last-child").addEventListener("click", paragrapheSuivant);
+			document.querySelector("#narrateur>div:last-child").remove();
+			document.querySelector("#narrateur>div:last-child").addEventListener("click", paragrapheSuivantEvt);
 			document.querySelector("#narrateur>div:last-child").style.display = "block";
 			document.querySelector("#narrateur>div:first-child>img").setAttribute("src", "images/casque.svg");
 			document.querySelector("#narrateur>div:first-child>img").setAttribute("alt", "Casque");
 			document.querySelector("#narrateur h3").textContent = "Narrateur";
+
+			paragrapheSuivant();
+		} else {
+			let message = document.createElement("p");
+			message.textContent = this.textContent+" n'est pas la bien-aimée de Merlin. Réessaie."
+			let nbAleatoireVerif;
+			let lesReponses = document.querySelectorAll(".divReponses>button");
+			switch(this.textContent) {
+				case "Morgane" : this.remove();
+						nbAleatoireVerif = Math.floor(Math.random() * 2) + 2;
+						if(nbAleatoireVerif == 2) {
+							for(let uneReponse of lesReponses) {
+								if(uneReponse.textContent == "Guenièvre") {
+									uneReponse.remove();
+								}
+							}
+						} else {
+							for(let uneReponse of lesReponses) {
+								if(uneReponse.textContent == "Mélusine") {
+									uneReponse.remove();
+								}
+							}
+						}
+					break;
+				case "Guenièvre" : this.remove();
+						nbAleatoireVerif = Math.floor(Math.random() * 4);
+						while(nbAleatoireVerif == 2 || nbAleatoireVerif == 1) {
+							nbAleatoireVerif = Math.floor(Math.random() * 4);
+						}
+						if(nbAleatoireVerif == 0) {
+							for(let uneReponse of lesReponses) {
+								if(uneReponse.textContent == "Morgane") {
+									uneReponse.remove();
+								}
+							}
+						} else {
+							for(let uneReponse of lesReponses) {
+								if(uneReponse.textContent == "Mélusine") {
+									uneReponse.remove();
+								}
+							}
+						}
+					break;
+				case "Mélusine" : this.remove();
+						nbAleatoireVerif = Math.floor(Math.random() * 3);
+						while(nbAleatoireVerif == 1) {
+							nbAleatoireVerif = Math.floor(Math.random() * 3);
+						}
+						if(nbAleatoireVerif == 0) {
+							for(let uneReponse of lesReponses) {
+								if(uneReponse.textContent == "Morgane") {
+									uneReponse.remove();
+								}
+							}
+						} else {
+							for(let uneReponse of lesReponses) {
+								if(uneReponse.textContent == "Guenièvre") {
+									uneReponse.remove();
+								}
+							}
+						}
+					break;
+			}
+			document.getElementById("narrateur").insertBefore(message, document.querySelector("#narrateur>div:nth-of-type(2)"));
 		}
 	}
-
-	/*let divNarrateur = document.getElementById("narrateur");
-		document.querySelector("#narrateur>div:first-child>img").setAttribute("src", "images/manette.svg");
-        document.querySelector("#narrateur>div:first-child>img").setAttribute("alt", "Manette de jeu");
-        document.querySelector("#narrateur h3").textContent = "Jeu";
-        let paragraphes = document.getElementsByClassName("histoire");
-        for(let unParagraphe of paragraphes) {
-        	unParagraphe.remove();
-        }
-        document.querySelector("#narrateur>div:last-child").style.display = "none";
-        document.querySelector("#narrateur>div:last-child>p").textContent = "Suivant";
-
-
-    /* Boucle se répétant autant de fois qu'il y a de mots à trouver dans le paragraphe */
-                //for (i = 1 ; i <= unNbMotsATrouver ; i++) {
-                        /* Choisir aléatoirement l'indice d'un vers */
-                    //var indiceVersAleatoire = Math.floor(Math.random() * (finParagraphe - debutParagraphe)) + debutParagraphe;
-                        /* Connaître le nombre de mots dans le vers choisi aléatoirement */
-                    //nbMotsDansLeVers = mots[indiceVersAleatoire].length;
-                        /* Prendre aléatoirement l'indice d'un mot dans le vers */
-                    //var indiceMotAleatoire = Math.floor(Math.random() * (nbMotsDansLeVers - 1));
-                        /* Filtrer les mots à trouver */
-                    //if(mots[indiceVersAleatoire][indiceMotAleatoire] == "_____" | mots[indiceVersAleatoire][indiceMotAleatoire].toUpperCase() == "A" | mots[indiceVersAleatoire][indiceMotAleatoire].toUpperCase() == "AN" | mots[indiceVersAleatoire][indiceMotAleatoire].toUpperCase() == "I" | mots[indiceVersAleatoire][indiceMotAleatoire].toUpperCase() == "THE" | mots[indiceVersAleatoire][indiceMotAleatoire].toUpperCase() == "*****") {
-                            /* Si le mot a déjà été sélectionné, faire un sorte d'en prendre un autre à la place */
-                    /*    i = i - 1;
-                    } else {
-                            /* Sinon, l'ajouter aux mots à trouver (avec l'indice du vers dans lequel il a été pris et l'indice du mot au sein du vers) et le remplacer par "_____" dans les mots à afficher */
-                       /* motsATrouver.push(mots[indiceVersAleatoire][indiceMotAleatoire]);
-                        motsATrouver.push(indiceVersAleatoire);
-                        motsATrouver.push(indiceMotAleatoire);
-                        mots[indiceVersAleatoire][indiceMotAleatoire] = "_____";
-                    }
-                }
-
-
-
-
-
-	/*<div id="narrateur" />
-                   <div>
-                        <img src="images/casque.svg" />
-                        <h3>Narrateur</h3> 
-                   </div>
-                   <p class="histoire">Pour acquérir le droit d’arpenter cet endroit, il te faudra répondre à une question...</p>
-                   <p class="histoire">Quelle est la bien aimée de Merlin ?</p>
-                   <div>
-                       <img src="images/flecheD.svg" />
-                       <p>Répondre</p>
-                   </div>
-                </div>*/
-
 }());
