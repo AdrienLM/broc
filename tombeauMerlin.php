@@ -59,7 +59,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                         <p>Avis visiteurs (42)</p>
                     </div>
                 </div>
-                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
+                <p class="desc">Merlin aurait été enfermé dans ce tombeau par sa bien-aimée, la fée Viviane. Désireuse de le garder auprès d’elle pour l’éternité, elle l’aurait emprisonné dans neufs cercles d’air. Le cercle de pierre au sol symbolise le maléfice. Merlin serait encore en vie, confiné pour l’éternité.</p>
                 <h2>Le tombeau de</h2>
                 <h3>Merlin</h3>
                 <img src="images/boussole.png" alt="boussole" class="imageFond">

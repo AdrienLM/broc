@@ -60,7 +60,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                         <p>Avis visiteurs (42)</p>
                     </div>
                 </div>
-                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
+                <p class="desc">L’abbé Gillard aurait décidé de faire revivre cette église en ruines à travers le mythe du Graal. Grâce à l’aide des paroissiens, des collectivités et de ses propres fonds, l’abbé finança la restauration. L’église du Graal est la seule église entièrement consacrée à la légende du Graal. </p>
                 <h2>L'eglise du</h2>
                 <h3>Graal</h3>
                 <img src="images/boussole.png" alt="boussole" class="imageFond">

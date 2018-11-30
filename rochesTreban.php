@@ -59,7 +59,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                         <p>Avis visiteurs (42)</p>
                     </div>
                 </div>
-                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
+                <p class="desc">Trois fées vivaient dans la forêt de Brocéliande. Un jour, elles entendirent parler de la construction La Merveille, l’abbaye du Mont-Saint-Michel et décidèrent d’y participer. Elles entamèrent leur chemin, emportant trois immenses roches. A leur grand désarroi, elles apprirent que le monument était déjà terminé et abandonnèrent leur pierres dans le sous-bois de Tréban </p>
                 <h2>Les trois roches de</h2>
                 <h3>Treban</h3>
                 <img src="images/boussole.png" alt="boussole" class="imageFond">
