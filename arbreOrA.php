@@ -47,7 +47,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <script src="js/jquery.js"></script>
         <script src="js/scriptMenuFlottant.js"></script>
         <script src="js/scriptArbreOr.js"></script>
-        <script src="js/audio.js"></script>
+        <script src="js/audioArbreOr.js"></script>
     </head>
     <body>
         <?php require 'header.php';
