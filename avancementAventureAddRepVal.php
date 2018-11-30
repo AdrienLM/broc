@@ -35,60 +35,68 @@ if($debugQWMain == true){
 
 <?php
     
+    if(isset($_SESSION['AventureProv'])){
     
-    if($_SESSION['antiRep'] == 1){
-        
-        if($_SESSION['aventureSur'] == 1){
-            echo '      dans if aventure sur        ';
-            //echo 'debut';
-            //var_dump($debugQWClass) ;
+
+        if($_SESSION['antiRep'] == 1){
+
+            if($_SESSION['aventureSur'] == 1){
+                    echo '      dans if aventure sur        ';
+                    //echo 'debut';
+                    //var_dump($debugQWClass) ;
 
 
-            
-            $avantureProv =  $_SESSION['AventureProv'];
-            
-            if($avantureProv == 1){
-                $_SESSION['addStick1'] = 211;
-                $_SESSION['addStick2'] = 311;
-                
-            }else if($avantureProv == 2){
-                $_SESSION['addStick1'] = 221;
-                $_SESSION['addStick2'] = 321;
-                
-            }else if($avantureProv == 3){
-                $_SESSION['addStick1'] = 231;
-                $_SESSION['addStick2'] = 331;
-                
+
+                    $avantureProv =  $_SESSION['AventureProv'];
+
+                    if($avantureProv == 1){
+                        $_SESSION['addStick1'] = 211;
+                        $_SESSION['addStick2'] = 311;
+
+                    }else if($avantureProv == 2){
+                        $_SESSION['addStick1'] = 221;
+                        $_SESSION['addStick2'] = 321;
+
+                    }else if($avantureProv == 3){
+                        $_SESSION['addStick1'] = 231;
+                        $_SESSION['addStick2'] = 331;
+
+                    }
+
+
+                    //$idCompte = 1;
+
+
+
+                    $codeGrimoire = $_SESSION['addStick1'];
+                    require 'updateAventureGrimoire.php';
+                     $codeGrimoire = $_SESSION['addStick2'];
+                    require 'updateAventureGrimoire.php';
+
+                    $_SESSION['antiRep'] = 0;
+                    $boolAventureUp = true;
+                    require 'avancementAventure.php';
+
+                }else{
+                     echo ' dans else ';
+
+
+                     $_SESSION['antiRep'] = 0;
+                     $boolAventureUp = true;
+                    require 'avancementAventure.php';
+                }
+
+            }else{
+                header('Location: index.php');
+                //redirection page choix pode ou accueil a voir
             }
-            
-
-            //$idCompte = 1;
-        
-            
-
-            $codeGrimoire = $_SESSION['addStick1'];
-            require 'updateAventureGrimoire.php';
-             $codeGrimoire = $_SESSION['addStick2'];
-            require 'updateAventureGrimoire.php';
-
-            $_SESSION['antiRep'] = 0;
-            $boolAventureUp = true;
-            require 'avancementAventure.php';
-
-        }else{
-             echo ' dans else ';
-            
-            
-             $_SESSION['antiRep'] = 0;
-             $boolAventureUp = true;
-            require 'avancementAventure.php';
-        }
         
     }else{
-        header('Location: index.php');
-        //redirection page choix pode ou accueil a voir
+        
+        require 'avancementAventure.php';
+        
     }
- ?>
+?>
 
  <?php
 }else{
