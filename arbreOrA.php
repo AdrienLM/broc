@@ -86,7 +86,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             </div>
             <div id="retour">
                 <p>Retour</p>
-                <a href="accueil.php">
+                <a href="choixModes.php">
                     <img src="images/flecheG.svg" alt="flèche vers la gauche">
                 </a>
             </div>

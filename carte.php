@@ -40,12 +40,13 @@
                 <a href="chateauTrecesson.php" class="pointeur" id="chateauTrecesson"></a>
                 <a href="miroirFees.php" class="pointeur" id="miroirFees"></a>
            </section>
+           <div id="retour">
+            <p>Retour</p>
+            <a href="chateauTrecesson.php">
+                <img src="images/flecheG.svg" alt="flèche vers la gauche">
+            </a>
+        </div>
         </main>
-        
-        
-        
         <?php require 'footer.php'; ?>
-        
-        
-        
+    </body>
 </html>

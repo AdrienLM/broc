@@ -86,6 +86,21 @@
 
             if($AvancementUserExist["AvancementUser"] >= 0)
             { 
+                //re vérif que ou estlejoueur
+                
+                
+                 $requete = "SELECT AvancementUser FROM membres WHERE IdUser = ".$idCompte;
+            if($debugQWMain) echo $requete;
+            $ifAvancementUserExist = $pdo->query($requete);
+
+            $AvancementUserExist = $ifAvancementUserExist->fetch(PDO::FETCH_ASSOC);
+            if($debugQWMain) echo '<br />'.$AvancementUserExist["AvancementUser"];
+                
+                
+                
+                
+                
+                
 
                 if($debugQWMain) echo '<br />deuxième boucle > 0';
 
