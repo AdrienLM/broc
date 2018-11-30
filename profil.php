@@ -52,10 +52,10 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
     </head>
 
     <body>
-
-
-        <?php require 'header.php'; require 'initCompteGrimoire.php'; ?>
-
+        <?php
+            require 'header.php'; 
+            require 'initCompteGrimoire.php'; 
+        ?>
         <div class="conteneur">
             <div class="partie1">
 
@@ -90,35 +90,14 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
     }
             ?>       
                     </div>
-                    <img class="imgBan" src="membres/banniere/<?php echo $userinfo['BanniereUser']; ?>" alt="banniere utilisateur">
-
-                    
-                    
+                    <img class="imgBan" src="membres/banniere/<?php echo $userinfo['BanniereUser']; ?>" alt="banniere utilisateur">  
                 </div>
-
-
-
-
-
-
             </div>
-
-
-
-
-
-
             <div class="partie2">nav</div>
         </div>
-
-
         <?php require 'footer.php'; ?>
-
-
     </body>
-
-    </html>
-
+</html>
     <?php
 
 }else{
