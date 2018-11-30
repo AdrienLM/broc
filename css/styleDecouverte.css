@@ -153,7 +153,7 @@ main .partGauche h3{
 
 main .partGauche .coeur{
     position: absolute;
-    left: 93%;
+    left: 95%;
     top: 20%;
     background-color: #fff;
     filter: grayscale(1);
@@ -222,8 +222,8 @@ main div:nth-child(3){
 }
 
 main div:nth-child(3) img{
-    width: 60%;
-    margin-left: calc(50% - 30%);
+    width: 40%;
+    margin-left: calc(50% - 19%);
 }
 
 main>div:last-child{
@@ -246,8 +246,8 @@ main>div:last-child{
 
 main>div:last-child img{
     transform: rotateZ(180deg);
-    width: 60%;
-    margin-left: calc(50% - 30%);
+    width: 40%;
+    margin-left: calc(50% - 19%);
 }
 
 main h1{
