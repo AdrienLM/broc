@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <title>KLEIZ | CONDITIONS D'UTILISATION</title>
         <meta name="description" content="">
-        <link rel="stylesheet" href="css/styleMenu.css">s
+        <link rel="stylesheet" href="css/styleMenu.css">
         <link rel="stylesheet" href="css/cgu.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -32,40 +32,7 @@
 
 <body>
     <div id="barreNav">
-        <header>
-           <a href="accueil.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
-            <nav>
-                <a href="accueil.php">accueil</a>
-                <a href="duide.php">guide</a>
-                <a href="profil.php">
-                <div class="profil">
-                    <p>profil</p>
-                    <img src="images/imgProfil.png" alt="image profil">
-                </div>
-                </a>
-                <img src="images/depliant.svg" alt="dépliant" id="depliant">
-                <ul id="menuFlottant">
-                    <li>
-                       <a href="deconnexion.php">
-                           <img src="images/carte.svg" alt="carte">
-                       </a>
-                        <p>Carte</p>
-                    </li>
-                    <li>
-                       <a href="parametres.php">
-                           <img src="images/power.svg" alt="quitter">
-                       </a>
-                        <p>Déconnexion</p>
-                    </li>
-                    <li>
-                       <a href="carte.php">
-                           <img src="images/engrenage.svg" alt="engrenage">
-                       </a>
-                        <p>Paramètres</p>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <?php include("header.php") ?>
         <h1>CONDITIONS GÉNÉRALES D'UTILISATION</h1>
     </div>
     <main>
@@ -219,22 +186,6 @@
             </a>
         </div>
     </main>
-    <footer>
-            <p>KLEIZ | Projet MMI2 2018-2019</p>
-            <div class="reseaux">
-               <a href="https://www.facebook.com/kleiz3" target="_blank">
-                   <img src="images/fb.png" alt="logo Facebook">
-               </a>
-                <a href="https://twitter.com/Kleizbro" target="_blank">
-                   <img src="images/twitter.png" alt="logo Twitter">
-               </a>
-               <a href="https://www.instagram.com/kleiz3" target="_blank">
-                   <img src="images/insta.png" alt="logo Instagram">
-               </a>
-               <a href="images/snapchat.jpg" target="_blank">
-                   <img src="images/snap.png" alt="logo Snapchat">
-               </a>
-            </div>
-        </footer>
+    <?php include("footer.php") ?>
 </body>
 </html>
