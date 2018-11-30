@@ -2,7 +2,7 @@
     <a href="index.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
     <nav>
         <a href="index.php">accueil</a>
-        <a href="duide.php">guide</a>
+        <a href="soon.php">guide</a>
 
 
 
