@@ -119,6 +119,30 @@ main div div{
     background-image: url(../images/fondGrimoire.png); 
 } 
 
+#retour{
+    padding: 0; 
+    border-radius: 0; 
+    box-shadow: none; 
+    background-size: cover; 
+    background-position: center; 
+    height: 10vh; 
+    
+    position: absolute;
+    z-index: 50;
+    left: 5vw;
+    bottom: 25vh;
+    width: 5%;
+    color: white;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#retour p{
+    margin-bottom: 10px;
+}
+
 footer {
     display: flex;
     justify-content: space-between;

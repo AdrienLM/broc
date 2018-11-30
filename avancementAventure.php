@@ -92,12 +92,12 @@
                 ///////////////////////////redirection avanture/////////////
                 if($AvancementUserExist["AvancementUser"] == 1){
                         if($debugQWMain) echo '<br />'.'aventure 1';
-                     echo 'header (location: page1.php)';
-                    //header ('location: page1.php');
+                     //echo 'header (location: page1.php)';
+                    header ('location: arbreOrA.php');
                 }else if($AvancementUserExist["AvancementUser"] == 2){
                         if($debugQWMain) echo '<br />'.'aventure 2';
-                    echo 'header (location: page2.php)';
-                    //header ('location: page2.php');
+                    echo 'header (location: tombeauMerlinA.php)';
+                    //header ('location: tombeauMerlinA.php');
                 }else if($AvancementUserExist["AvancementUser"] == 3){
                         if($debugQWMain) echo '<br />'.'aventure 3';
                     echo 'header (location: page3.php)';

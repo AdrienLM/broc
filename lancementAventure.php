@@ -22,7 +22,7 @@ if($debugQWMain == true){
     
         $_SESSION['aventureSur'] = 1;  
         $_SESSION['antiRep'] = 1;
-        $_SESSION['AventureProv'] = 3;
+        $_SESSION['AventureProv'] = 1;
        // $_SESSION['addStick1'] = 311;
        //  $_SESSION['addStick2'] = 211;
     

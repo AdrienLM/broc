@@ -1,3 +1,21 @@
+<?php 
+session_start();
+require 'connexionBDD.php';
+
+
+
+if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
+{
+	$getid = intval($_SESSION['id']);
+	$requser = $pdo->prepare('SELECT * FROM membres WHERE IdUser = ?');
+	$requser->execute(array($getid));
+	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);   
+    $_SESSION['val1'] = 0;
+
+           
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,6 +24,7 @@
         <meta name="description" content="">
         <link rel="stylesheet" href="css/styleMenu.css">
         <link rel="stylesheet" href="css/styleAventure.css">
+        <link rel="stylesheet" href="css/styleArbreOr.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
@@ -31,36 +50,11 @@
         <script src="js/audio.js"></script>
     </head>
     <body>
-        <header>
-           <a href="accueil.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
-            <nav>
-                <a href="accueil.php">accueil</a>
-                <a href="duide.php">guide</a>
-                <a href="choixModes.php">modes</a>
-                <a href="profil.php"><img src="images/imgProfil.png" alt="image profil"></a>
-                <img src="images/depliant.svg" alt="dépliant" id="depliant">
-                <ul id="menuFlottant">
-                    <li>
-                       <a href="deconnexion.php">
-                           <img src="images/carte.svg" alt="carte">
-                       </a>
-                        <p>Carte</p>
-                    </li>
-                    <li>
-                       <a href="parametres.php">
-                           <img src="images/power.svg" alt="quitter">
-                       </a>
-                        <p>Déconnexion</p>
-                    </li>
-                    <li>
-                       <a href="carte.php">
-                           <img src="images/engrenage.svg" alt="engrenage">
-                       </a>
-                        <p>Paramètres</p>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <?php require 'header.php';
+            $_SESSION['aventureSur'] = 1;  
+            $_SESSION['antiRep'] = 1;
+            $_SESSION['AventureProv'] = 1;
+        ?>
         <main>
             <div id="texte">
                 <h2>Scene 2</h2>
@@ -122,22 +116,14 @@
                 </div>
             </div>
         </main>
-        <footer>
-           <p>KLEIZ | Projet MMI2 2018-2019</p>
-            <div class="reseaux">
-               <a href="https://www.facebook.com/kleiz3" target="_blank">
-                   <img src="images/fb.png" alt="logo Facebook">
-               </a>
-                <a href="https://twitter.com/Kleizbro" target="_blank">
-                   <img src="images/twitter.png" alt="logo Twitter">
-               </a>
-               <a href="https://www.instagram.com/kleiz3" target="_blank">
-                   <img src="images/insta.png" alt="logo Instagram">
-               </a>
-               <a href="images/snapchat.jpg" target="_blank">
-                   <img src="images/snap.png" alt="logo Snapchat">
-               </a>
-            </div>
-        </footer>
+        <?php require 'footer.php'; ?>
     </body>
 </html>
+
+
+ <?php
+}else{
+    header('Location: connexion.php');
+}
+
+?>

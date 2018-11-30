@@ -69,7 +69,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 <h1>Mode<br><span>aventure</span></h1> 
                 <p class="desc">Que vous soyez passionés par les légendes de Brocéliandes ou de simples curieux, le mode Aventure vous permettra de vivre ces récits de façon immersive et divertissante grâce au conteur.</p> 
                 <div> 
-                    <a href="arbreOrA.php"><img src="images/flecheDBlanc.svg"></a> 
+                    <a href="lancementAventure.php"><img src="images/flecheDBlanc.svg"></a> 
                     <p>Découvrir</p> 
                 </div> 
             </div> 
@@ -85,10 +85,14 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 <h1>Consulter le<br><span>grimoire</span></h1> 
                 <p class="desc">A la fin de chaque légende du mode Aventure, le conteur vous offre de nouvelles plantes, créatures et anecdotes collectées dans votre grimoire. Devenez incollables sur Brocéliande et son folklore.</p> 
                 <div> 
-                    <a href="grimoire.php"><img src="images/flecheDBlanc.svg"></a> 
+                    <a href="grimBestiaire.php"><img src="images/flecheDBlanc.svg"></a> 
                     <p>Découvrir</p> 
                 </div> 
             </div> 
+            <div id="retour">
+                <p>Retour</p>
+                <a href="index.php"><img src="images/flecheG.png" alt="flèche vers la gauche"></a>
+            </div>
         </main>
         <footer>
             <p>KLEIZ | Projet MMI2 2018-2019</p>
