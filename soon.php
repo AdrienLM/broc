@@ -58,7 +58,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         
             <h1>PROCHAINEMENT</h1>
         
-        <p>Cette page sera disponnible très bientôt ! </p>
+        <p>Cette page sera disponible très bientôt ! </p>
         
         <div id="retour">
             <p>Retour</p>
