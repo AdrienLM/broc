@@ -9,14 +9,19 @@ spl_autoload_register('chargerClasse');
 
 require 'connexionBDD.php';
 */
+    
+        if(isset($idCompte)){
+            $requete = "SELECT isAdmin FROM membres WHERE IdUser = ".$idCompte;
+            $isAdmin = $pdo->query($requete);
+            $repAdmin = $isAdmin->fetch(PDO::FETCH_ASSOC);
 
+        }else{
+            $idCompte = $_SESSION['id'];
+            $requete = "SELECT isAdmin FROM membres WHERE IdUser = ".$idCompte;
+            $isAdmin = $pdo->query($requete);
+            $repAdmin = $isAdmin->fetch(PDO::FETCH_ASSOC);
 
-        $idCompte = $_SESSION['id'];
-        $requete = "SELECT isAdmin FROM membres WHERE IdUser = ".$idCompte;
-        $isAdmin = $pdo->query($requete);
-        $repAdmin = $isAdmin->fetch(PDO::FETCH_ASSOC);
-
-
+        }
 
 if($repAdmin['isAdmin'] == 1){
 

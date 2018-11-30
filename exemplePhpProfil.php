@@ -1,7 +1,8 @@
 <?php 
 session_start();
 require 'connexionBDD.php';
-
+    
+$debugQWMain = true;
 
 
 if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
@@ -19,7 +20,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 <html>
     <head>
         <meta charset="utf-8">
-        <title>KLEIZ | BESTIAIRE | GRIMOIRE OUBLIÉ</title>
+        <title>KLEIZ | BESTIAIRE | EXEMPLE PHP PROFIl</title>
         <meta name="description" content="">
         <link rel="stylesheet" href="./css/styleGrimoire.css">
         <link rel="stylesheet" href="css/styleMenu.css">
@@ -45,55 +46,58 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
     </head>
     <body>
         
-        <?php require 'header.php'; require 'collecteDataGrim.php';
+        <?php require 'header.php'; 
+    
+    
+    
+    ///////////////////////////////////Pseudo de l'utilisateur////////////////////////////////////////////////////
+     if($debugQWMain)    var_dump ($userinfo['PseudoUser']);  
+    echo $userinfo['PseudoUser'];
+    
+    
+    
+    
+    //si pas de description profose de faire une description
+    
+    if($userinfo['DescriptionUser'] != null){
+          ///////////////////////////////////DescriptionUser de l'utilisateur////////////////////////////////////////////////////
+         if($debugQWMain)    var_dump ($userinfo['DescriptionUser']);
+        echo $userinfo['DescriptionUser'];
+    }else{
+        echo 'Vous n\'avez pas de description pour le moment ';
+    }
+    
+    
+    
+    
+    
+    
+      ///////////////////////////////////AvatarUser de l'utilisateur////////////////////////////////////////////////////
+     if($debugQWMain)   var_dump ($userinfo['AvatarUser']);
+    echo $userinfo['AvatarUser'];
+      ///////////////////////////////////BanniereUser de l'utilisateur////////////////////////////////////////////////////
+     if($debugQWMain)   var_dump ($userinfo['BanniereUser']);
+        echo $userinfo['BanniereUser'];        
+        
+    
+    
+      
+    if($userinfo['GroupeUser'] != null){
+      ///////////////////////////////////groupeUser de l'utilisateur////////////////////////////////////////////////////
+     if($debugQWMain)   var_dump ($userinfo['GroupeUser']);
+    echo $userinfo['GroupeUser'];
+    
+    }else{
+          echo 'Vous n\'avez pas encore passer le test de personnalité ';
+    }
+    
         ?>
        
 
         <main>
-            <a href="herbier.html"> <!-- Flèche page précédente -->
-                <div>
-                    <p>Page précédente</p>
-                    <img src="images/flecheG.png" alt="flèche vers la gauche">
-                </div>
-            </a>
-            <section id="pageGrimoire">
-                <header> <!-- Titre de la page -->
-                    <h1>Le Grimoire Oublié</h1>
-                    <h2>Le Bestiaire</h2>
-                </header>                
-                
-                
-                
-                
-                 <?php ////Affichage Herbier////
-                    for($i=1;$i<=5;$i++) 
-                    { ?>
-                
-                
-                <article class="<?php echo $cadnasBestiaire[$i] ?>"> <!-- Chaque <article> est un des éléments du grimoire -->
-                    <div>
-                        <h3> <?php echo $nomBestiaire[$i] ?></h3>
-                        <p> <?php echo $descriptionBestiaire[$i] ?></p>
-                    </div>
-                    <img src = <?php echo '"'.$imageBestiaire[$i].'"' ?> alt="image" />
-                </article>
+     
 
-                  <?php } ?>
-                
-
-                <div> <!-- Languettes -->
-                    <a href="grimResume.php">Résumé</a>
-                    <a href="grimHerbier.php">Herbier</a>
-                    <a href="grimBestiaire.php" class="pageActiveGrimoire">Bestiaire</a>
-                </div>
-            </section>
-
-            <a href="#"> <!-- Flèche page suivante -->
-                <div class="nonCliquable">
-                    <p>Page suivante</p>
-                    <img src="images/flecheD.png" alt="flèche vers la droite">
-                </div>
-            </a>
+          
         </main>
         <?php require 'footer.php'; ?>
     </body>
