@@ -75,7 +75,7 @@
                 <img src="images/carteTombeauMerlin.svg" alt="carte de Brocéliande" />
             </div>
             <div id="jeu">
-                <div id="narrateur" />
+                <div id="narrateur">
                    <div>
                         <img src="images/casque.svg" alt="Casque" />
                         <h3>Narrateur</h3> 
@@ -97,6 +97,5 @@
         </main>
         <?php include("./footer.php"); ?>
         <script type="text/javascript" src="js/audioTombeauMerlin.js"></script>
-        <script type="text/javascript" src="js/tombeauMerlinA.js"></script>
     </body>
 </html>
