@@ -1,3 +1,23 @@
+<?php
+
+session_start();
+require 'connexionBDD.php';
+
+$debugQWMain = false;
+
+if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
+{
+	$getid = intval($_SESSION['id']);
+	$requser = $pdo->prepare('SELECT * FROM membres WHERE IdUser = ?');
+	$requser->execute(array($getid));
+	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);   
+    $_SESSION['val1'] = 0;
+
+   // require ' initCompteGrimoire.php';
+
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
