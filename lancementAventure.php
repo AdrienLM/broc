@@ -88,7 +88,7 @@ if($debugQWMain == true){
 
             }else{
                 header('Location: index.php');
-                //redirection page choix pode ou accueil a voir
+                //redirection page choix mode ou accueil a voir
             }
         
     }else{

@@ -151,11 +151,13 @@
 			baliseP.classList.add("histoire");
 			baliseP.appendChild(document.createTextNode(tableauParagraphes));
 			document.getElementById("narrateur").insertBefore(baliseP, document.querySelector("#narrateur>div:nth-of-type(2)"));*/
-		for(let unParagrapheAAfficher of tableauParagraphes[indiceParagrapheCourant - 1]) {
-			let baliseP = document.createElement("p");
-			baliseP.classList.add("histoire");
-			baliseP.appendChild(document.createTextNode(unParagrapheAAfficher));/*.textContent = unParagrapheAAfficher;*/
-			document.getElementById("narrateur").insertBefore(baliseP, document.querySelector("#narrateur>div:nth-of-type(2)"));
+		if(indiceParagrapheCourant < 4) {
+			for(let unParagrapheAAfficher of tableauParagraphes[indiceParagrapheCourant - 1]) {
+				let baliseP = document.createElement("p");
+				baliseP.classList.add("histoire");
+				baliseP.appendChild(document.createTextNode(unParagrapheAAfficher));/*.textContent = unParagrapheAAfficher;*/
+				document.getElementById("narrateur").insertBefore(baliseP, document.querySelector("#narrateur>div:nth-of-type(2)"));
+			}
 		}
 		animations();
 	}
@@ -180,6 +182,9 @@
 			case 3 : $("#jeu>img:last-of-type").fadeOut(500);
 					await attendre(500);
 				break;
+			case 4 : $("#narrateur div:last-child img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
+                    $("#narrateur div:last-child p").text("Terminé");
+                break;
 			default :
 				break;
 		}
