@@ -51,6 +51,21 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
     </head>
     <body>
         <?php require 'header.php';
+        
+        /*
+            $idCompte = $_SESSION['id'];
+        $debugQWMain = true;
+
+        //echo '$idCompte '.$idCompte.'  '.'<br />';
+        $requete = "SELECT AvancementUser FROM membres WHERE IdUser = ".$idCompte;
+        if($debugQWMain) echo $requete;
+        $ifAvancementUserExist = $pdo->query($requete);
+        $AvancementUserExist = $ifAvancementUserExist->fetch(PDO::FETCH_ASSOC);
+        if($debugQWMain) echo '<br />'.$AvancementUserExist["AvancementUser"];
+        */
+        //plus grande boucle if//
+    
+    
             $_SESSION['aventureSur'] = 1;  
             $_SESSION['antiRep'] = 1;
             $_SESSION['AventureProv'] = 1;
