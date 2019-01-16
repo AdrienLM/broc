@@ -1,0 +1,383 @@
+@font-face {
+    font-family: "Qurany";
+    src: url("../font/Qurany.ttf");
+}
+
+@font-face {
+    font-family: "Qurany-light";
+    src: url("../font/Qurany-light.ttf");
+}
+
+@font-face {
+    font-family: "Qurany-italic";
+    src: url("../font/Qurany-italic.ttf");
+}
+
+@font-face {
+    font-family: "Qurany-light-italic";
+    src: url("../font/Qurany-light-italic.ttf");
+}
+
+@font-face {
+    font-family: "Google-sans";
+    src: url("../font/GoogleSans-Medium");
+}
+
+@font-face {
+    font-family: "Google-sansBold";
+    src: url("../font/GoogleSans-Bold");
+}
+
+@font-face {
+    font-family: "Google-sansReg";
+    src: url("../font/GoogleSans-Regular");
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.conteneur {
+    display: grid;
+  grid-template-columns: 30% 65%;
+    grid-template-rows: 600px 100px;
+}
+
+.partie1 {
+  grid-column: 1; grid-row: 1;
+    background-color: #eaeaea;
+    margin: 0 30px 0 85px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0px 12px 13px rgba(0,0,0,0.16);
+}
+.partie2 {
+  grid-column: 2; grid-row: 1;
+    background-color: #222;
+    margin: 0 85px 0 20px;
+    border-radius: 8px;
+    box-shadow: 0px 12px 13px rgba(0,0,0,0.16);
+}
+
+.banniere {
+    height: 230px;
+    background-color: #aaaaaa;
+    border-radius: 8px 8px 0 0;
+}
+
+.imgBan {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    position: relative;
+    background-color: #a3a3a3;
+     border-radius: 8px 8px 0 0;
+}
+
+.imgProfil {
+    width: 120px;
+    position: absolute;
+    z-index: 2;
+    margin: 55px 0 0 38px;
+    border-radius: 80px;
+    border: 3px solid #fff;
+    background-color: #e8e8e8;
+}
+
+.nomProfil {
+    font-size: 20px;
+    position: absolute;
+    z-index: 3;
+    font-family: 'Google-sansBold';
+    margin: 33px 0 0 90px;
+}
+
+.descriptionProfil {
+    position: absolute;
+    z-index: 3;
+    margin: 103px 0 0 180px;
+}
+
+.descriptionProfil p {
+    font-size: 13px;
+    width: 240px;
+    position: absolute;
+}
+
+.roleProfil {
+    position: absolute;
+    z-index: 3;
+    font-size: 13px;
+    margin: 93px 0 0 180px;
+    font-family: 'Google-sans';
+
+}
+
+.roleProfil img {
+    width: 13px;
+}
+
+.succesCont{
+    width: 80%;
+    margin-left: calc(50% - 40%);
+    text-align: center;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.succes{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.succes img{
+    border-radius: 50%;
+    border: 1px solid #333;
+    width: 50px;
+    height: 50px;
+}
+
+.progresCont{
+    width: 80%;
+    margin-left: calc(50% - 40%);
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+}
+
+.progresCont>p{
+    text-transform: uppercase;
+}
+
+.progresCont>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.anecdotes{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    font-size: 8px;
+}
+
+.anecdotes p{
+    margin: 0;
+    padding: 0;
+}
+
+.anecdotes p:first-child{
+    margin-top: 10px;
+}
+
+.anecdotes p:nth-child(2){
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.stickers{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    font-size: 8px;
+}
+
+.stickers p{
+    margin: 0;
+    padding: 0;
+}
+
+.stickers p:first-child{
+    margin-top: 10px;
+}
+
+.stickers p:nth-child(2){
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.avancement{
+    width: 100px;
+    height: 100px;
+    border: 10px solid #333;
+    border-radius: 50%;
+    font-size: 10px;
+}
+
+.avancement p{
+    margin: 0;
+    padding: 0;
+}
+
+.avancement p:first-child{
+    margin-top: 30px;
+}
+
+.avancement p:nth-child(2){
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#btnGrim {
+    background: url(../images/flecheSuivant.png) no-repeat 90%/10%, rgb(12, 101, 129);
+    width: 35%;
+    padding: 10px 40px 10px 20px;
+    box-shadow: 0 5px 15px rgba(17, 47, 57, 0.67);
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 20px;
+    bottom: 5vh;
+    left: calc(50% - 25%);
+    position: absolute;
+    font-size: 15px;
+}
+
+#btnGrim:hover {
+    box-shadow: 0 5px 15px rgb(17, 47, 57);
+    background: url(../images/flecheSuivant.png) no-repeat 90%/10%, #145e76;
+    transform: scale(1.03);
+    transition: 0.5s ease-in-out;
+}
+
+.partie2{
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+}
+
+.ligne:first-child div:first-child{
+    border-top-left-radius: 8px;
+}
+
+.ligne:first-child div:last-child{
+    border-top-right-radius: 8px;
+}
+
+.ligne:last-child div:first-child{
+    border-bottom-left-radius: 8px;
+}
+
+.ligne:last-child div:last-child{
+    border-bottom-right-radius: 8px;
+}
+
+.ligne{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.ligne p{
+    padding-top: 40%;
+    text-transform: uppercase;
+}
+
+.ligne div{
+    width: 33%;
+    height: 100%;
+    background-color: #333;
+}
+
+.ligne div+div{
+    border-left: 2px solid white;
+}
+
+.ligne:first-child div{
+    border-bottom: 2px solid white;
+}
+
+p {
+    font-family: 'Google-sansReg';
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Open Sans';
+}
+
+body{
+    background-image: url(../images/foret2-min.jpg);
+    background-size: cover;
+	background-attachment: fixed;
+}
+
+main {
+    margin-left: 87px;
+    margin-top: 180px;
+    margin-bottom: 100px;
+    z-index: 999;
+}
+
+h1 {
+    font-family: 'Qurany';
+    font-size: 35pt;
+    margin-bottom: 30px;
+}
+
+h1 span {
+    font-size: 80pt;
+}
+
+main p {
+    width: 40%;
+    font-size: 17px;
+    margin-bottom: 40px;
+}
+
+main a {
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    width: 90%;
+    margin-left: calc(50% - 45%);
+    font-size: 12px;
+}
+
+footer div a {
+    margin: 0 10px;
+}
+
+
+
+footer .reseaux a {
+    margin: 0;
+}
+
+.fullscreen-bg__video {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+}
+
+

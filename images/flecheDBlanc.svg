@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.571 47.571">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #3d3d3d;
+      }
+    </style>
+  </defs>
+  <g id="Groupe_474" data-name="Groupe 474" transform="translate(-14.265 0)">
+    <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-1" cx="23.786" cy="23.786" r="23.786" transform="translate(14.265)"/>
+    <g id="download" transform="translate(33.65 12.999)">
+      <path id="Tracé_1" data-name="Tracé 1" class="cls-2" d="M1.738.34A1.018,1.018,0,0,0,.3,1.78L10.46,11.941a1.006,1.006,0,0,0,.719.3c.007,0,.014,0,.021,0s.013,0,.021,0a1,1,0,0,0,.809-.431L22.1,1.738A1.018,1.018,0,0,0,20.662.3L12.239,8.721l-.043.03c0-.563-.455.885-1.018.885S10.16,8.189,10.16,8.752l.043.055Z" transform="translate(0 22.401) rotate(-90)"/>
+    </g>
+  </g>
+</svg>

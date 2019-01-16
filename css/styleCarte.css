@@ -1,0 +1,152 @@
+@font-face {
+ font-family: "Qurany";
+ src: url("Qurany.ttf");
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+p{
+    font-family: 'Open Sans';
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Open Sans';
+}
+
+body{
+    background-image: url(../images/foret2-min.jpg);
+    background-size: cover;
+	background-attachment: fixed;
+}
+
+header{
+    margin: 60px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header nav a{
+    margin: 0px 25px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+header #logo{
+    height: 70px;
+}
+
+section {
+	position : relative;
+	margin : auto;
+	width : 90vw;
+	overflow : visible;
+	background-image : url("../images/carte3D.png");
+	background-size: contain;
+    background-repeat: no-repeat;
+	margin : 0;
+	height : calc(1015200vw / 46696);/*21.741vw;*/ /*calc(1015200vw / 46696)*/
+	/*width="46695.9" height="11279.2"*/
+    margin-left: calc(50% - 45vw);
+    margin-top: 20px;
+}
+
+h1{
+    font-family: 'Qurany';
+    width: 30vw;
+    margin-left: calc(50% - 25vw);
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    font-size: 30pt;
+}
+
+h1 span{
+    font-size: 60pt;
+}
+
+.pointeur {
+	position: absolute;
+	display : inline-block;
+	background-image : url("../images/maps-and-flags.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	width : 50px;
+	height : 52px;
+		/* transform permet d'être 100% responsive */
+	transform : translate(-50%,-100%);
+}
+#rochesTreban {
+	left : 51%;
+	top : 13%;
+	background-image : url("../images/pointeur3.svg");
+}
+#tombeauMerlin {
+	left : 60%;
+	top : 16%;
+	background-image : url("../images/pointeur1.svg");
+}
+#egliseGraal {
+	left : 26%;
+	top : 31%;
+	background-image : url("../images/pointeur6.svg");
+}
+#arbreOr {
+	left : 28%;
+	top : 34%;
+	background-image : url("../images/pointeur8.svg");
+}
+#fontaineBarenton {
+	left : 32%;
+	top : 36%;
+	background-image : url("../images/pointeur5.svg");
+}
+#fauxAmants {
+	left : 26%;
+	top : 44%;
+	background-image : url("../images/pointeur7.svg");
+}
+#chateauTrecesson {
+	left : 31%;
+	top : 51%;
+	background-image : url("../images/pointeur4.svg");
+}
+#miroirFees {
+	left : 37%;
+	top : 50%;
+	background-image : url("../images/pointeur2.svg");
+}
+
+#retour{
+    position: absolute;
+    background-color: #393939;
+    z-index: 50;
+    left: 0;
+    bottom: 25vh;
+    width: 5%;
+    color: white;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0 13px 13px 0;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+}
+
+#retour img{
+    width: 60%;
+    margin-left: calc(50% - 30%);
+}

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.33 68.724">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #656565;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #fff;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #684a64;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Groupe_40" data-name="Groupe 40" transform="translate(1 1)">
+    <g id="Ellipse_16" data-name="Ellipse 16" class="cls-1" transform="translate(9.091 10.606)">
+      <circle class="cls-3" cx="15.152" cy="15.152" r="15.152"/>
+      <circle class="cls-4" cx="15.152" cy="15.152" r="14.152"/>
+    </g>
+    <g id="maps-and-flags" transform="translate(0 0)">
+      <g id="Groupe_30" data-name="Groupe 30" transform="translate(0)">
+        <path id="Tracé_18" data-name="Tracé 18" class="cls-2" d="M94.738,0A24.192,24.192,0,0,0,70.573,24.165C70.573,40.7,92.2,64.977,93.119,66a2.177,2.177,0,0,0,3.238,0c.921-1.025,22.546-25.3,22.546-41.837A24.193,24.193,0,0,0,94.738,0Zm0,36.323A12.158,12.158,0,1,1,106.9,24.165,12.172,12.172,0,0,1,94.738,36.323Z" transform="translate(-70.573)"/>
+      </g>
+    </g>
+  </g>
+</svg>
