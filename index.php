@@ -77,7 +77,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 
         <main>
             <h1>Les legendes de <br><span>Broceliande</span></h1>
-            <p>Découvrez la forêt de Brocéliande à travers ses légendes, ses histoires et des secrets. Informez-vous, partez à la quête du Graal ou découvrez des créatures fantastiques. A chacun son mode et sa façon de vivre l'aventure.</p>
+            <p>Découvrez la forêt de Brocéliande à travers ses légendes, ses histoires et ses secrets. Informez-vous, partez à la quête du Graal ou découvrez des créatures fantastiques. A chacun son mode et sa façon de vivre l'aventure.</p>
 
 
 
