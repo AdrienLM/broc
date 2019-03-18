@@ -23,7 +23,7 @@ require 'connexionBDD.php';
 
         }
 
-if($repAdmin['isAdmin'] == 1){
+if($repAdmin['isAdmin'] == 2){
 
         $manager = new ResumeManage($pdo);   // creation de la gestion des Resume
         $manager->deleteAll();
@@ -71,7 +71,7 @@ if($repAdmin['isAdmin'] == 1){
         $Resume[4] = new Resume([
           'nom' => 'A Venir',
           'image' => 'images/aVenir.png',
-          'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+          'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           'position' => 4,
           'imageUnlock' => 'images/aVenir.png',
@@ -85,7 +85,7 @@ if($repAdmin['isAdmin'] == 1){
         $Resume[5] = new Resume([
           'nom' => 'A Venir',
           'image' => 'images/aVenir.png',
-          'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+          'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           'position' => 5,
           'imageUnlock' => 'images/aVenir.png',

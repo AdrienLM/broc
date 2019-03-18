@@ -24,6 +24,22 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
     </head>
     <body>
       <?php
+			if(isset($idCompte)){
+					$requete = "SELECT isAdmin FROM membres WHERE IdUser = ".$idCompte;
+					$isAdmin = $pdo->query($requete);
+					$repAdmin = $isAdmin->fetch(PDO::FETCH_ASSOC);
+
+			}else{
+					$idCompte = $_SESSION['id'];
+					$requete = "SELECT isAdmin FROM membres WHERE IdUser = ".$idCompte;
+					$isAdmin = $pdo->query($requete);
+					$repAdmin = $isAdmin->fetch(PDO::FETCH_ASSOC);
+
+			}
+
+	if($repAdmin['isAdmin'] == 2){
+
+
     function chargerClasse($classname)
         {
           require 'class/'.$classname.'.php';
@@ -41,6 +57,20 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 				var_dump( $listeUserAAdmin);
 
 
+
+
+
+
+
+
+
+
+
+
+
+			}else{
+			    header('Location: index.php');
+			}
 
 
       ?>
