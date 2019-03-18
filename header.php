@@ -3,6 +3,7 @@
     <nav>
         <a href="index.php">accueil</a>
         <a href="soon.php">guide</a>
+        <a href="choixModes.php">modes</a>
 
 
 
@@ -40,7 +41,7 @@
 
 
 
-                        <img src="images/depliant.svg" alt="dépliant" id="depliant">
+                        <img src="images/iconeMenu.svg" alt="dépliant" id="depliant">
                         <ul id="menuFlottant">
                             <li>
                                 <a href="carte.php">
