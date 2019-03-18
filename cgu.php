@@ -8,7 +8,7 @@
         <title>KLEIZ | CONDITIONS D'UTILISATION</title>
         <meta name="description" content="">
         <link rel="stylesheet" href="css/styleMenu.css">
-        <link rel="stylesheet" href="css/cgu.css">
+        <link rel="stylesheet" href="css/styleCGU.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
