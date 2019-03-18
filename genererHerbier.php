@@ -22,12 +22,12 @@ require 'connexionBDD.php';
 
         }
 
-if($repAdmin['isAdmin'] == 1){
-    
+if($repAdmin['isAdmin'] == 2){
+
         $manager = new HerbierManage($pdo);   // creation de la gestion des Herbiers pour la table de la pdo
         $manager->deleteAll();
 
-        $Herbier[1] = new Herbier([   // Mise en mémoire de l'instant 
+        $Herbier[1] = new Herbier([   // Mise en mémoire de l'instant
           'nom' => 'Feuille d\'or',
           'image' => 'images/feuille1Or.png',
           'description' => 'Les feuilles d’or apparaissent chaque nuit sur les branches de l’arbre d’or. Les lutins venaient chaque matin le récolter pour leurs propriétés magiques. Cette potion permettrait notamment de ramener à la vie les arbres meurtris.',
@@ -69,7 +69,7 @@ if($repAdmin['isAdmin'] == 1){
         $Herbier[4] = new Herbier([
           'nom' => 'A venir',
           'image' => 'images/aVenir.png',
-          'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+          'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           'position' => 4,
           'imageUnlock' => 'images/aVenir.png',
@@ -83,7 +83,7 @@ if($repAdmin['isAdmin'] == 1){
         $Herbier[5] = new Herbier([
           'nom' => 'A venir',
           'image' => 'images/aVenir.png',
-          'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+          'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           'position' => 5,
           'imageUnlock' => 'images/aVenir.png',

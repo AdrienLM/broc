@@ -9,7 +9,7 @@ spl_autoload_register('chargerClasse');
 
 require 'connexionBDD.php';
 */
-    
+
         if(isset($idCompte)){
             $requete = "SELECT isAdmin FROM membres WHERE IdUser = ".$idCompte;
             $isAdmin = $pdo->query($requete);
@@ -23,7 +23,7 @@ require 'connexionBDD.php';
 
         }
 
-if($repAdmin['isAdmin'] == 1){
+if($repAdmin['isAdmin'] == 2){
 
 
         $manager = new BestiaireManage($pdo);   // creation de la gestion des bestiaires pour la table de la pdo
@@ -71,7 +71,7 @@ if($repAdmin['isAdmin'] == 1){
         $Bestiaire[4] = new Bestiaire([  // mise en mémoire de l'instant $Bestiaire[4]
           'nom' => 'A venir',
           'image' => 'images/aVenir.png',
-          'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+          'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           'position' => 4,
           'imageUnlock' => 'images/aVenir.png',
@@ -85,7 +85,7 @@ if($repAdmin['isAdmin'] == 1){
         $Bestiaire[5] = new Bestiaire([  // mise en mémoire de l'instant $Bestiaire[5]
           'nom' => 'A venir',
           'image' => 'images/aVenir.png',
-          'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+          'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
         aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           'position' => 5,
           'imageUnlock' => 'images/aVenir.png',

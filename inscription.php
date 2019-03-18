@@ -9,15 +9,15 @@ if(isset($_POST['forminscription']))
 	$mail2 = htmlspecialchars($_POST['mail2']);
 	$mdp = sha1($_POST['mdp']);
 	$mdp2 = sha1($_POST['mdp2']);
-	
+
 	if(!empty($_POST['pseudo']) AND !empty($_POST['mail']) AND !empty($_POST['mail2']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2']))
 	{
 		$pseudolength = strlen($pseudo);
-		if($pseudolength <= 12 AND $pseudolength >= 3) 
+		if($pseudolength <= 12 AND $pseudolength >= 3)
 		{
-			if($mail == $mail2) 
+			if($mail == $mail2)
 			{
-				if(filter_var($mail, FILTER_VALIDATE_EMAIL)) 
+				if(filter_var($mail, FILTER_VALIDATE_EMAIL))
 				{
                     echo ("SELECT * FROM membres WHERE mail = '".$mail."'");
                     //$reqmail = $pdo->query("SELECT * FROM membres WHERE EmailUser = '".$mail."'");
@@ -25,20 +25,20 @@ if(isset($_POST['forminscription']))
 					$reqmail = $pdo->prepare("SELECT * FROM membres WHERE EmailUser = ?");
 					$reqmail->execute(array($mail));
 					$mailexist = $reqmail->rowCount();
-					if($mailexist == 0) 
+					if($mailexist == 0)
 					{
-						if($mdp == $mdp2) 
+						if($mdp == $mdp2)
 						{
 							$insertmbr = $pdo->prepare("INSERT INTO membres(PseudoUser, EmailUser, MdpUser, AvatarUser, BanniereUser) VALUES(?, ?, ?, ?, ?)");
 							$insertmbr->execute(array($pseudo, $mail, $mdp, "default.jpg", "defaultb.jpg"));
 							$valide = header('Location: connexion.php');
-						} 
-						else 
+						}
+						else
 						{
 							$erreur = " Vos mots de passes ne correspondent pas !";
 						}
-					} 
-					else 
+					}
+					else
 					{
 						$erreur = " Adresse mail déjà utilisée !";
 					}
@@ -57,7 +57,7 @@ if(isset($_POST['forminscription']))
 		{
 			$erreur = " Votre pseudo doit contenir entre 3 et 12 caractères !";
 		}
-		
+
 	}
 	else
 	{
@@ -99,16 +99,16 @@ if(isset($_POST['forminscription']))
             <div class="messageCentre">
            <div id="contenu">
             <?php
-			if(isset($erreur)) 
+			if(isset($erreur))
 			{
 				echo '<div class="message animated fadeInLeft"><img class="logoError" src="images/warning.svg" width="20" height="20" />' .$erreur. '</div>';
 			}
 			?>
                </div>
            </div>
-               
-              <div id="contenu"> 
-               
+
+              <div id="contenu">
+
         <div class="conteneur">
             <img src="images/logo.png" alt="logo kleiz" id="logo">
            <div id="titre">
@@ -171,8 +171,8 @@ if(isset($_POST['forminscription']))
         </section>
         <section>
             <h1>Les legendes de <br><span>Broceliande</span></h1>
-            
+
         </section>
-              </div> 
+              </div>
     </body>
 </html>
