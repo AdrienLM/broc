@@ -42,21 +42,33 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 			$sqlReq = "SELECT * FROM membres";
       $execSqlReq = $pdo->query($sqlReq);
 			while($donneesUserAdmin = $execSqlReq->fetch()){
-					$listeUserAAdmin[$donneesUserAdmin['IdUser']] =  $donneesUserAdmin['IdUser'];
-					$listeUserAAdmin[$donneesUserAdmin['EmailUser']] =  $donneesUserAdmin['EmailUser'];
-				}
+					$listeUserAAdminIdUser[$donneesUserAdmin['IdUser']] =  $donneesUserAdmin['IdUser'];
+					$listeUserAAdminPseudoUser[$donneesUserAdmin['IdUser']] =  $donneesUserAdmin['PseudoUser'];
+					$listeUserAAdminEmailUser[$donneesUserAdmin['IdUser']] =  $donneesUserAdmin['EmailUser'];
+					$listeUserAAdminDescriptionUser[$donneesUserAdmin['IdUser']] =  $donneesUserAdmin['DescriptionUser'];
+					$listeUserAAdminGroupeUser[$donneesUserAdmin['IdUser']] =  $donneesUserAdmin['GroupeUser'];
+					$listeUserAAdminAvatarUser[$donneesUserAdmin['IdUser']] =  $donneesUserAdmin['AvatarUser'];
+					$listeUserAAdminBanniereUser[$donneesUserAdmin['IdUser']] =  $donneesUserAdmin['BanniereUser'];
+					$listeUserAAdminDateCreation[$donneesUserAdmin['IdUser']] =  $donneesUserAdmin['DateCreation'];
+					$listeUserAAdminIsAdmin[$donneesUserAdmin['IdUser']] =  $donneesUserAdmin['isAdmin'];
+					$listeUserAAdminEtatCompte[$donneesUserAdmin['IdUser']] =  $donneesUserAdmin['EtatCompte'];
+					$listeUserAAdminMotifBloque[$donneesUserAdmin['IdUser']] =  $donneesUserAdmin['MotifBloque'];
+			}
 
+			foreach($listeUserAAdminIdUser as $cle => $valeur){
 
-
-				var_dump( $listeUserAAdmin);
-
-
-
-
-
-
-
-
+					echo 	"Pseudo -- ".$listeUserAAdminPseudoUser[$cle]."</br>";
+					echo 	"Mail -- ".$listeUserAAdminEmailUser[$cle]."</br>";
+					echo 	"Description -- ".$listeUserAAdminDescriptionUser[$cle]."</br>";
+					echo 	"Groupe -- ".$listeUserAAdminGroupeUser[$cle]."</br>";
+					echo 	"Avatar -- ".$listeUserAAdminAvatarUser[$cle]."</br>";
+					echo 	"Banniere -- ".$listeUserAAdminBanniereUser[$cle]."</br>";
+				  echo 	"Creation -- ".$listeUserAAdminDateCreation[$cle]."</br>";
+					echo 	"Droit -- ".$listeUserAAdminIsAdmin[$cle]."</br>";
+					echo 	"Bloquer -- ".$listeUserAAdminEtatCompte[$cle]."</br>";
+					echo 	"Motif Bloquer -- ".$listeUserAAdminMotifBloque[$cle]."</br>";
+					echo "</br>";
+			}
 
 			}else{
 			    header('Location: index.php');
