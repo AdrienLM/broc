@@ -12,11 +12,24 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 	$getid = intval($_SESSION['id']);
 	$requser = $pdo->prepare('SELECT * FROM membres WHERE IdUser = ?');
 	$requser->execute(array($getid));
-	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);   
+	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);
     $_SESSION['val1'] = 0;
 
    // require ' initCompteGrimoire.php';
+	 if($userinfo["DateCreation"] == null){
+		$userinfo["DateCreation"] = date("Y-m-d");
+		//echo $userinfo["DateCreation"].'  ';
+		$sqlUser = "UPDATE membres SET DateCreation = '".$userinfo['DateCreation']."' WHERE IdUser = ".$_SESSION['id']."";
+		//echo $sqlUser;
+		$requser = $pdo->prepare($sqlUser);
+		$requser->execute();
+
+	 }
 }
+
+
+
+
 
 
 ?>
@@ -62,9 +75,9 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             <div class="loading-progress"></div>
             <div class="barreBas"></div>
         </div>
-        
-        
-        
+
+
+
         <div class="fullscreen-bg">
             <video loop muted autoplay poster="video/cover.png" class="fullscreen-bg__video">
         <source src="videos/cover.webm" type="video/webm">
