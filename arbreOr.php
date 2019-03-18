@@ -10,7 +10,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 	$getid = intval($_SESSION['id']);
 	$requser = $pdo->prepare('SELECT * FROM membres WHERE IdUser = ?');
 	$requser->execute(array($getid));
-	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);   
+	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);
     $_SESSION['val1'] = 0;
 
    // require ' initCompteGrimoire.php';
@@ -47,7 +47,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <meta name="theme-color" content="#ffffff">
     </head>
     <body>
-        
+
 <?php require 'headerDecouverte.php'; ?>
         <main>
             <div class="partGauche">

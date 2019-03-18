@@ -3,9 +3,9 @@
 
 
 if(isset($codeGrimoire)){
-    
+
     echo 'dans if donc isset vrai';
-    
+
 //require 'connexionBDD.php';
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -116,9 +116,9 @@ $requser->execute();
 /*UPDATE tabherbier
 SET stick2 = '1'
 WHERE idCompte = 1*///
-    
+
 }else{
    // echo 'dans else donc pas isset';
-    
+
     //remettre une redirection si faux
 }
