@@ -73,8 +73,8 @@
                 <p>Dernière version : 27/11/2018</p>
             </div>
 
-            <h2>ARTTICLE 1: Objet</h2>
-            <p>Objet Les présentes « conditions générales d'utilisation » ont pour objet l'encadrement juridique des modalités de mise à disposition des services du site KLEIZ et leur utilisation par « l'Utilisateur ». Les conditions générales d'utilisation doivent être acceptées par tout Utilisateur souhaitant accéder au site. Elles constituent le contrat entre le site et l'Utilisateur. L’accès au site par l’Utilisateur signifie son acceptation des présentes conditions générales d’utilisation. En cas de non-acceptation des conditions générales d'utilisation stipulées dans le présent contrat, l'Utilisateur se doit de renoncer à l'accès des services proposés par le site. KLEIZ se réserve le droit de modifier unilatéralement et à tout moment le contenu des présentes conditions générales d'utilisation.</p>
+            <h2>ARTICLE 1 : Objet</h2>
+            <p>Les présentes « conditions générales d'utilisation » ont pour objet l'encadrement juridique des modalités de mise à disposition des services du site KLEIZ et leur utilisation par « l'Utilisateur ». Les conditions générales d'utilisation doivent être acceptées par tout Utilisateur souhaitant accéder au site. Elles constituent le contrat entre le site et l'Utilisateur. L’accès au site par l’Utilisateur signifie son acceptation des présentes conditions générales d’utilisation. En cas de non-acceptation des conditions générales d'utilisation stipulées dans le présent contrat, l'Utilisateur se doit de renoncer à l'accès des services proposés par le site. KLEIZ se réserve le droit de modifier unilatéralement et à tout moment le contenu des présentes conditions générales d'utilisation.</p>
 
             <h2>ARTICLE 2 : Mentions légales</h2>
             <p>L'édition du site KLEIZ est assurée par la Société KLEIZ dont le siège social est situé au 52 Rue des Docteurs Calmette et Guérin. La Directrice de la publication est Madame BERNARD Coralie. L'hébergeur du site KLEIZ est Le Mans Université située avenue Olivier Messian.
@@ -133,7 +133,7 @@
             <div class="titre">
                 <img src="images/cookie.svg">
                 <hr/>
-                <h2>Précions sur les Cookies</h2>
+                <h2>Précisions sur les Cookies</h2>
                 <p>Dernière version : 27/11/2018</p>
             </div>
 

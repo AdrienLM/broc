@@ -164,6 +164,9 @@ main .partGauche .coeur{
     border-radius: 40%;
 }
 
+main .partGauche .coeur:hover{
+    filter: grayscale(0);
+}
 
 main .partGauche .pied{
     position: absolute;
