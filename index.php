@@ -46,6 +46,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="images/favicon/manifest.json">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <meta name="msapplication-TileColor" content="#837474">
         <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
@@ -62,9 +63,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             <div class="loading-progress"></div>
             <div class="barreBas"></div>
         </div>
-        
-        
-        
         <div class="fullscreen-bg">
             <video loop muted autoplay poster="video/cover.png" class="fullscreen-bg__video">
         <source src="videos/cover.webm" type="video/webm">
@@ -73,16 +71,12 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
     </video>
         </div>
         <?php require 'header.php'; require 'initCompteGrimoire.php'; ?>
-
-
-        <main>
-            <h1>Les legendes de <br><span>Broceliande</span></h1>
-            <p>Découvrez la forêt de Brocéliande à travers ses légendes, ses histoires et des secrets. Informez-vous, partez à la quête du Graal ou découvrez des créatures fantastiques. A chacun son mode et sa façon de vivre l'aventure.</p>
-
-
-
-
-            <a href="choixModes.php">découvrir &nbsp; &nbsp; &nbsp; &rarr;</a>
+        <main id="accueil">
+           <div>
+               <h1>Les legendes de <br><span>Broceliande</span></h1>
+                <p>Découvrez la forêt de Brocéliande à travers ses légendes, ses histoires et des secrets. Informez-vous, partez à la quête du Graal ou découvrez des créatures fantastiques. A chacun son mode et sa façon de vivre l'aventure.</p>
+           </div>
+            <a href="choixModes.php">découvrir</a>
         </main>
         <footer>
             <p>KLEIZ | Projet MMI2 2018-2019</p>

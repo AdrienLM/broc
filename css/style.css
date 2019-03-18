@@ -28,9 +28,12 @@ body {
 
 main {
     margin-left: 87px;
+    margin-right: 87px;
     margin-top: 180px;
     margin-bottom: 100px;
     z-index: 999;
+    display: flex;
+    align-items: center;
 }
 
 h1 {
@@ -50,11 +53,21 @@ main p {
 }
 
 main a {
-    border: 2px solid white;
-    padding: 10px 20px;
+    border: 3px solid white;
+    padding: 10px 60px 10px 20px;
     border-radius: 30px;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 20px;
+    background-image: url(../images/flecheSuivant.png);
+    background-repeat: no-repeat;
+    background-position: 90% center;
+    transition: all 0.3s linear;
+}
+
+main a:hover{
+    transform: scale(1.2);
+    transition: all 0.3s linear;
+    border-color: #1a9a09;
 }
 
 footer {
