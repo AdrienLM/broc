@@ -19,7 +19,7 @@ header nav a{
 }
 
 header nav a:hover{
-    color: #037107;
+    color: #192B40;
     transition: all 0.3s linear;
 }
 
@@ -107,7 +107,7 @@ header #logo{
 }
 
 .profil:hover{
-    border-color: #037107;
+    border-color: #192B40;
     transition: all 0.3s linear;
     color: white;
 }
@@ -118,7 +118,6 @@ header #logo{
     font-size: 16px;
     font-weight: bold;
 }
-
 
 footer{
     display: flex;
