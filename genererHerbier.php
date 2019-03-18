@@ -22,7 +22,7 @@ require 'connexionBDD.php';
 
         }
 
-if($repAdmin['isAdmin'] == ){
+if($repAdmin['isAdmin'] == 2){
 
         $manager = new HerbierManage($pdo);   // creation de la gestion des Herbiers pour la table de la pdo
         $manager->deleteAll();
