@@ -53,7 +53,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 
     </head>
 
-    <body>
+    <body id="accueil">
         <!-- Loading -->
         <div class="loading">
             <div class="barre"></div>
@@ -71,7 +71,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
     </video>
         </div>
         <?php require 'header.php'; require 'initCompteGrimoire.php'; ?>
-        <main id="accueil">
+        <main>
            <div>
                <h1>Les legendes de <br><span>Broceliande</span></h1>
                 <p>Découvrez la forêt de Brocéliande à travers ses légendes, ses histoires et des secrets. Informez-vous, partez à la quête du Graal ou découvrez des créatures fantastiques. A chacun son mode et sa façon de vivre l'aventure.</p>

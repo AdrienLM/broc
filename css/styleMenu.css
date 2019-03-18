@@ -18,7 +18,7 @@ header nav a{
     transition: all 0.3s linear;
 }
 
-header nav a:hover{
+#accueil header nav a:hover, #choix header nav a:hover{
     color: #192B40;
     transition: all 0.3s linear;
 }
@@ -106,7 +106,7 @@ header #logo{
     transition: all 0.3s linear;
 }
 
-.profil:hover{
+#accueil .profil:hover, #choix .profil:hover{
     border-color: #192B40;
     transition: all 0.3s linear;
     color: white;
