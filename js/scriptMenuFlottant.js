@@ -12,7 +12,7 @@
             if(image == "images/depliant.svg"){
                 $(this).attr("src", "images/croixMenu.svg");
             }else{
-                $(this).attr("src", "images/depliant.svg");
+                $(this).attr("src", "images/iconeMenu.svg");
             }
             //$("#menuFlottant").css("transition", "all 0.2s linear");
         });
