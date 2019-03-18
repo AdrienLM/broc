@@ -1,12 +1,13 @@
 @font-face {
-    font-family: "GoogleSans-Bold";
-    src: url("../font/GoogleSans-Bold.ttf") format("truetype");
+    font-family: "OpenSans";
+    src: url("../font/OpenSans-Regular.ttf");
 }
 
 @font-face {
-    font-family: "GoogleSans-Regular";
-    src: url("../font/GoogleSans-Regular.ttf") format("truetype");
+    font-family: "OpenSans-Bold";
+    src: url("../font/OpenSans-Bold.ttf");
 }
+
 html, body{
     margin: 0;
     padding: 0;
@@ -15,24 +16,24 @@ html, body{
 }
 
 p{
-    font-family: 'Open Sans';
+    font-family: 'OpenSans';
 }
 a {
     text-decoration: none;
     color: white;
-    font-family: 'Open Sans';
+    font-family: 'OpenSans';
 }
 
 header{
     margin-top: 0;
     margin-bottom: -20px;
-    padding: 60px;
+    padding: 60px 0;
 }
 
 footer a{
     text-decoration: none;
     color: white;
-    font-family: 'GoogleSans-Regular';
+    font-family: 'OpenSans';
 }
 
 #barreNav {
@@ -51,7 +52,8 @@ nav {
 
 h1 {
     font-size: 40px;
-    font-family: 'GoogleSans-Bold';
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
     text-align: center;
     margin-top: 0;
 }
@@ -102,7 +104,7 @@ hr {
 }
 
 #afficher p{
-    font-family: 'GoogleSans-Regular';
+    font-family: 'OpenSans';
 }
 
 .menuCGU {
@@ -128,7 +130,7 @@ hr {
     border: 2px solid #5D5D5D;
     border-radius: 37px;
     padding: 15px 40px 15px 20px;
-    background: url(../images/flecheConsulter.svg) no-repeat 90%/10%;
+    /*background: url(../images/flecheSuivant.png) no-repeat 90%/10%;*/
     width: 20%;
     cursor: pointer;
     color: #5D5D5D;
@@ -145,7 +147,6 @@ hr {
     font-size: 36px;
     color: #5D5D5D;
     text-align: center;
-    margin-left: 5%;
 }
 
 .menuCOOKIE p {
@@ -184,7 +185,7 @@ hr {
     z-index: 50;
     left: 0;
     bottom: 10%;
-    width: 10%;
+    width: 120px;
     color: white;
     padding: 10px 0;
     display: flex;
@@ -203,7 +204,7 @@ hr {
 
 #retour p{
     margin-bottom: 10px;
-    font-family: 'GoogleSans-Regular';
+    font-family: 'OpenSans';
 }
 
 .footer {
@@ -214,7 +215,7 @@ hr {
 }
 
 h2 {
-    font-family: 'GoogleSans-Bold';
+    font-family: 'OpenSans-Bold';
     font-size: 20pt;
 }
 
@@ -230,12 +231,12 @@ h2 {
 }
 
 .CGU p {
-    font-family: 'GoogleSans-Regular';
+    font-family: 'OpenSans';
     font-size: 17px;
 }
 
 li {
-    font-family: 'GoogleSans-Regular';
+    font-family: 'OpenSans';
 }
 
 .CGU img {
@@ -254,7 +255,7 @@ li {
 }
 
 .RGPD p {
-    font-family: 'GoogleSans-Regular';
+    font-family: 'OpenSans';
     font-size: 17px;
 }
 
@@ -278,7 +279,7 @@ li {
 }
 
 .COOKIE p {
-    font-family: 'GoogleSans-Regular';
+    font-family: 'OpenSans';
     font-size: 17px;
 }
 
@@ -300,7 +301,7 @@ footer{
 }
 
 footer p{
-    font-family: 'GoogleSans-Regular';
+    font-family: 'OpenSans';
 }
 
 footer div a{
