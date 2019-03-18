@@ -89,6 +89,8 @@ main p{
     transition: all 0.2s linear; 
     position: absolute;
     top: 30%;
+    left: 0;
+    padding: 0 20px;
     font-size: 14pt;
 } 
  
