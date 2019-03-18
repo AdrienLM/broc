@@ -27,7 +27,7 @@
                 <?php
             }else{
             ?>
-                    <a href="connexion.php">
+                    <a href="connexion.php" class="co">
                         <div class="profil">
                             <p>Connexion</p>
                         </div>

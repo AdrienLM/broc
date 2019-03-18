@@ -15,6 +15,12 @@ header nav a{
     margin: 0px 25px;
     text-transform: uppercase;
     font-size: 18px;
+    transition: all 0.3s linear;
+}
+
+header nav a:hover{
+    color: #037107;
+    transition: all 0.3s linear;
 }
 
 header #logo{
@@ -24,8 +30,6 @@ header #logo{
 .footerCentre {
     font-style: bold;
 }
-
-
 
 .imgUser {
     width: 46px;
@@ -99,6 +103,13 @@ header #logo{
     border: 2px solid white;
     border-radius: 50px;
     padding: 3px 5px 3px 20px;
+    transition: all 0.3s linear;
+}
+
+.profil:hover{
+    border-color: #037107;
+    transition: all 0.3s linear;
+    color: white;
 }
 
 .profil p{

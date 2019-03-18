@@ -68,7 +68,7 @@ main a {
 main a:hover{
     transform: scale(1.2);
     transition: all 0.3s linear;
-    border-color: #1a811e;
+    border-color: #037107;
 }
 
 footer {
