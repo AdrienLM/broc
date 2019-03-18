@@ -9,7 +9,7 @@
             }
             $("#menuFlottant").css("display", "flex");
             var image = $(this).attr("src");
-            if(image == "images/depliant.svg"){
+            if(image == "images/iconeMenu.svg"){
                 $(this).attr("src", "images/croixMenu.svg");
             }else{
                 $(this).attr("src", "images/iconeMenu.svg");
