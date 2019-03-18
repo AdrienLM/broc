@@ -23,25 +23,27 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 
     </head>
     <body>
-    <?php
-
-
-
-                function chargerClasse($classname)
+      <?php
+    function chargerClasse($classname)
         {
           require 'class/'.$classname.'.php';
         }
-
         spl_autoload_register('chargerClasse');
 
-        require 'genererBestiaire.php';
-        require 'genererHerbier.php';
-        require 'genererResume.php';
+
+				$sqlReq = "SELECT * FROM membres";
+        $execSqlReq = $pdo->query($sqlReq);
+				while($donneesUserAdmin = $execSqlReq->fetch()){
+					$listeUserAAdmin[$donneesUserAdmin['IdUser']] =  $donneesUserAdmin['IdUser'];
+					$listeUserAAdmin[$donneesUserAdmin['EmailUser']] =  $donneesUserAdmin['EmailUser'];
+				}
+
+				var_dump( $listeUserAAdmin);
 
 
 
 
-    ?>
+      ?>
     </body>
 
 
