@@ -58,16 +58,17 @@ main a {
     border-radius: 30px;
     text-transform: uppercase;
     font-size: 20px;
-    background-image: url(../images/flecheSuivant.png);
+    background-image: url(../images/flecheDecouvre.png);
     background-repeat: no-repeat;
     background-position: 90% center;
     transition: all 0.3s linear;
+    margin-right: 150px;
 }
 
 main a:hover{
     transform: scale(1.2);
     transition: all 0.3s linear;
-    border-color: #1a9a09;
+    border-color: #1a811e;
 }
 
 footer {
@@ -84,8 +85,6 @@ footer {
 footer div a {
     margin: 0 10px;
 }
-
-
 
 footer .reseaux a {
     margin: 0;
