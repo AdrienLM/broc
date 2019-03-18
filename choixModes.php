@@ -46,6 +46,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="images/favicon/manifest.json">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <meta name="msapplication-TileColor" content="#837474">
         <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
@@ -65,30 +66,39 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 
 
         <main>
+           <div id="decouverte">
+               <a href="carte.php"> 
+                   <div id="fondNoir"></div>
+                    <h1>Mode<br><span>decouverte</span></h1> 
+                    <p class="desc">Si vous souhaitez avoir des informations concises sur un lieu de votre choix, le mode Découverte est fait pour vous. Idéal lors des balades, vous pourrez découvrir la légende derrière chaque lieu en temps voulu.</p> 
+                    <div> 
+                        <img src="images/flecheDBlanc.svg"> 
+                        <p>Découvrir</p> 
+                    </div> 
+               </a>
+            </div> 
             <div id="aventure"> 
-                <h1>Mode<br><span>aventure</span></h1> 
-                <p class="desc">Que vous soyez passionés par les légendes de Brocéliandes ou de simples curieux, le mode Aventure vous permettra de vivre ces récits de façon immersive et divertissante grâce au conteur.</p> 
-                <div> 
-                    <a href="lancementAventure.php"><img src="images/flecheDBlanc.svg"></a> 
-                    <p>Découvrir</p> 
-                </div> 
-            </div> 
-            <div id="decouverte"> 
-                <h1>Mode<br><span>decouverte</span></h1> 
-                <p class="desc">Si vous souhaitez avoir des informations concises sur un lieu de votre choix, le mode Découverte est fait pour vous. Idéal lors des balades, vous pourrez découvrir la légende derrière chaque lieu en temps voulu.</p> 
-                <div> 
-                    <a href="carte.php"><img src="images/flecheDBlanc.svg"></a> 
-                    <p>Découvrir</p> 
-                </div> 
-            </div> 
+               <a href="lancementAventure.php">
+                   <div id="fondNoir"></div>
+                    <h1>Mode<br><span>aventure</span></h1> 
+                    <p class="desc">Que vous soyez passionés par les légendes de Brocéliandes ou de simples curieux, le mode Aventure vous permettra de vivre ces récits de façon immersive et divertissante grâce au conteur.</p> 
+                    <div> 
+                        <a href="lancementAventure.php"><img src="images/flecheDBlanc.svg"> </a>
+                        <p>Découvrir</p> 
+                    </div> 
+                </a>
+            </div>
             <div id="grimoire"> 
+               <a href="grimBestiaire.php">
+               <div id="fondNoir"></div>
                 <h1>Consulter le<br><span>grimoire</span></h1> 
                 <p class="desc">A la fin de chaque légende du mode Aventure, le conteur vous offre de nouvelles plantes, créatures et anecdotes collectées dans votre grimoire. Devenez incollables sur Brocéliande et son folklore.</p> 
                 <div> 
-                    <a href="grimBestiaire.php"><img src="images/flecheDBlanc.svg"></a> 
+                    <a href="grimBestiaire.php"><img src="images/flecheDBlanc.svg"></a>
                     <p>Découvrir</p> 
-                </div> 
-            </div> 
+                </div>
+                </a> 
+            </div>
             <div id="retour">
                 <p>Retour</p>
                 <a href="index.php"><img src="images/flecheG.png" alt="flèche vers la gauche"></a>
