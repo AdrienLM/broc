@@ -39,7 +39,7 @@
     <main>
         <section id="equipe">
             <div id="coralie">
-                <img src="images/imgProfil.png">
+                <img src="images/coralie.png">
                 <h2><span>Coralie</span> Bernard</h2>
                 <hr/>
                 <p>Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis.</p>
@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div id="adrien">
-                <img src="images/imgProfil.png">
+                <img src="images/adrien.png">
                 <h2><span>Adrien</span> Le Moal</h2>
                 <hr/>
                 <p>Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis.</p>
@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div id="emma">
-                <img src="images/imgProfil.png">
+                <img src="images/emma.png">
                 <h2><span>Emma</span> Colin</h2>
                 <hr/>
                 <p>Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis.</p>
@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div id="celie">
-                <img src="images/imgProfil.png">
+                <img src="images/celie.png">
                 <h2><span>Célie</span> Pautrel</h2>
                 <hr/>
                 <p>Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis.</p>
@@ -79,7 +79,7 @@
                 </div>
             </div>
             <div id="quentin">
-                <img src="images/imgProfil.png">
+                <img src="images/quentin.png">
                 <h2><span>Quentin</span> Wascheul</h2>
                 <hr/>
                 <p>Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis.</p>
