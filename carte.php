@@ -51,14 +51,14 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <main>
            <h1>La carte de <br><span>Broceliande</span></h1>
            <section>
-               <a href="rochesTreban.php" class="pointeur" id="rochesTreban"></a>
-                <a href="tombeauMerlin.php" class="pointeur" id="tombeauMerlin"></a>
-                <a href="egliseGraal.php" class="pointeur" id="egliseGraal"></a>
-                <a href="arbreOr.php" class="pointeur" id="arbreOr"></a>
-                <a href="fontaineBarenton.php" class="pointeur" id="fontaineBarenton"></a>
-                <a href="rocherFauxAmants.php" class="pointeur" id="fauxAmants"></a>
-                <a href="chateauTrecesson.php" class="pointeur" id="chateauTrecesson"></a>
-                <a href="miroirFees.php" class="pointeur" id="miroirFees"></a>
+               <a href="decouverte.php" class="pointeur" data-numero="8" id="rochesTreban"></a>
+                <a href="decouverte.php" class="pointeur" data-numero="5" id="tombeauMerlin"></a>
+                <a href="decouverte.php" class="pointeur" data-numero="4" id="egliseGraal"></a>
+                <a href="decouverte.php" class="pointeur" data-numero="1" id="arbreOr"></a>
+                <a href="decouverte.php" class="pointeur" data-numero="6" id="fontaineBarenton"></a>
+                <a href="decouverte.php" class="pointeur" data-numero="3" id="fauxAmants"></a>
+                <a href="decouverte.php" class="pointeur" data-numero="7" id="chateauTrecesson"></a>
+                <a href="decouverte.php" class="pointeur" data-numero="2" id="miroirFees"></a>
            </section>
            <div id="retour">
             <p>Retour</p>
@@ -68,5 +68,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         </div>
         </main>
         <?php require 'footer.php'; ?>
+        <script src="js/jquery.js"></script>
+        <script src="js/valeursCarte.js"></script>
     </body>
 </html>

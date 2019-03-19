@@ -60,8 +60,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                     </div>
                 </div>
                 <p class="desc">La fée Morgane aurait enfermé son amant infidèle et sa maîtresse à l’intérieur de ce rocher. On raconte que si l’on tend l’oreille, on peut entendre les plaintes, les gémissements et les battements de coeur des deux amants.</p>
-                <h2>Le rocher des</h2>
-                <h3>faux amants</h3>
                 <img src="images/boussole.png" alt="boussole" class="imageFond">
                 <p class="pied">KLEIZ | Projet MMI2 2018-2019</p>
                 <img src="images/coeur.png" alt="coeur" class="coeur">
@@ -69,17 +67,19 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             <div class="partDroite">
                 <img src="images/rochersFauxAmants.jpg" alt="tombeau de Merlin">
                 <div></div>
+                <h2>Le rocher des</h2>
+                <h3>faux amants</h3>
                 <img src="images/carteRocherFauxAmantsD.svg" alt="carte de Brocéliande" class="carte">
             </div>
-            <div>
-                <p>Retour</p>
-                <a href="miroirFees.php">
+            <div id="precedent">
+                <p>Précédent</p>
+                <a href="rochesTreban.php">
                     <img src="images/flecheG.svg" alt="flèche vers la gauche">
                 </a>
             </div>
-            <div>
+            <div id="suivant">
                 <p>Suivant</p>
-                <a href="egliseGraal.php">
+                <a href="miroirFees.php">
                     <img src="images/flecheG.svg" alt="flèche vers la droite">
                 </a>
             </div>

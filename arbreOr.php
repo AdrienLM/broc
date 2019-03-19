@@ -60,8 +60,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                     </div>
                 </div>
                 <p class="desc">L’arbre d’or serait apparu un jour dans la clairière. Les lutins se servaient de ses feuilles pour créer une potion magique soignant les arbres abîmés par les Hommes. Un jour, une petite fille toucha l’arbre et se transforma en tronc calciné, trois de ses amis firent de même et se transformèrent à leur tour. Il est dit pour inverser le maléfice, un enfant doit reproduire la potion des lutins afin de libérer les êtres piégés.</p>
-                <h2>L'arbre</h2>
-                <h3>d'or</h3>
                 <img src="images/boussole.png" alt="boussole" class="imageFond">
                 <p class="pied">KLEIZ | Projet MMI2 2018-2019</p>
                 <img src="images/coeur.png" alt="coeur" class="coeur">
@@ -69,15 +67,17 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             <div class="partDroite">
                 <img src="images/arbreOr.jpg" alt="l'arbre d'or">
                 <div></div>
+                <h2>L'arbre</h2>
+                <h3>d'or</h3>
                 <img src="images/carteArbreOrD.svg" alt="carte de Brocéliande" class="carte">
             </div>
-            <div>
-                <p>Retour</p>
+            <div id="precedent">
+                <p>Précédent</p>
                 <a href="rochesTreban.php">
                     <img src="images/flecheG.svg" alt="flèche vers la gauche">
                 </a>
             </div>
-            <div>
+            <div id="suivant">
                 <p>Suivant</p>
                 <a href="miroirFees.php">
                     <img src="images/flecheG.svg" alt="flèche vers la droite">

@@ -22,7 +22,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 <html>
     <head>
         <meta charset="utf-8">
-        <title>KLEIZ | TOMBEAU DE MERLIN | MODE DÉCOUVERTE</title>
+        <title>KLEIZ | MODE DÉCOUVERTE</title>
         <meta name="description" content="">
         <link rel="stylesheet" href="css/styleDecouverte.css">
         <link rel="stylesheet" href="css/styleMenuDecouverte.css">
@@ -49,41 +49,41 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
     <body>
         <?php require 'headerDecouverte.php'; ?>
 
-        <main id="tombeauMerlin">
+        <main>
             <div class="partGauche">
                 <a href="index.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
                 <div>
-                    <h1>MERLIN L’ENCHANTEUR, MAÎTRE DE LA NATURE</h1>
+                    <h1></h1>
                     <div class="avis">
                         <p>Forêt de Paimpont</p>
                         <p>Avis visiteurs (42)</p>
                     </div>
                 </div>
-                <p class="desc">Merlin aurait été enfermé dans ce tombeau par sa bien-aimée, la fée Viviane. Désireuse de le garder auprès d’elle pour l’éternité, elle l’aurait emprisonné dans neufs cercles d’air. Le cercle de pierre au sol symbolise le maléfice. Merlin serait encore en vie, confiné pour l’éternité.</p>
+                <p class="desc"></p>
                 <img src="images/boussole.png" alt="boussole" class="imageFond">
                 <p class="pied">KLEIZ | Projet MMI2 2018-2019</p>
                 <img src="images/coeur.png" alt="coeur" class="coeur">
             </div>
             <div class="partDroite">
-                <img src="images/tombeauMerlin.jpg" alt="tombeau de Merlin">
+                <img src="" alt="">
                 <div></div>
-                <h2>Le tombeau de</h2>
-                <h3>Merlin</h3>
-                <img src="images/carteTombeauMerlinD.svg" alt="carte de Brocéliande" class="carte">
+                <h2></h2>
+                <h3></h3>
+                <img src="" alt="carte de Brocéliande" class="carte">
             </div>
             <div id="precedent">
-                <p>Précédent</p>
-                <a href="rochesTreban.php">
+                <p>Carte</p>
+                <a href="carte.php">
                     <img src="images/flecheG.svg" alt="flèche vers la gauche">
                 </a>
             </div>
             <div id="suivant">
                 <p>Suivant</p>
-                <a href="miroirFees.php">
-                    <img src="images/flecheG.svg" alt="flèche vers la droite">
-                </a>
+                <img src="images/flecheG.svg" alt="flèche vers la droite">
             </div>
         </main>
         <?php require 'footerDecouverte.php'; ?>
+        <script src="js/jquery.js"></script>
+        <script src="js/decouverte.js"></script>
     </body>
 </html>

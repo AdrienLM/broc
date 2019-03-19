@@ -40,7 +40,7 @@
 
 
 
-                        <img src="images/depliant.svg" alt="dépliant" id="depliant">
+                        <img src="images/iconeMenu.svg" alt="icone menu" id="depliant">
                         <ul id="menuFlottant">
                             <li>
                                 <a href="carte.php">
