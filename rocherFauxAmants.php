@@ -71,15 +71,15 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 <h3>faux amants</h3>
                 <img src="images/carteRocherFauxAmantsD.svg" alt="carte de Brocéliande" class="carte">
             </div>
-            <div>
-                <p>Retour</p>
-                <a href="miroirFees.php">
+            <div id="precedent">
+                <p>Précédent</p>
+                <a href="rochesTreban.php">
                     <img src="images/flecheG.svg" alt="flèche vers la gauche">
                 </a>
             </div>
-            <div>
+            <div id="suivant">
                 <p>Suivant</p>
-                <a href="egliseGraal.php">
+                <a href="miroirFees.php">
                     <img src="images/flecheG.svg" alt="flèche vers la droite">
                 </a>
             </div>
