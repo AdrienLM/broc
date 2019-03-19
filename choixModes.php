@@ -78,6 +78,21 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                </a>
             </div> 
             <div id="aventure"> 
+                <h1>Mode<br><span>aventure</span></h1> 
+                <p class="desc">Que vous soyez passionés par les légendes de Brocéliandes ou de simples curieux, le mode Aventure vous permettra de vivre ces récits de façon immersive et divertissante grâce au conteur.</p> 
+                <div> 
+                    <a href="cheminAventure.php"><img src="images/flecheDBlanc.svg"></a> 
+                    <p>Découvrir</p> 
+                </div> 
+            </div> 
+            <div id="decouverte"> 
+                <h1>Mode<br><span>decouverte</span></h1> 
+                <p class="desc">Si vous souhaitez avoir des informations concises sur un lieu de votre choix, le mode Découverte est fait pour vous. Idéal lors des balades, vous pourrez découvrir la légende derrière chaque lieu en temps voulu.</p> 
+                <div> 
+                    <a href="carte.php"><img src="images/flecheDBlanc.svg"></a> 
+                    <p>Découvrir</p> 
+                </div> 
+            </div> 
                <a href="lancementAventure.php">
                    <div id="fondNoir"></div>
                     <h1>Mode<br><span>aventure</span></h1> 

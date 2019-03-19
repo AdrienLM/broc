@@ -66,16 +66,19 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 
     </head>
 
-    <body id="accueil">
-        <!-- Loading -->
-        <div class="loading">
+    <body>
+       
+        <!--<div class="loading">
             <div class="barre"></div>
             <img src="images/logoEtNomB.png" alt="logo Kleiz" class="logoVerti">
             <h1 class="loading-title">CHARGEMENT</h1>
             <p class="loading-title2">BETA V.1.0</p>
             <div class="loading-progress"></div>
             <div class="barreBas"></div>
-        </div>
+        </div>-->
+        
+        
+        
         <div class="fullscreen-bg">
             <video loop muted autoplay poster="video/cover.png" class="fullscreen-bg__video">
         <source src="videos/cover.webm" type="video/webm">
