@@ -5,7 +5,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>KLEIZ | CONDITIONS D'UTILISATION</title>
+        <title>KLEIZ | NOTRE EQUIPE</title>
         <meta name="description" content="">
         <link rel="stylesheet" href="css/styleMenu.css">
         <link rel="stylesheet" href="css/styleEquipe.css">
@@ -43,35 +43,50 @@
                 <h2><span>Coralie</span> Bernard</h2>
                 <hr/>
                 <p>Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis.</p>
-                <img src="images/icoRole.svg">
+                <div>
+                    <img src="images/icoRole.svg">
+                    <p>Korrigan</p>
+                </div>
             </div>
             <div id="adrien">
                 <img src="images/imgProfil.png">
                 <h2><span>Adrien</span> Le Moal</h2>
                 <hr/>
                 <p>Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis.</p>
-                <img src="images/icoRole.svg">
+                <div>
+                    <img src="images/icoRole.svg">
+                    <p>Korrigan</p>
+                </div>
             </div>
             <div id="emma">
                 <img src="images/imgProfil.png">
                 <h2><span>Emma</span> Colin</h2>
                 <hr/>
                 <p>Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis.</p>
-                <img src="images/icoRole.svg">
+                <div>
+                    <img src="images/icoRole.svg">
+                    <p>Korrigan</p>
+                </div>
             </div>
             <div id="celie">
                 <img src="images/imgProfil.png">
                 <h2><span>Célie</span> Pautrel</h2>
                 <hr/>
                 <p>Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis.</p>
-                <img src="images/icoRole.svg">
+                <div>
+                    <img src="images/icoRole.svg">
+                    <p>Korrigan</p>
+                </div>
             </div>
             <div id="quentin">
                 <img src="images/imgProfil.png">
                 <h2><span>Quentin</span> Wascheul</h2>
                 <hr/>
                 <p>Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis.</p>
-                <img src="images/icoRole.svg">
+                <div>
+                    <img src="images/icoRole.svg">
+                    <p>Korrigan</p>
+                </div>
             </div>
         </section>
         <div id="retour">

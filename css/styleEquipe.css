@@ -46,10 +46,6 @@ footer a{
     padding-bottom: 50px;
 }
 
-nav {
-    height: 60%;
-}
-
 h1 {
     font-size: 40px;
     font-family: 'Open Sans', sans-serif;
@@ -62,7 +58,7 @@ h1 {
     position: relative;
     display: flex;
     justify-content: space-around;
-    margin-top: 10%;
+    margin-top: 8%;
     margin-bottom: 5%;
     color: #5D5D5D;
     padding: 0 2%;
@@ -80,16 +76,22 @@ h1 {
     border-radius: 17px;
 }
 
-#equipe img:first-child{
+#equipe>div>img{
     width: 70%;
     margin-top: -30%;
 }
 
-#equipe img:last-child{
-    width: 20%;
-    padding: 10px 30px;
+#equipe div div{
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px 0 0 0;
+    width: 80%;
     background-color: #ccc;
     border-radius: 15px;
+}
+
+#equipe div div img{
+    width: 50%;
 }
 
 #equipe p{
