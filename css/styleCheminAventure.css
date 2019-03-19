@@ -146,7 +146,10 @@ main {
     margin-left: 87px;
     margin-top: 180px;
     margin-bottom: 100px;
-    z-index: 999;
+}
+
+.bientot {
+    color: #a0a0a0;
 }
 
 .positionementGraphique {
@@ -198,7 +201,7 @@ main {
     font-family: 'Google-sansReg';
     font-size: 20px;
     position: absolute;
-    bottom: 10%;
+    bottom: 12%;
     width: 80%;
     left: 50%;
     margin-left: -40%;

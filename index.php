@@ -53,15 +53,15 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
     </head>
 
     <body>
-        <!-- Loading -->
-        <div class="loading">
+       
+        <!--<div class="loading">
             <div class="barre"></div>
             <img src="images/logoEtNomB.png" alt="logo Kleiz" class="logoVerti">
             <h1 class="loading-title">CHARGEMENT</h1>
             <p class="loading-title2">BETA V.1.0</p>
             <div class="loading-progress"></div>
             <div class="barreBas"></div>
-        </div>
+        </div>-->
         
         
         

@@ -64,23 +64,23 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0) {
         <div class="container">
             <div class="colonne1">
                 <ul>
-                    <li><a>SCÈNE 7 : LE ROCHER DES FAUX AMANTS</a></li>
-                    <li><a>SCÈNE 8 : L'ÉGLISE DU GRAAL</a></li>
-                    <li><a>SCÈNE 9 : EN DLC</a></li>
+                    <a href="#" class="bientot"><li>SCÈNE 7 : LE ROCHER DES FAUX AMANTS</li></a>
+                    <a href="#" class="bientot"><li>SCÈNE 8 : L'ÉGLISE DU GRAAL</li></a>
+                    <a href="#" class="bientot"><li>SCÈNE 9 : EN DLC</li></a>
                 </ul>
             </div>
             <div class="colonne2">
                 <ul>
-                    <li><a>SCÈNE 1 : LA MARIÉE DE TRÉCESSON</a></li>
-                    <li><a>SCÈNE 2 : L’ARBRE D’OR</a></li>
-                    <li><a>SCÈNE 3 : LA FONTAINE DE BARENTON</a></li>
+                    <a href="#"><li>SCÈNE 1 : LE MIROIR AUX FÉES</li></a>
+                    <a href="#"><li>SCÈNE 2 : L’ARBRE D’OR</li></a>
+                    <a href="#"><li>SCÈNE 3 : LE TOMBEAU DE MERLIN</li></a>
                 </ul>
             </div>
             <div class="colonne3">
                 <ul>
-                    <li><a>SCÈNE 4 : LE TOMBEAU DE MERLIN</a></li>
-                    <li><a>SCÈNE 5 : LE MIROIR AUX FÉES</a></li>
-                    <li><a>SCÈNE 6 : LES TROIS ROCHES DE TRÉBAN</a></li>
+                    <a href="#" class="bientot"><li>SCÈNE 4 : LA FONTAINE DE BARENTON</li></a>
+                    <a href="#" class="bientot"><li>SCÈNE 5 : LA MARIÉE DE TRÉCESSON</li></a>
+                    <a href="#" class="bientot"><li>SCÈNE 6 : LES TROIS ROCHES DE TRÉBAN</li></a>
                     
                    
                 </ul>

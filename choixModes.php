@@ -69,7 +69,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 <h1>Mode<br><span>aventure</span></h1> 
                 <p class="desc">Que vous soyez passionés par les légendes de Brocéliandes ou de simples curieux, le mode Aventure vous permettra de vivre ces récits de façon immersive et divertissante grâce au conteur.</p> 
                 <div> 
-                    <a href="lancementAventure.php"><img src="images/flecheDBlanc.svg"></a> 
+                    <a href="cheminAventure.php"><img src="images/flecheDBlanc.svg"></a> 
                     <p>Découvrir</p> 
                 </div> 
             </div> 
