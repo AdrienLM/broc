@@ -47,7 +47,7 @@ h1 span {
 }
 
 main p {
-    width: 40%;
+    width: 60%;
     font-size: 17px;
     margin-bottom: 40px;
 }
@@ -66,9 +66,10 @@ main a {
 }
 
 main a:hover{
-    transform: scale(1.2);
-    transition: all 0.3s linear;
-    border-color: #192B40;
+    transform: scale(1.1);
+   transition: all 0.3s linear;
+    border-color: #dedede;
+    color: #dedede;
 }
 
 footer {
