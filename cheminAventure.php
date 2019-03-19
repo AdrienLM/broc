@@ -16,13 +16,14 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0) {
    // require ' initCompteGrimoire.php';
 }
 ?>
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html>
+
     <head>
         <meta charset="utf-8">
         <title>KLEIZ | ACCUEIL</title>
         <meta name="description" content="">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/styleCheminAventure.css">
         <link rel="stylesheet" href="css/styleMenu.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
@@ -47,56 +48,51 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0) {
 
     <body>
         <!-- Loading -->
-        <div class="loading">
-            <div class="barre"></div>
-            <img src="images/logoEtNomB.png" alt="logo Kleiz" class="logoVerti">
-            <h1 class="loading-title">CHARGEMENT</h1>
-            <p class="loading-title2">BETA V.1.0</p>
-            <div class="loading-progress"></div>
-            <div class="barreBas"></div>
-        </div>
 
-        <div class="fullscreen-bg">
-            <video loop muted autoplay poster="video/cover.png" class="fullscreen-bg__video">
-                <source src="videos/cover.webm" type="video/webm">
-                <source src="videos/cover.mp4" type="video/mp4">
-                <source src="videos/cover.ogv" type="video/ogg">
-            </video>
-        </div>
+
         <?php require 'header.php'; require 'initCompteGrimoire.php'; ?>
 
-        <main>
-            <h1>Les legendes de <br><span>Broceliande</span></h1>
-            <p>Découvrez la forêt de Brocéliande à travers ses légendes, ses histoires et des secrets. Informez-vous, partez à la quête du Graal ou découvrez des créatures fantastiques. A chacun son mode et sa façon de vivre l'aventure.</p>
-            <a href="choixModes.php">découvrir &nbsp; &nbsp; &nbsp; &rarr;</a>
-        </main>
+        <div class="positionementGraphique">
 
-        <footer>
-            <p>KLEIZ | Projet MMI2 2018-2019</p>
-            <div>
-                <a href="soon.php">Plan du site</a>
-                <a href="cgu.php">Conditions d'utilisation</a>
-                <a href="soon.php">Notre équipe</a>
+            <img src="images/avancement.svg" class="boutonAvancerIcon avancementGraphique" alt="icone" />
+            <div class="positionTitreAvancement">
+                <h2>MODE</h2>
+                <h1>AVENTURE</h1>
             </div>
-            <div class="reseaux">
-                <a href="https://www.facebook.com/kleiz3" target="_blank">
-                   <img src="images/facebook.svg" alt="logo Facebook">
-               </a>
-                <a href="https://twitter.com/Kleizbro" target="_blank">
-                   <img src="images/twitter.svg" alt="logo Twitter">
-               </a>
-                <a href="https://www.instagram.com/kleiz3" target="_blank">
-                   <img src="images/instagram.svg" alt="logo Instagram">
-               </a>
-                <a href="images/snapchat.jpg" target="_blank">
-                   <img src="images/snapchat.svg" alt="logo Snapchat">
-               </a>
+        </div>
+
+        <div class="container">
+            <div class="colonne1">
+                <ul>
+                    <li><a>SCÈNE 7 : LE ROCHER DES FAUX AMANTS</a></li>
+                    <li><a>SCÈNE 8 : L'ÉGLISE DU GRAAL</a></li>
+                    <li><a>SCÈNE 9 : EN DLC</a></li>
+                </ul>
             </div>
-        </footer>
+            <div class="colonne2">
+                <ul>
+                    <li><a>SCÈNE 1 : LA MARIÉE DE TRÉCESSON</a></li>
+                    <li><a>SCÈNE 2 : L’ARBRE D’OR</a></li>
+                    <li><a>SCÈNE 3 : LA FONTAINE DE BARENTON</a></li>
+                </ul>
+            </div>
+            <div class="colonne3">
+                <ul>
+                    <li><a>SCÈNE 4 : LE TOMBEAU DE MERLIN</a></li>
+                    <li><a>SCÈNE 5 : LE MIROIR AUX FÉES</a></li>
+                    <li><a>SCÈNE 6 : LES TROIS ROCHES DE TRÉBAN</a></li>
+                    
+                   
+                </ul>
+            </div>
+        </div>
+
+        <?php require 'footer.php'; ?>
 
         <script src="js/jquery.js"></script>
         <script src="js/scriptMenuFlottant.js"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
         <script src="js/index.js"></script>
     </body>
-</html>
+
+    </html>
