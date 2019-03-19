@@ -15,6 +15,12 @@ header nav a{
     margin: 0px 25px;
     text-transform: uppercase;
     font-size: 18px;
+    transition: all 0.3s linear;
+}
+
+#accueil header nav a:hover, #choix header nav a:hover{
+    color: #192B40;
+    transition: all 0.3s linear;
 }
 
 header #logo{
@@ -100,6 +106,13 @@ header #logo{
     border: 2px solid white;
     border-radius: 50px;
     padding: 3px 5px 3px 20px;
+    transition: all 0.3s linear;
+}
+
+#accueil .profil:hover, #choix .profil:hover{
+    border-color: #192B40;
+    transition: all 0.3s linear;
+    color: white;
 }
 
 .profil p{

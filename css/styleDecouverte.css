@@ -69,7 +69,7 @@ main{
 
 main .partGauche{
     width: 25%;
-    background-color: #756036;
+    background-color: #fff;
     font-family: 'Open Sans';
     color: white;
     padding-top: 20px;
@@ -279,6 +279,10 @@ footer div a{
 
 footer .reseaux a{
     margin: 0;
+}
+
+#arbreOr .partGauche{
+    background-color: #756036;
 }
 
 #tombeauMerlin .partGauche{

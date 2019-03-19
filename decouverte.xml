@@ -19,7 +19,7 @@
 			Sept fées vivaient cachées au fond de ce plan d’eau. Un jour, la plus jeune d’entre elles tomba éperdument amoureuse d’un chevalier. Lorsque ses soeurs l’apprennent, elles assassinent le jeune homme. La nuit tombée, la jeune fée se vengea en tranchant la gorge de ses six soeurs. Le sang coula tant qu’il colora les roches et la terre de Brocéliande.
 		</desc>
 		<carte>images/carteMiroirFeesD.svg</carte>
-		<couleur>#4A4237</couleur>
+		<couleur>#367375</couleur>
 	</lieu>
 	<lieu numero="3" id="rocherFauxAmants">
 		<h1>Des amants enfermés dans un rocher</h1>
@@ -30,7 +30,7 @@
 			La fée Morgane aurait enfermé son amant infidèle et sa maîtresse à l’intérieur de ce rocher. On raconte que si l’on tend l’oreille, on peut entendre les plaintes, les gémissements et les battements de coeur des deux amants.
 		</desc>
 		<carte>images/carteRocherFauxAmantsD.svg</carte>
-		<couleur>#6D5050</couleur>
+		<couleur>#A86B8C</couleur>
 	</lieu>
 	<lieu numero="4" id="egliseGraal">
 		<h1>Un prêtre hors du commun à la quête du Graal</h1>
@@ -41,7 +41,7 @@
 			L’abbé Gillard aurait décidé de faire revivre cette église en ruines à travers le mythe du Graal. Grâce à l’aide des paroissiens, des collectivités et de ses propres fonds, l’abbé finança la restauration. L’église du Graal est la seule église entièrement consacrée à la légende du Graal.
 		</desc>
 		<carte>images/carteEgliseGraalD.svg</carte>
-		<couleur>#684A64</couleur>
+		<couleur>#6D5050</couleur>
 	</lieu>
 	<lieu numero="5" id="tombeauMerlin">
 		<h1>Merlin l'enchanteur, maître de la nature</h1>
@@ -52,7 +52,7 @@
 			Merlin aurait été enfermé dans ce tombeau par sa bien-aimée, la fée Viviane. Désireuse de le garder auprès d’elle pour l’éternité, elle l’aurait emprisonné dans neufs cercles d’air. Le cercle de pierre au sol symbolise le maléfice. Merlin serait encore en vie, confiné pour l’éternité.
 		</desc>
 		<carte>images/carteTombeauMerlinD.svg</carte>
-		<couleur>#367375</couleur>
+		<couleur>#105030</couleur>
 	</lieu>
 	<lieu numero="6" id="fontaineBarenton">
 		<h1>Une source d'eau naturelle au coeur de la forêt</h1>
@@ -63,7 +63,7 @@
 			Merlin aurait été enfermé dans ce tombeau par sa bien-aimée, la fée Viviane. Désireuse de le garder auprès d’elle pour l’éternité, elle l’aurait emprisonné dans neufs cercles d’air. Le cercle de pierre au sol symbolise le maléfice. Merlin serait encore en vie, confiné pour l’éternité.
 		</desc>
 		<carte>images/carteFontaineBarentonD.svg</carte>
-		<couleur>#A86B8C</couleur>
+		<couleur>#684A64</couleur>
 	</lieu>
 	<lieu numero="7" id="chateauTrecesson">
 		<h1>Le château des esprits et de la mariée de Trécesson</h1>
@@ -74,7 +74,7 @@
 			Une nuit, deux hommes enterrèrent vivante une mariée près des fossés du château, la jeune femme ne résista pas. Un braconnier, ayant vu la scène, alerta les villageois qui s'empressèrent de la libérer. Malheureusement, la mariée mourut sans lever le mystère. On raconte que l’on peut apercevoir son fantôme hanter les lieux.
 		</desc>
 		<carte>images/carteChateauTrecessonD.svg</carte>
-		<couleur>#3B4A37</couleur>
+		<couleur>#4A4237</couleur>
 	</lieu>
 	<lieu numero="8" id="rochesTreban">
 		<h1>La merveille du mont-saint-michel apparue par magie</h1>
@@ -85,6 +85,6 @@
 			Trois fées vivaient dans la forêt de Brocéliande. Un jour, elles entendirent parler de la construction La Merveille, l’abbaye du Mont-Saint-Michel et décidèrent d’y participer. Elles entamèrent leur chemin, emportant trois immenses roches. A leur grand désarroi, elles apprirent que le monument était déjà terminé et abandonnèrent leur pierres dans le sous-bois de Tréban.
 		</desc>
 		<carte>images/carteRochesTrebanD.svg</carte>
-		<couleur>#105030</couleur>
+		<couleur>#3B4A37</couleur>
 	</lieu>
 </lieux>

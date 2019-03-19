@@ -22,7 +22,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 <html>
     <head>
         <meta charset="utf-8">
-        <title>KLEIZ | ROCHES DE TREBAN | MODE DÉCOUVERTE</title>
+        <title>KLEIZ | MODE DÉCOUVERTE</title>
         <meta name="description" content="">
         <link rel="stylesheet" href="css/styleDecouverte.css">
         <link rel="stylesheet" href="css/styleMenuDecouverte.css">
@@ -49,27 +49,27 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
     <body>
         <?php require 'headerDecouverte.php'; ?>
 
-        <main id="rochesTreban">
+        <main>
             <div class="partGauche">
                 <a href="index.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
                 <div>
-                    <h1>LA MERVEILLE DU MONT-SAINT-MICHEL APPARUE PAR MAGIE</h1>
+                    <h1></h1>
                     <div class="avis">
                         <p>Forêt de Paimpont</p>
                         <p>Avis visiteurs (42)</p>
                     </div>
                 </div>
-                <p class="desc">Trois fées vivaient dans la forêt de Brocéliande. Un jour, elles entendirent parler de la construction La Merveille, l’abbaye du Mont-Saint-Michel et décidèrent d’y participer. Elles entamèrent leur chemin, emportant trois immenses roches. A leur grand désarroi, elles apprirent que le monument était déjà terminé et abandonnèrent leur pierres dans le sous-bois de Tréban </p>
+                <p class="desc"></p>
                 <img src="images/boussole.png" alt="boussole" class="imageFond">
                 <p class="pied">KLEIZ | Projet MMI2 2018-2019</p>
                 <img src="images/coeur.png" alt="coeur" class="coeur">
             </div>
             <div class="partDroite">
-                <img src="images/rochesTreban.jpg" alt="roches de Treban">
+                <img src="" alt="roches de Treban">
                 <div></div>
-                <h2>Les trois roches de</h2>
-                <h3>Treban</h3>
-                <img src="images/carteRochesTrebanD.svg" alt="carte de Brocéliande" class="carte">
+                <h2></h2>
+                <h3></h3>
+                <img src="" alt="carte de Brocéliande" class="carte">
             </div>
             <div id="precedent">
                 <p>Précédent</p>
