@@ -53,7 +53,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 
     </head>
 
-    <body>
+    <body id="choix">
         <div class="fullscreen-bg">
              <video loop muted autoplay poster="video/cover.png" class="fullscreen-bg__video">
                 <source src="videos/cover.webm" type="video/webm">
