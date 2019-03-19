@@ -20,6 +20,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
     </head>
 
     <body>
+
       <?php
 			if(isset($idCompte)){
 					$requete = "SELECT isAdmin FROM membres WHERE IdUser = ".$idCompte;
@@ -37,6 +38,40 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
         	require 'class/'.$classname.'.php';
       }
 	        spl_autoload_register('chargerClasse');
+
+/////////////////////////// formulaires//////////////////////////////
+
+
+
+
+if(isset($_POST['Bloquer'])){
+	echo "HAAAAAAAAAAAAAAAAAAAAAAA";
+
+}
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 			$sqlReq = "SELECT * FROM membres";
@@ -56,17 +91,99 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 			}
 
 			foreach($listeUserAAdminIdUser as $cle => $valeur){
-
+					// Pseudo -- aze
 					echo 	"Pseudo -- ".$listeUserAAdminPseudoUser[$cle]."</br>";
+
+					// Mail -- a@aa.com
 					echo 	"Mail -- ".$listeUserAAdminEmailUser[$cle]."</br>";
-					echo 	"Description -- ".$listeUserAAdminDescriptionUser[$cle]."</br>";
-					echo 	"Groupe -- ".$listeUserAAdminGroupeUser[$cle]."</br>";
-					echo 	"Avatar -- ".$listeUserAAdminAvatarUser[$cle]."</br>";
-					echo 	"Banniere -- ".$listeUserAAdminBanniereUser[$cle]."</br>";
-				  echo 	"Creation -- ".$listeUserAAdminDateCreation[$cle]."</br>";
-					echo 	"Droit -- ".$listeUserAAdminIsAdmin[$cle]."</br>";
-					echo 	"Bloquer -- ".$listeUserAAdminEtatCompte[$cle]."</br>";
-					echo 	"Motif Bloquer -- ".$listeUserAAdminMotifBloque[$cle]."</br>";
+
+					// Description --
+					//echo 	"Description -- ".$listeUserAAdminDescriptionUser[$cle]."</br>";
+					if ($listeUserAAdminDescriptionUser[$cle] == null) {
+						echo " pas de description ";
+					}else if($listeUserAAdminDescriptionUser[$cle] != null){
+						echo " ".$listeUserAAdminDescriptionUser[$cle]." ";
+					}
+
+					// Groupe --
+					//echo 	"Groupe -- ".$listeUserAAdminGroupeUser[$cle]."</br>";
+					if ($listeUserAAdminGroupeUser[$cle] == null) {
+						echo " pas de groupe ";
+					}else if($listeUserAAdminGroupeUser[$cle] == 1){
+						// farfadet
+						echo " Groupe farfadet ";
+					}else {
+						echo "groupe non existant";
+					}
+
+					// Avatar -- default.jpg
+					//echo 	"Avatar -- ".$listeUserAAdminAvatarUser[$cle]."</br>";
+					echo "<img src='membres/avatars/".$listeUserAAdminAvatarUser[$cle]."' />";
+
+					//Banniere -- defaultb.jpg
+					// echo 	"Banniere -- ".$listeUserAAdminBanniereUser[$cle]."</br>";
+					echo "<img src='membres/banniere/".$listeUserAAdminBanniereUser[$cle]."' />";
+
+					//Creation -- 2019-03-18
+				  //echo 	"Creation -- ".$listeUserAAdminDateCreation[$cle]."</br>";
+					if ($listeUserAAdminDateCreation[$cle] == null){
+						//Premiere Connexion Avant Maj 2019-03-19 et Non ReCo Depuis
+						echo " PCAM 2019-03-19 NRCD ";
+					}else{
+						echo " premiere connexion ".$listeUserAAdminDateCreation[$cle]." ";
+					}
+
+					// Droit --
+					//echo 	"Rôle -- ".$listeUserAAdminIsAdmin[$cle]."</br>";
+					if($listeUserAAdminIsAdmin[$cle] == null){
+							echo " Membre ";
+					}else if($listeUserAAdminIsAdmin[$cle] == 1){
+							echo " Modo ";
+					}else if ($listeUserAAdminIsAdmin[$cle] == 2) {
+							echo " Admin ";
+					}
+
+					// Bloquer --
+					//echo 	"Bloquer -- ".$listeUserAAdminEtatCompte[$cle]."</br>";
+					if ($listeUserAAdminEtatCompte[$cle] == null) {
+						echo " non bloquer ";
+?>
+
+
+
+						<form method="POST" action="">
+									<ul>
+										<li class="centrer">
+												<input type="submit" name="Bloquer<?php echo "".$cle."" ?>" value="bloquer" class="boutonInput" />
+										</li>
+									</ul>
+						</form>
+
+<?php
+						if(isset($_POST['Bloquer'.$cle])){
+							echo "compte".$cle."";
+
+						}
+
+?>
+<?php
+
+
+
+
+
+
+
+
+
+
+					}else if( $listeUserAAdminEtatCompte[$cle] == 1 ){
+						echo " compte bloquer";
+						echo " motif de bloquage ".$listeUserAAdminMotifBloque[$cle]."";
+					}
+
+					// Motif Bloquer --
+					//echo 	"Motif Bloquer -- ".$listeUserAAdminMotifBloque[$cle]."</br>";
 					echo "</br>";
 			}
 
