@@ -60,8 +60,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                     </div>
                 </div>
                 <p class="desc">Viviane et Merlin se sont rencontrés près de cette fontaine. Merlin avait pris l’apparence d’un bel écuyer et donna à Viviane sa première leçon de magie. Depuis, les femmes se rendent à la fontaine pour faire le voeu de se marier. Si des bulles apparaissent, elles seront mariées avant Pâques.</p>
-                <h2>fontaine de</h2>
-                <h3>Barenton</h3>
                 <img src="images/boussole.png" alt="boussole" class="imageFond">
                 <p class="pied">KLEIZ | Projet MMI2 2018-2019</p>
                 <img src="images/coeur.png" alt="coeur" class="coeur">
@@ -69,6 +67,8 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             <div class="partDroite">
                 <img src="images/fontaineBarenton.jpg" alt="fontaine de Barenton">
                 <div></div>
+                <h2>fontaine de</h2>
+                <h3>Barenton</h3>
                 <img src="images/carteFontaineBarentonD.svg" alt="carte de Brocéliande" class="carte">
             </div>
             <div>

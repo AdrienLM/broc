@@ -60,8 +60,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                     </div>
                 </div>
                 <p class="desc">Sept fées vivaient cachées au fond de ce plan d’eau. Un jour, la plus jeune d’entre elles tomba éperdument amoureuse d’un chevalier. Lorsque ses soeurs l’apprennent, elles assassinent le jeune homme. La nuit tombée, la jeune fée se vengea en tranchant la gorge de ses six soeurs. Le sang coula tant qu’il colora les roches et la terre de Brocéliande.</p>
-                <h2>Le miroir aux</h2>
-                <h3>fees</h3>
                 <img src="images/boussole.png" alt="boussole" class="imageFond">
                 <p class="pied">KLEIZ | Projet MMI2 2018-2019</p>
                 <img src="images/coeur.png" alt="coeur" class="coeur">
@@ -69,6 +67,8 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             <div class="partDroite">
                 <img src="images/miroirFees.JPG" alt="tombeau de Merlin">
                 <div></div>
+                <h2>Le miroir aux</h2>
+                <h3>fees</h3>
                 <img src="images/carteMiroirFeesD.svg" alt="carte de Brocéliande" class="carte">
             </div>
             <div>

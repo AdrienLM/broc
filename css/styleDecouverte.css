@@ -112,7 +112,6 @@ main .partGauche div .avis p:first-child{
 main .partGauche .desc{
     width: 80%;
     margin-left: calc(50% - 40%);
-    margin-bottom: 50px;
 }
 
 main .partGauche #logo{
@@ -124,31 +123,10 @@ main .partGauche #logo{
 main .partGauche .imageFond{
     width: 70%;
     margin-left: calc(50% - 35%);
-    opacity: 0.3;
+    opacity: 0.2;
     position: absolute;
     bottom: 50px;
     transform: rotateZ(-15deg)
-}
-
-main .partGauche h2{
-    text-transform: uppercase;
-    font-size: 30px;
-    font-family: 'Qurany-light';
-    position: absolute;
-    bottom: calc(4vh + 160px);
-    margin: 0;
-    margin-left: 25%;
-    width: 100%;
-}
-
-main .partGauche h3{
-    text-transform: uppercase;
-    font-size: 160px;
-    font-family: 'Qurany';
-    position: absolute;
-    bottom: 4vh;
-    margin: 0;
-    margin-left: 25%;
 }
 
 main .partGauche .coeur{
@@ -180,7 +158,8 @@ main .partDroite{
     width: 75%;
     background-color: #111;
     position: relative;
-    
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 main .partDroite img:first-child{
@@ -188,6 +167,29 @@ main .partDroite img:first-child{
     width: 100%;
     background-size: cover;
     
+}
+
+main .partDroite h2{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: 'Qurany-light';
+    position: absolute;
+    bottom: calc(2vh + 160px);
+    left: 20px;
+    margin: 0;
+    width: 100%;
+    color: white;
+}
+
+main .partDroite h3{
+    text-transform: uppercase;
+    font-size: 160px;
+    font-family: 'Qurany';
+    position: absolute;
+    bottom: 2vh;
+    left: 20px;
+    margin: 0;
+    color: white;
 }
 
 main .partDroite div{

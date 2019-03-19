@@ -60,8 +60,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                     </div>
                 </div>
                 <p class="desc">Merlin aurait été enfermé dans ce tombeau par sa bien-aimée, la fée Viviane. Désireuse de le garder auprès d’elle pour l’éternité, elle l’aurait emprisonné dans neufs cercles d’air. Le cercle de pierre au sol symbolise le maléfice. Merlin serait encore en vie, confiné pour l’éternité.</p>
-                <h2>Le tombeau de</h2>
-                <h3>Merlin</h3>
                 <img src="images/boussole.png" alt="boussole" class="imageFond">
                 <p class="pied">KLEIZ | Projet MMI2 2018-2019</p>
                 <img src="images/coeur.png" alt="coeur" class="coeur">
@@ -69,6 +67,8 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             <div class="partDroite">
                 <img src="images/tombeauMerlin.jpg" alt="tombeau de Merlin">
                 <div></div>
+                <h2>Le tombeau de</h2>
+                <h3>Merlin</h3>
                 <img src="images/carteTombeauMerlinD.svg" alt="carte de Brocéliande" class="carte">
             </div>
             <div>

@@ -61,8 +61,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                     </div>
                 </div>
                 <p class="desc">L’abbé Gillard aurait décidé de faire revivre cette église en ruines à travers le mythe du Graal. Grâce à l’aide des paroissiens, des collectivités et de ses propres fonds, l’abbé finança la restauration. L’église du Graal est la seule église entièrement consacrée à la légende du Graal. </p>
-                <h2>L'eglise du</h2>
-                <h3>Graal</h3>
                 <img src="images/boussole.png" alt="boussole" class="imageFond">
                 <p class="pied">KLEIZ | Projet MMI2 2018-2019</p>
                 <img src="images/coeur.png" alt="coeur" class="coeur">
@@ -70,6 +68,8 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             <div class="partDroite">
                 <img src="images/egliseGraal.JPG" alt="tombeau de Merlin">
                 <div></div>
+                <h2>L'eglise du</h2>
+                <h3>Graal</h3>
                 <img src="images/carteEgliseGraalD.svg" alt="carte de Brocéliande" class="carte">
             </div>
             <div>

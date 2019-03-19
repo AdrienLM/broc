@@ -60,8 +60,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                     </div>
                 </div>
                 <p class="desc">Une nuit, deux hommes enterrèrent vivante une mariée près des fossés du château, la jeune femme ne résista pas. Un braconnier, ayant vu la scène, alerta les villageois qui s'empressèrent de la libérer. Malheureusement, la mariée mourut sans lever le mystère. On raconte que l’on peut apercevoir son fantôme hanter les lieux</p>
-                <h2>chateau de</h2>
-                <h3>Trecesson</h3>
                 <img src="images/boussole.png" alt="boussole" class="imageFond">
                 <p class="pied">KLEIZ | Projet MMI2 2018-2019</p>
                 <img src="images/coeur.png" alt="coeur" class="coeur">
@@ -69,6 +67,8 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             <div class="partDroite">
                 <img src="images/chateauTrecesson.jpg" alt="tombeau de Merlin">
                 <div></div>
+                <h2>chateau de</h2>
+                <h3>Trecesson</h3>
                 <img src="images/carteChateauTrecessonD.svg" alt="carte de Brocéliande" class="carte">
             </div>
             <div>
