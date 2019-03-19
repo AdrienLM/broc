@@ -31,7 +31,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 					$isAdmin = $pdo->query($requete);
 					$repAdmin = $isAdmin->fetch(PDO::FETCH_ASSOC);
 			}
-			if($repAdmin['isAdmin'] == 2){
+			if($repAdmin['isAdmin'] >= 1){
 
     	function chargerClasse($classname){
         	require 'class/'.$classname.'.php';
@@ -70,53 +70,97 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 // Description --
 					//echo 	"Description -- ".$listeUserAAdminDescriptionUser[$cle]."</br>";
 					if ($listeUserAAdminDescriptionUser[$cle] == null) {
-						echo " pas de description ";
+						echo " pas de description </br>";
 					}else if($listeUserAAdminDescriptionUser[$cle] != null){
-						echo " ".$listeUserAAdminDescriptionUser[$cle]." ";
+						echo " ".$listeUserAAdminDescriptionUser[$cle]." </br> ";
 					}
 
 // Groupe --
 					//echo 	"Groupe -- ".$listeUserAAdminGroupeUser[$cle]."</br>";
 					if ($listeUserAAdminGroupeUser[$cle] == null) {
-						echo " pas de groupe ";
+						echo " pas de groupe </br> ";
 					}else if($listeUserAAdminGroupeUser[$cle] == 1){
 						// farfadet
-						echo " Groupe farfadet ";
+						echo " Groupe farfadet </br> ";
 					}else {
-						echo "groupe non existant";
+						echo "groupe non existant </br>";
 					}
 
 // Avatar -- default.jpg
 					//echo 	"Avatar -- ".$listeUserAAdminAvatarUser[$cle]."</br>";
-					echo "<img src='membres/avatars/".$listeUserAAdminAvatarUser[$cle]."' />";
+					echo "<img src='membres/avatars/".$listeUserAAdminAvatarUser[$cle]."' /> ";
 
 //Banniere -- defaultb.jpg
 					// echo 	"Banniere -- ".$listeUserAAdminBanniereUser[$cle]."</br>";
-					echo "<img src='membres/banniere/".$listeUserAAdminBanniereUser[$cle]."' />";
+					echo "<img src='membres/banniere/".$listeUserAAdminBanniereUser[$cle]."' /> </br>";
 
 //Creation -- 2019-03-18
 				  //echo 	"Creation -- ".$listeUserAAdminDateCreation[$cle]."</br>";
 					if ($listeUserAAdminDateCreation[$cle] == null){
 						//Premiere Connexion Avant Maj 2019-03-19 et Non ReCo Depuis
-						echo " PCAM 2019-03-19 NRCD ";
+						echo " PCAM 2019-03-19 NRCD </br>";
 					}else{
-						echo " premiere connexion ".$listeUserAAdminDateCreation[$cle]." ";
+						echo " premiere connexion ".$listeUserAAdminDateCreation[$cle]." </br>";
 					}
 
 // Droit --
 					//echo 	"Rôle -- ".$listeUserAAdminIsAdmin[$cle]."</br>";
-					if($listeUserAAdminIsAdmin[$cle] == null){
-							echo " Membre ";
-					}else if($listeUserAAdminIsAdmin[$cle] == 1){
-							echo " Modo ";
-					}else if ($listeUserAAdminIsAdmin[$cle] == 2) {
-							echo " Admin ";
-					}
+					//////////////////// Si MODO //////////////////////
+					if($repAdmin['isAdmin'] == 1){
+							if($listeUserAAdminIsAdmin[$cle] == null){	echo " Membre </br>";
+							}else if($listeUserAAdminIsAdmin[$cle] == 1){	echo " Modo </br>";
+							}else if ($listeUserAAdminIsAdmin[$cle] == 2) {		echo " Admin </br>"; }
+
+
+
+				  //////////////////// Sinon Admin //////////////////////
+					}else if($repAdmin['isAdmin'] == 2){
+						if($listeUserAAdminIsAdmin[$cle] < 2){
+							if($listeUserAAdminIsAdmin[$cle] == null){	echo " Membre </br>";
+							}else if($listeUserAAdminIsAdmin[$cle] == 1){ 	echo " Modo </br>";
+							}else if ($listeUserAAdminIsAdmin[$cle] == 2) { 	echo " Admin </br>";}
+?>
+
+						<form method="POST" action="">
+							<select name="Droit<?php echo "".$cle."" ?>" size="1">
+								<option>membre
+								<option>modo
+								<option>admin
+							</select>
+							<input type="submit" name="EnvDroit<?php echo "".$cle."" ?>" value="ModifierDroit" class="boutonInput" />
+						</form>
+<?php
+						if(isset($_POST['EnvDroit'.$cle])){
+								if ($_POST['Droit'.$cle] == "membre" ) {
+									echo "membre";
+									$calcDroit = "NULL";
+								}else if($_POST['Droit'.$cle] == "modo" ){
+									echo "modo";
+									$calcDroit = 1;
+								}else if($_POST['Droit'.$cle] == "admin" ){
+									echo "admin";
+									$calcDroit = 2;
+								}
+
+						  $sqlAdminUserRole = "UPDATE membres
+																		 SET isAdmin = ".$calcDroit."
+																		 WHERE IdUser = ".$cle."";
+							echo $sqlAdminUserRole;
+							$requserAdminUserRole = $pdo->prepare($sqlAdminUserRole);
+							$requserAdminUserRole->execute();
+							header('Location: adminUser.php');
+
+				     }
+				  }
+				 }
+
+
+
 
 // Bloquer --
 					//echo 	"Bloquer -- ".$listeUserAAdminEtatCompte[$cle]."</br>";
 					if ($listeUserAAdminEtatCompte[$cle] == null) {
-						echo " non bloquer ";
+						echo " non bloquer </br>";
 ?>
 						<form method="POST" action="">
 									<ul>
@@ -140,17 +184,17 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 							echo $sqlAdminUserBloque;
 							$requserAdminUserBloque = $pdo->prepare($sqlAdminUserBloque);
 							$requserAdminUserBloque->execute();
-						//	header('Location: adminUser.php');
+							header('Location: adminUser.php');
 						}
 ?>
 <?php
 
 					}else if( $listeUserAAdminEtatCompte[$cle] == 1 ){
-						echo " compte bloquer";
-						echo " motif de bloquage ".$listeUserAAdminMotifBloque[$cle]."";
+						echo " compte bloquer  </br>";
+						echo " motif de bloquage ".$listeUserAAdminMotifBloque[$cle]." </br>";
 					}
 
-					echo "</br>";
+					echo "</br>---------------------------------------------------------------------------------------------------------------------------</br>";
 			}
 
 			}else{
