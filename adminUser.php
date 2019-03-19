@@ -20,8 +20,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
     </head>
 
     <body>
-
-      <?php
+<?php
 			if(isset($idCompte)){
 					$requete = "SELECT isAdmin FROM membres WHERE IdUser = ".$idCompte;
 					$isAdmin = $pdo->query($requete);
@@ -39,41 +38,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
       }
 	        spl_autoload_register('chargerClasse');
 
-/////////////////////////// formulaires//////////////////////////////
-
-
-
-
-if(isset($_POST['Bloquer'])){
-	echo "HAAAAAAAAAAAAAAAAAAAAAAA";
-
-}
-
-
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 			$sqlReq = "SELECT * FROM membres";
       $execSqlReq = $pdo->query($sqlReq);
 			while($donneesUserAdmin = $execSqlReq->fetch()){
@@ -90,14 +54,20 @@ if(isset($_POST['Bloquer'])){
 					$listeUserAAdminMotifBloque[$donneesUserAdmin['IdUser']] =  $donneesUserAdmin['MotifBloque'];
 			}
 
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////Utilisateur/////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+
 			foreach($listeUserAAdminIdUser as $cle => $valeur){
-					// Pseudo -- aze
+// Pseudo -- aze
 					echo 	"Pseudo -- ".$listeUserAAdminPseudoUser[$cle]."</br>";
 
-					// Mail -- a@aa.com
+// Mail -- a@aa.com
 					echo 	"Mail -- ".$listeUserAAdminEmailUser[$cle]."</br>";
 
-					// Description --
+// Description --
 					//echo 	"Description -- ".$listeUserAAdminDescriptionUser[$cle]."</br>";
 					if ($listeUserAAdminDescriptionUser[$cle] == null) {
 						echo " pas de description ";
@@ -105,7 +75,7 @@ if(isset($_POST['Bloquer'])){
 						echo " ".$listeUserAAdminDescriptionUser[$cle]." ";
 					}
 
-					// Groupe --
+// Groupe --
 					//echo 	"Groupe -- ".$listeUserAAdminGroupeUser[$cle]."</br>";
 					if ($listeUserAAdminGroupeUser[$cle] == null) {
 						echo " pas de groupe ";
@@ -116,15 +86,15 @@ if(isset($_POST['Bloquer'])){
 						echo "groupe non existant";
 					}
 
-					// Avatar -- default.jpg
+// Avatar -- default.jpg
 					//echo 	"Avatar -- ".$listeUserAAdminAvatarUser[$cle]."</br>";
 					echo "<img src='membres/avatars/".$listeUserAAdminAvatarUser[$cle]."' />";
 
-					//Banniere -- defaultb.jpg
+//Banniere -- defaultb.jpg
 					// echo 	"Banniere -- ".$listeUserAAdminBanniereUser[$cle]."</br>";
 					echo "<img src='membres/banniere/".$listeUserAAdminBanniereUser[$cle]."' />";
 
-					//Creation -- 2019-03-18
+//Creation -- 2019-03-18
 				  //echo 	"Creation -- ".$listeUserAAdminDateCreation[$cle]."</br>";
 					if ($listeUserAAdminDateCreation[$cle] == null){
 						//Premiere Connexion Avant Maj 2019-03-19 et Non ReCo Depuis
@@ -133,7 +103,7 @@ if(isset($_POST['Bloquer'])){
 						echo " premiere connexion ".$listeUserAAdminDateCreation[$cle]." ";
 					}
 
-					// Droit --
+// Droit --
 					//echo 	"Rôle -- ".$listeUserAAdminIsAdmin[$cle]."</br>";
 					if($listeUserAAdminIsAdmin[$cle] == null){
 							echo " Membre ";
@@ -143,47 +113,43 @@ if(isset($_POST['Bloquer'])){
 							echo " Admin ";
 					}
 
-					// Bloquer --
+// Bloquer --
 					//echo 	"Bloquer -- ".$listeUserAAdminEtatCompte[$cle]."</br>";
 					if ($listeUserAAdminEtatCompte[$cle] == null) {
 						echo " non bloquer ";
 ?>
-
-
-
 						<form method="POST" action="">
 									<ul>
+										<li>
+                        <input type="text" name="Motif<?php echo "".$cle."" ?>" class="field-long" placeholder="Motif de bloquage" required="required" />
+                    </li>
 										<li class="centrer">
 												<input type="submit" name="Bloquer<?php echo "".$cle."" ?>" value="bloquer" class="boutonInput" />
 										</li>
 									</ul>
 						</form>
-
 <?php
 						if(isset($_POST['Bloquer'.$cle])){
 							echo "compte".$cle."";
-
+							$motif = $_POST['Motif'.$cle];
+							echo $motif;
+							$sqlAdminUserBloque = "UPDATE membres
+							 											 SET EtatCompte = '1',
+																		 		 MotifBloque = '".$motif."'
+																		 WHERE IdUser = ".$cle."";
+							echo $sqlAdminUserBloque;
+							$requserAdminUserBloque = $pdo->prepare($sqlAdminUserBloque);
+							$requserAdminUserBloque->execute();
+						//	header('Location: adminUser.php');
 						}
-
 ?>
 <?php
-
-
-
-
-
-
-
-
-
 
 					}else if( $listeUserAAdminEtatCompte[$cle] == 1 ){
 						echo " compte bloquer";
 						echo " motif de bloquage ".$listeUserAAdminMotifBloque[$cle]."";
 					}
 
-					// Motif Bloquer --
-					//echo 	"Motif Bloquer -- ".$listeUserAAdminMotifBloque[$cle]."</br>";
 					echo "</br>";
 			}
 
