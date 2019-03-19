@@ -65,23 +65,21 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 <img src="images/coeur.png" alt="coeur" class="coeur">
             </div>
             <div class="partDroite">
-                <img src="" alt="roches de Treban">
+                <img src="" alt="">
                 <div></div>
                 <h2></h2>
                 <h3></h3>
                 <img src="" alt="carte de Brocéliande" class="carte">
             </div>
             <div id="precedent">
-                <p>Précédent</p>
-                <a href="rochesTreban.php">
+                <p>Carte</p>
+                <a href="carte.php">
                     <img src="images/flecheG.svg" alt="flèche vers la gauche">
                 </a>
             </div>
             <div id="suivant">
                 <p>Suivant</p>
-                <a href="miroirFees.php">
-                    <img src="images/flecheG.svg" alt="flèche vers la droite">
-                </a>
+                <img src="images/flecheG.svg" alt="flèche vers la droite">
             </div>
         </main>
         <?php require 'footerDecouverte.php'; ?>

@@ -1,7 +1,7 @@
 <lieux>
 	<lieu numero="1" id="arbreOr">
 		<h1>Le symbole du souvenir d'autrefois</h1>
-		<h2>Arbre</h2>
+		<h2>L'arbre</h2>
 		<h3>d'or</h3>
 		<img>images/arbreOr.jpg</img>
 		<desc>
@@ -24,8 +24,8 @@
 	<lieu numero="3" id="rocherFauxAmants">
 		<h1>Des amants enfermés dans un rocher</h1>
 		<h2>Le rocher des</h2>
-		<h3>Faux amants</h3>
-		<img>rocherFauxAmants.jpg</img>
+		<h3>faux amants</h3>
+		<img>images/rocherFauxAmants.jpg</img>
 		<desc>
 			La fée Morgane aurait enfermé son amant infidèle et sa maîtresse à l’intérieur de ce rocher. On raconte que si l’on tend l’oreille, on peut entendre les plaintes, les gémissements et les battements de coeur des deux amants.
 		</desc>
@@ -67,7 +67,7 @@
 	</lieu>
 	<lieu numero="7" id="chateauTrecesson">
 		<h1>Le château des esprits et de la mariée de Trécesson</h1>
-		<h2>Le château de</h2>
+		<h2>Le chateau de</h2>
 		<h3>Trecesson</h3>
 		<img>images/chateauTrecesson.jpg</img>
 		<desc>

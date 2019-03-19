@@ -174,7 +174,7 @@ main .partDroite h2{
     font-size: 30px;
     font-family: 'Qurany-light';
     position: absolute;
-    bottom: calc(2vh + 160px);
+    bottom: calc(2vh + 130px);
     left: 20px;
     margin: 0;
     width: 100%;
@@ -183,7 +183,7 @@ main .partDroite h2{
 
 main .partDroite h3{
     text-transform: uppercase;
-    font-size: 160px;
+    font-size: 130px;
     font-family: 'Qurany';
     position: absolute;
     bottom: 2vh;
@@ -252,7 +252,7 @@ main>div:last-child{
 main>div:last-child img{
     transform: rotateZ(180deg);
     width: 40%;
-    margin-left: calc(50% - 19%);
+    cursor: pointer;
 }
 
 main h1{
@@ -279,43 +279,6 @@ footer div a{
 
 footer .reseaux a{
     margin: 0;
-}
-
-#arbreOr .partGauche{
-    background-color: #756036;
-}
-
-#tombeauMerlin .partGauche{
-    background-color: #105030;
-}
-
-#fontaineBarenton .partGauche{
-    background-color: #684A64;
-}
-
-#miroirFees .partGauche{
-    background-color: #367375;
-}
-
-#rochesTreban .partGauche{
-    background-color: #3B4A37;
-}
-
-#rocherFauxAmants .partGauche{
-    background-color: #A86B8C;
-}
-
-#rocherFauxAmants h3{
-    width: 1300px;
-    font-size: 130px;
-}
-
-#chateauTrecesson .partGauche{
-    background-color: #4A4237;
-}
-
-#egliseGraal .partGauche{
-    background-color: #6D5050;
 }
 
 #menuFlottant{
