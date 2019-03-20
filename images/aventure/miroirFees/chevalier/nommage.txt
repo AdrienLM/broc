@@ -1,0 +1,23 @@
+Caractéristiques séparées par _
+Couleurs séparées des caractéristiques par -
+
+A -> Armure
+	B -> Bleu
+	R -> Rouge
+	V -> Vert
+P -> Peau
+	B -> Blanche
+	M -> Mate
+	N -> Noire
+C -> Cheveux
+	J -> Jaunes
+	N -> Noirs
+	O -> Oranges
+	R -> Roses
+Y -> Yeux
+	B -> Bleus
+	M -> Mauves
+	N -> Noirs
+	V -> Verts
+
+Ex : A-B_P-B_C-J_Y-B

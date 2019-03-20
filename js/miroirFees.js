@@ -3,11 +3,11 @@
 	window.addEventListener("DOMContentLoaded", initialiser);
 
 /* ! -> Données à modifier à automatiser */
-	let tempsTotal = 85; /* DONNÉE À MODIFIER */ /* s ? */
+	let tempsTotal = 84; /* DONNÉE À MODIFIER */ /* s ? */
 	let tempsPasseS = 0;
 	let tempsPasseDS = 0;
 	let tempsDePause = new Array(80, 252, 369, 503, 690, 849); /* DONNÉE À MODIFIER */ /* ds ? */
-	let tempsDeDepart = new Array(80, 252, 369, 503, 690); /* DONNÉE À MODIFIER */
+	let tempsDeDepart = new Array(81, 252, 369, 503, 690); /* DONNÉE À MODIFIER */
 	let indiceParagrapheCourant = 0;
 	let timerAffichage;
 	let timerPause;
@@ -101,8 +101,9 @@
 		if(!playerAudio.paused) {
 			playerAudio.pause();
 			window.clearInterval(timerPause);
-			indiceParagrapheCourant++;
 		}
+
+		indiceParagrapheCourant++;
 		let lesParagraphes = document.querySelectorAll("#narrateur>p");
 		for(let unParagrapheAsupprimer of lesParagraphes) {
 			unParagrapheAsupprimer.remove();
@@ -354,7 +355,6 @@
 		tempsPasseDS++;
 		if(tempsPasseDS == tempsDePause[indiceParagrapheCourant]) {
 			playerAudio.pause();
-			indiceParagrapheCourant++;
 			window.clearInterval(timerAffichage);
 			window.clearInterval(timerPause);
 		}
