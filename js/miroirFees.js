@@ -2,29 +2,45 @@
 	"use strict";
 	window.addEventListener("DOMContentLoaded", initialiser);
 
+/* ! -> Données à modifier à automatiser */
 	let tempsTotal = 76; /* DONNÉE À MODIFIER */
 	let tempsPasseS = 0;
 	let tempsPasseDS = 0;
-	let tempsDePause = new Array(85, 289, 528, 765); /* DONNÉE À MODIFIER */
-	let tempsDeDepart = new Array(97, 301, 528); /* DONNÉE À MODIFIER */
+	let tempsDePause = new Array(97, 150, 301, 420, 528, 680); /* DONNÉE À MODIFIER */
+	let tempsDeDepart = new Array(97, 150, 301, 420, 528); /* DONNÉE À MODIFIER */
 	let indiceParagrapheCourant = 0;
 	let timerAffichage;
 	let timerPause;
 	let playerAudio;
 	let tousLesSons;
 
-
 	let divJeu;
   let divNarrateur;
   let brouillard;
   let vivianeEtMerlin;
 
-
+/* ! -> À automatiser */
 	let tableauParagraphes = new Array();
-	tableauParagraphes.push(new Array("Ce tombeau est l’un des lieux symbolique de l’amour inconditionnel liant Viviane et Merlin.", "Amant de la fée Viviane, Merlin était également son mentor.", "L’enchanteur a révélé tous ses secrets à la fée. Parmi ceux-ci se trouvait le sortilège permettant de garder un homme pour l’éternité."));
-	tableauParagraphes.push(new Array("Utilisant ce savoir, Viviane a enfermé Merlin dans neuf cercles d’air à l’aide d’un cercle de pierre.", "Merlin, grand magicien, connaissait le sort qui l’attendait mais ne fit rien pour l’éviter.", "Viviane a ainsi pu rester auprès de son bien-aimé jusqu’à la fin des temps.", "Merlin est toujours en vie aux côtés de Viviane dans la caverne que l’on peut deviner sous nos pieds."));
-	tableauParagraphes.push(new Array("L’enchanteur accorde encore aujourd’hui des souhaits aux passants.", "Pour cela, procurez vous différents éléments de la forêt : branches, fleurs, feuilles… et transformez les simplement. Tout ce dont vous avez besoin est de votre créativité.", "Il suffira de poser votre création sur le rocher, de faire un vœu et de remercier Merlin de bien vouloir l’exaucer."));
+	tableauParagraphes.push(new Array("Au fond d’un lac vivaient sept fées, toutes sœurs.",
+																		"La plus jeune d’entre elle, romantique, imaginait la nuit le chevalier de ses rêves…"));
+	tableauParagraphes.push(new Array("Par une journée ensoleillé, la benjamine partit se promener aux alentours du lac.",
+																		"Cependant, alors qu’elle s’apprêtait à sortir du lac, son regard fut attiré par une silhouette.",
+																		"Il s’agissait d’un magnifique jeune homme venu se baigner dans la forêt.",
+																		"Il ne fallut pas plus d’un regard à la fée pour tomber sous son charme, tant il ressemblait à celui dont elle rêvait jours et nuits."));
+	tableauParagraphes.push(new Array("Alors qu’elle observait le chevalier, l’une de ses sœurs sortit à son tour du lac et surprit son regard.",
+																		"Contrariée par l’intérêt de sa benjamine pour cet homme, elle resta dans l’eau à les épier."));
+	tableauParagraphes.push(new Array("La nuit venue, alors que la plus jeune fée dormait paisiblement, les six autres s’éclipsèrent discrètement.",
+																		"Elles virent le chevalier marcher, un peu plus loin dans la forêt.",
+																		"Elles s’approchèrent.",
+																		"Et… Elles l’assassinèrent !"));
+	tableauParagraphes.push(new Array("Le lendemain, la benjamine partit se promener dans les environs du lac comme à son habitude.",
+																		"Sur son chemin, elle tomba sur le cadavre du chevalier. Désespérée, elle le prit dans ses bras et sanglota jusqu’au soir.",
+																		"Sans un mot, la fée laissa là son bien aimé et repartit avec son épée en direction du lac."));
+	tableauParagraphes.push(new Array("Lorsqu’elle retourna chez elle, ses six sœurs dormaient.",
+																		"Elle en profita pour obtenir vengeance pour le chevalier, et trancha la gorge de ses sœurs.",
+																		"Le sang coula à flot et se répandit dans l’eau, tant et si bien qu’il imprégna la terre et les roches l’entourant, les colorant de rouge."));
 
+		/* Création du lecteur audio */
 	/* Visualisation des éléments dans le DOM :
 		<div nomJS="divPlayer" class="player">
 			<span nomJS="containerTexte">Lecture : 0:00 / 2:02</span>
@@ -60,83 +76,27 @@
 		tousLesSons = document.querySelectorAll("audio");
 			/* Ajouter les écouteurs d'événements */
 		document.querySelector("#param>div:nth-child(2)").addEventListener("click", lancementSon);
-		document.querySelector("#narrateur>div:last-child").addEventListener("click", lancerEnigme);
-		//document.querySelector("#narrateur>div:last-child").addEventListener("click", paragrapheSuivantEvt);
+		//document.querySelector("#narrateur>div:last-child").addEventListener("click", lancerEnigme);
+		document.querySelector("#narrateur>div:last-child").addEventListener("click", paragrapheSuivantEvt);
 
-		    /* Ecouteur animation début */
-        document.querySelector("#param>div:first-child>img").addEventListener("click", pleinEcran);
-        document.querySelector("#param>div:nth-child(2)").addEventListener("click", transitionDebut);
+		  /* Ecouteur animation début */
+    document.querySelector("#param>div:first-child>img").addEventListener("click", pleinEcran);
+    document.querySelector("#param>div:nth-child(2)").addEventListener("click", transitionDebut);
 
-            /*  */
-        divJeu = document.getElementById("jeu");
-        divNarrateur = document.getElementById("narrateur");
-        brouillard = document.createElement("img");
-        brouillard.setAttribute("src", "images/brouillardTombeauMerlin.png");
-        brouillard.setAttribute("alt", "Brouillard épais");
-        brouillard.style.height = "100%";
-        divJeu.insertBefore(brouillard, divNarrateur);
+      /*  */
+    divJeu = document.getElementById("jeu");
+    divNarrateur = document.getElementById("narrateur");
+    brouillard = document.createElement("img");
+    brouillard.setAttribute("src", "images/brouillardTombeauMerlin.png");
+    brouillard.setAttribute("alt", "Brouillard épais");
+    brouillard.style.height = "100%";
+    divJeu.insertBefore(brouillard, divNarrateur);
 	}
 
-	function interrupteurSon(evt) {
-		for(let unSon of tousLesSons) {
-			if(unSon.volume == 1) {
-				unSon.volume = 0;
-			} else {
-				unSon.volume = 1;
-			}
-		}
-	}
-
-	async function lancementSon(evt) {
-		document.querySelector("#param>div:last-child").addEventListener("click", interrupteurSon);
-		await attendre(1000);
-			/* Lancer le son */
-		playerAudio = document.getElementById("playerAudioConteur");
-		playerAudio.play();
-			/* Lancer les timers */
-		timerAffichage = window.setInterval(affichageTemps, 1000);
-		timerPause = window.setInterval(arretSon, 100);
-	}
-
-	function affichageTemps() {
-		tempsPasseS = Math.floor(playerAudio.currentTime);
-			/* Arrêter le timer à la fin */
-		if(tempsPasseS > tempsTotal) {
-			window.clearInterval(timerAffichage);
-		}
-			/* Mettre à jour le texte affiché */
-		containerTexte.textContent = "Lecture : "+transformerSecondesEnMinutesSecondes(tempsPasseS)+" / "+transformerSecondesEnMinutesSecondes(tempsTotal);
-			/* Calculer le pourcentage de temps passé et agrandir/déplacer les éléments dynamiques en conséquence */
-		let pourcentage = (tempsPasseS * 100 / tempsTotal);
-		divTempsPasse.style.width = pourcentage+"%";
-		curseur.style.left = pourcentage+"%";
-	}
-
-	function transformerSecondesEnMinutesSecondes(tempsInitial) {
-		let minutes = Math.floor(tempsInitial / 60);
-		let secondes = Math.floor(tempsInitial - 60 * minutes);
-		if(secondes<10) {
-			var tempsTransforme = minutes+":0"+secondes;
-		} else {
-			var tempsTransforme = minutes+":"+secondes;
-		}
-		return tempsTransforme;
-	}
-
-	function arretSon() {
-		tempsPasseDS++;
-		if(tempsPasseDS == tempsDePause[indiceParagrapheCourant]) {
-			playerAudio.pause();
-			indiceParagrapheCourant++;
-			window.clearInterval(timerAffichage);
-			window.clearInterval(timerPause);
-		}
-	}
 
 	function paragrapheSuivantEvt(evt) {
 		paragrapheSuivant();
 	}
-
 	function paragrapheSuivant() {
 		if(!playerAudio.paused) {
 			playerAudio.pause();
@@ -165,26 +125,32 @@
 
 	async function animations() {
 		switch(indiceParagrapheCourant) {
-			case 1 : vivianeEtMerlin = document.createElement("img");
-        			vivianeEtMerlin.setAttribute("src", "images/merlinViviane.png");
-			        vivianeEtMerlin.setAttribute("alt", "Viviane sur les genous de Merlin");
-			        vivianeEtMerlin.style.position = "absolute";
-			        vivianeEtMerlin.style.height = "80%";
-			        vivianeEtMerlin.style.bottom = "-10%";
-			        vivianeEtMerlin.style.right = "30vw";
-			        divJeu.insertBefore(vivianeEtMerlin, divNarrateur);
-			        $("#jeu>img:first-of-type").fadeOut(1500);
+			case 1 : /*vivianeEtMerlin = document.createElement("img");
+        	vivianeEtMerlin.setAttribute("src", "images/merlinViviane.png");
+			    vivianeEtMerlin.setAttribute("alt", "Viviane sur les genous de Merlin");
+			    vivianeEtMerlin.style.position = "absolute";
+			    vivianeEtMerlin.style.height = "80%";
+			    vivianeEtMerlin.style.bottom = "-10%";
+			    vivianeEtMerlin.style.right = "30vw";*/
+          vivianeEtMerlin = ajouterImage("images/merlinViviane.png", "Viviane sur les genous de Merlin",
+                                Array("position" : "absolute",
+                                      "height" : "80%",
+                                      "bottom" : "-10%",
+                                      "right" : "30vw"
+                              ));
+			    divJeu.insertBefore(vivianeEtMerlin, divNarrateur);
+			    $("#jeu>img:first-of-type").fadeOut(1500);
 					await attendre(1500);
 					brouillard.remove();
-			        $("#jeu>img:last-of-type").fadeIn(500);
+			    $("#jeu>img:last-of-type").fadeIn(500);
 					await attendre(500);
 				break;
 			case 3 : $("#jeu>img:last-of-type").fadeOut(500);
 					await attendre(500);
 				break;
 			case 4 : $("#narrateur div:last-child img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
-                    $("#narrateur div:last-child p").text("Terminé");
-                break;
+          $("#narrateur div:last-child p").text("Terminé");
+        break;
 			default :
 				break;
 		}
@@ -195,8 +161,18 @@
 		timerAffichage = window.setInterval(affichageTemps, 1000);
 	}
 
+  function ajouterImage(src, alt, styles) {
+    let img = document.createElement("img");
+    img.setAttribute("src", src);
+    img.setAttribute("alt", alt);
+    for(unStyle in styles) {
+      let propriete = style.indexOf(unStyle);
+      img.style.propriete = unStyle;
+    }
+    return img;
+  }
 
-	async function lancerEnigme(evt) {
+	/*async function lancerEnigme(evt) {
 		if(!playerAudio.paused) {
 			playerAudio.pause();
 			window.clearInterval(timerPause);
@@ -274,15 +250,6 @@
 			booleanEnigme = true;
 		}
 	}
-
-	function attendre(temps) {
-		return new Promise(function(resolve) {
-			setTimeout(function () {
-				resolve()
-			}, temps);
-		})
-	}
-
 	function verificationReponse(evt) {
 		if(this.textContent == "Viviane") {
 			document.querySelector("#narrateur>div:last-child").remove();
@@ -360,64 +327,113 @@
 			}
 			document.getElementById("narrateur").insertBefore(message, document.querySelector("#narrateur>div:nth-of-type(2)"));
 		}
+	}*/
+
+/* FONCTIONS GÉNÉRALES */
+  async function transitionDebut(evt) {
+    this.removeEventListener("click", transitionDebut);
+    let divTexte = document.getElementById("texte");
+    divTexte.style.transform = "scale(0.7) translate(-40%, -35%)";
+    divTexte.style.transition = "all 1s linear";
+    document.querySelector("#param>div:last-child>p").textContent = "Son";
+    document.querySelector("#param>div:last-child>img").setAttribute("src", "images/hautParleur.svg");
+    document.querySelector("#param>div:last-child>img").setAttribute("alt", "Haut parleur");
+    document.querySelector("#param>div:nth-child(2)").remove();
+    document.getElementById("retour").remove();
+    let divCarte = document.getElementById("carte");
+    divCarte.style.transform = "scale(0.6) translate(-255%, 40%)";
+    divCarte.style.transition = "all 1s linear";
+    await attendre(500);
+    $("#jeu").fadeIn(500);
+    divJeu.style.display = "flex";
+  }
+
+  async function lancementSon(evt) {
+		document.querySelector("#param>div:last-child").addEventListener("click", interrupteurSon);
+		await attendre(1000);
+			/* Lancer le son */
+		playerAudio = document.getElementById("playerAudioConteur");
+		playerAudio.play();
+			/* Lancer les timers */
+		timerAffichage = window.setInterval(affichageTemps, 1000);
+		timerPause = window.setInterval(arretSon, 100);
+	}
+  function arretSon() {
+		tempsPasseDS++;
+		if(tempsPasseDS == tempsDePause[indiceParagrapheCourant]) {
+			playerAudio.pause();
+			indiceParagrapheCourant++;
+			window.clearInterval(timerAffichage);
+			window.clearInterval(timerPause);
+		}
 	}
 
-
-
-
-
-
-	    /* Animation début */
-    async function transitionDebut(evt) {
-        this.removeEventListener("click", transitionDebut);
-        let divTexte = document.getElementById("texte");
-        divTexte.style.transform = "scale(0.7) translate(-40%, -35%)";
-        divTexte.style.transition = "all 1s linear";
-        document.querySelector("#param>div:last-child>p").textContent = "Son";
-        document.querySelector("#param>div:last-child>img").setAttribute("src", "images/hautParleur.svg");
-        document.querySelector("#param>div:last-child>img").setAttribute("alt", "Haut parleur");
-        document.querySelector("#param>div:nth-child(2)").remove();
-        document.getElementById("retour").remove();
-        let divCarte = document.getElementById("carte");
-        divCarte.style.transform = "scale(0.6) translate(-255%, 40%)";
-        divCarte.style.transition = "all 1s linear";
-        await attendre(500);
-        $("#jeu").fadeIn(500);
-        divJeu.style.display = "flex";
+  function interrupteurSon(evt) {
+		for(let unSon of tousLesSons) {
+			if(unSon.volume == 1) {
+				unSon.volume = 0;
+			} else {
+				unSon.volume = 1;
+			}
+		}
+	}
+  let booleanPleinEcran = false;
+  function pleinEcran(evt) {
+    if(!booleanPleinEcran) {
+      booleanPleinEcran = true;
+      let html = document.querySelector("html");
+      if (html.requestFullscreen) {
+        html.requestFullscreen();
+      } else if (html.mozRequestFullScreen) { /* Firefox */
+        html.mozRequestFullScreen();
+      } else if (html.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        html.webkitRequestFullscreen();
+      } else if (html.msRequestFullscreen) { /* IE/Edge */
+        html.msRequestFullscreen();
+      }
+    } else {
+      booleanPleinEcran = false;
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) { /* Firefox */
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { /* IE/Edge */
+        document.msExitFullscreen();
+      }
     }
+  }
 
-    let booleanPleinEcran = false;
-    function pleinEcran(evt) {
-        if(!booleanPleinEcran) {
-            booleanPleinEcran = true;
-            let html = document.querySelector("html");
-            if (html.requestFullscreen) {
-                html.requestFullscreen();
-            } else if (html.mozRequestFullScreen) { /* Firefox */
-                html.mozRequestFullScreen();
-            } else if (html.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-                html.webkitRequestFullscreen();
-            } else if (html.msRequestFullscreen) { /* IE/Edge */
-                html.msRequestFullscreen();
-            }
-        } else {
-            booleanPleinEcran = false;
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.mozCancelFullScreen) { /* Firefox */
-                document.mozCancelFullScreen();
-            } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
-                document.webkitExitFullscreen();
-            } else if (document.msExitFullscreen) { /* IE/Edge */
-                document.msExitFullscreen();
-            }
-        }
-    }
+  function affichageTemps() {
+		tempsPasseS = Math.floor(playerAudio.currentTime);
+			/* Arrêter le timer à la fin */
+		if(tempsPasseS > tempsTotal) {
+			window.clearInterval(timerAffichage);
+		}
+			/* Mettre à jour le texte affiché */
+		containerTexte.textContent = "Lecture : "+transformerSecondesEnMinutesSecondes(tempsPasseS)+" / "+transformerSecondesEnMinutesSecondes(tempsTotal);
+			/* Calculer le pourcentage de temps passé et agrandir/déplacer les éléments dynamiques en conséquence */
+		let pourcentage = (tempsPasseS * 100 / tempsTotal);
+		divTempsPasse.style.width = pourcentage+"%";
+		curseur.style.left = pourcentage+"%";
+	}
+  function transformerSecondesEnMinutesSecondes(tempsInitial) {
+		let minutes = Math.floor(tempsInitial / 60);
+		let secondes = Math.floor(tempsInitial - 60 * minutes);
+		if(secondes<10) {
+			var tempsTransforme = minutes+":0"+secondes;
+		} else {
+			var tempsTransforme = minutes+":"+secondes;
+		}
+		return tempsTransforme;
+	}
 
-    function fondu() {
-        $("#jeu").fadeIn(500);
-        divJeu.style.display = "flex";
-        /*divJeu.style.opacity = "1";
-        divJeu.style.transition = "opacity 1s linear";*/
-    }
+	function attendre(temps) {
+		return new Promise(function(resolve) {
+			setTimeout(function () {
+				resolve()
+			}, temps);
+		})
+	}
 }());
