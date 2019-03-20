@@ -74,32 +74,32 @@ require 'connexionBDD.php';
             <p>Passer</p>
           </div>
         </div>
-        <div id="carte">
-          <h2>Localisation</h2>
-          <p>Forêt de Paimpont</p>
-          <img src="images/carteTombeauMerlin.svg" alt="carte de Brocéliande" />
+      </div>
+      <div id="carte">
+        <h2>Localisation</h2>
+        <p>Forêt de Paimpont</p>
+        <img src="images/carteTombeauMerlin.svg" alt="carte de Brocéliande" />
+      </div>
+      <div id="jeu">
+        <div id="narrateur">
+         <div>
+           <img src="images/casque.svg" alt="Casque" />
+           <h3>Narrateur</h3>
+         </div>
+         <p class="histoire">Pour acquérir le droit d’arpenter cet endroit, il te faudra répondre à une question...</p>
+         <p class="histoire">Quelle est la bien aimée de Merlin ?</p>
+         <div>
+           <img src="images/flecheD.svg" alt="Flèche vers la droite" />
+           <p>Répondre</p>
+         </div>
         </div>
       </div>
-        <div id="jeu">
-          <div id="narrateur">
-           <div>
-             <img src="images/casque.svg" alt="Casque" />
-             <h3>Narrateur</h3>
-           </div>
-           <p class="histoire">Pour acquérir le droit d’arpenter cet endroit, il te faudra répondre à une question...</p>
-           <p class="histoire">Quelle est la bien aimée de Merlin ?</p>
-           <div>
-             <img src="images/flecheD.svg" alt="Flèche vers la droite" />
-             <p>Répondre</p>
-           </div>
-          </div>
-        </div>
-        <div id="retour">
-          <p>Retour</p>
-          <a href="javascript:history.go(-1)">
-            <img src="images/flecheG.svg" class="rectif" alt="flèche vers la gauche">
-          </a>
-        </div>
+      <div id="retour">
+        <p>Retour</p>
+        <a href="javascript:history.go(-1)">
+          <img src="images/flecheG.svg" class="rectif" alt="flèche vers la gauche">
+        </a>
+      </div>
     </main>
     <?php include("./footer.php"); ?>
     <script type="text/javascript" src="js/miroirFees.js"></script>

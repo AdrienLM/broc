@@ -152,15 +152,7 @@
 		timerAffichage = window.setInterval(affichageTemps, 1000);
 	}
 
-  function ajouterImage(src, alt, styles) {
-    let img = document.createElement("img");
-    img.setAttribute("src", src);
-    img.setAttribute("alt", alt);
-    for(let index in styles) {
-      eval("img.style."+index+" = styles[index]");
-    }
-    return img;
-  }
+
 
 	/*async function lancerEnigme(evt) {
 		if(!playerAudio.paused) {
@@ -320,6 +312,16 @@
 	}*/
 
 /* FONCTIONS GÉNÉRALES */
+  function ajouterImage(src, alt, styles) {
+    let img = document.createElement("img");
+    img.setAttribute("src", src);
+    img.setAttribute("alt", alt);
+    for(let index in styles) {
+      eval("img.style."+index+" = styles[index]");
+    }
+    return img;
+  }
+
   async function transitionDebut(evt) {
     this.removeEventListener("click", transitionDebut);
     let divTexte = document.getElementById("texte");
@@ -331,7 +333,7 @@
     document.querySelector("#param>div:nth-child(2)").remove();
     document.getElementById("retour").remove();
     let divCarte = document.getElementById("carte");
-    divCarte.style.transform = "scale(0.6) translate(-255%, 40%)";
+    divCarte.style.transform = "scale(0.6) translate(-255%, 40vh)";
     divCarte.style.transition = "all 1s linear";
     await attendre(500);
     $("#jeu").fadeIn(500);
@@ -358,15 +360,7 @@
 		}
 	}
 
-  function interrupteurSon(evt) {
-		for(let unSon of tousLesSons) {
-			if(unSon.volume == 1) {
-				unSon.volume = 0;
-			} else {
-				unSon.volume = 1;
-			}
-		}
-	}
+    /* Paramètres */
   let booleanPleinEcran = false;
   function pleinEcran(evt) {
     if(!booleanPleinEcran) {
@@ -391,6 +385,15 @@
         document.webkitExitFullscreen();
       } else if (document.msExitFullscreen) { /* IE/Edge */
         document.msExitFullscreen();
+      }
+    }
+  }
+  function interrupteurSon(evt) {
+    for(let unSon of tousLesSons) {
+      if(unSon.volume == 1) {
+        unSon.volume = 0;
+      } else {
+        unSon.volume = 1;
       }
     }
   }
