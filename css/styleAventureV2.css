@@ -232,11 +232,6 @@ main{
 
 
 
-
-
-
-
-
 @media screen and (max-width: 1366px) {
     #texte #param{
         font-size: 1.1em;
@@ -322,4 +317,3 @@ main{
     border-radius : 3px;
     background-color : #ffffff;
 }
-

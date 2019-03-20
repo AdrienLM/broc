@@ -15,9 +15,9 @@
 
 
 	let divJeu;
-    let divNarrateur;
-    let brouillard;
-    let vivianeEtMerlin;
+  let divNarrateur;
+  let brouillard;
+  let vivianeEtMerlin;
 
 
 	let tableauParagraphes = new Array();
