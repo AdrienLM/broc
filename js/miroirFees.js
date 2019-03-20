@@ -3,11 +3,11 @@
 	window.addEventListener("DOMContentLoaded", initialiser);
 
 /* ! -> Données à modifier à automatiser */
-	let tempsTotal = 76; /* DONNÉE À MODIFIER */
+	let tempsTotal = 85; /* DONNÉE À MODIFIER */ /* s ? */
 	let tempsPasseS = 0;
 	let tempsPasseDS = 0;
-	let tempsDePause = new Array(97, 150, 301, 420, 528, 680); /* DONNÉE À MODIFIER */
-	let tempsDeDepart = new Array(97, 150, 301, 420, 528); /* DONNÉE À MODIFIER */
+	let tempsDePause = new Array(80, 252, 369, 503, 690, 849); /* DONNÉE À MODIFIER */ /* ds ? */
+	let tempsDeDepart = new Array(80, 252, 369, 503, 690); /* DONNÉE À MODIFIER */
 	let indiceParagrapheCourant = 0;
 	let timerAffichage;
 	let timerPause;
@@ -125,19 +125,10 @@
 
 	async function animations() {
 		switch(indiceParagrapheCourant) {
-			case 1 : /*vivianeEtMerlin = document.createElement("img");
-        	vivianeEtMerlin.setAttribute("src", "images/merlinViviane.png");
-			    vivianeEtMerlin.setAttribute("alt", "Viviane sur les genous de Merlin");
-			    vivianeEtMerlin.style.position = "absolute";
-			    vivianeEtMerlin.style.height = "80%";
-			    vivianeEtMerlin.style.bottom = "-10%";
-			    vivianeEtMerlin.style.right = "30vw";*/
+			case 1 :
           vivianeEtMerlin = ajouterImage("images/merlinViviane.png", "Viviane sur les genous de Merlin",
-                                Array("position" : "absolute",
-                                      "height" : "80%",
-                                      "bottom" : "-10%",
-                                      "right" : "30vw"
-                              ));
+                                {"position" : "absolute", "height" : "80%", "bottom" : "-10%", "right" : "30vw"}
+                              );
 			    divJeu.insertBefore(vivianeEtMerlin, divNarrateur);
 			    $("#jeu>img:first-of-type").fadeOut(1500);
 					await attendre(1500);
@@ -165,9 +156,8 @@
     let img = document.createElement("img");
     img.setAttribute("src", src);
     img.setAttribute("alt", alt);
-    for(unStyle in styles) {
-      let propriete = style.indexOf(unStyle);
-      img.style.propriete = unStyle;
+    for(let index in styles) {
+      eval("img.style."+index+" = styles[index]");
     }
     return img;
   }
