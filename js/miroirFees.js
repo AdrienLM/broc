@@ -3,11 +3,11 @@
 	window.addEventListener("DOMContentLoaded", initialiser);
 
 /* ! -> Données à modifier à automatiser */
-	let tempsTotal = 84; /* DONNÉE À MODIFIER */ /* s ? */
+	let tempsTotal = 88; /* DONNÉE À MODIFIER */ /* s ? */
 	let tempsPasseS = 0;
 	let tempsPasseDS = 0;
-	let tempsDePause = new Array(80, 252, 369, 503, 690, 849); /* DONNÉE À MODIFIER */ /* ds ? */
-	let tempsDeDepart = new Array(81, 252, 369, 503, 690); /* DONNÉE À MODIFIER */
+	let tempsDePause = new Array(80, 286, 403, 536, 723, 883); /* DONNÉE À MODIFIER */ /* ds ? */
+	let tempsDeDepart = new Array(81, 286, 403, 536, 723); /* DONNÉE À MODIFIER */
 	let indiceParagrapheCourant = 0;
 	let timerAffichage;
 	let timerPause;
@@ -126,6 +126,9 @@
 		btnOui.textContent = "Oui";
 		let btnNon = document.createElement("button");
 		btnNon.textContent = "Non";*/
+		btnDivNarrateur.removeEventListener("click", validationPersonnalisationChevalier);
+		btnDivNarrateur.addEventListener("click", paragrapheSuivantEvt);
+		paragrapheSuivant();
 		interfaceChoixChevalier.remove();
 		interrupteurInterfaceNarrateurJeu(0);
 	}
@@ -141,14 +144,12 @@
 			divNarrateur.style.transform = "translate(0)";
 			divNarrateur.style.width = "250px";
 			btnDivNarrateur.querySelector("p").textContent = "Suivant";
-			btnDivNarrateur.style.justifyContent = "flex-start";
 		} else {
 			supprimerParagraphesHistoire();
 			divNarrateur.querySelector("img").setAttribute("src", "images/console.svg");
 			divNarrateur.querySelector("img").setAttribute("alt", "Manette de jeu");
 			divNarrateur.querySelector("h3").textContent = "Jeu";
 			btnDivNarrateur.querySelector("p").textContent = "Valider";
-			btnDivNarrateur.style.justifyContent = "center";
 
 			switch(numeroJeu) {
 				case 1 :
@@ -395,7 +396,7 @@
 			baliseP.classList.add("histoire");
 			baliseP.appendChild(document.createTextNode(tableauParagraphes));
 			document.getElementById("narrateur").insertBefore(baliseP, document.querySelector("#narrateur>div:nth-of-type(2)"));*/
-		if(indiceParagrapheCourant < 4) {
+		if(indiceParagrapheCourant <= tableauParagraphes.length) {
 			for(let unParagrapheAAfficher of tableauParagraphes[indiceParagrapheCourant - 1]) {
 				let baliseP = document.createElement("p");
 				baliseP.classList.add("histoire");
@@ -408,20 +409,8 @@
 
 	async function animations() {
 		switch(indiceParagrapheCourant) {
-			case 1 :
-          let vivianeEtMerlin = creerImage("images/merlinViviane.png", "Viviane sur les genous de Merlin", {"position" : "absolute", "height" : "80%", "bottom" : "-10%", "right" : "30vw"});
-			    divJeu.insertBefore(vivianeEtMerlin, divNarrateur);
-			    $("#jeu>img:first-of-type").fadeOut(1500);
-					await attendre(1500);
-					brouillard.remove();
-			    $("#jeu>img:last-of-type").fadeIn(500);
-					await attendre(500);
-				break;
-			case 3 : $("#jeu>img:last-of-type").fadeOut(500);
-					await attendre(500);
-				break;
-			case 4 : $("#narrateur div:last-child img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
-          $("#narrateur div:last-child p").text("Terminé");
+			case tableauParagraphes.length : $("#narrateur>div:last-child>img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
+          $("#narrateur>div:last-child>p").text("Terminé");
         break;
 			default :
 				break;

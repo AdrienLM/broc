@@ -51,8 +51,8 @@ require 'connexionBDD.php';
         <h2>Scène 1</h2>
         <h1>Le miroir aux Fées</h1>
         <audio id="playerAudioConteur">
-          <source src="./sons/aventureMiroirAuxFees.mp3" />
-          <source src="./sons/aventureMiroirAuxFees.ogg" />
+          <source src="./sons/aventureMiroirAuxFeesV2.mp3" />
+          <source src="./sons/aventureMiroirAuxFeesV2.ogg" />
         </audio>
         <p>Paramètres</p>
         <div id="param">

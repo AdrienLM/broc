@@ -181,7 +181,7 @@ main{
     flex-direction: column;
 }
 
-#narrateur>div:not(.interfaceChoixChevalier)>img{
+#narrateur>div:not(.interfaceChoixChevalier) img{
     width: 30px;
     margin-right: 10px;
 }
