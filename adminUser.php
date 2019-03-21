@@ -10,6 +10,54 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 		$requser->execute(array($getid));
 		$userinfo = $requser->fetch(PDO::FETCH_ASSOC);
   	$_SESSION['val1'] = 0;
+
+//////////////////////////// FORMULAIRE ROLE ///////////////////////////
+				if(isset($_POST['EnvDroit'])){
+
+            $cleRole = $_POST['cleRole'];
+
+						if ($_POST['Droit'] == "Membre" ) {
+						//	echo "membre";
+							$calcDroit = "NULL";
+						}else if($_POST['Droit'] == "Modérateur" ){
+						//	echo "modo";
+							$calcDroit = 1;
+						}else if($_POST['Droit'] == "Admininistrateur" ){
+						//	echo "admin";
+							$calcDroit = 2;
+						}
+
+					$sqlAdminUserRole = "UPDATE membres
+																 SET isAdmin = ".$calcDroit."
+																 WHERE IdUser = ".$cleRole."";
+				 //	echo $sqlAdminUserRole;
+					$requserAdminUserRole = $pdo->prepare($sqlAdminUserRole);
+					$requserAdminUserRole->execute();
+					unset($_POST['EnvDroit']);
+				  header('Location: adminUser.php');
+			}
+///////////////////////////////////////////////////////////////////
+
+//////////////////////// FORMULAIRE BLOQUER //////////////////////
+			if(isset($_POST['Bloquer'])){
+
+				$motif = $_POST['Motif'];
+				//	echo $motif;
+				$cleMotif = $_POST['cleMotif'];
+
+				$sqlAdminUserBloque = "UPDATE membres
+															 SET EtatCompte = '1',
+																	 MotifBloque = '".$motif."'
+															 WHERE IdUser = ".$cleMotif."";
+				//echo $sqlAdminUserBloque;
+				$requserAdminUserBloque = $pdo->prepare($sqlAdminUserBloque);
+				$requserAdminUserBloque->execute();
+				unset($_POST['Bloquer']);
+				unset($_POST['Motif']);
+				header('Location: adminUser.php');
+			}
+//////////////////////////////////////////////////////////////////
+
 ?>
 
     <!DOCTYPE html>
@@ -249,45 +297,17 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 ?>
 
                     <form method="POST" action="">
-                        <select name="Droit<?php echo "".$cle."" ?>" size="1">
+                        <select name="Droit" size="1">
 														<option>Membre</option>
 														<option>Modérateur</option>
 														<option>Admininistrateur</option>
 												</select>
-                        <input type="submit" name="EnvDroit<?php echo "".$cle."" ?>" value="Modifier les droits" class="boutonInput" />
+                        <input name="cleRole" value="<?php echo $cle ; ?>" type="hidden" />
+                        <input type="submit" name="EnvDroit" value="Modifier les droits" class="boutonInput" />
                     </form>
                     <?php
-
-
-										////formulaire///
-							if(isset($_POST['EnvDroit'.$cle])){
-									if ($_POST['Droit'.$cle] == "Membre" ) {
-									//	echo "membre";
-										$calcDroit = "NULL";
-									}else if($_POST['Droit'.$cle] == "Modérateur" ){
-									//	echo "modo";
-										$calcDroit = 1;
-									}else if($_POST['Droit'.$cle] == "Admininistrateur" ){
-									//	echo "admin";
-										$calcDroit = 2;
-									}
-
-							  $sqlAdminUserRole = "UPDATE membres
-																			 SET isAdmin = ".$calcDroit."
-																			 WHERE IdUser = ".$cle."";
-							 //	echo $sqlAdminUserRole;
-								$requserAdminUserRole = $pdo->prepare($sqlAdminUserRole);
-								$requserAdminUserRole->execute();
-							 // header('Location: adminUser.php');
-
-
-
-					  }
 				  }
 				 }
-
-
-
 
 // Bloquer --
 					//echo 	"Bloquer -- ".$listeUserAAdminEtatCompte[$cle]."</br>";
@@ -297,41 +317,28 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
                         <form method="POST" action="">
                             <ul>
                                 <li>
-                                    <input type="text" name="Motif<?php echo "".$cle."" ?>" class="field-long" placeholder="Motif de bloquage" required="required" />
+                                    <input type="text" name="Motif" class="field-long" placeholder="Motif de bloquage" required="required" />
                                 </li>
+																<input name="cleMotif" value="<?php echo $cle ; ?>" type="hidden" />
                                 <li class="centrer">
-                                    <input type="submit" name="Bloquer<?php echo "".$cle."" ?>" value="bloquer" class="boutonInput" />
+                                    <input type="submit" name="Bloquer" value="bloquer" class="boutonInput" />
                                 </li>
                             </ul>
                         </form>
 
-                        <?php
-						if(isset($_POST['Bloquer'.$cle])){
-							// echo "compte".$cle."";
-							$motif = $_POST['Motif'.$cle];
-						  //	echo $motif;
-							$sqlAdminUserBloque = "UPDATE membres
-							 											 SET EtatCompte = '1',
-																		 		 MotifBloque = '".$motif."'
-																		 WHERE IdUser = ".$cle."";
-							//echo $sqlAdminUserBloque;
-							$requserAdminUserBloque = $pdo->prepare($sqlAdminUserBloque);
-							$requserAdminUserBloque->execute();
-							//header('Location: adminUser.php');
-						}
-?>
 
-                        <?php
 
-					}else if( $listeUserAAdminEtatCompte[$cle] == 1 ){
-						echo " Statut : compte bloqué  </br>";
-						echo " Motif de bloquage : ".$listeUserAAdminMotifBloque[$cle]." </br>";
-					}
+<?php
+
+					  }else if( $listeUserAAdminEtatCompte[$cle] == 1 ){
+						  echo " Statut : compte bloqué  </br>";
+					  	echo " Motif de bloquage : ".$listeUserAAdminMotifBloque[$cle]." </br>";
+					  }
                         ?></div><?php
-					echo "</br></br>";?>
-            </div>
+				    	echo "</br></br>";?>
+              </div>
 
-            <?php
+<?php
 			}
 
 
