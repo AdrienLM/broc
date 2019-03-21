@@ -2,8 +2,6 @@
 session_start();
 require 'connexionBDD.php';
 
-
-
 //if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 //{
 	//$getid = intval($_SESSION['id']);
@@ -11,10 +9,7 @@ require 'connexionBDD.php';
 	//$requser->execute(array($getid));
 	//$userinfo = $requser->fetch(PDO::FETCH_ASSOC);
   //$_SESSION['val1'] = 0;
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html allowfullscreen>
@@ -82,16 +77,16 @@ require 'connexionBDD.php';
       </div>
       <div id="jeu">
         <div id="narrateur">
-         <div>
-           <img src="images/casque.svg" alt="Casque" />
-           <h3>Narrateur</h3>
-         </div>
-         <p class="histoire">Pour acquérir le droit d’arpenter cet endroit, il te faudra répondre à une question...</p>
-         <p class="histoire">Quelle est la bien aimée de Merlin ?</p>
-         <div>
-           <img src="images/flecheD.svg" alt="Flèche vers la droite" />
-           <p>Répondre</p>
-         </div>
+          <div>
+            <img src="images/casque.svg" alt="Casque" />
+            <h3>Narrateur</h3>
+          </div>
+          <p class="histoire">Au fond d’un lac vivaient sept fées, toutes sœurs.</p>
+          <p class="histoire">La plus jeune d’entre elles, romantique, imaginait la nuit le chevalier de ses rêves…</p>
+          <div>
+            <img src="images/flecheD.svg" alt="Flèche vers la droite" />
+            <p>Choisir</p>
+          </div>
         </div>
       </div>
       <div id="retour">
@@ -106,11 +101,8 @@ require 'connexionBDD.php';
   </body>
 </html>
 
-
-
- <?php
+<?php
 //}else{
    // header('Location: connexion.php');
 //}
-
 ?>
