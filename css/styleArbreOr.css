@@ -12,6 +12,23 @@
     display: none;
 }
 
+#jeu #zoom:focus{
+    outline:none;
+} 
+
+#jeu #zoom img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+#jeu #zoom{
+    text-decoration:none;
+    color: rgba(0,0,0,0.7);
+    cursor: default;
+}
+
 #jeu #arbreOr{
     height: 60%;
     margin-top: 10%;
@@ -83,17 +100,18 @@
 }
 
 .feuilles{
-    height: 5%;
+    height: 15px;
+    width: 15px;
+    background-color: red;
     position: absolute;
-    opacity: 0;
-    transition: all 0.2s linear;
+    opacity: 1;
     cursor: pointer;
+    z-index: 5000;
 }
 
 #feuille1{
-    bottom: 15%;
-    right: 17%;
-    transform: rotate(60deg);
+    bottom: 30%;
+    left: 20%;
 }
 
 #feuille2{
@@ -104,7 +122,6 @@
 #feuille3{
     bottom: 15%;
     right: 40%;
-    transform: rotate(-15deg);
 }
 
 .pierres{

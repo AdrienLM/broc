@@ -110,10 +110,10 @@
 	
 	Zoomple.DEFAULTS = { 
 		attachWindowToMouse : true, 
-		blankURL : 'images/blank.gif',
-		bgColor : '#fff',
+		blankURL : 'images/logo_kleiz.svg',
+		bgColor : 'rgba(0,0,0,0.7)',
 		delay : 1,
-		loaderURL : 'images/loader.gif',
+		loaderURL : 'images/logo_kleiz.svg',
 		offset : {x : 5,y : 5},
 		roundedCorners : false, 
 		source : 'href',

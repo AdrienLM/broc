@@ -103,6 +103,12 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 </a>
             </div>
             <div id="jeu">
+               <a href="images/arbreOr/clairiereZoom.jpg" class="zoomple" id="zoom">
+                   <img src="images/arbreOr/clairiere.jpg">
+                   <div class="feuilles" id="feuille1"></div>
+                   <div class="feuilles" id="feuille2"></div>
+                   <div class="feuilles" id="feuille3"></div>
+               </a>
                 <img src="images/arbreOr/arbreDOr.png" alt="arbre d'or" id="arbreOr">
                 <img src="images/arbreOr/lutin1.png" alt="lutin" id="lutin1">
                 <img src="images/arbreOr/lutin2.png" alt="lutin" id="lutin2">
@@ -111,9 +117,9 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 <img src="images/arbreOr/tronc2.png" alt="tronc d'arbre calciné" id="arbre2">
                 <img src="images/arbreOr/tronc3.png" alt="tronc d'arbre calciné" id="arbre3">
                 <img src="images/arbreOr/tronc4.png" alt="tronc d'arbre calciné" id="arbre4">
-                <img src="images/arbreOr/feuilleOr.png" alt="feuille d'or" id="feuille1" class="feuilles">
+                <!--<img src="images/arbreOr/feuilleOr.png" alt="feuille d'or" id="feuille1" class="feuilles">
                 <img src="images/arbreOr/feuilleOr.png" alt="feuille d'or" id="feuille2" class="feuilles">
-                <img src="images/arbreOr/feuilleOr.png" alt="feuille d'or" id="feuille3" class="feuilles">
+                <img src="images/arbreOr/feuilleOr.png" alt="feuille d'or" id="feuille3" class="feuilles">-->
                 <img src="images/arbreOr/pierreLutin.png" alt="pierre" id="pierre1" class="pierres">
                 <img src="images/arbreOr/pierreLutin.png" alt="pierre" id="pierre2" class="pierres">
                 <img src="images/arbreOr/pierreLutin.png" alt="pierre" id="pierre3" class="pierres">

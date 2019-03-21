@@ -100,13 +100,12 @@ $(document).ready(function(){
             setTimeout(function(){
                 $("#lutin2").css("opacity", "1");
             }, 2000);
-            $("#jeu").zoomple({ 
-                blankURL : 'images/blank.gif',
-                bgColor : '#90D5D9',
-                loaderURL : 'images/loader.gif',
-                offset : {x:-150,y:-150},
-                zoomWidth : 300,  
-                zoomHeight : 300,
+            $("#zoom").zoomple({
+                offset : {x:10,y:10},
+                bgColor : '#839CA1', 
+                zoomWidth : 250, 
+                showCursor : true, 
+                zoomHeight : 250,
                 roundedCorners : true
             });
             //écouteur sur le bouton suivant
