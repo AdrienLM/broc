@@ -48,7 +48,81 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 
     <body>
         <div id="barreNav">
-            <?php include("header.php") ?>
+
+<!-- DEBUT HEADER ADMIN  -->
+<header>
+    <a href="index.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
+    <nav>
+        <a href="index.php">accueil</a>
+        <a href="soon.php">guide</a>
+        <a href="choixModes.php">modes</a>
+
+<?php
+            if(isset($_SESSION['id']) AND $userinfo['IdUser'] == $_SESSION['id'])
+            {
+?>
+            <a href="profil.php">
+                <div class="profil">
+                      <p>Profil</p>
+                    <img class="imgUser" src="membres/avatars/<?php echo $userinfo['AvatarUser']; ?>" alt="image du profil utilisateur">
+                </div>
+            </a>
+<?php
+            }else{
+?>
+            <a href="connexion.php" class="co">
+                <div class="profil">
+                    <p>Connexion</p>
+                </div>
+            </a>
+<?php
+            }
+?>
+            <img src="images/iconeMenu.svg" alt="dépliant" id="depliant">
+            <ul id="menuFlottant">
+                <li>
+                          <a href="carte.php">
+                        <img src="images/carte.svg" alt="carte">
+                    </a>
+                    <p>Carte</p>
+              	</li>
+            <li>
+
+
+
+<?php
+            if(isset($_SESSION['id']) AND $userinfo['IdUser'] == $_SESSION['id'])
+            {
+?>
+            <li>
+                <a href="deconnexion.php">
+                	<img src="images/power.svg" alt="quitter">
+            		</a>
+                <p>Déconnexion</p>
+						</li>
+<?php
+            }else{
+?>
+            <li>
+            		<a href="inscription.php">
+               		<img src="images/userNonCompte.svg" alt="quitter">
+            		</a>
+               <p>Inscription</p>
+            </li>
+<?php
+            }
+?>
+            <li>
+              <!-- <a href="parametres.php"> -->
+               <a href="soon.php">
+                  <img src="images/engrenage.svg" alt="engrenage">
+               </a>
+                  <p>Paramètres</p>
+            </li>
+        </ul>
+    </nav>
+</header>
+<!-- FIN HEADER ADMIN  -->
             <h1>PANNEL ADMININISTRATEUR</h1>
         </div>
 
@@ -67,12 +141,14 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 					$isAdmin = $pdo->query($requete);
 					$repAdmin = $isAdmin->fetch(PDO::FETCH_ASSOC);
 			}
+
+
 			if($repAdmin['isAdmin'] >= 1){
 
-    	function chargerClasse($classname){
-        	require 'class/'.$classname.'.php';
-      }
-	        spl_autoload_register('chargerClasse');
+
+
+// réinitialisation //
+
 
 			$sqlReq = "SELECT * FROM membres";
       $execSqlReq = $pdo->query($sqlReq);
@@ -95,42 +171,41 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 ////////////////////////////////////Utilisateur/////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-    
-    
+
+
 
 			foreach($listeUserAAdminIdUser as $cle => $valeur){
-                
+
                 ?>
 
-        
+
             <div class="containerUser">
 
 
 
                 <?php
-
-
-
 // Avatar -- default.jpg
 					//echo 	"Avatar -- ".$listeUserAAdminAvatarUser[$cle]."</br>";
-					echo "<img class=\"imgProfil\" src='membres/avatars/".$listeUserAAdminAvatarUser[$cle]."' /> ";
+					echo "<img class=\"imgProfil\" src='membres/avatars/".$listeUserAAdminAvatarUser[$cle]."'/>";
 
 //Banniere -- defaultb.jpg
 					// echo 	"Banniere -- ".$listeUserAAdminBanniereUser[$cle]."</br>";
-					echo "<img class=\"imgBanniere\" src='membres/banniere/".$listeUserAAdminBanniereUser[$cle]."' /> </br>";
-                ?> 
-                
+					echo "<img class=\"imgBanniere\" src='membres/banniere/".$listeUserAAdminBanniereUser[$cle]."'/> </br>";
+                ?>
+
                     <div class="fondProfil">
-                    <?php
-                    
-                
+
+
+                <?php
+
+
                 // Pseudo -- aze
-					echo 	"Pseudo : ".$listeUserAAdminPseudoUser[$cle]."</br>";   
+					echo 	"Pseudo : ".$listeUserAAdminPseudoUser[$cle]."</br>";
 
 // Mail -- a@aa.com
 					echo 	"Mail : ".$listeUserAAdminEmailUser[$cle]."</br>";
 
-// Groupe --           
+// Groupe --
                     // Description --
 					//echo 	"Description -- ".$listeUserAAdminDescriptionUser[$cle]."</br>";
 					if ($listeUserAAdminDescriptionUser[$cle] == null) {
@@ -177,35 +252,38 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 ?>
 
                     <form method="POST" action="">
-                        <select name="Droit<?php echo " ".$cle." " ?>" size="1">
-								<option>Membre</option>
-								<option>Modérateur</option>
-								<option>Admininistrateur</option>
-							</select>
-                        <input type="submit" name="EnvDroit<?php echo " ".$cle." " ?>" value="Modifier les droits" class="boutonInput" />
+                        <select name="Droit<?php echo "".$cle."" ?>" size="1">
+														<option>Membre</option>
+														<option>Modérateur</option>
+														<option>Admininistrateur</option>
+												</select>
+                        <input type="submit" name="EnvDroit<?php echo "".$cle."" ?>" value="Modifier les droits" class="boutonInput" />
                     </form>
                     <?php
-						if(isset($_POST['EnvDroit'.$cle])){
-								if ($_POST['Droit'.$cle] == "membre" ) {
-									echo "membre";
-									$calcDroit = "NULL";
-								}else if($_POST['Droit'.$cle] == "modo" ){
-									echo "modo";
-									$calcDroit = 1;
-								}else if($_POST['Droit'.$cle] == "admin" ){
-									echo "admin";
-									$calcDroit = 2;
-								}
+							////formulaire///
+							if(isset($_POST['EnvDroit'.$cle])){
+									if ($_POST['Droit'.$cle] == "Membre" ) {
+									//	echo "membre";
+										$calcDroit = "NULL";
+									}else if($_POST['Droit'.$cle] == "Modérateur" ){
+									//	echo "modo";
+										$calcDroit = 1;
+									}else if($_POST['Droit'.$cle] == "Admininistrateur" ){
+									//	echo "admin";
+										$calcDroit = 2;
+									}
 
-						  $sqlAdminUserRole = "UPDATE membres
-																		 SET isAdmin = ".$calcDroit."
-																		 WHERE IdUser = ".$cle."";
-							echo $sqlAdminUserRole;
-							$requserAdminUserRole = $pdo->prepare($sqlAdminUserRole);
-							$requserAdminUserRole->execute();
-							header('Location: adminUser.php');
+							  $sqlAdminUserRole = "UPDATE membres
+																			 SET isAdmin = ".$calcDroit."
+																			 WHERE IdUser = ".$cle."";
+							 //	echo $sqlAdminUserRole;
+								$requserAdminUserRole = $pdo->prepare($sqlAdminUserRole);
+								$requserAdminUserRole->execute();
+							 // header('Location: adminUser.php');
+							  
 
-				     }
+
+					  }
 				  }
 				 }
 
@@ -220,30 +298,30 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
                         <form method="POST" action="">
                             <ul>
                                 <li>
-                                    <input type="text" name="Motif<?php echo " ".$cle." " ?>" class="field-long" placeholder="Motif de bloquage" required="required" />
+                                    <input type="text" name="Motif<?php echo "".$cle."" ?>" class="field-long" placeholder="Motif de bloquage" required="required" />
                                 </li>
                                 <li class="centrer">
-                                    <input type="submit" name="Bloquer<?php echo " ".$cle." " ?>" value="bloquer" class="boutonInput" />
+                                    <input type="submit" name="Bloquer<?php echo "".$cle."" ?>" value="bloquer" class="boutonInput" />
                                 </li>
                             </ul>
                         </form>
-                        
+
                         <?php
 						if(isset($_POST['Bloquer'.$cle])){
-							echo "compte".$cle."";
+							// echo "compte".$cle."";
 							$motif = $_POST['Motif'.$cle];
-							echo $motif;
+						  //	echo $motif;
 							$sqlAdminUserBloque = "UPDATE membres
 							 											 SET EtatCompte = '1',
 																		 		 MotifBloque = '".$motif."'
 																		 WHERE IdUser = ".$cle."";
-							echo $sqlAdminUserBloque;
+							//echo $sqlAdminUserBloque;
 							$requserAdminUserBloque = $pdo->prepare($sqlAdminUserBloque);
 							$requserAdminUserBloque->execute();
-							header('Location: adminUser.php');
+							//header('Location: adminUser.php');
 						}
 ?>
-                            
+
                         <?php
 
 					}else if( $listeUserAAdminEtatCompte[$cle] == 1 ){
@@ -253,16 +331,16 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
                         ?></div><?php
 					echo "</br></br>";?>
             </div>
-               
+
             <?php
 			}
-                
+
 
 			}else{
 			    header('Location: index.php');
 			}
       ?>
-             </div>
+        </div>
     </body>
 
     </html>
