@@ -16,13 +16,30 @@
 
 	let divJeu;
   let divNarrateur;
-  let brouillard;
-  let vivianeEtMerlin;
+	let btnDivNarrateur;
+	let btnDivNarrateurImg;
+
+	let tableauChoix;
+	let tableauChoixMots = { "A" : "", "P" : "", "C" : "", "Y" : ""};
+	let chevalier;
+
+
+	let interfaceChoixChevalier = document.createElement("div");
+	let divChoixCheveuxG = document.createElement("div");
+	let divChoixYeuxG = document.createElement("div");
+	let divChoixPeauG = document.createElement("div");
+	let divChoixArmureG = document.createElement("div");
+	let divChoixCheveuxD = document.createElement("div");
+	let divChoixYeuxD = document.createElement("div");
+	let divChoixPeauD = document.createElement("div");
+	let divChoixArmureD = document.createElement("div");
+
+
 
 /* ! -> À automatiser */
 	let tableauParagraphes = new Array();
-	tableauParagraphes.push(new Array("Au fond d’un lac vivaient sept fées, toutes sœurs.",
-																		"La plus jeune d’entre elle, romantique, imaginait la nuit le chevalier de ses rêves…"));
+	//tableauParagraphes.push(new Array("Au fond d’un lac vivaient sept fées, toutes sœurs.",
+																		//"La plus jeune d’entre elles, romantique, imaginait la nuit le chevalier de ses rêves…"));
 	tableauParagraphes.push(new Array("Par une journée ensoleillé, la benjamine partit se promener aux alentours du lac.",
 																		"Cependant, alors qu’elle s’apprêtait à sortir du lac, son regard fut attiré par une silhouette.",
 																		"Il s’agissait d’un magnifique jeune homme venu se baigner dans la forêt.",
@@ -72,27 +89,297 @@
 		divPlayer.appendChild(barreTemps);
 		document.getElementById("texte").insertBefore(divPlayer, document.getElementById("texte").querySelector("p"));
 
-
+			/* Enregistrer les éléments du DOM nécessaire à la fonction initialiser */
 		tousLesSons = document.querySelectorAll("audio");
+		btnDivNarrateur = document.querySelector("#narrateur>div:last-child");
+		btnDivNarrateurImg = btnDivNarrateur.querySelector("img");
+
 			/* Ajouter les écouteurs d'événements */
 		document.querySelector("#param>div:nth-child(2)").addEventListener("click", lancementSon);
-		//document.querySelector("#narrateur>div:last-child").addEventListener("click", lancerEnigme);
-		document.querySelector("#narrateur>div:last-child").addEventListener("click", paragrapheSuivantEvt);
+		btnDivNarrateur.addEventListener("click", lancerJeuPersonnalisationChevalier);
+		//document.querySelector("#narrateur>div:last-child").addEventListener("click", paragrapheSuivantEvt);
 
 		  /* Ecouteur animation début */
     document.querySelector("#param>div:first-child>img").addEventListener("click", pleinEcran);
     document.querySelector("#param>div:nth-child(2)").addEventListener("click", transitionDebut);
 
-      /*  */
+      /* Enregistrer les autres éléments du DOM */
+		divNarrateur = document.getElementById("narrateur");
     divJeu = document.getElementById("jeu");
-    divNarrateur = document.getElementById("narrateur");
-    brouillard = document.createElement("img");
-    brouillard.setAttribute("src", "images/brouillardTombeauMerlin.png");
-    brouillard.setAttribute("alt", "Brouillard épais");
-    brouillard.style.height = "100%";
-    divJeu.insertBefore(brouillard, divNarrateur);
 	}
 
+	function lancerJeuPersonnalisationChevalier(evt) {
+		if(!playerAudio.paused) {
+			playerAudio.pause();
+			window.clearInterval(timerPause);
+		}
+		interrupteurInterfaceNarrateurJeu(1);
+		btnDivNarrateur.removeEventListener("click", lancerJeuPersonnalisationChevalier);
+		btnDivNarrateur.addEventListener("click", validationPersonnalisationChevalier);
+	}
+
+	function validationPersonnalisationChevalier(evt) {
+		/*let divValidation = document.createElement("div");
+		let p = document.createElement("p");
+		p.textContent = "Ce choix vous convient-il ?";
+		let btnOui = document.createElement("button");
+		btnOui.textContent = "Oui";
+		let btnNon = document.createElement("button");
+		btnNon.textContent = "Non";*/
+		interfaceChoixChevalier.remove();
+		interrupteurInterfaceNarrateurJeu(0);
+	}
+
+	function interrupteurInterfaceNarrateurJeu(numeroJeu) {
+		if(divNarrateur.querySelector("h3").textContent == "Jeu") {
+			btnDivNarrateur.addEventListener("click", paragrapheSuivantEvt);
+			divNarrateur.querySelector("img").setAttribute("src", "images/casque.svg");
+			divNarrateur.querySelector("img").setAttribute("alt", "Casque");
+			divNarrateur.querySelector("h3").textContent = "Narrateur";
+			divNarrateur.style.right = "10px";
+			divNarrateur.style.top = "20px";
+			divNarrateur.style.transform = "translate(0)";
+			divNarrateur.style.width = "250px";
+			btnDivNarrateur.querySelector("p").textContent = "Suivant";
+			btnDivNarrateur.style.justifyContent = "flex-start";
+		} else {
+			supprimerParagraphesHistoire();
+			divNarrateur.querySelector("img").setAttribute("src", "images/console.svg");
+			divNarrateur.querySelector("img").setAttribute("alt", "Manette de jeu");
+			divNarrateur.querySelector("h3").textContent = "Jeu";
+			btnDivNarrateur.querySelector("p").textContent = "Valider";
+			btnDivNarrateur.style.justifyContent = "center";
+
+			switch(numeroJeu) {
+				case 1 :
+						/* Restyliser #narrateur pour le jeu */
+					divNarrateur.style.right = "50%";
+					divNarrateur.style.top = "50%";
+					divNarrateur.style.transition = "all 1s linear";
+					divNarrateur.style.transform = "translateX(50%) translateY(-50%)";
+					divNarrateur.style.width = "95%";
+					divNarrateur.style.height = "95%";
+
+						/* Créer le tableau des paramètres choisis */
+					tableauChoix = {"C" : "O", "Y" : "B", "P" : "B", "A" : "B"};
+
+						/* Ajouter l'interface */
+					interfaceChoixChevalier.classList.add("interfaceChoixChevalier")
+					divNarrateur.insertBefore(interfaceChoixChevalier, btnDivNarrateur);
+
+						/* Créer les boutons de choix à gauche */
+					let divChoixGauche = document.createElement("div");
+					divChoixCheveuxG.dataset.parametre = "C";
+					divChoixCheveuxG.dataset.couleur = "N";
+					divChoixYeuxG.dataset.parametre = "Y";
+					divChoixYeuxG.dataset.couleur = "V";
+					divChoixPeauG.dataset.parametre = "P";
+					divChoixPeauG.dataset.couleur = "N";
+					divChoixArmureG.dataset.parametre = "A";
+					divChoixArmureG.dataset.couleur = "V";
+					interfaceChoixChevalier.appendChild(divChoixGauche);
+					divChoixGauche.appendChild(divChoixCheveuxG);
+					divChoixGauche.appendChild(divChoixYeuxG);
+					divChoixGauche.appendChild(divChoixPeauG);
+					divChoixGauche.appendChild(divChoixArmureG);
+
+						/* Créer les boutons de choix à droite */
+					let divChoixDroite = document.createElement("div");
+					divChoixCheveuxD.dataset.parametre = "C";
+					divChoixCheveuxD.dataset.couleur = "R";
+					divChoixYeuxD.dataset.parametre = "Y";
+					divChoixYeuxD.dataset.couleur = "M";
+					divChoixPeauD.dataset.parametre = "P";
+					divChoixPeauD.dataset.couleur = "M";
+					divChoixArmureD.dataset.parametre = "A";
+					divChoixArmureD.dataset.couleur = "R";
+					interfaceChoixChevalier.appendChild(divChoixDroite);
+					divChoixDroite.appendChild(divChoixCheveuxD);
+					divChoixDroite.appendChild(divChoixYeuxD);
+					divChoixDroite.appendChild(divChoixPeauD);
+					divChoixDroite.appendChild(divChoixArmureD);
+
+						/* Ajouter les boutons de choix */
+					for(let i = 0 ; i < 8 ; i++) {
+						let img;
+						if(i < 4) {
+							img = creerImage("images/flecheG.svg", "Flèche vers la gauche", null);
+						} else {
+							img = creerImage("images/flecheD.svg", "Flèche vers la droite", null);
+						}
+
+						let p = document.createElement("p");
+						if(i == 0 || i == 5) {
+							p.textContent = "Cheveux";
+							if(i == 0) {
+								divChoixCheveuxG.appendChild(img);
+								divChoixCheveuxG.appendChild(p);
+							} else {
+								divChoixCheveuxD.appendChild(img);
+								divChoixCheveuxD.appendChild(p);
+							}
+						} else if(i == 1 || i == 6) {
+							p.textContent = "Yeux";
+							if(i == 1) {
+								divChoixYeuxG.appendChild(img);
+								divChoixYeuxG.appendChild(p);
+							} else {
+								divChoixYeuxD.appendChild(img);
+								divChoixYeuxD.appendChild(p);
+							}
+						} else if (i == 2 || i == 7) {
+							p.textContent = "Peau";
+							if(i == 2) {
+								divChoixPeauG.appendChild(img);
+								divChoixPeauG.appendChild(p);
+							} else {
+								divChoixPeauD.appendChild(img);
+								divChoixPeauD.appendChild(p);
+							}
+						} else {
+							p.textContent = "Armure";
+							if(i == 3) {
+								divChoixArmureG.appendChild(img);
+								divChoixArmureG.appendChild(p);
+							} else {
+								divChoixArmureD.appendChild(img);
+								divChoixArmureD.appendChild(p);
+							}
+						}
+						img.addEventListener("click", changerApparence, false);
+					}
+
+						/* Ajouter l'image du chevalier */
+					let divChevalier = document.createElement("div");
+					chevalier = creerImage("images/aventure/miroirFees/chevalier/debout/A-B_P-B_C-O_Y-B", "Chevalier en armure bleue ayant une peau blanche, des cheveux roux et des yeux bleus", null);
+					interfaceChoixChevalier.insertBefore(divChevalier, divChoixDroite);
+			    divChevalier.appendChild(chevalier);
+					break;
+				default : break;
+			}
+		}
+	}
+
+	function changerApparence(evt) {
+			/* Enregistrer le changement de choix dans la variable */
+		tableauChoix[evt.target.parentNode.dataset.parametre] = evt.target.parentNode.dataset.couleur;
+			/* Changer le lien vers l'image */
+    chevalier.setAttribute("src", "images/aventure/miroirFees/chevalier/debout/A-"+tableauChoix["A"]+"_P-"+tableauChoix["P"]+"_C-"+tableauChoix["C"]+"_Y-"+tableauChoix["Y"]);
+			/* Enregistrer le changement de choix sous forme de mots */
+		switch(tableauChoix["A"]) {
+			case "B" : tableauChoixMots["A"] = "bleue";
+				break;
+			case "R" : tableauChoixMots["A"] = "rouge";
+				break;
+			case "V" : tableauChoixMots["A"] = "verte";
+				break;
+		}
+		switch(tableauChoix["P"]) {
+			case "B" : tableauChoixMots["P"] = "blanche";
+				break;
+			case "M" : tableauChoixMots["P"] = "mate";
+				break;
+			case "N" : tableauChoixMots["P"] = "noire";
+				break;
+		}
+		switch(tableauChoix["C"]) {
+			case "J" : tableauChoixMots["C"] = "blonds";
+				break;
+			case "N" : tableauChoixMots["C"] = "noirs";
+				break;
+			case "O" : tableauChoixMots["C"] = "roux";
+				break;
+			case "R" : tableauChoixMots["C"] = "roses";
+				break;
+		}
+		switch(tableauChoix["Y"]) {
+			case "B" : tableauChoixMots["Y"] = "bleus";
+				break;
+			case "M" : tableauChoixMots["Y"] = "violets";
+				break;
+			case "N" : tableauChoixMots["Y"] = "noirs";
+				break;
+			case "V" : tableauChoixMots["Y"] = "verts";
+				break;
+		}
+			/* Changer l'attribut alt de l'image */
+    chevalier.setAttribute("alt", "Chevalier en armure "+tableauChoixMots["A"]+" ayant une peau "+tableauChoixMots["P"]+", des cheveux "+tableauChoixMots["C"]+" et des yeux "+tableauChoixMots["Y"]);
+			/* Changer la couleur qu'indique chaque flèche */
+		switch(evt.target.parentNode.dataset.parametre) {
+			case "A" :
+				switch(tableauChoix["A"]) {
+					case "B" :
+						divChoixArmureG.dataset.couleur = "V";
+						divChoixArmureD.dataset.couleur = "R";
+						break;
+					case "R" :
+						divChoixArmureG.dataset.couleur = "B";
+						divChoixArmureD.dataset.couleur = "V";
+						break;
+					case "V" :
+						divChoixArmureG.dataset.couleur = "R";
+						divChoixArmureD.dataset.couleur = "B";
+						break;
+				}
+				break;
+			case "P" :
+				switch(tableauChoix["P"]) {
+					case "B" :
+						divChoixPeauG.dataset.couleur = "N";
+						divChoixPeauD.dataset.couleur = "M";
+						break;
+					case "M" :
+						divChoixPeauG.dataset.couleur = "B";
+						divChoixPeauD.dataset.couleur = "N";
+						break;
+					case "N" :
+						divChoixPeauG.dataset.couleur = "M";
+						divChoixPeauD.dataset.couleur = "B";
+						break;
+				}
+				break;
+			case "C" :
+				switch(tableauChoix["C"]) {
+					case "J" :
+						divChoixCheveuxG.dataset.couleur = "R";
+						divChoixCheveuxD.dataset.couleur = "N";
+						break;
+					case "N" :
+						divChoixCheveuxG.dataset.couleur = "J";
+						divChoixCheveuxD.dataset.couleur = "O";
+						break;
+					case "O" :
+						divChoixCheveuxG.dataset.couleur = "N";
+						divChoixCheveuxD.dataset.couleur = "R";
+						break;
+					case "R" :
+						divChoixCheveuxG.dataset.couleur = "O";
+						divChoixCheveuxD.dataset.couleur = "J";
+						break;
+				}
+				break;
+			case "Y" :
+				switch(tableauChoix["Y"]) {
+					case "B" :
+						divChoixYeuxG.dataset.couleur = "V";
+						divChoixYeuxD.dataset.couleur = "M";
+						break;
+					case "M" :
+						divChoixYeuxG.dataset.couleur = "B";
+						divChoixYeuxD.dataset.couleur = "N";
+						break;
+					case "N" :
+						divChoixYeuxG.dataset.couleur = "M";
+						divChoixYeuxD.dataset.couleur = "V";
+						break;
+					case "V" :
+						divChoixYeuxG.dataset.couleur = "N";
+						divChoixYeuxD.dataset.couleur = "B";
+						break;
+				}
+				break;
+		}
+	}
 
 	function paragrapheSuivantEvt(evt) {
 		paragrapheSuivant();
@@ -102,12 +389,8 @@
 			playerAudio.pause();
 			window.clearInterval(timerPause);
 		}
-
 		indiceParagrapheCourant++;
-		let lesParagraphes = document.querySelectorAll("#narrateur>p");
-		for(let unParagrapheAsupprimer of lesParagraphes) {
-			unParagrapheAsupprimer.remove();
-		}
+		supprimerParagraphesHistoire();
 		/*let baliseP = document.createElement("p");
 			baliseP.classList.add("histoire");
 			baliseP.appendChild(document.createTextNode(tableauParagraphes));
@@ -123,13 +406,10 @@
 		animations();
 	}
 
-
 	async function animations() {
 		switch(indiceParagrapheCourant) {
 			case 1 :
-          vivianeEtMerlin = ajouterImage("images/merlinViviane.png", "Viviane sur les genous de Merlin",
-                                {"position" : "absolute", "height" : "80%", "bottom" : "-10%", "right" : "30vw"}
-                              );
+          let vivianeEtMerlin = creerImage("images/merlinViviane.png", "Viviane sur les genous de Merlin", {"position" : "absolute", "height" : "80%", "bottom" : "-10%", "right" : "30vw"});
 			    divJeu.insertBefore(vivianeEtMerlin, divNarrateur);
 			    $("#jeu>img:first-of-type").fadeOut(1500);
 					await attendre(1500);
@@ -153,8 +433,6 @@
 		timerAffichage = window.setInterval(affichageTemps, 1000);
 	}
 
-
-
 	/*async function lancerEnigme(evt) {
 		if(!playerAudio.paused) {
 			playerAudio.pause();
@@ -163,7 +441,6 @@
 		}
 		document.querySelector("#narrateur>div:last-child").removeEventListener("click", lancerEnigme);
 
-		let divNarrateur = document.getElementById("narrateur");
 		document.querySelector("#narrateur>div:first-child>img").setAttribute("src", "images/console.svg");
 		document.querySelector("#narrateur>div:first-child>img").setAttribute("alt", "Manette de jeu");
 		document.querySelector("#narrateur h3").textContent = "Jeu";
@@ -313,15 +590,23 @@
 	}*/
 
 /* FONCTIONS GÉNÉRALES */
-  function ajouterImage(src, alt, styles) {
+  function creerImage(src, alt, styles) {
     let img = document.createElement("img");
     img.setAttribute("src", src);
     img.setAttribute("alt", alt);
-    for(let index in styles) {
-      eval("img.style."+index+" = styles[index]");
-    }
+		if(styles != null) {
+			for(let index in styles) {
+	      eval("img.style."+index+" = styles[index]");
+	    }
+		}
     return img;
   }
+
+	function supprimerParagraphesHistoire() {
+		for(let unParagrapheASupprimer of document.querySelectorAll("#narrateur>p")) {
+			unParagrapheASupprimer.remove();
+		}
+	}
 
   async function transitionDebut(evt) {
     this.removeEventListener("click", transitionDebut);
@@ -414,10 +699,11 @@
   function transformerSecondesEnMinutesSecondes(tempsInitial) {
 		let minutes = Math.floor(tempsInitial / 60);
 		let secondes = Math.floor(tempsInitial - 60 * minutes);
+		let tempsTransforme;
 		if(secondes<10) {
-			var tempsTransforme = minutes+":0"+secondes;
+			tempsTransforme = minutes+":0"+secondes;
 		} else {
-			var tempsTransforme = minutes+":"+secondes;
+			tempsTransforme = minutes+":"+secondes;
 		}
 		return tempsTransforme;
 	}
