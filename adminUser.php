@@ -178,10 +178,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 
                 ?>
 
-
             <div class="containerUser">
-
-
 
                 <?php
 // Avatar -- default.jpg
@@ -260,7 +257,9 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
                         <input type="submit" name="EnvDroit<?php echo "".$cle."" ?>" value="Modifier les droits" class="boutonInput" />
                     </form>
                     <?php
-							////formulaire///
+
+
+										////formulaire///
 							if(isset($_POST['EnvDroit'.$cle])){
 									if ($_POST['Droit'.$cle] == "Membre" ) {
 									//	echo "membre";
@@ -280,7 +279,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 								$requserAdminUserRole = $pdo->prepare($sqlAdminUserRole);
 								$requserAdminUserRole->execute();
 							 // header('Location: adminUser.php');
-							  
+
 
 
 					  }
