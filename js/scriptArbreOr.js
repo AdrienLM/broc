@@ -1,4 +1,4 @@
-    $(document).ready(function(){
+$(document).ready(function(){
         $("#param div:first-child img").click(function(){
             let booleanPleinEcran = false;
             if(!booleanPleinEcran) {

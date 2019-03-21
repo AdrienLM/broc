@@ -1,0 +1,139 @@
+<livre>
+    <chapitre numero="1">
+        <h1>Le miroir aux fées</h1>
+        <paragraphe time="81" numero="1">
+            Au fond d’un lac vivaient sept fées, toutes sœurs.
+            La plus jeune d’entre elle, romantique, imaginait la nuit le chevalier de ses rêves… 
+        </paragraphe>
+        <paragraphe time="252" numero="2">
+            Par une journée ensoleillé, la benjamine partit se promener aux alentours du lac.
+            <!-- apparition fée-->
+            Cependant, alors qu’elle s’apprêtait à sortir du lac, son regard fut attiré par une silhouette.
+            Il s’agissait d’un magnifique jeune homme venu se baigner dans la forêt. [Apparition chevalier]
+            Il ne fallut pas plus d’un regard à la fée pour tomber sous son charme, tant il ressemblait à celui dont elle rêvait jours et nuits.
+        </paragraphe>
+        <paragraphe time="370" numero="3">
+            Alors qu’elle observait le chevalier, l’une de ses sœurs sortit à son tour du lac et surprit son regard.
+            Contrariée par l’intérêt de sa benjamine pour cet homme, elle resta dans l’eau à les épier.
+        </paragraphe>
+        <paragraphe time="503" numero="4">
+            La nuit venue, alors que la plus jeune fée dormait paisiblement, les six autres s’éclipsèrent discrètement.
+            Elles virent le chevalier marcher, un peu plus loin dans la forêt.
+            Elles s’approchèrent.
+            Et… Elles l’assassinèrent !
+            <!-- jeu choisir mort du chevalier -->
+            <!-- mort du chevalier -->
+        </paragraphe>
+        <paragraphe time="689" numero="5">
+            Le lendemain, la benjamine partit se promener dans les environs du lac comme à son habitude.
+            Sur son chemin, elle tomba sur le cadavre du chevalier. Désespérée, elle le prit dans ses bras et sanglota jusqu’au soir.
+            Sans un mot, la fée laissa là son bien aimé et repartit avec son épée en direction du lac. 
+        </paragraphe>
+        <paragraphe time="850" numero="6">
+             Lorsqu’elle retourna chez elle, ses six sœurs dormaient.
+            Elle en profita pour obtenir vengeance pour le chevalier, et trancha la gorge de ses sœurs.
+            Le sang coula à flot et se répandit dans l’eau, tant et si bien qu’il imprégna la terre et les roches l’entourant, les colorant de rouge.
+            <!-- animation du sang -->
+        </paragraphe>
+    </chapitre>
+    <chapitre numero="2">
+        <h1>L'arbre d'or</h1>
+        <paragraphe time="100" numero="1">
+            Dans une petite clairière près de Trehorenteuc, un arbre en or avait prit racine.
+            <!-- arbre qui pousse -->
+            Chaque nuit les branches de cet arbre fabuleux s’ornaient de magnifiques feuilles d’or.
+            <!-- feuilles qui poussent -->
+        </paragraphe>
+        <paragraphe time="161" numero="2">
+            Les lutins de la forêt venaient chaque matin les récolter pour leurs propriétés magiques. 
+            <!-- apparition de 2 lutins -->
+        </paragraphe>
+        <paragraphe time="369" numero="3">
+            <!-- jeu ramasser les feuilles -->
+            En les utilisant, ils créaient une potion ramenant à la vie les arbres meurtris par les hommes, brûlés ou déracinés par les tempêtes.
+            <!-- bruits de hache et tempêtes -->
+            Leur recette est toujours secrète. Personne ne peut dire le dosage de cette potion miraculeuse.
+            Cependant, nous savons qu’ils faisaient fondre les feuilles merveilleuses dans une eau des plus pures dont personne ne connaît l’origine.
+        </paragraphe>
+        <paragraphe time="624" numero="4">
+            Par une belle journée de printemps, une petite fille était partie ramasser du bois dans la forêt.
+            <!-- apparition de la petite fille -->
+            Lors de sa recherche, elle trouva l’arbre d’or, brillant et mystérieux.
+            <!-- la petite fille s'approche de l'arbre -->
+            Fascinée par cet arbre extraordinaire, elle s’en approcha et le toucha.
+            <!-- la petite fille touche l'arbre -->
+            Malheur ! L’arbre ensorcelle ceux qui le touche, les transformant en arbres calcinés.
+            <!-- flammes -->
+            La petite fille subit ce maléfice et est encore aujourd’hui un simple tronc carbonisé.
+            <!-- transformation petite fille en arbre calciné -->
+        </paragraphe>
+        <paragraphe time="824" numero="5">
+           <!-- passage forêt -->
+            Ne voyant la petite fille revenir, ses trois amis s’inquiétèrent.
+            <!-- apparition des trois amis -->
+            Les jeunes hommes partirent donc à sa recherche. Après quelques inspections, ils retrouvèrent sa trace.
+            <!-- passage clairière -->
+            C’est ainsi qu’ils virent à leur tour l’incroyable arbre d’or. 
+            <!-- ils s'approchent de l'arbre -->
+            Hélas, ils firent la même erreur que leur amie et le touchèrent.
+            <!-- ils touchent l'arbre, flammes -->
+            Ils rejoignirent celle-ci aux côtés de l’arbre magique.
+            <!-- transformation troncs calcinés -->
+        </paragraphe>
+        <paragraphe time="1081" numero="6">
+            Le lendemain matin, les lutins se rendirent à l’arbre pour leur récolte quotidienne.
+            <!-- apparition lutins -->
+            Ils furent déroutés de ce qu’ils y virent : comment étaient apparus ces quatre arbres brûlés ?
+	       Malgré leur étonnement, ils ramassèrent les ingrédients nécessaires à leur potion.
+	       <!-- ils touchent l'arbre -->
+	       Soudain, alors que jamais l’arbre n’avait contesté leur présence, il les ensorcela à leur tour.
+	       <!-- ils tombent comme des pierres -->
+	       C’est ainsi qu’ils devinrent des pierres et reposèrent aux côtés des quatre enfants et de l’arbre enchanté.
+	       <!-- transformation en pierre -->
+        </paragraphe>
+        <paragraphe time="1277" numero="7">
+            Depuis ce jour, le lieu est resté figé. Des arbres calcinés et des pierres entourent un arbre d’or sur lequel plus une seule feuille ne pousse.
+            Cependant, il existerait un moyen de conjurer le sort.
+            Si quelqu’un perçait le secret de la potion magique gardé par les lutins, ces derniers, la petite fille ainsi que ses trois amis seraient délivrés.
+            <!-- jeu ramasser recette + ingrédients + faire potion -->
+            <!-- si non passé lutins et personnes libérées -->
+            <!-- bruits de joie -->
+        </paragraphe>
+    </chapitre>
+    <chapitre numero="3">
+        <h1>Le tombeau de Merlin</h1>
+        <paragraphe time="39" numero="1">
+           <!-- tombeau avant le tombeau -->
+            Lance un sort pour dissiper le brouillard.
+            <!-- le brouillard se dissipe progressivement -->
+        </paragraphe>
+        <paragraphe time="169" numero="2">
+            Voici l’un des lieux symbolique de l’amour inconditionnel liant Viviane et Merlin.
+            Mais avant d’en apprendre plus sur cet endroit, allons à la Fontaine de Barenton pour découvrir la rencontre de ces deux amants.
+        </paragraphe>
+        <paragraphe time="379" numero="3">
+            Un beau jour de printemps, la fée Viviane se tenait assise sur une pierre.
+            Un jeune écuyer vint alors à sa rencontre.
+            Le bel homme, s’avérant magicien, donna à la jeune fille sa première leçon de magie.
+            La fée montra un talent certain en réussissant son premier sort, faisant apparaître une rivière fraîche et rapide.
+            <!-- apparition de la fontaine -->
+            Sans révéler son identité, l'écuyer partit sans un mot.
+        </paragraphe>
+        <paragraphe time="539" numero="4">
+            Ce n’est que bien plus tard, alors que Viviane s’était entichée de ce bel homme, que ce dernier lui révéla sa véritable apparence.
+            <!-- Merlin reprend son apparence -->
+            Des traits plus âgés, plus sages, se cachaient derrière un masque magique. Pour la première fois, Viviane vit le vrai visage de son bien aimé Merlin.
+        </paragraphe>
+        <paragraphe time="859" numero="5">
+            Amant mais également mentor de la fée, Merlin lui révéla tous ses secrets et lui apprit de nombreux sorts. Parmi ceux-ci se trouvait le sortilège permettant de garder un homme pour l’éternité.
+            Utilisant ce savoir, Viviane enferma Merlin dans neuf cercles d’air à l’aide d’un cercle de pierre. 
+            <!-- le sort est lancé -->
+            Merlin, grand magicien, connaissait le sort qui l’attendait mais ne fit rien pour l’éviter. 
+            <!-- apparition du tombeau -->
+            Viviane a ainsi pu rester auprès de son bien-aimé jusqu’à la fin des temps.
+            Merlin est toujours en vie aux côtés de Viviane dans la caverne que l’on peut deviner sous nos pieds.
+            Maintenant testons ta mémoire.
+            <!-- quizz -->
+        </paragraphe>
+    </chapitre>
+</livre>

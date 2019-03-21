@@ -2,11 +2,11 @@
     "use strict";
     window.addEventListener("DOMContentLoaded", initialiser);
 
-    let tempsTotal = 128; /* DONNÉE À MODIFIER */
+    let tempsTotal = 850; /* DONNÉE À MODIFIER */
     let tempsPasseS = 0;
     let tempsPasseDS = 0;
-    let tempsDePause = new Array(100, 161, 369, 624, 824, 1081, 1277); /* DONNÉE À MODIFIER */
-    let tempsDeDepart = new Array(100, 161, 369, 624, 824, 1081); /* DONNÉE À MODIFIER */
+    let tempsDePause = new Array(81, 252, 370, 503, 689, 850); /* DONNÉE À MODIFIER */
+    let tempsDeDepart = new Array(81, 252, 370, 503, 689); /* DONNÉE À MODIFIER */
     let indiceParagrapheCourant = 0;
     let timerAffichage;
     let timerPause;

@@ -75,8 +75,8 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 <h2>Scene 2</h2>
                 <h1>L'arbre d'or</h1>
                 <audio id="playerAudioConteur">
-                      <source src="./sons/aventureArbreOr.mp3">
-                      <source src="./sons/aventureArbreOr.ogg">
+                      <source src="./sons/aventureArbreDOrv2.mp3">
+                      <source src="./sons/aventureArbreDOrv2.ogg">
                 </audio>
                 <p>Paramètres</p>
                 <div id="param">
