@@ -173,9 +173,10 @@ main{
     border-bottom: 10px solid white;
     box-shadow: 5px 8px 10px rgba(0,0,0,0.18);
     width: 25%;
+    height: 480px;
     position: absolute;
-    right: 10px;
-    top: 5%;
+    right: 0;
+    top: 2px;
 }
 
 #narrateur img{
