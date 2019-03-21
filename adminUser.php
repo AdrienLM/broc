@@ -12,11 +12,11 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
   	$_SESSION['val1'] = 0;
 ?>
 
-<!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="fr">
+    <!DOCTYPE html>
+    <!DOCTYPE html>
+    <html lang="fr">
 
-<!--en-tete de la page: titre et sous-titre-->
+    <!--en-tete de la page: titre et sous-titre-->
 
     <head>
         <meta charset="utf-8">
@@ -35,7 +35,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
         <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
         <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
         <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
         <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
@@ -46,14 +46,17 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
         <meta name="theme-color" content="#ffffff">
     </head>
 
-<body>
-    <div id="barreNav">
-        <?php include("header.php") ?>
-        <h1>PANNEL ADMININISTRATEUR</h1>
-    </div>
-    
-     <div class="containerTitreUser"><img src="images/laptop.svg" class="" alt=""><h1>UTILISATEURS INSCRITS</h1></div>
-<?php
+    <body>
+        <div id="barreNav">
+            <?php include("header.php") ?>
+            <h1>PANNEL ADMININISTRATEUR</h1>
+        </div>
+
+        <div class="containerTitreUser"><img src="images/laptop.svg" class="" alt="">
+            <h1>UTILISATEURS INSCRITS</h1>
+        </div>
+         <div class="displayGrille">
+        <?php
 			if(isset($idCompte)){
 					$requete = "SELECT isAdmin FROM membres WHERE IdUser = ".$idCompte;
 					$isAdmin = $pdo->query($requete);
@@ -98,43 +101,15 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 			foreach($listeUserAAdminIdUser as $cle => $valeur){
                 
                 ?>
-    
-    
-   
-        <div class="containerUser">
-    
-    
-    
-    <?php
-// Pseudo -- aze
-					echo 	"Pseudo -- ".$listeUserAAdminPseudoUser[$cle]."</br>";   
-            ?>
-            
-            
-            
-            <?php
 
-// Mail -- a@aa.com
-					echo 	"Mail -- ".$listeUserAAdminEmailUser[$cle]."</br>";
+        
+            <div class="containerUser">
 
-// Description --
-					//echo 	"Description -- ".$listeUserAAdminDescriptionUser[$cle]."</br>";
-					if ($listeUserAAdminDescriptionUser[$cle] == null) {
-						echo " pas de description </br>";
-					}else if($listeUserAAdminDescriptionUser[$cle] != null){
-						echo " ".$listeUserAAdminDescriptionUser[$cle]." </br> ";
-					}
 
-// Groupe --
-					//echo 	"Groupe -- ".$listeUserAAdminGroupeUser[$cle]."</br>";
-					if ($listeUserAAdminGroupeUser[$cle] == null) {
-						echo " pas de groupe </br> ";
-					}else if($listeUserAAdminGroupeUser[$cle] == 1){
-						// farfadet
-						echo " Groupe farfadet </br> ";
-					}else {
-						echo "groupe non existant </br>";
-					}
+
+                <?php
+
+
 
 // Avatar -- default.jpg
 					//echo 	"Avatar -- ".$listeUserAAdminAvatarUser[$cle]."</br>";
@@ -143,43 +118,73 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 //Banniere -- defaultb.jpg
 					// echo 	"Banniere -- ".$listeUserAAdminBanniereUser[$cle]."</br>";
 					echo "<img class=\"imgBanniere\" src='membres/banniere/".$listeUserAAdminBanniereUser[$cle]."' /> </br>";
+                ?> 
+                
+                    <div class="fondProfil">
+                    <?php
+                    
+                
+                // Pseudo -- aze
+					echo 	"Pseudo : ".$listeUserAAdminPseudoUser[$cle]."</br>";   
+
+// Mail -- a@aa.com
+					echo 	"Mail : ".$listeUserAAdminEmailUser[$cle]."</br>";
+
+// Groupe --           
+                    // Description --
+					//echo 	"Description -- ".$listeUserAAdminDescriptionUser[$cle]."</br>";
+					if ($listeUserAAdminDescriptionUser[$cle] == null) {
+						echo "Description : aucune</br>";
+					}else if($listeUserAAdminDescriptionUser[$cle] != null){
+						echo "Description ".$listeUserAAdminDescriptionUser[$cle]." </br> ";
+					}
+					//echo 	"Groupe -- ".$listeUserAAdminGroupeUser[$cle]."</br>";
+					if ($listeUserAAdminGroupeUser[$cle] == null) {
+						echo " Groupe : aucun </br> ";
+					}else if($listeUserAAdminGroupeUser[$cle] == 1){
+						// farfadet
+						echo " Groupe : Farfadet </br> ";
+					}else {
+						echo "Groupe : non existant </br>";
+					}
+
 
 //Creation -- 2019-03-18
 				  //echo 	"Creation -- ".$listeUserAAdminDateCreation[$cle]."</br>";
 					if ($listeUserAAdminDateCreation[$cle] == null){
 						//Premiere Connexion Avant Maj 2019-03-19 et Non ReCo Depuis
-						echo " PCAM 2019-03-19 NRCD </br>";
+						echo " Inscription : non connecté</br>";
 					}else{
-						echo " premiere connexion ".$listeUserAAdminDateCreation[$cle]." </br>";
+						echo " Inscription : ".$listeUserAAdminDateCreation[$cle]." </br>";
 					}
-
+?> <hr> <?php
 // Droit --
 					//echo 	"Rôle -- ".$listeUserAAdminIsAdmin[$cle]."</br>";
 					//////////////////// Si MODO //////////////////////
 					if($repAdmin['isAdmin'] == 1){
-							if($listeUserAAdminIsAdmin[$cle] == null){	echo " Membre </br>";
-							}else if($listeUserAAdminIsAdmin[$cle] == 1){	echo " Modo </br>";
-							}else if ($listeUserAAdminIsAdmin[$cle] == 2) {		echo " Admin </br>"; }
+							if($listeUserAAdminIsAdmin[$cle] == null){	echo " Rôle : membre </br>";
+							}else if($listeUserAAdminIsAdmin[$cle] == 1){	echo "Rôle :  modérateur </br>";
+							}else if ($listeUserAAdminIsAdmin[$cle] == 2) {		echo "Rôle :  admininistrateur </br>"; }
 
 
 
 				  //////////////////// Sinon Admin //////////////////////
 					}else if($repAdmin['isAdmin'] == 2){
 						if($listeUserAAdminIsAdmin[$cle] < 2){
-							if($listeUserAAdminIsAdmin[$cle] == null){	echo " Membre </br>";
-							}else if($listeUserAAdminIsAdmin[$cle] == 1){ 	echo " Modo </br>";
-							}else if ($listeUserAAdminIsAdmin[$cle] == 2) { 	echo " Admin </br>";}
+							if($listeUserAAdminIsAdmin[$cle] == null){	echo "Rôle : membre </br>";
+							}else if($listeUserAAdminIsAdmin[$cle] == 1){ 	echo "Rôle : modérateur </br>";
+							}else if ($listeUserAAdminIsAdmin[$cle] == 2) { 	echo "Rôle : admininistrateur </br>";}
 ?>
 
-						<form method="POST" action="">
-							<select name="Droit<?php echo "".$cle."" ?>" size="1">
-								<option>membre</option>
-								<option>modo</option>
-								<option>admin</option>
+                    <form method="POST" action="">
+                        <select name="Droit<?php echo " ".$cle." " ?>" size="1">
+								<option>Membre</option>
+								<option>Modérateur</option>
+								<option>Admininistrateur</option>
 							</select>
-							<input type="submit" name="EnvDroit<?php echo "".$cle."" ?>" value="ModifierDroit" class="boutonInput" />
-						</form>
-<?php
+                        <input type="submit" name="EnvDroit<?php echo " ".$cle." " ?>" value="Modifier les droits" class="boutonInput" />
+                    </form>
+                    <?php
 						if(isset($_POST['EnvDroit'.$cle])){
 								if ($_POST['Droit'.$cle] == "membre" ) {
 									echo "membre";
@@ -210,19 +215,20 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 // Bloquer --
 					//echo 	"Bloquer -- ".$listeUserAAdminEtatCompte[$cle]."</br>";
 					if ($listeUserAAdminEtatCompte[$cle] == null) {
-						echo " non bloqué </br>";
+						echo "Statut : non bloqué </br>";
 ?>
-						<form method="POST" action="">
-									<ul>
-										<li>
-                        <input type="text" name="Motif<?php echo "".$cle."" ?>" class="field-long" placeholder="Motif de bloquage" required="required" />
-                    </li>
-										<li class="centrer">
-												<input type="submit" name="Bloquer<?php echo "".$cle."" ?>" value="bloquer" class="boutonInput" />
-										</li>
-									</ul>
-						</form>
-<?php
+                        <form method="POST" action="">
+                            <ul>
+                                <li>
+                                    <input type="text" name="Motif<?php echo " ".$cle." " ?>" class="field-long" placeholder="Motif de bloquage" required="required" />
+                                </li>
+                                <li class="centrer">
+                                    <input type="submit" name="Bloquer<?php echo " ".$cle." " ?>" value="bloquer" class="boutonInput" />
+                                </li>
+                            </ul>
+                        </form>
+                        
+                        <?php
 						if(isset($_POST['Bloquer'.$cle])){
 							echo "compte".$cle."";
 							$motif = $_POST['Motif'.$cle];
@@ -237,14 +243,18 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 							header('Location: adminUser.php');
 						}
 ?>
-<?php
+                            
+                        <?php
 
 					}else if( $listeUserAAdminEtatCompte[$cle] == 1 ){
-						echo " compte bloqué  </br>";
-						echo " motif de bloquage ".$listeUserAAdminMotifBloque[$cle]." </br>";
+						echo " Statut : compte bloqué  </br>";
+						echo " Motif de bloquage : ".$listeUserAAdminMotifBloque[$cle]." </br>";
 					}
-
-					echo "</br><hr></br>";?></div><?php
+                        ?></div><?php
+					echo "</br></br>";?>
+            </div>
+               
+            <?php
 			}
                 
 
@@ -252,10 +262,11 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 			    header('Location: index.php');
 			}
       ?>
-            
+             </div>
     </body>
-</html>
- <?php
+
+    </html>
+    <?php
 }else{
     header('Location: connexion.php');
 }

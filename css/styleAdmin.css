@@ -8,6 +8,11 @@
     src: url("../font/OpenSans-Bold.ttf");
 }
 
+@font-face {
+    font-family: "Google-sans";
+    src: url("../font/GoogleSans-Medium");
+}
+
 html, body{
     margin: 0;
     padding: 0;
@@ -85,21 +90,49 @@ h1 {
 
 
 .containerUser {
-    margin: 0px 5% 0 5%;
+    margin: 0px;
     background-color: #fff;
-    padding: 20px 30px 0 30px;
+    padding: 20px 30px 0 30px; 
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto
 }
 
 .imgProfil {
     border-radius: 50%;
     border: solid 3px #6B6B6B;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
+    margin-left: 150px;
+    margin-top: 50px;
+    position: absolute;
+    
+}
+
+.displayGrille {
+    display: flex;
+    background-color: #fff;
+    width: 90%;
+    flex-wrap: wrap;
+    margin-left: 5%;
 }
 
 .imgBanniere {
     width: 400px;
     height: 170px;
+    margin: 0;
+    border-radius: 9px 9px 0 0;
+}
+
+.fondProfil {
+    background-color: #e0e0e0;
+    width: 380px;
+    padding: 10px 10px 10px 10px;
+    margin: -5px 0 0 0;
+    border-radius: 0 0 9px 9px;
+    font-size: 17px;
+    color: #222;
+    font-family:'Google-Sans';
 }
 
 .containerTitreUser {
@@ -119,8 +152,8 @@ h1 {
 }
 
 hr {
-    margin-top: 2px;
-    color: #707070;
+    margin-top: 10px;
+    color: #acacac;
     border-width: 1px;
     border-style: solid;
 }

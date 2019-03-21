@@ -65,7 +65,8 @@ body {
 .banniere {
     height: 230px;
     background-color: #aaaaaa;
-    border-radius: 8px 8px 0 0;
+    border-radius: 8px 8px 0;
+    z-index: 1;
 }
 
 .imgBan {
@@ -75,6 +76,7 @@ body {
     position: relative;
     background-color: #a3a3a3;
      border-radius: 8px 8px 0 0;
+    z-index: 0;
 }
 
 .imgProfil {
