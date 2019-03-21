@@ -15,7 +15,7 @@ require 'connexionBDD.php';
 <html allowfullscreen>
   <head>
     <meta charset="utf-8">
-    <title>KLEIZ | TOMBEAU DE MERLIN | MODE AVENTURE</title>
+    <title>KLEIZ | MIROIR AUX FÉES | MODE AVENTURE</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="css/styleMenu.css">
     <link rel="stylesheet" href="css/styleAventureV2.css">
@@ -76,6 +76,7 @@ require 'connexionBDD.php';
         <img src="images/carteTombeauMerlin.svg" alt="carte de Brocéliande" />
       </div>
       <div id="jeu">
+        <img src="images/aventure/miroirFees/fond1.jpg" alt="Sept fées dormant au fond d'un lac" class="fondJeu" />
         <div id="narrateur">
           <div>
             <img src="images/casque.svg" alt="Casque" />

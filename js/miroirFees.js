@@ -40,7 +40,7 @@
 	let tableauParagraphes = new Array();
 	//tableauParagraphes.push(new Array("Au fond d’un lac vivaient sept fées, toutes sœurs.",
 																		//"La plus jeune d’entre elles, romantique, imaginait la nuit le chevalier de ses rêves…"));
-	tableauParagraphes.push(new Array("Par une journée ensoleillé, la benjamine partit se promener aux alentours du lac.",
+	tableauParagraphes.push(new Array("Par une journée ensoleillée, la benjamine partit se promener aux alentours du lac.",
 																		"Cependant, alors qu’elle s’apprêtait à sortir du lac, son regard fut attiré par une silhouette.",
 																		"Il s’agissait d’un magnifique jeune homme venu se baigner dans la forêt.",
 																		"Il ne fallut pas plus d’un regard à la fée pour tomber sous son charme, tant il ressemblait à celui dont elle rêvait jours et nuits."));
@@ -159,7 +159,6 @@
 					divNarrateur.style.transition = "all 1s linear";
 					divNarrateur.style.transform = "translateX(50%) translateY(-50%)";
 					divNarrateur.style.width = "95%";
-					divNarrateur.style.height = "95%";
 
 						/* Créer le tableau des paramètres choisis */
 					tableauChoix = {"C" : "O", "Y" : "B", "P" : "B", "A" : "B"};
