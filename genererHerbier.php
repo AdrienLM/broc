@@ -25,7 +25,7 @@ require 'connexionBDD.php';
 if($repAdmin['isAdmin'] == 2){
 
         $manager = new HerbierManage($pdo);   // creation de la gestion des Herbiers pour la table de la pdo
-        $manager->deleteAll();
+        //$manager->deleteAll();
 
         $Herbier[1] = new Herbier([   // Mise en mémoire de l'instant
           'nom' => 'Feuille d\'or',

@@ -26,7 +26,7 @@ require 'connexionBDD.php';
 if($repAdmin['isAdmin'] == 2){
 
         $manager = new ResumeManage($pdo);   // creation de la gestion des Resume
-        $manager->deleteAll();
+        //$manager->deleteAll();
 
 
         $Resume[1] = new Resume([
