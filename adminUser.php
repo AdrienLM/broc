@@ -231,7 +231,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
                 <?php
 // Avatar -- default.jpg
 					//echo 	"Avatar -- ".$listeUserAAdminAvatarUser[$cle]."</br>";
-					echo "<img class=\"imgProfil\" src='membres/avatars/".$listeUserAAdminAvatarUser[$cle]."'/>";
+					echo "<img class=\"imgProfil fondLogo\" src='membres/avatars/".$listeUserAAdminAvatarUser[$cle]."'/>";
 
 //Banniere -- defaultb.jpg
 					// echo 	"Banniere -- ".$listeUserAAdminBanniereUser[$cle]."</br>";

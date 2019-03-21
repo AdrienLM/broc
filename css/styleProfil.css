@@ -540,8 +540,9 @@ input[type="email"] {
     border-radius: 32px;
     background: #416068;
     outline: none;
+    display: flex;  
     text-indent: 20%;
-    width: 60%;
+    width: 10%;
     height: 5%;
     padding: 10px 0 10px 0;
     color: white;
