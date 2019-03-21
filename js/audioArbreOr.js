@@ -56,8 +56,10 @@ function initialiser(evt) {
         for(let unSon of tousLesSons) {
             if(unSon.volume == 1) {
                 unSon.volume = 0;
+                $("#param div:last-child img").attr("src", "images/hautParleur.svg");
             } else {
                 unSon.volume = 1;
+                $("#param div:last-child img").attr("src", "images/hautParleur1.svg");
             }
         }
     }

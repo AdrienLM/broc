@@ -176,7 +176,7 @@ main{
     height: 480px;
     position: absolute;
     right: 0;
-    top: 2px;
+    top: 0;
 }
 
 #narrateur img{
@@ -197,6 +197,8 @@ main{
 #narrateur div:last-child{
     width: 40%;
     margin-left: calc(50% - 20%);
+    position: absolute;
+    bottom: 0;
 }
 
 #narrateur div:last-child img{

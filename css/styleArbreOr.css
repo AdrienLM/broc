@@ -1,5 +1,5 @@
 #jeu{
-    background-image: url("../images/scene2.png");
+    background-image: url("../images/arbreOr/foretNuit.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top right;
@@ -16,6 +16,25 @@
     height: 60%;
     margin-top: 10%;
     margin-left: 50%;
+    opacity: 0;
+}
+
+#lutin1{
+    height: 35%;
+    position: absolute;
+    bottom: 28%;
+    left: 49%;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
+#lutin2{
+    height: 20%;
+    position: absolute;
+    bottom: 20%;
+    left: 40%;
+    opacity: 0;
+    transition: all 0.2s linear;
 }
 
 #fille{

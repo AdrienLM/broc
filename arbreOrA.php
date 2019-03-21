@@ -25,6 +25,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <link rel="stylesheet" href="css/styleMenu.css">
         <link rel="stylesheet" href="css/styleAventure.css">
         <link rel="stylesheet" href="css/styleArbreOr.css">
+        <link rel="stylesheet" href="js/zoom/styles/zoomple.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
@@ -44,10 +45,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
-        <script src="js/jquery.js"></script>
-        <script src="js/scriptMenuFlottant.js"></script>
-        <script src="js/scriptArbreOr.js"></script>
-        <script src="js/audioArbreOr.js"></script>
     </head>
     <body>
         <?php require 'header.php';
@@ -85,7 +82,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                         <p>Plein écran</p>
                     </div>
                     <div>
-                        <img src="images/flecheD.svg" alt="flèche vers la droite" class="decouvrir">
+                        <img src="images/play.svg" alt="flèche vers la droite" class="decouvrir">
                         <p>Découvrir</p>
                     </div>
                     <div>
@@ -106,18 +103,20 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 </a>
             </div>
             <div id="jeu">
-                <img src="images/arbreDOr.png" alt="arbre d'or" id="arbreOr">
-                <img src="images/petiteFille.png" alt="petite fille" id="fille">
-                <img src="images/tronc1.png" alt="tronc d'arbre calciné" id="arbre1">
-                <img src="images/tronc2.png" alt="tronc d'arbre calciné" id="arbre2">
-                <img src="images/tronc3.png" alt="tronc d'arbre calciné" id="arbre3">
-                <img src="images/tronc4.png" alt="tronc d'arbre calciné" id="arbre4">
-                <img src="images/feuilleOr.png" alt="feuille d'or" id="feuille1" class="feuilles">
-                <img src="images/feuilleOr.png" alt="feuille d'or" id="feuille2" class="feuilles">
-                <img src="images/feuilleOr.png" alt="feuille d'or" id="feuille3" class="feuilles">
-                <img src="images/pierreLutin.png" alt="pierre" id="pierre1" class="pierres">
-                <img src="images/pierreLutin.png" alt="pierre" id="pierre2" class="pierres">
-                <img src="images/pierreLutin.png" alt="pierre" id="pierre3" class="pierres">
+                <img src="images/arbreOr/arbreDOr.png" alt="arbre d'or" id="arbreOr">
+                <img src="images/arbreOr/lutin1.png" alt="lutin" id="lutin1">
+                <img src="images/arbreOr/lutin2.png" alt="lutin" id="lutin2">
+                <img src="images/arbreOr/petiteFille.png" alt="petite fille" id="fille">
+                <img src="images/arbreOr/tronc1.png" alt="tronc d'arbre calciné" id="arbre1">
+                <img src="images/arbreOr/tronc2.png" alt="tronc d'arbre calciné" id="arbre2">
+                <img src="images/arbreOr/tronc3.png" alt="tronc d'arbre calciné" id="arbre3">
+                <img src="images/arbreOr/tronc4.png" alt="tronc d'arbre calciné" id="arbre4">
+                <img src="images/arbreOr/feuilleOr.png" alt="feuille d'or" id="feuille1" class="feuilles">
+                <img src="images/arbreOr/feuilleOr.png" alt="feuille d'or" id="feuille2" class="feuilles">
+                <img src="images/arbreOr/feuilleOr.png" alt="feuille d'or" id="feuille3" class="feuilles">
+                <img src="images/arbreOr/pierreLutin.png" alt="pierre" id="pierre1" class="pierres">
+                <img src="images/arbreOr/pierreLutin.png" alt="pierre" id="pierre2" class="pierres">
+                <img src="images/arbreOr/pierreLutin.png" alt="pierre" id="pierre3" class="pierres">
                 <div id="narrateur">
                    <div>
                       <img src="images/casque.svg">
@@ -132,6 +131,11 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             </div>
         </main>
         <?php require 'footer.php'; ?>
+        <script src="js/jquery.js"></script>
+        <script src="js/scriptMenuFlottant.js"></script>
+        <script src="js/scriptArbreOr.js"></script>
+        <script src="js/audioArbreOr.js"></script>
+        <script src="js/zoom/zoomple.js"></script>
     </body>
 </html>
 

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
+  <g id="Groupe_482" data-name="Groupe 482" transform="translate(-219 -493)">
+    <g id="Groupe_480" data-name="Groupe 480" transform="translate(67 57)">
+      <g id="Groupe_236" data-name="Groupe 236" transform="translate(65 -248)">
+        <g id="Groupe_1" data-name="Groupe 1" transform="translate(0 -12)">
+          <g id="Rectangle_1" data-name="Rectangle 1" transform="translate(87 696)" fill="none" stroke="#fff" stroke-width="2">
+            <rect width="45" height="45" rx="22.5" stroke="none"/>
+            <rect x="1" y="1" width="43" height="43" rx="21.5" fill="none"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="speaker" transform="translate(230 502.989)">
+      <path id="Tracé_192" data-name="Tracé 192" d="M12.175,3.183a1.3,1.3,0,0,0-1.325.019.4.4,0,0,0-.056.04L4.987,8.156H.429A.428.428,0,0,0,0,8.584v8.144a.429.429,0,0,0,.429.429l4.548,0,5.805,5.332a.418.418,0,0,0,.069.051,1.3,1.3,0,0,0,1.325.019,1.338,1.338,0,0,0,.684-1.181V4.365A1.339,1.339,0,0,0,12.175,3.183ZM12,21.377a.492.492,0,0,1-.248.435.45.45,0,0,1-.429.011L5.572,16.538V14.585a.429.429,0,1,0-.857,0V16.3l-3.858,0V9.013H4.715v1.715a.429.429,0,1,0,.857,0V8.783l5.746-4.861a.448.448,0,0,1,.436.008A.492.492,0,0,1,12,4.365Z" fill="#fff"/>
+      <path id="Tracé_193" data-name="Tracé 193" d="M38.042,7.036a.429.429,0,1,0-.276.812,7.494,7.494,0,0,1,.01,14.191.429.429,0,0,0,.138.835.423.423,0,0,0,.138-.023,8.352,8.352,0,0,0-.011-15.815Z" transform="translate(-21.411 -2.287)" fill="#fff"/>
+      <path id="Tracé_194" data-name="Tracé 194" d="M36.726,18.085a5.812,5.812,0,0,0-4.179-5.556.429.429,0,1,0-.237.824,4.926,4.926,0,0,1,0,9.465.429.429,0,0,0,.119.841.436.436,0,0,0,.119-.017A5.812,5.812,0,0,0,36.726,18.085Z" transform="translate(-18.283 -5.429)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
