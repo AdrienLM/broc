@@ -77,7 +77,7 @@ require 'connexionBDD.php';
       </div>
       <div id="jeu">
         <div id="wrapperJeu">
-          <img src="images/aventure/miroirFees/fond1.jpg" alt="Sept fées dormant au fond d'un lac" class="fondJeu" />
+          <img src="images/aventure/miroirFees/fondFondLac.jpg" alt="Sept fées dormant au fond d'un lac" class="fondJeu" />
           <div id="narrateur">
             <div>
               <img src="images/casque.svg" alt="Casque" />

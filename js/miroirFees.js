@@ -463,11 +463,19 @@
 	}
 
 	async function animations() {
+		lancerTimersAnimation()
 		switch(indiceParagrapheCourant) {
 			case 1 :
-				await attendre(3000);
-				let chevalierDeDos = creerImage("images/aventure/miroirFees/chevalier/deDos/P-"+tableauChoix["P"]+"_C-"+tableauChoix["C"], "Chevalier en train de se baigner", {"position" : "absolute", "right" : "50%", "top" : "40%", "height" : "55%" });
+				divJeu.querySelector("img").setAttribute("src", "images/aventure/miroirFees/fondSurfaceLac1.jpg");
+				divJeu.querySelector("img").setAttribute("alt", "Suface du lac");
+				let jeuneFeeDansLEau = creerImage("images/aventure/miroirFees/jeuneFeeDansLEau.png", "Chevalier en train de se baigner", {"position" : "absolute", "right" : "30%", "top" : "42%", "height" : "45%", "transform" : "rotate(-3.4deg)", "display" : "none" });
+				divJeu.insertBefore(jeuneFeeDansLEau, divNarrateur);
+				await attendre(4300);
+				$("#wrapperJeu>img:last-of-type").fadeIn(200);
+				let chevalierDeDos = creerImage("images/aventure/miroirFees/chevalier/deDos/P-"+tableauChoix["P"]+"_C-"+tableauChoix["C"], "Chevalier en train de se baigner", {"position" : "absolute", "right" : "50%", "top" : "40%", "height" : "55%", "display" : "none" });
 				divJeu.insertBefore(chevalierDeDos, divNarrateur);
+				await attendre(4700);
+				$("#wrapperJeu>img:last-of-type").fadeIn(1000);
 				break;
 			case 3 :
 				btnDivNarrateur.querySelector("p").textContent = "Choisir";
@@ -480,6 +488,8 @@
         break;
 			default : break;
 		}
+	}
+	function lancerTimersAnimation() {
 		playerAudio.currentTime = (tempsDeDepart[indiceParagrapheCourant - 1] / 10);
 		tempsPasseDS = tempsDeDepart[indiceParagrapheCourant - 1];
 		playerAudio.play();
