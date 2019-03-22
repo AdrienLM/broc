@@ -25,6 +25,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <link rel="stylesheet" href="css/styleMenu.css">
         <link rel="stylesheet" href="css/styleAventure.css">
         <link rel="stylesheet" href="css/styleArbreOr.css">
+        <link rel="stylesheet" href="js/zoom/styles/zoomple.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
@@ -44,10 +45,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
-        <script src="js/jquery.js"></script>
-        <script src="js/scriptMenuFlottant.js"></script>
-        <script src="js/scriptArbreOr.js"></script>
-        <script src="js/audioArbreOr.js"></script>
     </head>
     <body>
         <?php require 'header.php';
@@ -72,11 +69,11 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         ?>
         <main>
             <div id="texte">
-                <h2>Scene 2</h2>
-                <h1>L'arbre d'or</h1>
+                <h2></h2>
+                <h1></h1>
                 <audio id="playerAudioConteur">
-                      <source src="./sons/aventureArbreOr.mp3">
-                      <source src="./sons/aventureArbreOr.ogg">
+                      <source src="./sons/aventureArbreDOrv2.mp3">
+                      <source src="./sons/aventureArbreDOrv2.ogg">
                 </audio>
                 <p>Paramètres</p>
                 <div id="param">
@@ -85,7 +82,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                         <p>Plein écran</p>
                     </div>
                     <div>
-                        <img src="images/flecheD.svg" alt="flèche vers la droite" class="decouvrir">
+                        <img src="images/play.svg" alt="flèche vers la droite" class="decouvrir">
                         <p>Découvrir</p>
                     </div>
                     <div>
@@ -106,24 +103,37 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 </a>
             </div>
             <div id="jeu">
-                <img src="images/arbreDOr.png" alt="arbre d'or" id="arbreOr">
-                <img src="images/petiteFille.png" alt="petite fille" id="fille">
-                <img src="images/tronc1.png" alt="tronc d'arbre calciné" id="arbre1">
-                <img src="images/tronc2.png" alt="tronc d'arbre calciné" id="arbre2">
-                <img src="images/tronc3.png" alt="tronc d'arbre calciné" id="arbre3">
-                <img src="images/tronc4.png" alt="tronc d'arbre calciné" id="arbre4">
-                <img src="images/feuilleOr.png" alt="feuille d'or" id="feuille1" class="feuilles">
-                <img src="images/feuilleOr.png" alt="feuille d'or" id="feuille2" class="feuilles">
-                <img src="images/feuilleOr.png" alt="feuille d'or" id="feuille3" class="feuilles">
-                <img src="images/pierreLutin.png" alt="pierre" id="pierre1" class="pierres">
-                <img src="images/pierreLutin.png" alt="pierre" id="pierre2" class="pierres">
-                <img src="images/pierreLutin.png" alt="pierre" id="pierre3" class="pierres">
+              <!--
+               <a href="images/arbreOr/clairiereZoom.jpg" class="zoomple" id="zoom">
+                   <img src="images/arbreOr/clairiere.jpg">
+                   <div class="feuilles" id="feuille1"></div>
+                   <div class="feuilles" id="feuille2"></div>
+                   <div class="feuilles" id="feuille3"></div>
+               </a>-->
+                <img src="images/arbreOr/arbreDOr.png" alt="arbre d'or" id="arbreOr">
+                <img src="images/arbreOr/lutin1.png" alt="lutin" id="lutin1">
+                <img src="images/arbreOr/lutin2.png" alt="lutin" id="lutin2">
+                <img src="images/arbreOr/petiteFille.png" alt="petite fille" id="fille">
+                <img src="images/arbreOr/tronc1.png" alt="tronc d'arbre calciné" id="arbre1">
+                <img src="images/arbreOr/tronc2.png" alt="tronc d'arbre calciné" id="arbre2">
+                <img src="images/arbreOr/tronc3.png" alt="tronc d'arbre calciné" id="arbre3">
+                <img src="images/arbreOr/tronc4.png" alt="tronc d'arbre calciné" id="arbre4">
+                <!--<img src="images/arbreOr/feuilleOr.png" alt="feuille d'or" id="feuille1" class="feuilles">
+                <img src="images/arbreOr/feuilleOr.png" alt="feuille d'or" id="feuille2" class="feuilles">
+                <img src="images/arbreOr/feuilleOr.png" alt="feuille d'or" id="feuille3" class="feuilles">-->
+                <img src="images/arbreOr/pierreLutin.png" alt="pierre" id="pierre1" class="pierres">
+                <img src="images/arbreOr/pierreLutin.png" alt="pierre" id="pierre2" class="pierres">
+                <img src="images/arbreOr/pierreLutin.png" alt="pierre" id="pierre3" class="pierres">
+                <div id="popupArbre" class="popup">
+                   <img src="images/croix.svg" alt="croix">
+                    <p>Clique sur l'arbre pour faire pousser ses feuilles</p>
+                </div>
                 <div id="narrateur">
                    <div>
                       <img src="images/casque.svg">
                        <h3>Narrateur</h3> 
                    </div> 
-                   <p class="histoire">Dans une petite clairière près de Trehorenteuc, un arbre en or avait prit racine.<br><br> Chaque nuit les branches de cet arbre fabuleux s’ornaient de magnifiques feuilles d’or. <br><br>Les lutins de la forêt venaient chaque matin les récolter pour leurs propriétés magiques.</p>
+                   <p class="histoire"></p>
                    <div>
                        <img src="images/flecheD.svg">
                        <p>Suivant</p>
@@ -132,6 +142,11 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             </div>
         </main>
         <?php require 'footer.php'; ?>
+        <script src="js/jquery.js"></script>
+        <script src="js/scriptMenuFlottant.js"></script>
+        <script src="js/scriptArbreOr.js"></script>
+        <!--<script src="js/audioArbreOr.js"></script>-->
+        <script src="js/zoom/zoomple.js"></script>
     </body>
 </html>
 

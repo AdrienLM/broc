@@ -2,11 +2,11 @@
     "use strict";
     window.addEventListener("DOMContentLoaded", initialiser);
 
-    let tempsTotal = 148; /* DONNÉE À MODIFIER */
+    let tempsTotal = 128; /* DONNÉE À MODIFIER */
     let tempsPasseS = 0;
     let tempsPasseDS = 0;
-    let tempsDePause = new Array(174, 404, 687, 919, 1192, 1409, 1499); /* DONNÉE À MODIFIER */
-    let tempsDeDepart = new Array(174, 404, 687, 919, 1192, 1409); /* DONNÉE À MODIFIER */
+    let tempsDePause = new Array(100, 161, 369, 624, 824, 1081, 1277); /* DONNÉE À MODIFIER */
+    let tempsDeDepart = new Array(100, 161, 369, 624, 824, 1081); /* DONNÉE À MODIFIER */
     let indiceParagrapheCourant = 0;
     let timerAffichage;
     let timerPause;
@@ -56,8 +56,10 @@ function initialiser(evt) {
         for(let unSon of tousLesSons) {
             if(unSon.volume == 1) {
                 unSon.volume = 0;
+                $("#param div:last-child img").attr("src", "images/hautParleur.svg");
             } else {
                 unSon.volume = 1;
+                $("#param div:last-child img").attr("src", "images/hautParleur1.svg");
             }
         }
     }

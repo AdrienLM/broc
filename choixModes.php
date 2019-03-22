@@ -63,8 +63,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             <div></div>
         </div>
         <?php require 'header.php'; require 'initCompteGrimoire.php'; ?>
-
-
         <main>
            <div id="decouverte">
                <a href="carte.php"> 
@@ -77,41 +75,25 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                     </div> 
                </a>
             </div> 
-            <div id="aventure"> 
-                <h1>Mode<br><span>aventure</span></h1> 
-                <p class="desc">Que vous soyez passionés par les légendes de Brocéliandes ou de simples curieux, le mode Aventure vous permettra de vivre ces récits de façon immersive et divertissante grâce au conteur.</p> 
-                <div> 
-                    <a href="cheminAventure.php"><img src="images/flecheDBlanc.svg"></a> 
-                    <p>Découvrir</p> 
-                </div> 
-            </div> 
-            <div id="decouverte"> 
-                <h1>Mode<br><span>decouverte</span></h1> 
-                <p class="desc">Si vous souhaitez avoir des informations concises sur un lieu de votre choix, le mode Découverte est fait pour vous. Idéal lors des balades, vous pourrez découvrir la légende derrière chaque lieu en temps voulu.</p> 
-                <div> 
-                    <a href="carte.php"><img src="images/flecheDBlanc.svg"></a> 
-                    <p>Découvrir</p> 
-                </div> 
-            </div> 
-               <a href="lancementAventure.php">
-                   <div id="fondNoir"></div>
+            <div id="aventure">
+               <a href="cheminAventure.php"> 
                     <h1>Mode<br><span>aventure</span></h1> 
                     <p class="desc">Que vous soyez passionés par les légendes de Brocéliandes ou de simples curieux, le mode Aventure vous permettra de vivre ces récits de façon immersive et divertissante grâce au conteur.</p> 
                     <div> 
-                        <a href="lancementAventure.php"><img src="images/flecheDBlanc.svg"> </a>
+                        <img src="images/flecheDBlanc.svg">
                         <p>Découvrir</p> 
                     </div> 
                 </a>
             </div>
             <div id="grimoire"> 
                <a href="grimBestiaire.php">
-               <div id="fondNoir"></div>
-                <h1>Consulter le<br><span>grimoire</span></h1> 
-                <p class="desc">A la fin de chaque légende du mode Aventure, le conteur vous offre de nouvelles plantes, créatures et anecdotes collectées dans votre grimoire. Devenez incollables sur Brocéliande et son folklore.</p> 
-                <div> 
-                    <a href="grimBestiaire.php"><img src="images/flecheDBlanc.svg"></a>
-                    <p>Découvrir</p> 
-                </div>
+                   <div id="fondNoir"></div>
+                    <h1>Consulter le<br><span>grimoire</span></h1> 
+                    <p class="desc">A la fin de chaque légende du mode Aventure, le conteur vous offre de nouvelles plantes, créatures et anecdotes collectées dans votre grimoire. Devenez incollables sur Brocéliande et son folklore.</p> 
+                    <div> 
+                        <a href="grimBestiaire.php"><img src="images/flecheDBlanc.svg"></a>
+                        <p>Découvrir</p> 
+                    </div>
                 </a> 
             </div>
             <div id="retour">
