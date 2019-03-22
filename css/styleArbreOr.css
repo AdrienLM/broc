@@ -27,13 +27,40 @@
     text-decoration:none;
     color: rgba(0,0,0,0.7);
     cursor: default;
+    opacity: 0;
 }
 
 #jeu #arbreOr{
     height: 60%;
     margin-top: 10%;
     margin-left: 50%;
-    opacity: 0;
+    display: none;
+    z-index: 100;
+}
+
+#arbreOr:hover{
+    cursor: pointer;
+}
+
+.popup{
+    width: 200px;
+    height: 80px;
+    background-color: #eee;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+    text-align: center;
+    color: #333;
+    display: none;
+}
+
+.popup img{
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    width: 30px;
+    cursor: pointer;
 }
 
 #lutin1{
@@ -41,7 +68,7 @@
     position: absolute;
     bottom: 28%;
     left: 49%;
-    opacity: 0;
+    display: none;
     transition: all 0.2s linear;
 }
 
@@ -50,7 +77,7 @@
     position: absolute;
     bottom: 20%;
     left: 40%;
-    opacity: 0;
+    display: none;
     transition: all 0.2s linear;
 }
 
@@ -59,7 +86,7 @@
     position: absolute;
     bottom: 0;
     left: 40%;
-    opacity: 0;
+    display: none;
     transition: all 0.2s linear;
 }
 
@@ -68,7 +95,7 @@
     position: absolute;
     bottom: 10%;
     left: 35%;
-    opacity: 0;
+    display: none;
     transition: all 0.2s linear;
 }
 
@@ -77,7 +104,7 @@
     position: absolute;
     bottom: 20%;
     left: 40%;
-    opacity: 0;
+    display: none;
     transition: all 0.2s linear;
 }
 
@@ -86,7 +113,7 @@
     position: absolute;
     bottom: 9%;
     right: 27%;
-    opacity: 0;
+    display: none;
     transition: all 0.2s linear;
 }
 
@@ -95,7 +122,7 @@
     position: absolute;
     bottom: 15%;
     right: 17%;
-    opacity: 0;
+    display: none;
     transition: all 0.2s linear;
 }
 
@@ -104,7 +131,7 @@
     width: 15px;
     background-color: red;
     position: absolute;
-    opacity: 1;
+    display: none;
     cursor: pointer;
     z-index: 5000;
 }
@@ -127,7 +154,7 @@
 .pierres{
     position: absolute;
     height: 10%;
-    opacity: 0;
+    display: none;
     transition: all 0.2s linear;
 }
 

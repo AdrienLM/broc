@@ -69,8 +69,8 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         ?>
         <main>
             <div id="texte">
-                <h2>Scene 2</h2>
-                <h1>L'arbre d'or</h1>
+                <h2></h2>
+                <h1></h1>
                 <audio id="playerAudioConteur">
                       <source src="./sons/aventureArbreDOrv2.mp3">
                       <source src="./sons/aventureArbreDOrv2.ogg">
@@ -103,12 +103,13 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 </a>
             </div>
             <div id="jeu">
+              <!--
                <a href="images/arbreOr/clairiereZoom.jpg" class="zoomple" id="zoom">
                    <img src="images/arbreOr/clairiere.jpg">
                    <div class="feuilles" id="feuille1"></div>
                    <div class="feuilles" id="feuille2"></div>
                    <div class="feuilles" id="feuille3"></div>
-               </a>
+               </a>-->
                 <img src="images/arbreOr/arbreDOr.png" alt="arbre d'or" id="arbreOr">
                 <img src="images/arbreOr/lutin1.png" alt="lutin" id="lutin1">
                 <img src="images/arbreOr/lutin2.png" alt="lutin" id="lutin2">
@@ -123,12 +124,16 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 <img src="images/arbreOr/pierreLutin.png" alt="pierre" id="pierre1" class="pierres">
                 <img src="images/arbreOr/pierreLutin.png" alt="pierre" id="pierre2" class="pierres">
                 <img src="images/arbreOr/pierreLutin.png" alt="pierre" id="pierre3" class="pierres">
+                <div id="popupArbre" class="popup">
+                   <img src="images/croix.svg" alt="croix">
+                    <p>Clique sur l'arbre pour faire pousser ses feuilles</p>
+                </div>
                 <div id="narrateur">
                    <div>
                       <img src="images/casque.svg">
                        <h3>Narrateur</h3> 
                    </div> 
-                   <p class="histoire">Dans une petite clairière près de Trehorenteuc, un arbre en or avait prit racine.<br><br> Chaque nuit les branches de cet arbre fabuleux s’ornaient de magnifiques feuilles d’or. <br><br>Les lutins de la forêt venaient chaque matin les récolter pour leurs propriétés magiques.</p>
+                   <p class="histoire"></p>
                    <div>
                        <img src="images/flecheD.svg">
                        <p>Suivant</p>
@@ -140,7 +145,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <script src="js/jquery.js"></script>
         <script src="js/scriptMenuFlottant.js"></script>
         <script src="js/scriptArbreOr.js"></script>
-        <script src="js/audioArbreOr.js"></script>
+        <!--<script src="js/audioArbreOr.js"></script>-->
         <script src="js/zoom/zoomple.js"></script>
     </body>
 </html>

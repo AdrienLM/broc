@@ -5,14 +5,57 @@ var p4;
 var p5;
 var p6;
 var p7;
+let tempsTotal = 128; /* DONNÉE À MODIFIER */
+    let tempsPasseS = 0;
+    let tempsPasseDS = 0;
+    let tempsDePause = new Array(100, 161, 369, 624, 824, 1081, 1277); /* DONNÉE À MODIFIER */
+    let tempsDeDepart = new Array(100, 161, 369, 624, 824, 1081); /* DONNÉE À MODIFIER */
+    let indiceParagrapheCourant = 0;
+    let timerAffichage;
+    let timerPause;
+    let playerAudio;
+    let tousLesSons;
+
+    /* Visualisation des éléments dans le DOM :
+        <div nomJS="divPlayer" class="player">
+            <span nomJS="containerTexte">Lecture : 0:00  2:02</span>
+            <div nomJS="barreTemps" class="barreTemps">
+                <div nomJS="divTempsPasse" class="tempsPasse"></div>
+                <div nomJS="curseur" class="curseur"></div>
+            </div>
+        </div>
+    */
+        /* Créer les éléments, leurs attribuer un style (dynamique) et une calsse si besoin */
+    let divPlayer = document.createElement("div");
+    divPlayer.classList.add("player");
+    let containerTexte = document.createElement("span");
+    let barreTemps = document.createElement("div");
+    barreTemps.classList.add("barreTemps");
+    let divTempsPasse = document.createElement("div");
+    divTempsPasse.classList.add("tempsPasse");
+    divTempsPasse.style.width = "0";
+    let curseur = document.createElement("div");
+    curseur.classList.add("curseur");
+    curseur.style.left = "0";
+
 $(document).ready(function(){
     /*var numero = sessionStorage.getItem("numero");
     if(numero<1||numero>8){
         numero="1";
     }*/
-    $("h1").empty();
-    $("#texte h2").empty();
-    $(".histoire").empty();
+    /* Placer les éléments dans le DOM */
+        containerTexte.appendChild(document.createTextNode("Lecture : 0:00 / "+transformerSecondesEnMinutesSecondes(tempsTotal)));
+        divPlayer.appendChild(containerTexte);
+        barreTemps.appendChild(divTempsPasse);
+        barreTemps.appendChild(curseur);
+        divPlayer.appendChild(barreTemps);
+        document.getElementById("texte").insertBefore(divPlayer, document.getElementById("texte").querySelector("p"));
+
+
+        tousLesSons = document.querySelectorAll("audio");
+            / Ajouter les écouteurs d'événements */
+        document.querySelector("#param>div:nth-child(2)").addEventListener("click", lancementSon);
+        document.querySelector("#narrateur>div:last-child").addEventListener("click", paragrapheSuivantEvt);
     $.ajax({
         url: "aventure.xml",
         dataType: "xml",
@@ -78,8 +121,7 @@ $(document).ready(function(){
             }, 500);
             $("#jeu").css("transition", "all 1s linear");
             $("#playerAudio").css("transform", "scale(1)");
-            $(this).off();
-            setTimeout(function(){
+            /*setTimeout(function(){
                 $("#arbreOr").css("opacity", "1");    
             }, 3000);
             setTimeout(function(){
@@ -87,8 +129,45 @@ $(document).ready(function(){
             }, 3500);
             setTimeout(function(){
                 $("#arbreOr").attr("src", "images/arbreOr/arbreOrFeuilles2.png");
-            }, 3600);
+            }, 3600);*/
+            //window.setTimeout(apparition, 4000);
+            /*if(playerAudio.paused){
+                $("#arbreOr").css("display", "block");
+                $("#popupArbre").css("display", "block");
+                $("#popupArbre img").click(function(){
+                    $("#popupArbre").remove();
+                });
+                $("#arbreOr").click(function(){
+                    $("#arbreOr").attr("src", "images/arbreOr/arbreOrFeuilles1.png");
+                    $("#arbreOr").click(function(){
+                        $("#arbreOr").attr("src", "images/arbreOr/arbreOrFeuilles2.png");
+                    })
+                });
+            }*/
+            while(!playerAudio.paused){
+                
+            }
+            $("#arbreOr").css("display", "block");
+            $("#popupArbre").css("display", "block");
+            $("#popupArbre img").click(function(){
+                $("#popupArbre").remove();
+            });
+            $("#arbreOr").click(function(){
+                $("#arbreOr").attr("src", "images/arbreOr/arbreOrFeuilles1.png");
+                $("#arbreOr").click(function(){
+                    $("#arbreOr").attr("src", "images/arbreOr/arbreOrFeuilles2.png");
+                })
+            });
         });
+    
+        function grandirArbre(evt){
+            $("#arbreOr").attr("src", "images/arbreOr/arbreOrFeuilles1.png");
+            $(this).off("click", grandirArbre);
+            $(this).click(function(){
+                $("#arbreOr").attr("src", "images/arbreOr/arbreOrFeuilles2.png");
+            })
+        }
+    
         //écouteur sur le bouton suivant
         $("#narrateur div:last-child img").click(function(){
             //changement texte
@@ -98,7 +177,7 @@ $(document).ready(function(){
             $(".histoire").append(p2);
             $("#arbreOr").attr("src", "images/arbreOr/arbreOrFeuilles2.png");
             setTimeout(function(){
-                $("#lutin2").css("opacity", "1");
+                $("#lutin2").css("display", "block");
             }, 2000);
             $("#zoom").zoomple({
                 offset : {x:10,y:10},
@@ -116,11 +195,11 @@ $(document).ready(function(){
                 $(".histoire").append(p3);
                 //disparition de la petite fille
                 setTimeout(function(){
-                    $("#fille").css("opacity", "0");
+                    $("#fille").css("display", "block");
                 }, 1000);
                     //apparition d'un arbre calciné
                     setTimeout(function(){
-                        $("#arbre1").css("opacity", "1");
+                        $("#arbre1").css("display", "block");
                     }, 100);
                 //écouteur sur le bouton suivant
                 $("#narrateur div:last-child img").click(function(){
@@ -129,11 +208,11 @@ $(document).ready(function(){
                     $(".histoire").empty();
                     $(".histoire").append(p4);
                     //apparition de la petite fille
-                    $("#fille").css("opacity", "1");
+                    $("#fille").css("display", "block");
                     //apparition des trois autres arbres calcinés
-                    $("#arbre2").css("opacity", "1");
-                    $("#arbre3").css("opacity", "1");
-                    $("#arbre4").css("opacity", "1");
+                    $("#arbre2").css("display", "block");
+                    $("#arbre3").css("display", "block");
+                    $("#arbre4").css("display", "block");
                     //écouteur sur le bouton suivant
                     $("#narrateur div:last-child img").click(function(){
                         //changement texte
@@ -145,7 +224,7 @@ $(document).ready(function(){
                             $("#jeu").css("background-image", "url(images/arbreOr/clairiere.jpg)");
                         }, 5000);
                         //apparition des pierres
-                        $(".pierres").css("opacity", "1");
+                        $(".pierres").css("display", "block");
                         //écouteur sur le bouton suivant
                         $("#narrateur div:last-child img").click(function(){
                             //changement texte
@@ -199,3 +278,77 @@ $(document).ready(function(){
             });
         });
     });
+function interrupteurSon(evt) {
+        for(let unSon of tousLesSons) {
+            if(unSon.volume == 1) {
+                unSon.volume = 0;
+                $("#param div:last-child img").attr("src", "images/hautParleur.svg");
+            } else {
+                unSon.volume = 1;
+                $("#param div:last-child img").attr("src", "images/hautParleur1.svg");
+            }
+        }
+    }
+function lancementSon(evt) {
+        window.setTimeout(timerLancementSon, 1000);
+        document.querySelector("#param>div:last-child").addEventListener("click", interrupteurSon);
+    }
+
+    function timerLancementSon() {
+            /* Lancer le son */
+        playerAudio = document.getElementById("playerAudioConteur");
+        playerAudio.play();
+            /* Lancer les timers */
+        timerAffichage = window.setInterval(affichageTemps, 1000);
+        timerPause = window.setInterval(arretSon, 100);
+    }
+
+    function affichageTemps() {
+        tempsPasseS = Math.floor(playerAudio.currentTime);
+            /* Arrêter le timer à la fin */
+        if(tempsPasseS > tempsTotal) {
+            window.clearInterval(timerAffichage);
+        }
+            /* Mettre à jour le texte affiché */
+        containerTexte.textContent = "Lecture : "+transformerSecondesEnMinutesSecondes(tempsPasseS)+" / "+transformerSecondesEnMinutesSecondes(tempsTotal);
+            /* Calculer le pourcentage de temps passé et agrandir/déplacer les éléments dynamiques en conséquence */
+        let pourcentage = (tempsPasseS * 100 / tempsTotal);
+        divTempsPasse.style.width = pourcentage+"%";
+        curseur.style.left = pourcentage+"%";
+    }
+function transformerSecondesEnMinutesSecondes(tempsInitial) {
+        let minutes = Math.floor(tempsInitial / 60);
+        let secondes = Math.floor(tempsInitial - 60 * minutes);
+        if(secondes<10) {
+            var tempsTransforme = minutes+":0"+secondes;
+        } else {
+            var tempsTransforme = minutes+":"+secondes;
+        }
+        return tempsTransforme;
+    }
+
+    function arretSon() {
+        tempsPasseDS++;
+        if(tempsPasseDS == tempsDePause[indiceParagrapheCourant]) {
+            playerAudio.pause();
+            indiceParagrapheCourant++;
+            window.clearInterval(timerAffichage);
+            window.clearInterval(timerPause);
+        }
+    }
+
+    function paragrapheSuivantEvt(evt) {
+        paragrapheSuivant();
+    }
+function paragrapheSuivant() {
+        if(!playerAudio.paused) {
+            window.clearInterval(timerPause);
+            playerAudio.pause();
+            indiceParagrapheCourant++;
+        }
+        playerAudio.currentTime = (tempsDeDepart[indiceParagrapheCourant - 1] / 10);
+        tempsPasseDS = tempsDeDepart[indiceParagrapheCourant - 1];
+        playerAudio.play();
+        timerAffichage = window.setInterval(affichageTemps, 1000);
+        timerPause = window.setInterval(arretSon, 100);
+    }
