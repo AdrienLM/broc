@@ -1,7 +1,80 @@
 
 <?php
 
+/////////
+    $idCompte = $_SESSION['id'];
+    $debugQWMain = false;
 
+
+
+            $requete = "SELECT * FROM avancementaventure WHERE idCompte = ".$idCompte;
+            if($debugQWMain) echo $requete;
+            $ifAvancementUserExist = $pdo->query($requete);
+            $AvancementUserExist = $ifAvancementUserExist->fetch(PDO::FETCH_ASSOC);
+
+            $numAvancement = $_SESSION['AventureProv'];
+        if(isset($_SESSION['AventureProv'])){
+
+            $modifdata = $pdo->prepare('UPDATE avancementaventure SET aventure1 = :numAvance WHERE idCompte= :idCompte');
+            if($debugQWMain) var_dump($modifdata) ;
+                try
+                {
+                    //$numAvancement = $_SESSION['AventureProv']+1;
+                    //$modifdata->bindParam(':datedec', $_POST['datedec'], PDO:: PARAM_STR); // date
+                    $modifdata->bindParam(':numAvance', $numAvancement, PDO:: PARAM_INT); // entier
+                    $modifdata->bindParam(':idCompte', $idCompte, PDO:: PARAM_INT); // entier
+                    $modifdata->execute();
+                    header ('location: CheminAventure.php');
+
+                }
+                catch ( Exception $e )
+                {
+
+                    if($debugQWMain) echo 'Erreur de requête : ', $e->getMessage();
+                    //header ('location: index.php');
+
+                }
+
+       }
+
+
+///////////////////////////////
+
+
+            /*
+            $initAvance = $pdo->prepare("UPDATE AvancementUser SET numAvance = 'numDeAvance' WHERE idCompte = (idCompte) VALUES (:idCompte)");
+            $initAvance->bindParam(':idCompte', $idCompte);
+            $initAvance->bindParam(':idCompte', $idCompte);
+             echo '<br />'.$ifGrimoireExist.'';
+            $ifGrimoireExist = $grimExiste->execute();
+             echo '<br />'.$ifGrimoireExist.'';
+            */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////ancien Code ////////////////////////
+/*
     $idCompte = $_SESSION['id'];
     $debugQWMain = false;
 
@@ -123,23 +196,5 @@
                     //echo '<br />'.'aventure pas encore présente';
                     //header ('location: index.php');
                  }
-
-
-
-
-            /*
-            $initAvance = $pdo->prepare("UPDATE AvancementUser SET numAvance = 'numDeAvance' WHERE idCompte = (idCompte) VALUES (:idCompte)");
-            $initAvance->bindParam(':idCompte', $idCompte);
-            $initAvance->bindParam(':idCompte', $idCompte);
-             echo '<br />'.$ifGrimoireExist.'';
-            $ifGrimoireExist = $grimExiste->execute();
-             echo '<br />'.$ifGrimoireExist.'';
-            */
-
-
-            }
-
-
-
-
+*/
 ?>

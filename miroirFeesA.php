@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'connexionBDD.php';
-/*
+
 if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 {
 	$getid = intval($_SESSION['id']);
@@ -9,7 +9,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 	$requser->execute(array($getid));
 	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);
   $_SESSION['val1'] = 0;
-}*/
+}
 ?>
 
 <!DOCTYPE html>
@@ -43,9 +43,9 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
   <body>
     <?php include("header.php");
 
-        //$_SESSION['aventureSur'] = 1;
-        //$_SESSION['antiRep'] = 1;
-        //$_SESSION['AventureProv'] = 2;
+        $_SESSION['aventureSur'] = 1;
+        $_SESSION['antiRep'] = 1;
+        $_SESSION['AventureProv'] = 1;
     ?>
     <main>
       <div id="texte">
