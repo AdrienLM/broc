@@ -38,7 +38,7 @@ footer a{
 
 #barreNav {
     background-color: #808080;
-    box-shadow: 0px 3px 6px #000000;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.31);
     height: 20%;
     color: white;
     margin-top: -1.4%;
@@ -111,7 +111,7 @@ hr {
 
 .menuCGU {
     background-color: #E1E1E1;
-    box-shadow: 0px 3px 6px #000000;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.31);
     width: 23%;
     border-radius: 17px;
     font-family: 'GoogleSans-Bold';
@@ -131,9 +131,9 @@ hr {
     font-size: 14px;
     border: 2px solid #5D5D5D;
     border-radius: 37px;
-    padding: 15px 30px 15px 20px;
-    /*background: url(../images/flecheSuivant.png) no-repeat 90%/10%;*/
-    width: 20%;
+    padding: 15px 20px 15px 20px;
+    /* background: url(../images/flecheSuivant.png) no-repeat 90%/10%; */
+    width: 100px;
     cursor: pointer;
     color: #5D5D5D;
     text-decoration: none;
@@ -142,7 +142,7 @@ hr {
 
 .menuCOOKIE {
     background-color: #E1E1E1;
-    box-shadow: 0px 3px 6px #000000;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.31);
     width: 23%;
     border-radius: 17px;
     font-family: 'GoogleSans-Bold';
@@ -158,7 +158,7 @@ hr {
 
 .menuRGPD {
     background-color: #E1E1E1;
-    box-shadow: 0px 3px 6px #000000;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.31);
     width: 23%;
     border-radius: 17px;
     font-family: 'GoogleSans-Bold';
@@ -179,6 +179,7 @@ hr {
     align-items: center;
     color: white;
     margin-bottom: 3%;
+    z-index: 1;
 }
 
 #retour{
@@ -247,7 +248,7 @@ li {
 
 .RGPD {
     background-color: #E1E1E1;
-    box-shadow: 0px 3px 6px #000000;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.31);
     border-radius: 17px;
     width: 70%;
     margin: auto;
@@ -267,7 +268,7 @@ li {
 
 .COOKIE {
     background-color: #E1E1E1;
-    box-shadow: 0px 3px 6px #000000;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.31);
     border-radius: 17px;
     width: 70%;
     margin: auto;
@@ -310,10 +311,22 @@ footer div a{
     margin: 0 10px;
 }
 
-footer .reseaux img{
-    width: 30px;
+.barreBas {
+    background-color: #4B4B4B;
+   
+    position: fixed;
+    bottom: 0;
+    padding-top: 30px;
+    height: 50px;
+    z-index: 0;
+    width: 100%
 }
 
-footer .reseaux a{
-    margin: 0;
+.reseaux img {
+    width: 17px;
+    margin: 0 7px 0 7px;
+}
+
+nav, img {
+    z-index: 0;
 }

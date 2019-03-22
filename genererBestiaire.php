@@ -27,7 +27,7 @@ if($repAdmin['isAdmin'] == 2){
 
 
         $manager = new BestiaireManage($pdo);   // creation de la gestion des bestiaires pour la table de la pdo
-        $manager->deleteAll();
+        //$manager->deleteAll();
 
         $Bestiaire[1] = new Bestiaire([  // mise en mémoire de l'instant $Bestiaire[1]
           'nom' => 'Lutin',

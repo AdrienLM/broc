@@ -6,7 +6,7 @@ require 'connexionBDD.php';
 if(isset($_POST['formconnexion']))
 {
 	if(!empty($_POST['mailconnect']) AND !empty($_POST['mdpconnect']))
-	{	
+	{
 		$mailconnect = htmlspecialchars($_POST['mailconnect']);
 		$mdpconnect = sha1($_POST['mdpconnect']);
 		if(!empty($mailconnect) AND !empty($mdpconnect))
@@ -17,10 +17,19 @@ if(isset($_POST['formconnexion']))
 			if($userexist == 1 )
 			{
 				$userinfo = $requser->fetch();
-				$_SESSION['id'] = $userinfo['IdUser']; 
-				$_SESSION['pseudo'] = $userinfo['PseudoUser'];
-				$_SESSION['mail'] = $userinfo['EmailUser'];
-                header("Location: index.php?id=".$_SESSION['id']);
+				///test si bloqué
+				if($userinfo['EtatCompte'] == 1){
+
+					$_SESSION['MotifBloque'] = $userinfo['MotifBloque'] ;
+							header("Location: bloquage.php");
+				}else{
+
+								$_SESSION['id'] = $userinfo['IdUser'];
+								$_SESSION['pseudo'] = $userinfo['PseudoUser'];
+								$_SESSION['mail'] = $userinfo['EmailUser'];
+												header("Location: index.php?id=".$_SESSION['id']);
+							}
+
             }
 			else
 			{
@@ -70,9 +79,9 @@ if(isset($_POST['formconnexion']))
        <section>
           <div id="contenu">
               <div class="conteneur">
-              
+
               <?php
-                if(isset($erreur)) 
+                if(isset($erreur))
                 {
                     echo '<div class="message animated fadeInLeft"><img class="logoError" src="images/warning.svg" width="20" height="20" />' .$erreur. '</div>';
                 }

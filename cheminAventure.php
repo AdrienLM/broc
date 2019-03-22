@@ -10,7 +10,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0) {
 	$getid = intval($_SESSION['id']);
 	$requser = $pdo->prepare('SELECT * FROM membres WHERE IdUser = ?');
 	$requser->execute(array($getid));
-	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);   
+	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);
     $_SESSION['val1'] = 0;
 
    // require ' initCompteGrimoire.php';
@@ -50,7 +50,8 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0) {
         <!-- Loading -->
 
 
-        <?php require 'header.php'; require 'initCompteGrimoire.php'; ?>
+        <?php require 'header.php';
+				 			require 'initCompteGrimoire.php'; ?>
 
         <div class="positionementGraphique">
 
@@ -81,8 +82,8 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0) {
                     <a href="#" class="bientot"><li>SCÈNE 4 : LA FONTAINE DE BARENTON</li></a>
                     <a href="#" class="bientot"><li>SCÈNE 5 : LA MARIÉE DE TRÉCESSON</li></a>
                     <a href="#" class="bientot"><li>SCÈNE 6 : LES TROIS ROCHES DE TRÉBAN</li></a>
-                    
-                   
+
+
                 </ul>
             </div>
         </div>

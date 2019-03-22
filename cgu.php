@@ -1,3 +1,34 @@
+<?php
+
+session_start();
+require 'connexionBDD.php';
+unset($_SESSION['aventureSur']);
+unset($_SESSION['antiRep']);
+unset($_SESSION['AventureProv']);
+
+
+if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
+{
+	$getid = intval($_SESSION['id']);
+	$requser = $pdo->prepare('SELECT * FROM membres WHERE IdUser = ?');
+	$requser->execute(array($getid));
+	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);
+    $_SESSION['val1'] = 0;
+
+   // require ' initCompteGrimoire.php';
+	 if($userinfo["DateCreation"] == null){
+		$userinfo["DateCreation"] = date("Y-m-d");
+		//echo $userinfo["DateCreation"].'  ';
+		$sqlUser = "UPDATE membres SET DateCreation = '".$userinfo['DateCreation']."' WHERE IdUser = ".$_SESSION['id']."";
+		//echo $sqlUser;
+		$requser = $pdo->prepare($sqlUser);
+		$requser->execute();
+
+	 }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -39,7 +70,7 @@
     <main>
         <section class="menu">
             <div class="menuCGU">
-                <img src="images/laptop.svg">
+                <img src="images/laptop2.svg">
                 <hr/>
                 <h2>Conditions d'utilisation de l'application</h2>
                 <a href="#CGU" class="boutonConsulter">CONSULTER</a>
@@ -67,7 +98,7 @@
         <section class="CGU" id="CGU">
 
             <div class="titre">
-                <img src="images/laptop.svg">
+                <img src="images/laptop2.svg">
                 <hr/>
                 <h2>Conditions d'utilisation de KLEIZ</h2>
                 <p>Dernière version : 27/11/2018</p>
@@ -164,28 +195,31 @@
             </p>
             <ul>
                 <li>mot de passe ;</li>
-                <li>email ;</li>
+                <li>email;</li>
                 <li>grimoire;</li>
                 <li>avatar;</li>
-                <li>bannière ;</li>
-                <li>pseudonyme ;</li>
+                <li>bannière;</li>
+                <li>pseudonyme;</li>
                 <li>sauvegarde de la progression.</li>
             </ul>
             <p>
                 La collecte de ces donnés est effectuée lors de la création d’un compte utilisateur et de l’expérience de jeu. Les informations demandées à l’inscription au site sont nécessaires et obligatoires pour la création du compte de l'Utilisateur. En particulier, l'adresse électronique pourra être utilisée par le site pour l'administration, la gestion et l'animation du service. Le site assure à l'Utilisateur une collecte et un traitement d'informations personnelles dans le respect de la vie privée conformément à la loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés. En vertu des articles 39 et 40 de la loi en date du 6 janvier 1978, l'Utilisateur dispose d'un droit d'accès, de rectification, de suppression et d'opposition de ses données personnelles. L'Utilisateur exerce ce droit via :
             </p>
             <ul>
-                <li>son espace personnel ;</li>
-                <li>par mail à kleiz@wirox.fr.</li>
+                <li>son espace personnel;</li>
+                <li>par mail à l'adresse : kleiz@wirox.fr.</li>
             </ul>
             <hr class="hr2"/>
         </section>
+        
         <div id="retour">
             <p>Retour</p>
+            
             <a href="index.php">
                 <img src="images/flecheG.svg" alt="flèche vers la gauche">
             </a>
         </div>
+        <div class="barreBas"></div>
     </main>
     <?php include("footer.php") ?>
 </body>
