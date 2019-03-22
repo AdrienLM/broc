@@ -468,19 +468,49 @@
 			case 1 :
 				divJeu.querySelector("img").setAttribute("src", "images/aventure/miroirFees/fondSurfaceLac1.jpg");
 				divJeu.querySelector("img").setAttribute("alt", "Suface du lac");
-				let jeuneFeeDansLEau = creerImage("images/aventure/miroirFees/jeuneFeeDansLEau.png", "Chevalier en train de se baigner", {"position" : "absolute", "right" : "30%", "top" : "42%", "height" : "45%", "transform" : "rotate(-3.4deg)", "display" : "none" });
+				let jeuneFeeDansLEau = creerImage("images/aventure/miroirFees/jeuneFeeDansLEauV2.png", "Jeune fée regardant le chevalier", {"position" : "absolute", "right" : "30%", "top" : "44%", "height" : "45%", "transform" : "rotate(3.4deg)", "display" : "none"});
 				divJeu.insertBefore(jeuneFeeDansLEau, divNarrateur);
 				await attendre(4300);
 				$("#wrapperJeu>img:last-of-type").fadeIn(200);
-				let chevalierDeDos = creerImage("images/aventure/miroirFees/chevalier/deDos/P-"+tableauChoix["P"]+"_C-"+tableauChoix["C"], "Chevalier en train de se baigner", {"position" : "absolute", "right" : "50%", "top" : "40%", "height" : "55%", "display" : "none" });
+				let chevalierDeDos = creerImage("images/aventure/miroirFees/chevalier/deDos/P-"+tableauChoix["P"]+"_C-"+tableauChoix["C"]+".png", "Chevalier en train de se baigner", {"position" : "absolute", "right" : "50%", "top" : "40%", "height" : "55%", "display" : "none"});
 				divJeu.insertBefore(chevalierDeDos, divNarrateur);
 				await attendre(4700);
 				$("#wrapperJeu>img:last-of-type").fadeIn(1000);
+				break;
+			case 2 :
+				let fondSurfaceLac2 = creerImage("images/aventure/miroirFees/fondSurfaceLac2.jpg", "Suface du lac", null);
+				fondSurfaceLac2.classList.add("fondJeu");
+				divJeu.insertBefore(fondSurfaceLac2, document.querySelector(".fondJeu").nextElementSibling);
+				let feeEspionne = creerImage("images/aventure/miroirFees/feeEspionne2.png", "Fée regardant sa sœur et le chevalier", {"position" : "absolute", "right" : "40%", "top" : "30%", "height" : "55%", "display" : "none"});
+				divJeu.insertBefore(feeEspionne, divNarrateur);
+				await attendre(2400);
+				$("#wrapperJeu>img:first-of-type").fadeOut(100);
+				$("#wrapperJeu>img:nth-child(3)").fadeOut(100);
+				$("#wrapperJeu>img:nth-child(4)").fadeOut(100);
+				$("#wrapperJeu>img:last-of-type").fadeIn(100);
+				await attendre(4700);
+				$("#wrapperJeu>img:last-of-type").fadeIn(1000);
+				await attendre(100);
+				document.querySelector("#wrapperJeu>img:first-of-type").remove();
+				document.querySelector("#wrapperJeu>img:nth-child(2)").remove();
+				document.querySelector("#wrapperJeu>img:nth-child(2)").remove();
 				break;
 			case 3 :
 				btnDivNarrateur.querySelector("p").textContent = "Choisir";
 				btnDivNarrateur.removeEventListener("click", paragrapheSuivantEvt);
 				btnDivNarrateur.addEventListener("click", lancerJeuChoixArme);
+
+				let fondForet = creerImage("images/aventure/miroirFees/fondForet.jpg", "Forêt", null);
+				fondForet.classList.add("fondJeu");
+				divJeu.insertBefore(fondForet, document.querySelector(".fondJeu").nextElementSibling);
+				let chevalierEnGarde = creerImage("images/aventure/miroirFees/chevalier/enGarde/A-"+tableauChoix["A"]+".png", "Chevalier en armure", {"position" : "absolute", "right" : "60%", "top" : "33%", "height" : "55%", "display" : "none"});
+				divJeu.insertBefore(chevalierEnGarde, divNarrateur);
+				$("#wrapperJeu>img:first-of-type").fadeOut(100);
+				$("#wrapperJeu>img:nth-child(3)").fadeOut(100);
+				$("#wrapperJeu>img:last-of-type").fadeIn(100);
+				await attendre(100);
+				document.querySelector("#wrapperJeu>img:first-of-type").remove();
+				document.querySelector("#wrapperJeu>img:nth-child(2)").remove();
 				break;
 			case tableauParagraphes.length :
 				$("#narrateur>div:last-child>img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
