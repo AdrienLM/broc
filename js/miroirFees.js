@@ -19,12 +19,20 @@
 	let btnDivNarrateur;
 	let btnDivNarrateurImg;
 
+		/* Variables enregistrant les choix utilisateurs */
 	let tableauChoix;
 	let tableauChoixMots = { "A" : "", "P" : "", "C" : "", "Y" : ""};
+	let armeChoisie;
+		/* Variables images */
 	let chevalier;
 
 
 	let interfaceChoixChevalier = document.createElement("div");
+	interfaceChoixChevalier.classList.add("interfaceChoix");
+	interfaceChoixChevalier.classList.add("chevalier");
+	let interfaceChoixArme = document.createElement("div");
+	interfaceChoixArme.classList.add("interfaceChoix");
+	interfaceChoixArme.classList.add("arme");
 	let divChoixCheveuxG = document.createElement("div");
 	let divChoixYeuxG = document.createElement("div");
 	let divChoixPeauG = document.createElement("div");
@@ -97,7 +105,7 @@
 			/* Ajouter les écouteurs d'événements */
 		document.querySelector("#param>div:nth-child(2)").addEventListener("click", lancementSon);
 		btnDivNarrateur.addEventListener("click", lancerJeuPersonnalisationChevalier);
-		//document.querySelector("#narrateur>div:last-child").addEventListener("click", paragrapheSuivantEvt);
+		//btnDivNarrateur.addEventListener("click", paragrapheSuivantEvt);
 
 		  /* Ecouteur animation début */
     document.querySelector("#param>div:first-child>img").addEventListener("click", pleinEcran);
@@ -105,7 +113,7 @@
 
       /* Enregistrer les autres éléments du DOM */
 		divNarrateur = document.getElementById("narrateur");
-    divJeu = document.getElementById("jeu");
+    divJeu = document.getElementById("wrapperJeu");
 	}
 
 	function lancerJeuPersonnalisationChevalier(evt) {
@@ -117,7 +125,6 @@
 		btnDivNarrateur.removeEventListener("click", lancerJeuPersonnalisationChevalier);
 		btnDivNarrateur.addEventListener("click", validationPersonnalisationChevalier);
 	}
-
 	function validationPersonnalisationChevalier(evt) {
 		/*let divValidation = document.createElement("div");
 		let p = document.createElement("p");
@@ -130,6 +137,24 @@
 		btnDivNarrateur.addEventListener("click", paragrapheSuivantEvt);
 		paragrapheSuivant();
 		interfaceChoixChevalier.remove();
+		interrupteurInterfaceNarrateurJeu(0);
+	}
+
+	function lancerJeuChoixArme(evt) {
+		if(!playerAudio.paused) {
+			playerAudio.pause();
+			window.clearInterval(timerPause);
+		}
+		interrupteurInterfaceNarrateurJeu(2);
+		btnDivNarrateur.removeEventListener("click", lancerJeuChoixArme);
+		btnDivNarrateur.addEventListener("click", validationChoixArme);
+	}
+	function validationChoixArme(evt) {
+		btnDivNarrateur.removeEventListener("click", validationChoixArme);
+		btnDivNarrateur.addEventListener("click", paragrapheSuivantEvt);
+		armeChoisie = document.querySelector(".selection").dataset.nom;
+		paragrapheSuivant();
+		interfaceChoixArme.remove();
 		interrupteurInterfaceNarrateurJeu(0);
 	}
 
@@ -146,25 +171,25 @@
 			btnDivNarrateur.querySelector("p").textContent = "Suivant";
 		} else {
 			supprimerParagraphesHistoire();
+				/* Restyliser #narrateur pour le jeu */
 			divNarrateur.querySelector("img").setAttribute("src", "images/console.svg");
 			divNarrateur.querySelector("img").setAttribute("alt", "Manette de jeu");
 			divNarrateur.querySelector("h3").textContent = "Jeu";
 			btnDivNarrateur.querySelector("p").textContent = "Valider";
+			divNarrateur.style.right = "50%";
+			divNarrateur.style.top = "50%";
+			divNarrateur.style.transition = "all 1s linear";
+			divNarrateur.style.transform = "translateX(50%) translateY(-50%)";
 
 			switch(numeroJeu) {
 				case 1 :
 						/* Restyliser #narrateur pour le jeu */
-					divNarrateur.style.right = "50%";
-					divNarrateur.style.top = "50%";
-					divNarrateur.style.transition = "all 1s linear";
-					divNarrateur.style.transform = "translateX(50%) translateY(-50%)";
 					divNarrateur.style.width = "95%";
 
 						/* Créer le tableau des paramètres choisis */
 					tableauChoix = {"C" : "O", "Y" : "B", "P" : "B", "A" : "B"};
 
 						/* Ajouter l'interface */
-					interfaceChoixChevalier.classList.add("interfaceChoixChevalier")
 					divNarrateur.insertBefore(interfaceChoixChevalier, btnDivNarrateur);
 
 						/* Créer les boutons de choix à gauche */
@@ -251,20 +276,55 @@
 
 						/* Ajouter l'image du chevalier */
 					let divChevalier = document.createElement("div");
-					chevalier = creerImage("images/aventure/miroirFees/chevalier/debout/A-B_P-B_C-O_Y-B", "Chevalier en armure bleue ayant une peau blanche, des cheveux roux et des yeux bleus", null);
+					chevalier = creerImage("images/aventure/miroirFees/chevalier/debout/A-B_P-B_C-O_Y-B.png", "Chevalier en armure bleue ayant une peau blanche, des cheveux roux et des yeux bleus", null);
 					interfaceChoixChevalier.insertBefore(divChevalier, divChoixDroite);
 			    divChevalier.appendChild(chevalier);
+					break;
+				case 2 :
+						/* Restyliser #narrateur pour le jeu */
+					divNarrateur.style.width = "50%";
+
+						/* Ajouter l'interface */
+					divNarrateur.insertBefore(interfaceChoixArme, btnDivNarrateur);
+						/* Créer les wrapper des images */
+					let epee = creerImage("images/aventure/miroirFees/chevalier/epee/A-"+tableauChoix["A"]+".png", "Epée du chevalier", null);
+					epee.dataset.nom = "epee";
+					let hache = creerImage("images/aventure/miroirFees/hache.png", "Hache", null);
+					hache.dataset.nom = "hache";
+					let fleche = creerImage("images/aventure/miroirFees/fleche.png", "Flèche", null);
+					for(let i = 0 ; i < 3 ; i++) {
+						let divChoixArme = document.createElement("div");
+						interfaceChoixArme.appendChild(divChoixArme);
+						switch(i) {
+							case 0 : divChoixArme.appendChild(epee);
+								break;
+							case 1 : divChoixArme.appendChild(hache);
+								break;
+							case 2 : divChoixArme.appendChild(fleche);
+								break;
+						}
+						divChoixArme.firstElementChild.addEventListener("click", selectionnerArme);
+					}
 					break;
 				default : break;
 			}
 		}
 	}
 
+	function selectionnerArme(evt) {
+		for(let uneDiv of interfaceChoixArme.children) {
+			if(uneDiv.firstElementChild.classList.contains("selection")) {
+				uneDiv.firstElementChild.classList.remove("selection")
+			}
+		}
+		evt.target.classList.add("selection");
+	}
+
 	function changerApparence(evt) {
 			/* Enregistrer le changement de choix dans la variable */
 		tableauChoix[evt.target.parentNode.dataset.parametre] = evt.target.parentNode.dataset.couleur;
 			/* Changer le lien vers l'image */
-    chevalier.setAttribute("src", "images/aventure/miroirFees/chevalier/debout/A-"+tableauChoix["A"]+"_P-"+tableauChoix["P"]+"_C-"+tableauChoix["C"]+"_Y-"+tableauChoix["Y"]);
+    chevalier.setAttribute("src", "images/aventure/miroirFees/chevalier/debout/A-"+tableauChoix["A"]+"_P-"+tableauChoix["P"]+"_C-"+tableauChoix["C"]+"_Y-"+tableauChoix["Y"]+".png");
 			/* Enregistrer le changement de choix sous forme de mots */
 		switch(tableauChoix["A"]) {
 			case "B" : tableauChoixMots["A"] = "bleue";
@@ -391,10 +451,6 @@
 		}
 		indiceParagrapheCourant++;
 		supprimerParagraphesHistoire();
-		/*let baliseP = document.createElement("p");
-			baliseP.classList.add("histoire");
-			baliseP.appendChild(document.createTextNode(tableauParagraphes));
-			document.getElementById("narrateur").insertBefore(baliseP, document.querySelector("#narrateur>div:nth-of-type(2)"));*/
 		if(indiceParagrapheCourant <= tableauParagraphes.length) {
 			for(let unParagrapheAAfficher of tableauParagraphes[indiceParagrapheCourant - 1]) {
 				let baliseP = document.createElement("p");
@@ -408,11 +464,21 @@
 
 	async function animations() {
 		switch(indiceParagrapheCourant) {
-			case tableauParagraphes.length : $("#narrateur>div:last-child>img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
-          $("#narrateur>div:last-child>p").text("Terminé");
-        break;
-			default :
+			case 1 :
+				await attendre(3000);
+				let chevalierDeDos = creerImage("images/aventure/miroirFees/chevalier/deDos/P-"+tableauChoix["P"]+"_C-"+tableauChoix["C"], "Chevalier en train de se baigner", {"position" : "absolute", "right" : "50%", "top" : "40%", "height" : "55%" });
+				divJeu.insertBefore(chevalierDeDos, divNarrateur);
 				break;
+			case 3 :
+				btnDivNarrateur.querySelector("p").textContent = "Choisir";
+				btnDivNarrateur.removeEventListener("click", paragrapheSuivantEvt);
+				btnDivNarrateur.addEventListener("click", lancerJeuChoixArme);
+				break;
+			case tableauParagraphes.length :
+				$("#narrateur>div:last-child>img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
+        $("#narrateur>div:last-child>p").text("Terminé");
+        break;
+			default : break;
 		}
 		playerAudio.currentTime = (tempsDeDepart[indiceParagrapheCourant - 1] / 10);
 		tempsPasseDS = tempsDeDepart[indiceParagrapheCourant - 1];
@@ -420,162 +486,6 @@
 		timerPause = window.setInterval(arretSon, 100);
 		timerAffichage = window.setInterval(affichageTemps, 1000);
 	}
-
-	/*async function lancerEnigme(evt) {
-		if(!playerAudio.paused) {
-			playerAudio.pause();
-			window.clearInterval(timerPause);
-			indiceParagrapheCourant++;
-		}
-		document.querySelector("#narrateur>div:last-child").removeEventListener("click", lancerEnigme);
-
-		document.querySelector("#narrateur>div:first-child>img").setAttribute("src", "images/console.svg");
-		document.querySelector("#narrateur>div:first-child>img").setAttribute("alt", "Manette de jeu");
-		document.querySelector("#narrateur h3").textContent = "Jeu";
-		document.querySelector(".histoire").remove();
-		document.querySelector("#narrateur>div:last-child").style.display = "none";
-		document.querySelector("#narrateur>div:last-child>p").textContent = "Suivant";
-		let divReponses = document.createElement("div");
-		divReponses.classList.add("divReponses");
-		divNarrateur.appendChild(divReponses);
-		divNarrateur.style.right = "50%";
-		divNarrateur.style.top = "50%";
-		divNarrateur.style.transform = "translateX(50%) translateY(-50%)";
-		divNarrateur.style.width = "300px";
-
-
-		let i=0;
-		let nbChoisis = new Array();
-		nbChoisis.push(4);
-		let booleanEnigme = true;
-		let rep;
-		while(i <= 3) {
-			let nbAleatoire = Math.floor(Math.random() * 4);
-			for(let unNbChoisi of nbChoisis) {
-				if(unNbChoisi == nbAleatoire) {
-					booleanEnigme = false;
-				}
-			}
-			if(booleanEnigme) {
-				nbChoisis.push(nbAleatoire);
-				i = i + 1;
-
-				switch(nbAleatoire) {
-					case 0 : rep = document.createElement("button");
-							rep.textContent = "Morgane";
-							divReponses.appendChild(rep);
-							$(".divReponses>button:last-child").fadeIn(500);
-							document.getElementById("playerAudioRep0").play();
-							await attendre(1500);
-							rep.addEventListener("click", verificationReponse);
-						break;
-					case 1 : rep = document.createElement("button");
-							rep.textContent = "Viviane";
-							divReponses.appendChild(rep);
-							$(".divReponses>button:last-child").fadeIn(500);
-							document.getElementById("playerAudioRep1").play();
-							await attendre(1500);
-							rep.addEventListener("click", verificationReponse);
-						break;
-					case 2 : rep = document.createElement("button");
-							rep.textContent = "Guenièvre";
-							divReponses.appendChild(rep);
-							$(".divReponses>button:last-child").fadeIn(500);
-							document.getElementById("playerAudioRep2").play();
-							await attendre(1500);
-							rep.addEventListener("click", verificationReponse);
-						break;
-					case 3 : rep = document.createElement("button");
-							rep.textContent = "Mélusine";
-							divReponses.appendChild(rep);
-							$(".divReponses>button:last-child").fadeIn(500);
-							document.getElementById("playerAudioRep3").play();
-							await attendre(1500);
-							rep.addEventListener("click", verificationReponse);
-						break;
-				}
-			}
-			booleanEnigme = true;
-		}
-	}
-	function verificationReponse(evt) {
-		if(this.textContent == "Viviane") {
-			document.querySelector("#narrateur>div:last-child").remove();
-			document.querySelector("#narrateur>div:last-child").addEventListener("click", paragrapheSuivantEvt);
-			document.querySelector("#narrateur>div:last-child").style.display = "block";
-			document.querySelector("#narrateur>div:first-child>img").setAttribute("src", "images/casque.svg");
-			document.querySelector("#narrateur>div:first-child>img").setAttribute("alt", "Casque");
-			document.querySelector("#narrateur h3").textContent = "Narrateur";
-			document.getElementById("narrateur").style.right = "10px";
-			document.getElementById("narrateur").style.top = "20px";
-			document.getElementById("narrateur").style.transform = "translate(0)";
-			document.getElementById("narrateur").style.width = "250px";
-
-			paragrapheSuivant();
-		} else {
-			let message = document.createElement("p");
-			message.textContent = this.textContent+" n'est pas la bien-aimée de Merlin. Réessaie."
-			let nbAleatoireVerif;
-			let lesReponses = document.querySelectorAll(".divReponses>button");
-			switch(this.textContent) {
-				case "Morgane" : this.remove();
-						nbAleatoireVerif = Math.floor(Math.random() * 2) + 2;
-						if(nbAleatoireVerif == 2) {
-							for(let uneReponse of lesReponses) {
-								if(uneReponse.textContent == "Guenièvre") {
-									uneReponse.remove();
-								}
-							}
-						} else {
-							for(let uneReponse of lesReponses) {
-								if(uneReponse.textContent == "Mélusine") {
-									uneReponse.remove();
-								}
-							}
-						}
-					break;
-				case "Guenièvre" : this.remove();
-						nbAleatoireVerif = Math.floor(Math.random() * 4);
-						while(nbAleatoireVerif == 2 || nbAleatoireVerif == 1) {
-							nbAleatoireVerif = Math.floor(Math.random() * 4);
-						}
-						if(nbAleatoireVerif == 0) {
-							for(let uneReponse of lesReponses) {
-								if(uneReponse.textContent == "Morgane") {
-									uneReponse.remove();
-								}
-							}
-						} else {
-							for(let uneReponse of lesReponses) {
-								if(uneReponse.textContent == "Mélusine") {
-									uneReponse.remove();
-								}
-							}
-						}
-					break;
-				case "Mélusine" : this.remove();
-						nbAleatoireVerif = Math.floor(Math.random() * 3);
-						while(nbAleatoireVerif == 1) {
-							nbAleatoireVerif = Math.floor(Math.random() * 3);
-						}
-						if(nbAleatoireVerif == 0) {
-							for(let uneReponse of lesReponses) {
-								if(uneReponse.textContent == "Morgane") {
-									uneReponse.remove();
-								}
-							}
-						} else {
-							for(let uneReponse of lesReponses) {
-								if(uneReponse.textContent == "Guenièvre") {
-									uneReponse.remove();
-								}
-							}
-						}
-					break;
-			}
-			document.getElementById("narrateur").insertBefore(message, document.querySelector("#narrateur>div:nth-of-type(2)"));
-		}
-	}*/
 
 /* FONCTIONS GÉNÉRALES */
   function creerImage(src, alt, styles) {
@@ -589,13 +499,11 @@
 		}
     return img;
   }
-
 	function supprimerParagraphesHistoire() {
 		for(let unParagrapheASupprimer of document.querySelectorAll("#narrateur>p")) {
 			unParagrapheASupprimer.remove();
 		}
 	}
-
   async function transitionDebut(evt) {
     this.removeEventListener("click", transitionDebut);
     let divTexte = document.getElementById("texte");
@@ -613,6 +521,38 @@
     $("#jeu").fadeIn(500);
     divJeu.style.display = "flex";
   }
+	function attendre(temps) {
+			return new Promise(function(resolve) {
+				setTimeout(function () {
+					resolve()
+				}, temps);
+			})
+		}
+
+  function affichageTemps() {
+		tempsPasseS = Math.floor(playerAudio.currentTime);
+			/* Arrêter le timer à la fin */
+		if(tempsPasseS > tempsTotal) {
+			window.clearInterval(timerAffichage);
+		}
+			/* Mettre à jour le texte affiché */
+		containerTexte.textContent = "Lecture : "+transformerSecondesEnMinutesSecondes(tempsPasseS)+" / "+transformerSecondesEnMinutesSecondes(tempsTotal);
+			/* Calculer le pourcentage de temps passé et agrandir/déplacer les éléments dynamiques en conséquence */
+		let pourcentage = (tempsPasseS * 100 / tempsTotal);
+		divTempsPasse.style.width = pourcentage+"%";
+		curseur.style.left = pourcentage+"%";
+	}
+  function transformerSecondesEnMinutesSecondes(tempsInitial) {
+		let minutes = Math.floor(tempsInitial / 60);
+		let secondes = Math.floor(tempsInitial - 60 * minutes);
+		let tempsTransforme;
+		if(secondes<10) {
+			tempsTransforme = minutes+":0"+secondes;
+		} else {
+			tempsTransforme = minutes+":"+secondes;
+		}
+		return tempsTransforme;
+	}
 
   async function lancementSon(evt) {
 		document.querySelector("#param>div:last-child").addEventListener("click", interrupteurSon);
@@ -671,36 +611,4 @@
     }
   }
 
-  function affichageTemps() {
-		tempsPasseS = Math.floor(playerAudio.currentTime);
-			/* Arrêter le timer à la fin */
-		if(tempsPasseS > tempsTotal) {
-			window.clearInterval(timerAffichage);
-		}
-			/* Mettre à jour le texte affiché */
-		containerTexte.textContent = "Lecture : "+transformerSecondesEnMinutesSecondes(tempsPasseS)+" / "+transformerSecondesEnMinutesSecondes(tempsTotal);
-			/* Calculer le pourcentage de temps passé et agrandir/déplacer les éléments dynamiques en conséquence */
-		let pourcentage = (tempsPasseS * 100 / tempsTotal);
-		divTempsPasse.style.width = pourcentage+"%";
-		curseur.style.left = pourcentage+"%";
-	}
-  function transformerSecondesEnMinutesSecondes(tempsInitial) {
-		let minutes = Math.floor(tempsInitial / 60);
-		let secondes = Math.floor(tempsInitial - 60 * minutes);
-		let tempsTransforme;
-		if(secondes<10) {
-			tempsTransforme = minutes+":0"+secondes;
-		} else {
-			tempsTransforme = minutes+":"+secondes;
-		}
-		return tempsTransforme;
-	}
-
-	function attendre(temps) {
-		return new Promise(function(resolve) {
-			setTimeout(function () {
-				resolve()
-			}, temps);
-		})
-	}
 }());

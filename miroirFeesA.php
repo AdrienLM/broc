@@ -48,8 +48,8 @@ require 'connexionBDD.php';
     ?>
     <main>
       <div id="texte">
-        <h2>Scène 1</h2>
-        <h1>Le miroir aux Fées</h1>
+        <h2>Scene 2</h2>
+        <h1>Le miroir aux Fees</h1>
         <audio id="playerAudioConteur">
           <source src="./sons/aventureMiroirAuxFeesV2.mp3" />
           <source src="./sons/aventureMiroirAuxFeesV2.ogg" />
@@ -76,25 +76,27 @@ require 'connexionBDD.php';
         <img src="images/carteTombeauMerlin.svg" alt="carte de Brocéliande" />
       </div>
       <div id="jeu">
-        <img src="images/aventure/miroirFees/fond1.jpg" alt="Sept fées dormant au fond d'un lac" class="fondJeu" />
-        <div id="narrateur">
-          <div>
-            <img src="images/casque.svg" alt="Casque" />
-            <h3>Narrateur</h3>
-          </div>
-          <p class="histoire">Au fond d’un lac vivaient sept fées, toutes sœurs.</p>
-          <p class="histoire">La plus jeune d’entre elles, romantique, imaginait la nuit le chevalier de ses rêves…</p>
-          <div>
-            <img src="images/flecheD.svg" alt="Flèche vers la droite" />
-            <p>Choisir</p>
+        <div id="wrapperJeu">
+          <img src="images/aventure/miroirFees/fond1.jpg" alt="Sept fées dormant au fond d'un lac" class="fondJeu" />
+          <div id="narrateur">
+            <div>
+              <img src="images/casque.svg" alt="Casque" />
+              <h3>Narrateur</h3>
+            </div>
+            <p class="histoire">Au fond d’un lac vivaient sept fées, toutes sœurs.</p>
+            <p class="histoire">La plus jeune d’entre elles, romantique, imaginait la nuit le chevalier de ses rêves…</p>
+            <div>
+              <img src="images/flecheD.svg" alt="Flèche vers la droite" />
+              <p>Choisir</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div id="retour">
-        <p>Retour</p>
-        <a href="javascript:history.go(-1)">
-          <img src="images/flecheG.svg" class="rectif" alt="flèche vers la gauche">
-        </a>
+        <div id="retour">
+          <p>Retour</p>
+          <a href="javascript:history.go(-1)">
+            <img src="images/flecheG.svg" class="rectif" alt="flèche vers la gauche">
+          </a>
+        </div>
       </div>
     </main>
     <?php include("./footer.php"); ?>
