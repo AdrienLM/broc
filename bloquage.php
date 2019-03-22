@@ -56,7 +56,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 
         ?>
 
-            <h1>VOUS ÊTES BLOQUÉ</h1>
+            <h1>VOUS ETES BLOQUE</h1>
 
         <p>Motif : <?php echo $_SESSION['MotifBloque'] ?></p>
 
