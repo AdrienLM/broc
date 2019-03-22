@@ -120,9 +120,10 @@ body {
     height: 230px;
     object-fit: cover;
     position: relative;
-    background-color: #a3a3a3;
+    background-color: #2a2a2a;
      border-radius: 8px 8px 0 0;
     z-index: 0;
+    opacity: 0.7;
 }
 
 .iconeEdite {
@@ -133,6 +134,7 @@ body {
 
 .imgProfil {
     width: 120px;
+    height: 120px;
     position: absolute;
     z-index: 2;
     margin: 55px 0 0 38px;

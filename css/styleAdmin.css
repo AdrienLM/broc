@@ -103,8 +103,8 @@ h1 {
     border: solid 3px #6B6B6B;
     width: 80px;
     height: 80px;
-    margin-left: 150px;
-    margin-top: 50px;
+    margin-left: 155px;
+    margin-top: 55px;
     position: absolute;
     background-color: #eaeaea;
     
@@ -126,7 +126,7 @@ h1 {
 
 .imgBanniere {
     width: 400px;
-    height: 170px;
+    height: 190px;
     margin: 0;
     border-radius: 9px 9px 0 0;
 }
