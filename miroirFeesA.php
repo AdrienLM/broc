@@ -46,6 +46,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         $_SESSION['aventureSur'] = 1;
         $_SESSION['antiRep'] = 1;
         $_SESSION['AventureProv'] = 1;
+        
     ?>
     <main>
       <div id="texte">
