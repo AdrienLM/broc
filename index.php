@@ -15,15 +15,23 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);
     $_SESSION['val1'] = 0;
 
+////////// initialisation ////////
    // require ' initCompteGrimoire.php';
 	 if($userinfo["DateCreation"] == null){
 		$userinfo["DateCreation"] = date("Y-m-d");
-		//echo $userinfo["DateCreation"].'  ';
 		$sqlUser = "UPDATE membres SET DateCreation = '".$userinfo['DateCreation']."' WHERE IdUser = ".$_SESSION['id']."";
-		//echo $sqlUser;
 		$requser = $pdo->prepare($sqlUser);
 		$requser->execute();
+	 }
 
+	 $requserInitAvTest = $pdo->prepare('SELECT * FROM avancementaventure WHERE idCompte = ?');
+ 	 $requserInitAvTest->execute(array($getid));
+	 $avancementUser = $requserInitAvTest->fetch(PDO::FETCH_ASSOC);
+	 //var_dump($avancementUser['idCompte']);
+	 if ($avancementUser['idCompte'] == null){
+		 $requserInitAv = $pdo->prepare("INSERT INTO avancementaventure (idCompte) VALUES(?)");
+	 	 $requserInitAv->execute(array($getid));
+	   //var_dump($requserInitAv);
 	 }
 }
 

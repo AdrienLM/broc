@@ -9,10 +9,10 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 	$getid = intval($_SESSION['id']);
 	$requser = $pdo->prepare('SELECT * FROM membres WHERE IdUser = ?');
 	$requser->execute(array($getid));
-	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);   
+	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);
     $_SESSION['val1'] = 0;
 
-           
+
 ?>
 
 
@@ -48,7 +48,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
     </head>
     <body>
         <?php require 'header.php';
-        
+
         /*
             $idCompte = $_SESSION['id'];
         $debugQWMain = true;
@@ -61,9 +61,9 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         if($debugQWMain) echo '<br />'.$AvancementUserExist["AvancementUser"];
         */
         //plus grande boucle if//
-    
-    
-            $_SESSION['aventureSur'] = 1;  
+
+
+            $_SESSION['aventureSur'] = 1;
             $_SESSION['antiRep'] = 1;
             $_SESSION['AventureProv'] = 1;
         ?>
@@ -131,8 +131,8 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 <div id="narrateur">
                    <div>
                       <img src="images/casque.svg">
-                       <h3>Narrateur</h3> 
-                   </div> 
+                       <h3>Narrateur</h3>
+                   </div>
                    <p class="histoire"></p>
                    <div>
                        <img src="images/flecheD.svg">
