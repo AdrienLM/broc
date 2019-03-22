@@ -15,7 +15,7 @@
 
 
     if($AvancementUserExist["AvancementUser"] != null)
-    {    
+    {
             if($debugQWMain) echo '<br />'.'existe dans if ';
     }else{
             if($debugQWMain) echo '<br />'.'existe pas else';
@@ -53,11 +53,11 @@
 
             $AvancementUserExist = $ifAvancementUserExist->fetch(PDO::FETCH_ASSOC);
             if($debugQWMain) echo '<br />'.$AvancementUserExist["AvancementUser"];
-    
-    
-    
-  
-    
+
+
+
+
+
         if(isset($_SESSION['AventureProv'])){
 
             $modifdata = $pdo->prepare('UPDATE membres SET AvancementUser= :numAvance WHERE IdUser= :idCompte');
@@ -78,29 +78,29 @@
                     //header ('location: index.php');
 
                 }
-        
+
     }
 
 
 
 
             if($AvancementUserExist["AvancementUser"] >= 0)
-            { 
+            {
                 //re vérif que ou estlejoueur
-                
-                
+
+
                  $requete = "SELECT AvancementUser FROM membres WHERE IdUser = ".$idCompte;
             if($debugQWMain) echo $requete;
             $ifAvancementUserExist = $pdo->query($requete);
 
             $AvancementUserExist = $ifAvancementUserExist->fetch(PDO::FETCH_ASSOC);
             if($debugQWMain) echo '<br />'.$AvancementUserExist["AvancementUser"];
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
 
                 if($debugQWMain) echo '<br />deuxième boucle > 0';
 
@@ -130,7 +130,7 @@
             /*
             $initAvance = $pdo->prepare("UPDATE AvancementUser SET numAvance = 'numDeAvance' WHERE idCompte = (idCompte) VALUES (:idCompte)");
             $initAvance->bindParam(':idCompte', $idCompte);
-            $initAvance->bindParam(':idCompte', $idCompte);  
+            $initAvance->bindParam(':idCompte', $idCompte);
              echo '<br />'.$ifGrimoireExist.'';
             $ifGrimoireExist = $grimExiste->execute();
              echo '<br />'.$ifGrimoireExist.'';
@@ -138,8 +138,8 @@
 
 
             }
-    
-    
-    
+
+
+
 
 ?>
