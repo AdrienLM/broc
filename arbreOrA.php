@@ -103,9 +103,9 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 </a>
             </div>
             <div id="jeu">
-               <!--<a href="images/arbreOr/clairiereZoom.jpg" class="zoomple" id="zoom">
-                   <img src="images/arbreOr/clairiere.jpg">
-               </a>-->
+               <a href="images/arbreOr/clairiereZoom.jpg" class="zoomple" id="zoom">
+                   <img src="images/arbreOr/clairiereFeuilles.jpg">
+               </a>
                <!--<span class="zoom" id="zoom">
                     <img src="images/arbreOr/clairiere.jpg" alt="arbre d'or"/>
                     <p>Loupe</p>
@@ -146,7 +146,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 </div>
                 <div id="popupJeu" class="popup">
                    <div>
-                      <img src="images/croix.svg" alt="loupe">
+                      <img src="images/loupe.svg" alt="loupe">
                        <p>Loupe</p>
                    </div>
                     <div>

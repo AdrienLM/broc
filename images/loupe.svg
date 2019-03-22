@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
+  <g id="Groupe_504" data-name="Groupe 504" transform="translate(-87 -742)">
+    <g id="Rectangle_1" data-name="Rectangle 1" transform="translate(87 742)" fill="none" stroke="#fff" stroke-width="2">
+      <rect width="45" height="45" rx="22.5" stroke="none"/>
+      <rect x="1" y="1" width="43" height="43" rx="21.5" fill="none"/>
+    </g>
+    <path id="search" d="M19.083,17.573l-5.634-5.634a7.5,7.5,0,1,0-1.509,1.509l5.634,5.634ZM.712,7.473a6.761,6.761,0,1,1,6.761,6.761A6.768,6.768,0,0,1,.712,7.473Zm11.944,5.371q.1-.092.187-.187c.052-.054.108-.1.158-.158l5.075,5.075-.5.5L12.5,13C12.553,12.951,12.6,12.895,12.656,12.843Z" transform="translate(100 755)" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+  </g>
+</svg>
