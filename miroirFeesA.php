@@ -63,7 +63,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             <p>Plein écran</p>
           </div>
           <div>
-            <img src="images/flecheD.svg" alt="flèche vers la droite" />
+            <img src="images/play.svg" alt="flèche vers la droite" class="decouvrir">
             <p>Découvrir</p>
           </div>
           <div>

@@ -125,6 +125,126 @@
 		btnDivNarrateur.removeEventListener("click", lancerJeuPersonnalisationChevalier);
 		btnDivNarrateur.addEventListener("click", validationPersonnalisationChevalier);
 	}
+	function changerApparence(evt) {
+			/* Enregistrer le changement de choix dans la variable */
+		tableauChoix[evt.target.parentNode.dataset.parametre] = evt.target.parentNode.dataset.couleur;
+			/* Changer le lien vers l'image */
+		chevalier.setAttribute("src", "images/aventure/miroirFees/chevalier/debout/A-"+tableauChoix["A"]+"_P-"+tableauChoix["P"]+"_C-"+tableauChoix["C"]+"_Y-"+tableauChoix["Y"]+".png");
+			/* Enregistrer le changement de choix sous forme de mots */
+		switch(tableauChoix["A"]) {
+			case "B" : tableauChoixMots["A"] = "bleue";
+				break;
+			case "R" : tableauChoixMots["A"] = "rouge";
+				break;
+			case "V" : tableauChoixMots["A"] = "verte";
+				break;
+		}
+		switch(tableauChoix["P"]) {
+			case "B" : tableauChoixMots["P"] = "blanche";
+				break;
+			case "M" : tableauChoixMots["P"] = "mate";
+				break;
+			case "N" : tableauChoixMots["P"] = "noire";
+				break;
+		}
+		switch(tableauChoix["C"]) {
+			case "J" : tableauChoixMots["C"] = "blonds";
+				break;
+			case "N" : tableauChoixMots["C"] = "noirs";
+				break;
+			case "O" : tableauChoixMots["C"] = "roux";
+				break;
+			case "R" : tableauChoixMots["C"] = "roses";
+				break;
+		}
+		switch(tableauChoix["Y"]) {
+			case "B" : tableauChoixMots["Y"] = "bleus";
+				break;
+			case "M" : tableauChoixMots["Y"] = "violets";
+				break;
+			case "N" : tableauChoixMots["Y"] = "noirs";
+				break;
+			case "V" : tableauChoixMots["Y"] = "verts";
+				break;
+		}
+			/* Changer l'attribut alt de l'image */
+		chevalier.setAttribute("alt", "Chevalier en armure "+tableauChoixMots["A"]+" ayant une peau "+tableauChoixMots["P"]+", des cheveux "+tableauChoixMots["C"]+" et des yeux "+tableauChoixMots["Y"]);
+			/* Changer la couleur qu'indique chaque flèche */
+		switch(evt.target.parentNode.dataset.parametre) {
+			case "A" :
+				switch(tableauChoix["A"]) {
+					case "B" :
+						divChoixArmureG.dataset.couleur = "V";
+						divChoixArmureD.dataset.couleur = "R";
+						break;
+					case "R" :
+						divChoixArmureG.dataset.couleur = "B";
+						divChoixArmureD.dataset.couleur = "V";
+						break;
+					case "V" :
+						divChoixArmureG.dataset.couleur = "R";
+						divChoixArmureD.dataset.couleur = "B";
+						break;
+				}
+				break;
+			case "P" :
+				switch(tableauChoix["P"]) {
+					case "B" :
+						divChoixPeauG.dataset.couleur = "N";
+						divChoixPeauD.dataset.couleur = "M";
+						break;
+					case "M" :
+						divChoixPeauG.dataset.couleur = "B";
+						divChoixPeauD.dataset.couleur = "N";
+						break;
+					case "N" :
+						divChoixPeauG.dataset.couleur = "M";
+						divChoixPeauD.dataset.couleur = "B";
+						break;
+				}
+				break;
+			case "C" :
+				switch(tableauChoix["C"]) {
+					case "J" :
+						divChoixCheveuxG.dataset.couleur = "R";
+						divChoixCheveuxD.dataset.couleur = "N";
+						break;
+					case "N" :
+						divChoixCheveuxG.dataset.couleur = "J";
+						divChoixCheveuxD.dataset.couleur = "O";
+						break;
+					case "O" :
+						divChoixCheveuxG.dataset.couleur = "N";
+						divChoixCheveuxD.dataset.couleur = "R";
+						break;
+					case "R" :
+						divChoixCheveuxG.dataset.couleur = "O";
+						divChoixCheveuxD.dataset.couleur = "J";
+						break;
+				}
+				break;
+			case "Y" :
+				switch(tableauChoix["Y"]) {
+					case "B" :
+						divChoixYeuxG.dataset.couleur = "V";
+						divChoixYeuxD.dataset.couleur = "M";
+						break;
+					case "M" :
+						divChoixYeuxG.dataset.couleur = "B";
+						divChoixYeuxD.dataset.couleur = "N";
+						break;
+					case "N" :
+						divChoixYeuxG.dataset.couleur = "M";
+						divChoixYeuxD.dataset.couleur = "V";
+						break;
+					case "V" :
+						divChoixYeuxG.dataset.couleur = "N";
+						divChoixYeuxD.dataset.couleur = "B";
+						break;
+				}
+				break;
+		}
+	}
 	function validationPersonnalisationChevalier(evt) {
 		/*let divValidation = document.createElement("div");
 		let p = document.createElement("p");
@@ -138,6 +258,7 @@
 		paragrapheSuivant();
 		interfaceChoixChevalier.remove();
 		interrupteurInterfaceNarrateurJeu(0);
+		animationMort();
 	}
 
 	function lancerJeuChoixArme(evt) {
@@ -149,12 +270,23 @@
 		btnDivNarrateur.removeEventListener("click", lancerJeuChoixArme);
 		btnDivNarrateur.addEventListener("click", validationChoixArme);
 	}
+	function selectionnerArme(evt) {
+		for(let uneDiv of interfaceChoixArme.children) {
+			if(uneDiv.firstElementChild.classList.contains("selection")) {
+				uneDiv.firstElementChild.classList.remove("selection")
+			}
+		}
+		evt.target.classList.add("selection");
+	}
 	function validationChoixArme(evt) {
-		btnDivNarrateur.removeEventListener("click", validationChoixArme);
-		btnDivNarrateur.addEventListener("click", paragrapheSuivantEvt);
-		armeChoisie = document.querySelector(".selection").dataset.nom;
-		interfaceChoixArme.remove();
-		interrupteurInterfaceNarrateurJeu(0);
+		if (!(document.querySelector(".selection") === null)) {
+			btnDivNarrateur.removeEventListener("click", validationChoixArme);
+			btnDivNarrateur.addEventListener("click", paragrapheSuivantEvt);
+			paragrapheSuivant();
+			armeChoisie = document.querySelector(".selection").dataset.nom;
+			interfaceChoixArme.remove();
+			interrupteurInterfaceNarrateurJeu(0);
+		}
 	}
 
 	function interrupteurInterfaceNarrateurJeu(numeroJeu) {
@@ -291,6 +423,7 @@
 					let hache = creerImage("images/aventure/miroirFees/hache.png", "Hache", null);
 					hache.dataset.nom = "hache";
 					let fleche = creerImage("images/aventure/miroirFees/fleche.png", "Flèche", null);
+					fleche.dataset.nom = "fleche";
 					for(let i = 0 ; i < 3 ; i++) {
 						let divChoixArme = document.createElement("div");
 						interfaceChoixArme.appendChild(divChoixArme);
@@ -307,136 +440,6 @@
 					break;
 				default : break;
 			}
-		}
-	}
-
-	function selectionnerArme(evt) {
-		for(let uneDiv of interfaceChoixArme.children) {
-			if(uneDiv.firstElementChild.classList.contains("selection")) {
-				uneDiv.firstElementChild.classList.remove("selection")
-			}
-		}
-		evt.target.classList.add("selection");
-	}
-
-	function changerApparence(evt) {
-			/* Enregistrer le changement de choix dans la variable */
-		tableauChoix[evt.target.parentNode.dataset.parametre] = evt.target.parentNode.dataset.couleur;
-			/* Changer le lien vers l'image */
-    chevalier.setAttribute("src", "images/aventure/miroirFees/chevalier/debout/A-"+tableauChoix["A"]+"_P-"+tableauChoix["P"]+"_C-"+tableauChoix["C"]+"_Y-"+tableauChoix["Y"]+".png");
-			/* Enregistrer le changement de choix sous forme de mots */
-		switch(tableauChoix["A"]) {
-			case "B" : tableauChoixMots["A"] = "bleue";
-				break;
-			case "R" : tableauChoixMots["A"] = "rouge";
-				break;
-			case "V" : tableauChoixMots["A"] = "verte";
-				break;
-		}
-		switch(tableauChoix["P"]) {
-			case "B" : tableauChoixMots["P"] = "blanche";
-				break;
-			case "M" : tableauChoixMots["P"] = "mate";
-				break;
-			case "N" : tableauChoixMots["P"] = "noire";
-				break;
-		}
-		switch(tableauChoix["C"]) {
-			case "J" : tableauChoixMots["C"] = "blonds";
-				break;
-			case "N" : tableauChoixMots["C"] = "noirs";
-				break;
-			case "O" : tableauChoixMots["C"] = "roux";
-				break;
-			case "R" : tableauChoixMots["C"] = "roses";
-				break;
-		}
-		switch(tableauChoix["Y"]) {
-			case "B" : tableauChoixMots["Y"] = "bleus";
-				break;
-			case "M" : tableauChoixMots["Y"] = "violets";
-				break;
-			case "N" : tableauChoixMots["Y"] = "noirs";
-				break;
-			case "V" : tableauChoixMots["Y"] = "verts";
-				break;
-		}
-			/* Changer l'attribut alt de l'image */
-    chevalier.setAttribute("alt", "Chevalier en armure "+tableauChoixMots["A"]+" ayant une peau "+tableauChoixMots["P"]+", des cheveux "+tableauChoixMots["C"]+" et des yeux "+tableauChoixMots["Y"]);
-			/* Changer la couleur qu'indique chaque flèche */
-		switch(evt.target.parentNode.dataset.parametre) {
-			case "A" :
-				switch(tableauChoix["A"]) {
-					case "B" :
-						divChoixArmureG.dataset.couleur = "V";
-						divChoixArmureD.dataset.couleur = "R";
-						break;
-					case "R" :
-						divChoixArmureG.dataset.couleur = "B";
-						divChoixArmureD.dataset.couleur = "V";
-						break;
-					case "V" :
-						divChoixArmureG.dataset.couleur = "R";
-						divChoixArmureD.dataset.couleur = "B";
-						break;
-				}
-				break;
-			case "P" :
-				switch(tableauChoix["P"]) {
-					case "B" :
-						divChoixPeauG.dataset.couleur = "N";
-						divChoixPeauD.dataset.couleur = "M";
-						break;
-					case "M" :
-						divChoixPeauG.dataset.couleur = "B";
-						divChoixPeauD.dataset.couleur = "N";
-						break;
-					case "N" :
-						divChoixPeauG.dataset.couleur = "M";
-						divChoixPeauD.dataset.couleur = "B";
-						break;
-				}
-				break;
-			case "C" :
-				switch(tableauChoix["C"]) {
-					case "J" :
-						divChoixCheveuxG.dataset.couleur = "R";
-						divChoixCheveuxD.dataset.couleur = "N";
-						break;
-					case "N" :
-						divChoixCheveuxG.dataset.couleur = "J";
-						divChoixCheveuxD.dataset.couleur = "O";
-						break;
-					case "O" :
-						divChoixCheveuxG.dataset.couleur = "N";
-						divChoixCheveuxD.dataset.couleur = "R";
-						break;
-					case "R" :
-						divChoixCheveuxG.dataset.couleur = "O";
-						divChoixCheveuxD.dataset.couleur = "J";
-						break;
-				}
-				break;
-			case "Y" :
-				switch(tableauChoix["Y"]) {
-					case "B" :
-						divChoixYeuxG.dataset.couleur = "V";
-						divChoixYeuxD.dataset.couleur = "M";
-						break;
-					case "M" :
-						divChoixYeuxG.dataset.couleur = "B";
-						divChoixYeuxD.dataset.couleur = "N";
-						break;
-					case "N" :
-						divChoixYeuxG.dataset.couleur = "M";
-						divChoixYeuxD.dataset.couleur = "V";
-						break;
-					case "V" :
-						divChoixYeuxG.dataset.couleur = "N";
-						divChoixYeuxD.dataset.couleur = "B";
-						break;
-				}
-				break;
 		}
 	}
 
@@ -461,6 +464,18 @@
 		animations();
 	}
 
+	async function animationMort() {
+
+	}
+
+	let booleanAnimationPassee = false;
+	let booleanAnimation2Passee = false;
+	let booleanAnimation3Passee = false;
+	let booleanAnimation5Passee = false;
+	let reponsePromesseObtenue = false;
+	let reponsePromesse2Obtenue = false;
+	let reponsePromesse3Obtenue = false;
+	let reponsePromesse5Obtenue = false;
 	async function animations() {
 		lancerTimersAnimation()
 		switch(indiceParagrapheCourant) {
@@ -468,52 +483,151 @@
 				divJeu.querySelector("img").setAttribute("src", "images/aventure/miroirFees/fondSurfaceLac1.jpg");
 				divJeu.querySelector("img").setAttribute("alt", "Suface du lac");
 				let jeuneFeeDansLEau = creerImage("images/aventure/miroirFees/jeuneFeeDansLEauV2.png", "Jeune fée regardant le chevalier", {"position" : "absolute", "right" : "30%", "top" : "44%", "height" : "45%", "transform" : "rotate(3.4deg)", "display" : "none"});
-				divJeu.insertBefore(jeuneFeeDansLEau, divNarrateur);
 				await attendre(4300);
-				$("#wrapperJeu>img:last-of-type").fadeIn(200);
-				let chevalierDeDos = creerImage("images/aventure/miroirFees/chevalier/deDos/P-"+tableauChoix["P"]+"_C-"+tableauChoix["C"]+".png", "Chevalier en train de se baigner", {"position" : "absolute", "right" : "50%", "top" : "40%", "height" : "55%", "display" : "none"});
-				divJeu.insertBefore(chevalierDeDos, divNarrateur);
-				await attendre(4700);
-				$("#wrapperJeu>img:last-of-type").fadeIn(1000);
+				let chevalierDeDos;
+				if(indiceParagrapheCourant == 1) {
+					reponsePromesseObtenue = true;
+					divJeu.insertBefore(jeuneFeeDansLEau, divNarrateur);
+					$("#wrapperJeu>img:last-of-type").fadeIn(200);
+					chevalierDeDos = creerImage("images/aventure/miroirFees/chevalier/deDos/P-"+tableauChoix["P"]+"_C-"+tableauChoix["C"]+".png", "Chevalier en train de se baigner", {"position" : "absolute", "right" : "50%", "top" : "40%", "height" : "55%", "display" : "none"});
+					await attendre(4700);
+				} else {
+					booleanAnimationPassee = true;
+				}
+				if(indiceParagrapheCourant == 1) {
+					reponsePromesse2Obtenue = true;
+					divJeu.insertBefore(chevalierDeDos, divNarrateur);
+					$("#wrapperJeu>img:last-of-type").fadeIn(1000);
+				} else {
+					booleanAnimation2Passee = true;
+				}
 				break;
 			case 2 :
-				let fondSurfaceLac2 = creerImage("images/aventure/miroirFees/fondSurfaceLac2.jpg", "Suface du lac", null);
-				fondSurfaceLac2.classList.add("fondJeu");
-				divJeu.insertBefore(fondSurfaceLac2, document.querySelector(".fondJeu").nextElementSibling);
+				//let fondSurfaceLac2 = creerImage("images/aventure/miroirFees/fondSurfaceLac2.jpg", "Suface du lac", null);
+				//fondSurfaceLac2.classList.add("fondJeu");
+				//divJeu.insertBefore(fondSurfaceLac2, document.querySelector(".fondJeu").nextElementSibling);
 				let feeEspionne = creerImage("images/aventure/miroirFees/feeEspionne2.png", "Fée regardant sa sœur et le chevalier", {"position" : "absolute", "right" : "40%", "top" : "30%", "height" : "55%", "display" : "none"});
-				divJeu.insertBefore(feeEspionne, divNarrateur);
 				await attendre(2400);
-				$("#wrapperJeu>img:first-of-type").fadeOut(100);
-				$("#wrapperJeu>img:nth-child(3)").fadeOut(100);
-				$("#wrapperJeu>img:nth-child(4)").fadeOut(100);
-				$("#wrapperJeu>img:last-of-type").fadeIn(100);
-				await attendre(4700);
-				$("#wrapperJeu>img:last-of-type").fadeIn(1000);
-				await attendre(100);
-				document.querySelector("#wrapperJeu>img:first-of-type").remove();
-				document.querySelector("#wrapperJeu>img:nth-child(2)").remove();
-				document.querySelector("#wrapperJeu>img:nth-child(2)").remove();
+				if(indiceParagrapheCourant == 2) {
+					reponsePromesse3Obtenue = true;
+					if(!booleanAnimationPassee && reponsePromesseObtenue) {
+						//$("#wrapperJeu>img:first-of-type").fadeOut(150);
+						$("#wrapperJeu>img:nth-child(2)").fadeOut(150);
+						if(!booleanAnimation2Passee && reponsePromesse2Obtenue) {
+							$("#wrapperJeu>img:nth-child(3)").fadeOut(150);
+						}
+					}
+					divJeu.insertBefore(feeEspionne, divNarrateur);
+					divJeu.querySelector("img").setAttribute("src", "images/aventure/miroirFees/fondSurfaceLac2.jpg");
+					$("#wrapperJeu>img:last-of-type").fadeIn(150);
+					await attendre(150);
+					if(!booleanAnimationPassee && reponsePromesseObtenue) {
+						//document.querySelector("#wrapperJeu>img:first-of-type").remove();
+						document.querySelector("#wrapperJeu>img:nth-child(2)").remove();
+						if(!booleanAnimation2Passee && reponsePromesse2Obtenue) {
+							document.querySelector("#wrapperJeu>img:nth-child(2)").remove();
+						}
+					}
+				} else {
+					booleanAnimation3Passee = true;
+				}
 				break;
 			case 3 :
 				btnDivNarrateur.querySelector("p").textContent = "Choisir";
 				btnDivNarrateur.removeEventListener("click", paragrapheSuivantEvt);
 				btnDivNarrateur.addEventListener("click", lancerJeuChoixArme);
 
-				let fondForet = creerImage("images/aventure/miroirFees/fondForet.jpg", "Forêt", null);
-				fondForet.classList.add("fondJeu");
-				divJeu.insertBefore(fondForet, document.querySelector(".fondJeu").nextElementSibling);
+				//let fondForet = creerImage("images/aventure/miroirFees/fondForet.jpg", "Forêt", null);
+				//fondForet.classList.add("fondJeu");
+				//divJeu.insertBefore(fondForet, document.querySelector(".fondJeu").nextElementSibling);
+				divJeu.querySelector("img").setAttribute("src", "images/aventure/miroirFees/fondForet.jpg");
+				divJeu.querySelector("img").setAttribute("alt", "Forêt");
 				let chevalierEnGarde = creerImage("images/aventure/miroirFees/chevalier/enGarde/A-"+tableauChoix["A"]+".png", "Chevalier en armure", {"position" : "absolute", "right" : "60%", "top" : "33%", "height" : "55%", "display" : "none"});
 				divJeu.insertBefore(chevalierEnGarde, divNarrateur);
-				$("#wrapperJeu>img:first-of-type").fadeOut(100);
-				$("#wrapperJeu>img:nth-child(3)").fadeOut(100);
-				$("#wrapperJeu>img:last-of-type").fadeIn(100);
-				await attendre(100);
-				document.querySelector("#wrapperJeu>img:first-of-type").remove();
-				document.querySelector("#wrapperJeu>img:nth-child(2)").remove();
+				if(!booleanAnimation3Passee && reponsePromesse3Obtenue) {
+					//$("#wrapperJeu>img:first-of-type").fadeOut(150);
+					$("#wrapperJeu>img:nth-child(2)").fadeOut(150);
+				}
+				$("#wrapperJeu>img:last-of-type").fadeIn(150);
+				await attendre(150);
+				if(!booleanAnimation3Passee && reponsePromesse3Obtenue) {
+					//document.querySelector("#wrapperJeu>img:first-of-type").remove();
+					document.querySelector("#wrapperJeu>img:nth-child(2)").remove();
+					booleanAnimationPassee = false;
+				}
+				break;
+			case 4 :
+				$("#wrapperJeu>img:last-of-type").fadeOut(150);
+				await attendre(150);
+				let feePortantLeChevalier;
+				let arme;
+				if(indiceParagrapheCourant == 4) {
+					document.querySelector("#wrapperJeu>img:last-of-type").remove();
+					feePortantLeChevalier = creerImage("images/aventure/miroirFees/chevalier/feePortantLeChevalier/A-"+tableauChoix["A"]+"_P-"+tableauChoix["P"]+"_C-"+tableauChoix["C"]+"_Y-"+tableauChoix["Y"]+".png", "Jeune fée pleurant en portant le cadavre du chevalier", {"position" : "absolute", "right" : "25%", "bottom" : "0", "height" : "75%", "display" : "none"});
+
+					if(armeChoisie == "epee") {
+						arme = creerImage("images/aventure/miroirFees/chevalier/epee/A-"+tableauChoix["A"]+"Mort.png", "Epee", {"position" : "absolute", "right" : "43%", "bottom" : "38.5%", "height" : "30%", "display" : "none"});
+					} else {
+						arme = creerImage("images/aventure/miroirFees/"+armeChoisie+"Mort.png", armeChoisie, {"position" : "absolute", "right" : "43%", "bottom" : "38.5%", "height" : "25%", "display" : "none"});
+					}
+					await attendre(8500);
+					reponsePromesse5Obtenue = true;
+				}
+				if(indiceParagrapheCourant == 4) {
+					divJeu.insertBefore(feePortantLeChevalier, divNarrateur);
+					divJeu.insertBefore(arme, divNarrateur);
+					$("#wrapperJeu>img:nth-child(2)").fadeIn(1000);
+					$("#wrapperJeu>img:last-of-type").fadeIn(1000);
+					await attendre(1000);
+				} else {
+					booleanAnimation5Passee = true;
+				}
 				break;
 			case tableauParagraphes.length :
 				$("#narrateur>div:last-child>img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
-        $("#narrateur>div:last-child>p").text("Terminé");
+				$("#narrateur>div:last-child>p").text("Terminé");
+				btnDivNarrateur.removeEventListener("click", paragrapheSuivantEvt);
+
+				//let fondFondLac = creerImage("images/aventure/miroirFees/fondFondLac.png", "Les six sœurs dormant au fond du lac", null);
+				//fondFondLac.classList.add("fondJeu");
+				//divJeu.insertBefore(fondFondLac, document.querySelector(".fondJeu").nextElementSibling);
+				divJeu.querySelector("img").setAttribute("src", "images/aventure/miroirFees/fondFondLac2.png");
+				divJeu.querySelector("img").setAttribute("alt", "Les six sœurs dormant au fond du lac");
+				//$("#wrapperJeu>img:first-of-type").fadeOut(150);
+				if(!booleanAnimation5Passee && reponsePromesse5Obtenue) {
+					$("#wrapperJeu>img:nth-child(2)").fadeOut(150);
+					$("#wrapperJeu>img:last-of-type").fadeOut(150);
+				}
+				await attendre(150);
+				let divSang;
+				let jeuneFeeMeurtriere;
+				if(indiceParagrapheCourant == tableauParagraphes.length) {
+					if(!booleanAnimation5Passee && reponsePromesse5Obtenue) {
+					//document.querySelector("#wrapperJeu>img:first-of-type").remove();
+						document.querySelector("#wrapperJeu>img:last-of-type").remove();
+						document.querySelector("#wrapperJeu>img:last-of-type").remove();
+					}
+					divSang = document.createElement("div");
+					divSang.style.backgroundColor = "rgba(255, 0, 0, 0.4)";
+					divSang.style.width = "100%";
+					divSang.style.height = "100%";
+					divSang.style.position = "absolute";
+					divSang.style.left = "0";
+					divSang.style.top = "0";
+					divSang.style.display = "none";
+					divSang.style.zIndex = "13";
+					jeuneFeeMeurtriere = creerImage("images/aventure/miroirFees/jeuneFeeMeurtriere_A-"+tableauChoix["A"]+".png", "La jeune fée dans une rage meurtrière, couverte de sang et tenant fermement l'épée du chevalier", {"position" : "absolute", "left" : "0", "bottom" : "0", "height" : "80%", "display" : "none", "zIndex" : "14"});
+					await attendre(6000);
+				}
+				if(indiceParagrapheCourant == tableauParagraphes.length) {
+					divJeu.insertBefore(jeuneFeeMeurtriere, divNarrateur);
+					$("#wrapperJeu>img:last-of-type").fadeIn(1000);
+					await attendre(2800);
+				}
+				if(indiceParagrapheCourant == tableauParagraphes.length) {
+					divJeu.insertBefore(divSang, jeuneFeeMeurtriere);
+					$("#wrapperJeu>div:first-of-type").fadeIn(1200);
+				}
         break;
 			default : break;
 		}
