@@ -152,10 +152,10 @@ main{
 }
 
 #jeu {
-    background-image: url("../images/fondScene4.jpg");
+    /*background-image: url("../images/fondScene4.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: top right;
+    background-position: top right;*/
     display : none;
     position: absolute;
     justify-content : flex-end;
@@ -163,11 +163,27 @@ main{
     top: 0;
     height: 100%;
     width : 64vw;
-    height : calc((1149 * 64vw) / 1990);
+    height : calc((9 * 64vw) / 16);
     margin : auto;
 }
+#wrapperJeu {
+  height : 100%;
+  width : 100%;
+  position : relative;
+  overflow : hidden;
+}
+#wrapperJeu>img:not(.fondJeu) {
+  z-index : 11;
+}
+.fondJeu {
+  width : 100%;
+  height : 100%;
+  z-index : 10;
+}
+
 
 #narrateur{
+    z-index : 20;
     background-color: #3E3E3E;
     border-bottom: 10px solid white;
     box-shadow: 5px 8px 10px rgba(0,0,0,0.18);
@@ -175,34 +191,35 @@ main{
     position: absolute;
     right: 10px;
     top: 20px;
-    height: calc(100% - 40px);
+    height: calc(100% - 50px);
 
     display : flex;
     flex-direction: column;
+    /*overflow-y: scroll;*/
 }
 
-#narrateur>div:not(.interfaceChoixChevalier)>img{
+#narrateur>div:not(.interfaceChoix) img{
     width: 30px;
     margin-right: 10px;
 }
 
-#narrateur>div:not(.interfaceChoixChevalier){
+#narrateur>div:not(.interfaceChoix) {
     display: flex;
     align-items: center;
     justify-content : center;
 }
 
-.interfaceChoixChevalier {
+.interfaceChoix {
   width : 100%;
   max-height : 75%;
   flex-grow : 1;
   display : flex;
   text-align: center;
 }
-.interfaceChoixChevalier>div {
+.interfaceChoix>div {
   max-height : 100%;
 }
-.interfaceChoixChevalier>div:not(:nth-child(2)) {
+.chevalier>div:not(:nth-child(2)) {
   height : 100%;
   max-width : 25%;
   display : inline-block;
@@ -211,29 +228,49 @@ main{
   flex-direction : column;
   justify-content : space-between;
 }
-.interfaceChoixChevalier>div:not(:nth-child(2))>div {
+.chevalier>div:not(:nth-child(2))>div {
   max-height : 25%;
 }
-.interfaceChoixChevalier>div:not(:nth-child(2)) p {
+.chevalier>div:not(:nth-child(2)) p {
   margin : 0 0 10px 0;
 }
-.interfaceChoixChevalier>div:not(:nth-child(2)) img {
+.chevalier>div:not(:nth-child(2)) img {
   max-height : 50px;
 }
-.interfaceChoixChevalier>div:not(:nth-child(2)) img:hover {
+.chevalier>div:not(:nth-child(2)) img:hover {
   cursor : pointer;
 }
 
-.interfaceChoixChevalier>div:nth-child(2)>img {
+.chevalier>div:nth-child(2)>img {
   height : 100%;
   margin : auto;
   display : block;
 }
-.interfaceChoixChevalier>div:nth-child(2) {
+.chevalier>div:nth-child(2) {
   flex-grow : 1;
   display : inline-block;
   margin : 0 5%;
 }
+
+.arme {
+  justify-content : space-between;
+}
+.arme>div {
+  width : calc(100% / 3);
+  margin : auto;
+}
+.arme>div>img {
+  width : 100%;
+  transition : transform 0.2s linear;
+}
+.arme>div>img:hover {
+  transform : rotate(15deg) scale(1.2);
+}
+.arme>div>.selection, .arme>div>.selection:hover {
+  transform : rotate(25deg) scale(1.2);
+}
+
+
 
 #narrateur>div:first-child{
     width: 60%;

@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require 'connexionBDD.php';
 
@@ -9,10 +9,10 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 	$getid = intval($_SESSION['id']);
 	$requser = $pdo->prepare('SELECT * FROM membres WHERE IdUser = ?');
 	$requser->execute(array($getid));
-	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);   
+	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);
     $_SESSION['val1'] = 0;
 
-           
+
 ?>
 
 
@@ -46,8 +46,8 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
     </head>
     <body>
         <?php include("header.php");
-        
-            $_SESSION['aventureSur'] = 1;  
+
+            $_SESSION['aventureSur'] = 1;
             $_SESSION['antiRep'] = 1;
             $_SESSION['AventureProv'] = 2;
         ?>
@@ -98,10 +98,10 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 <img src="images/carteTombeauMerlin.svg" alt="carte de Brocéliande" />
             </div>
             <div id="jeu">
-                <div id="narrateur">
+								<div id="narrateur">
                    <div>
                         <img src="images/casque.svg" alt="Casque" />
-                        <h3>Narrateur</h3> 
+                        <h3>Narrateur</h3>
                    </div>
                    <p class="histoire">Pour acquérir le droit d’arpenter cet endroit, il te faudra répondre à une question...</p>
                    <p class="histoire">Quelle est la bien aimée de Merlin ?</p>
