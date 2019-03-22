@@ -170,6 +170,7 @@ main{
   height : 100%;
   width : 100%;
   position : relative;
+  overflow : hidden;
 }
 #wrapperJeu>img:not(.fondJeu) {
   z-index : 11;
@@ -194,6 +195,7 @@ main{
 
     display : flex;
     flex-direction: column;
+    /*overflow-y: scroll;*/
 }
 
 #narrateur>div:not(.interfaceChoix) img{
