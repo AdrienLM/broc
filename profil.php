@@ -68,16 +68,16 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                         </h4>
                     </div>
                     
-                    <div class="roleProfil">  <img class="imgRole" src="images/icoRole.svg" alt="image du profil utilisateur"> <?php if($userinfo['GroupeUser'] != null){
+                    <!--<div class="roleProfil">  <img class="imgRole" src="images/icoRole.svg" alt="image du profil utilisateur"> <?php //if($userinfo['GroupeUser'] != null){
       ///////////////////////////////////groupeUser de l'utilisateur////////////////////////////////////////////////////
-     if($debugQWMain)   var_dump ($userinfo['GroupeUser']);
-    echo '<p>'.$userinfo['GroupeUser'].'</p>';
+     //if($debugQWMain)   var_dump ($userinfo['GroupeUser']);
+   // echo '<p>'.$userinfo['GroupeUser'].'</p>';
     
-    }else{
-          echo ' Non attribué';
-    }
+    ////}else{
+   //       echo ' Non attribué';
+   // }
     
-        ?>.</div>
+        ?>.</div>-->
                     <div class="descriptionProfil">
 
                         <?php   if($userinfo['DescriptionUser'] != null){

@@ -120,6 +120,8 @@ h1 {
     width: 90%;
     flex-wrap: wrap;
     margin-left: 5%;
+    margin-bottom: 60px;
+    border-radius: 0 0 15px 15px;
 }
 
 .imgBanniere {

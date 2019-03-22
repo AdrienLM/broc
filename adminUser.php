@@ -102,8 +102,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
     <a href="index.php"><img src="images/logo.png" alt="logo Kleiz" id="logo"></a>
     <nav>
         <a href="index.php">accueil</a>
-        <a href="soon.php">guide</a>
-        <a href="choixModes.php">modes</a>
 
 <?php
             if(isset($_SESSION['id']) AND $userinfo['IdUser'] == $_SESSION['id'])
@@ -126,52 +124,27 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 <?php
             }
 ?>
-            <img src="images/iconeMenu.svg" alt="dépliant" id="depliant">
-            <ul id="menuFlottant">
-                <li>
-                          <a href="carte.php">
-                        <img src="images/carte.svg" alt="carte">
-                    </a>
-                    <p>Carte</p>
-              	</li>
-            <li>
-
-
-
-<?php
-            if(isset($_SESSION['id']) AND $userinfo['IdUser'] == $_SESSION['id'])
-            {
-?>
-            <li>
-                <a href="deconnexion.php">
-                	<img src="images/power.svg" alt="quitter">
-            		</a>
-                <p>Déconnexion</p>
-						</li>
-<?php
-            }else{
-?>
-            <li>
-            		<a href="inscription.php">
-               		<img src="images/userNonCompte.svg" alt="quitter">
-            		</a>
-               <p>Inscription</p>
-            </li>
-<?php
-            }
-?>
-            <li>
-              <!-- <a href="parametres.php"> -->
-               <a href="soon.php">
-                  <img src="images/engrenage.svg" alt="engrenage">
-               </a>
-                  <p>Paramètres</p>
-            </li>
-        </ul>
+           
     </nav>
 </header>
 <!-- FIN HEADER ADMIN  -->
+            
+            
+            <?php
+            if($userinfo['isAdmin'] == 2){
+            ?>
             <h1>PANNEL ADMININISTRATEUR</h1>
+            <?php
+            }else{
+            ?>
+            <h1>PANNEL MODÉRATEUR</h1>
+            <?php
+            }
+            ?>
+
+            
+            
+            
         </div>
 
         <div class="containerTitreUser"><img src="images/laptop.svg" class="" alt="">
