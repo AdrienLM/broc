@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require 'connexionBDD.php';
 
@@ -11,7 +11,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 	$requser->execute(array($getid));
 	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);
     $_SESSION['val1'] = 0;
-
+}
 
 ?>
 
@@ -65,7 +65,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 
             $_SESSION['aventureSur'] = 1;
             $_SESSION['antiRep'] = 1;
-            $_SESSION['AventureProv'] = 1;
+            $_SESSION['AventureProv'] = 2;
         ?>
         <main>
             <div id="texte">
@@ -168,8 +168,8 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 
 
  <?php
-}else{
-    header('Location: connexion.php');
-}
+//}else{
+    //header('Location: connexion.php');
+//}
 
 ?>
