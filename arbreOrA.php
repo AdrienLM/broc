@@ -113,8 +113,8 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                <div class="feuilles" id="feuille1"></div>
                 <div class="feuilles" id="feuille2"></div>
                 <div class="feuilles" id="feuille3"></div>
-                <img src="images/arbreOr/arbreDOr.png" alt="arbre d'or" id="arbreOr">
                 <img src="images/arbreOr/lutin1.png" alt="lutin" id="lutin1">
+                <img src="images/arbreOr/arbreDOr.png" alt="arbre d'or" id="arbreOr">
                 <img src="images/arbreOr/lutin2.png" alt="lutin" id="lutin2">
                 <img src="images/arbreOr/petiteFille2.png" alt="petite fille" id="fille">
                 <img src="images/arbreOr/ami1.png" alt="ami petit garçon" id="ami1">
@@ -140,9 +140,21 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 </div>
                 <div id="popupGagne" class="popup">
                    <img src="images/croix.svg" alt="croix">
-                    <p>Bravo, tu as réussis ! Une feuille d'or est apparue dans ton grimoire !</p><br>
+                    <p>Bien joué ! Tu as tout récupéré !</p>
                     <!--<img src="images/feuille1OrUnlock.png" alt="feuille d'or">-->
-                    <a href="grimoire.php">consulter</a><br>
+                    <!--<a href="grimoire.php">consulter</a><br>-->
+                </div>
+                <div id="popupJeu" class="popup">
+                   <div>
+                      <img src="images/croix.svg" alt="loupe">
+                       <p>Loupe</p>
+                   </div>
+                    <div>
+                      <img src="images/croix.svg" alt="croix">
+                       <p>Passer</p>
+                   </div>
+                    <!--<img src="images/feuille1OrUnlock.png" alt="feuille d'or">-->
+                    <!--<a href="grimoire.php">consulter</a><br>-->
                 </div>
                 <div id="narrateur">
                    <div>

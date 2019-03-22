@@ -81,6 +81,27 @@
     transition: 0.5s ease-in-out;
 }
 
+#popupJeu{
+    top: 0;
+    left: 10%;
+    background-color: #3E3E3E;
+    border-bottom: 10px solid white;
+    box-shadow: 5px 8px 10px rgba(0,0,0,0.18);
+    color: white
+}
+
+#popupJeu div{
+    display: flex;
+    align-items: center;
+}
+
+#popupJeu img{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-right: 20px;
+}
+
 #lutin1{
     height: 35%;
     position: absolute;
@@ -175,6 +196,7 @@
     height: 30px;
     width: 30px;
     background-color: red;
+    opacity: 0;
     position: absolute;
     display: none;
     cursor: pointer;
