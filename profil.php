@@ -62,6 +62,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 <div class="banniere">
                     <a href="editionProfil.php"><img class="iconeEdite" src="images/editionprofil.svg" alt="Editer le profil"></a>
                     <div class="imageProfil"><img class="imgProfil" src="membres/avatars/<?php echo $userinfo['AvatarUser']; ?>" alt="image du profil utilisateur"></div>
+                    <div class="infoConteneur">
                     <div class="nomProfil">
                         <h4 class="nomProfil">
                             <?php echo $userinfo['PseudoUser']; ?>
@@ -91,6 +92,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             ?>       
                     </div>
                     <img class="imgBan" src="membres/banniere/<?php echo $userinfo['BanniereUser']; ?>" alt="banniere utilisateur">  
+                </div>
                 </div>
                 <div class="succesCont">
                     <p>Succès obtenus</p>

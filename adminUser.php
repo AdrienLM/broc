@@ -229,14 +229,14 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0){
 					if ($listeUserAAdminDescriptionUser[$cle] == null) {
 						echo "Description : aucune</br>";
 					}else if($listeUserAAdminDescriptionUser[$cle] != null){
-						echo "Description ".$listeUserAAdminDescriptionUser[$cle]." </br> ";
+						echo "Description : ".$listeUserAAdminDescriptionUser[$cle]." </br> ";
 					}
 					//echo 	"Groupe -- ".$listeUserAAdminGroupeUser[$cle]."</br>";
 					if ($listeUserAAdminGroupeUser[$cle] == null) {
 						echo " Groupe : aucun </br> ";
 					}else if($listeUserAAdminGroupeUser[$cle] == 1){
 						// farfadet
-						echo " Groupe : Farfadet </br> ";
+						echo " Groupe : Korrigan </br> ";
 					}else {
 						echo "Groupe : non existant </br>";
 					}

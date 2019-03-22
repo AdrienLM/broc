@@ -5,16 +5,7 @@
         <a href="soon.php">guide</a>
         <a href="choixModes.php">modes</a>
 
-        <?php
-            if($userinfo['isAdmin'] != 0){
-            ?>
-            <a href="adminUser.php">admin</a>
-            <?php
-            }else{
-            ?>
-            <?php
-            }
-            ?>
+       
 
 
 
@@ -23,6 +14,17 @@
                     <?php
             if(isset($_SESSION['id']) AND $userinfo['IdUser'] == $_SESSION['id']) 
             {
+            ?>
+        
+         <?php
+            if($userinfo['isAdmin'] != 0){
+            ?>
+            <a href="adminUser.php">admin</a>
+            <?php
+            }else{
+            ?>
+            <?php
+            }
             ?>
 
                         <a href="profil.php">
