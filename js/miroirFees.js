@@ -153,7 +153,6 @@
 		btnDivNarrateur.removeEventListener("click", validationChoixArme);
 		btnDivNarrateur.addEventListener("click", paragrapheSuivantEvt);
 		armeChoisie = document.querySelector(".selection").dataset.nom;
-		paragrapheSuivant();
 		interfaceChoixArme.remove();
 		interrupteurInterfaceNarrateurJeu(0);
 	}
@@ -550,7 +549,7 @@
     divTexte.style.transform = "scale(0.7) translate(-40%, -35%)";
     divTexte.style.transition = "all 1s linear";
     document.querySelector("#param>div:last-child>p").textContent = "Son";
-    document.querySelector("#param>div:last-child>img").setAttribute("src", "images/hautParleur.svg");
+    document.querySelector("#param>div:last-child>img").setAttribute("src", "images/hautParleur1.svg");
     document.querySelector("#param>div:last-child>img").setAttribute("alt", "Haut parleur");
     document.querySelector("#param>div:nth-child(2)").remove();
     document.getElementById("retour").remove();
@@ -645,8 +644,10 @@
     for(let unSon of tousLesSons) {
       if(unSon.volume == 1) {
         unSon.volume = 0;
+				document.querySelector("#param>div:last-child>img").setAttribute("src", "images/hautParleur.svg");
       } else {
         unSon.volume = 1;
+				document.querySelector("#param>div:last-child>img").setAttribute("src", "images/hautParleur1.svg");
       }
     }
   }
