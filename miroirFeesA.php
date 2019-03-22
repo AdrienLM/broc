@@ -2,13 +2,14 @@
 session_start();
 require 'connexionBDD.php';
 
-//if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
-//{
-	//$getid = intval($_SESSION['id']);
-	//$requser = $pdo->prepare('SELECT * FROM membres WHERE IdUser = ?');
-	//$requser->execute(array($getid));
-	//$userinfo = $requser->fetch(PDO::FETCH_ASSOC);
-  //$_SESSION['val1'] = 0;
+if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
+{
+	$getid = intval($_SESSION['id']);
+	$requser = $pdo->prepare('SELECT * FROM membres WHERE IdUser = ?');
+	$requser->execute(array($getid));
+	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);
+  $_SESSION['val1'] = 0;
+}
 ?>
 
 <!DOCTYPE html>
@@ -42,9 +43,9 @@ require 'connexionBDD.php';
   <body>
     <?php include("header.php");
 
-        //$_SESSION['aventureSur'] = 1;
-        //$_SESSION['antiRep'] = 1;
-        //$_SESSION['AventureProv'] = 2;
+        $_SESSION['aventureSur'] = 1;
+        $_SESSION['antiRep'] = 1;
+        $_SESSION['AventureProv'] = 1;
     ?>
     <main>
       <div id="texte">

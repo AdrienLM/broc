@@ -72,7 +72,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0) {
             </div>
             <div class="colonne2">
                 <ul>
-                    <a href="#"><li>SCÈNE 1 : LE MIROIR AUX FÉES</li></a>
+                    <a href="miroirFeesA.php"><li>SCÈNE 1 : LE MIROIR AUX FÉES</li></a>
                     <a href="#"><li>SCÈNE 2 : L’ARBRE D’OR</li></a>
                     <a href="#"><li>SCÈNE 3 : LE TOMBEAU DE MERLIN</li></a>
                 </ul>

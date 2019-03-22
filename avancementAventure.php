@@ -1,7 +1,80 @@
 
 <?php
 
+/////////
+    $idCompte = $_SESSION['id'];
+    $debugQWMain = false;
 
+
+
+            $requete = "SELECT * FROM avancementaventure WHERE idCompte = ".$idCompte;
+            if($debugQWMain) echo $requete;
+            $ifAvancementUserExist = $pdo->query($requete);
+            $AvancementUserExist = $ifAvancementUserExist->fetch(PDO::FETCH_ASSOC);
+
+            $numAvancement = $_SESSION['AventureProv'];
+        if(isset($_SESSION['AventureProv'])){
+
+            $modifdata = $pdo->prepare('UPDATE avancementaventure SET aventure1 = :numAvance WHERE idCompte= :idCompte');
+            if($debugQWMain) var_dump($modifdata) ;
+                try
+                {
+                    //$numAvancement = $_SESSION['AventureProv']+1;
+                    //$modifdata->bindParam(':datedec', $_POST['datedec'], PDO:: PARAM_STR); // date
+                    $modifdata->bindParam(':numAvance', $numAvancement, PDO:: PARAM_INT); // entier
+                    $modifdata->bindParam(':idCompte', $idCompte, PDO:: PARAM_INT); // entier
+                    $modifdata->execute();
+                    header ('location: CheminAventure.php');
+
+                }
+                catch ( Exception $e )
+                {
+
+                    if($debugQWMain) echo 'Erreur de requête : ', $e->getMessage();
+                    //header ('location: index.php');
+
+                }
+
+       }
+
+
+///////////////////////////////
+
+
+            /*
+            $initAvance = $pdo->prepare("UPDATE AvancementUser SET numAvance = 'numDeAvance' WHERE idCompte = (idCompte) VALUES (:idCompte)");
+            $initAvance->bindParam(':idCompte', $idCompte);
+            $initAvance->bindParam(':idCompte', $idCompte);
+             echo '<br />'.$ifGrimoireExist.'';
+            $ifGrimoireExist = $grimExiste->execute();
+             echo '<br />'.$ifGrimoireExist.'';
+            */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////ancien Code ////////////////////////
+/*
     $idCompte = $_SESSION['id'];
     $debugQWMain = false;
 
@@ -15,7 +88,7 @@
 
 
     if($AvancementUserExist["AvancementUser"] != null)
-    {    
+    {
             if($debugQWMain) echo '<br />'.'existe dans if ';
     }else{
             if($debugQWMain) echo '<br />'.'existe pas else';
@@ -53,11 +126,11 @@
 
             $AvancementUserExist = $ifAvancementUserExist->fetch(PDO::FETCH_ASSOC);
             if($debugQWMain) echo '<br />'.$AvancementUserExist["AvancementUser"];
-    
-    
-    
-  
-    
+
+
+
+
+
         if(isset($_SESSION['AventureProv'])){
 
             $modifdata = $pdo->prepare('UPDATE membres SET AvancementUser= :numAvance WHERE IdUser= :idCompte');
@@ -78,29 +151,29 @@
                     //header ('location: index.php');
 
                 }
-        
+
     }
 
 
 
 
             if($AvancementUserExist["AvancementUser"] >= 0)
-            { 
+            {
                 //re vérif que ou estlejoueur
-                
-                
+
+
                  $requete = "SELECT AvancementUser FROM membres WHERE IdUser = ".$idCompte;
             if($debugQWMain) echo $requete;
             $ifAvancementUserExist = $pdo->query($requete);
 
             $AvancementUserExist = $ifAvancementUserExist->fetch(PDO::FETCH_ASSOC);
             if($debugQWMain) echo '<br />'.$AvancementUserExist["AvancementUser"];
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
 
                 if($debugQWMain) echo '<br />deuxième boucle > 0';
 
@@ -123,23 +196,5 @@
                     //echo '<br />'.'aventure pas encore présente';
                     //header ('location: index.php');
                  }
-
-
-
-
-            /*
-            $initAvance = $pdo->prepare("UPDATE AvancementUser SET numAvance = 'numDeAvance' WHERE idCompte = (idCompte) VALUES (:idCompte)");
-            $initAvance->bindParam(':idCompte', $idCompte);
-            $initAvance->bindParam(':idCompte', $idCompte);  
-             echo '<br />'.$ifGrimoireExist.'';
-            $ifGrimoireExist = $grimExiste->execute();
-             echo '<br />'.$ifGrimoireExist.'';
-            */
-
-
-            }
-    
-    
-    
-
+*/
 ?>
