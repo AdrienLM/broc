@@ -336,8 +336,8 @@ $(document).ready(function(){
                                 $("#lutin2").attr("src", "images/arbreOr/lutin2Mousse.png").fadeIn(4000);
                                 $("#arbreOr").attr("src", "images/arbreOr/arbreDOr.png").fadeIn(4000);
                                 $("#narrateur div:last-child img").replaceWith('<a href="cheminAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
-                                    $("#narrateur div:last-child p").text("Terminer");
-                                $("#narrateur div:last-child").css("display", "block");
+                                    $("#narrateur div:last-child p").text("Fin");
+                                $("#narrateur div:last-child").css("display", "flex");
                                 //écouteur sur le bouton suivant
                                 $("#narrateur div:last-child img").click(function(){
                                     //jeu pour retrouver les feuilles d'or
