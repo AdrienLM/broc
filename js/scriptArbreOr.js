@@ -335,6 +335,9 @@ $(document).ready(function(){
                                 $("#lutin1").attr("src", "images/arbreOr/lutin1Mousse.png").fadeIn(4000);
                                 $("#lutin2").attr("src", "images/arbreOr/lutin2Mousse.png").fadeIn(4000);
                                 $("#arbreOr").attr("src", "images/arbreOr/arbreDOr.png").fadeIn(4000);
+                                $("#narrateur div:last-child img").replaceWith('<a href="cheminAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
+                                    $("#narrateur div:last-child p").text("Terminer");
+                                $("#narrateur div:last-child").css("display", "block");
                                 //écouteur sur le bouton suivant
                                 $("#narrateur div:last-child img").click(function(){
                                     //jeu pour retrouver les feuilles d'or
@@ -368,7 +371,6 @@ $(document).ready(function(){
                                     //changement du bouton passer en terminé
                                     /*$("#narrateur div:last-child img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
                                     $("#narrateur div:last-child p").text("Terminé");*/
-                                    $("#narrateur div:last-child").css("display", "block");
                                 })
                             })
                         })

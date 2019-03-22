@@ -21,7 +21,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0) {
 
     <head>
         <meta charset="utf-8">
-        <title>KLEIZ | ACCUEIL</title>
+        <title>KLEIZ | MODE AVENTURE</title>
         <meta name="description" content="">
         <link rel="stylesheet" href="css/styleCheminAventure.css">
         <link rel="stylesheet" href="css/styleMenu.css">
