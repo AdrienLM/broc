@@ -39,6 +39,7 @@ header #logo{
 
 .imgUser {
     width: 46px;
+    height: 46px;
     border-radius: 50px;
     background-color: #eaeaea;
     border: 2px solid #fff;
