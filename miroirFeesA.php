@@ -48,7 +48,7 @@ require 'connexionBDD.php';
     ?>
     <main>
       <div id="texte">
-        <h2>Scene 2</h2>
+        <h2>Scene 1</h2>
         <h1>Le miroir aux Fees</h1>
         <audio id="playerAudioConteur">
           <source src="./sons/aventureMiroirAuxFeesV2.mp3" />
@@ -77,7 +77,7 @@ require 'connexionBDD.php';
       </div>
       <div id="jeu">
         <div id="wrapperJeu">
-          <img src="images/aventure/miroirFees/fondFondLac.jpg" alt="Sept fées dormant au fond d'un lac" class="fondJeu" />
+          <img src="images/aventure/miroirFees/fondFondLac.png" alt="Sept fées dormant au fond d'un lac" class="fondJeu" />
           <div id="narrateur">
             <div>
               <img src="images/casque.svg" alt="Casque" />
