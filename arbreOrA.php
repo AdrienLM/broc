@@ -103,17 +103,23 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 </a>
             </div>
             <div id="jeu">
-              <!--
-               <a href="images/arbreOr/clairiereZoom.jpg" class="zoomple" id="zoom">
+               <!--<a href="images/arbreOr/clairiereZoom.jpg" class="zoomple" id="zoom">
                    <img src="images/arbreOr/clairiere.jpg">
-                   <div class="feuilles" id="feuille1"></div>
-                   <div class="feuilles" id="feuille2"></div>
-                   <div class="feuilles" id="feuille3"></div>
                </a>-->
+               <!--<span class="zoom" id="zoom">
+                    <img src="images/arbreOr/clairiere.jpg" alt="arbre d'or"/>
+                    <p>Loupe</p>
+                </span>-->
+               <div class="feuilles" id="feuille1"></div>
+                <div class="feuilles" id="feuille2"></div>
+                <div class="feuilles" id="feuille3"></div>
                 <img src="images/arbreOr/arbreDOr.png" alt="arbre d'or" id="arbreOr">
                 <img src="images/arbreOr/lutin1.png" alt="lutin" id="lutin1">
                 <img src="images/arbreOr/lutin2.png" alt="lutin" id="lutin2">
-                <img src="images/arbreOr/petiteFille.png" alt="petite fille" id="fille">
+                <img src="images/arbreOr/petiteFille2.png" alt="petite fille" id="fille">
+                <img src="images/arbreOr/ami1.png" alt="ami petit garçon" id="ami1">
+                <img src="images/arbreOr/ami2.png" alt="ami petit garçon" id="ami2">
+                <img src="images/arbreOr/ami3.png" alt="ami petit garçon" id="ami3">
                 <img src="images/arbreOr/tronc1.png" alt="tronc d'arbre calciné" id="arbre1">
                 <img src="images/arbreOr/tronc2.png" alt="tronc d'arbre calciné" id="arbre2">
                 <img src="images/arbreOr/tronc3.png" alt="tronc d'arbre calciné" id="arbre3">
@@ -127,6 +133,16 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 <div id="popupArbre" class="popup">
                    <img src="images/croix.svg" alt="croix">
                     <p>Clique sur l'arbre pour faire pousser ses feuilles</p>
+                </div>
+                <div id="popupFeuilles" class="popup">
+                   <img src="images/croix.svg" alt="croix">
+                    <p>Des feuilles sont cachées dans la clairière, essaie de les trouver</p>
+                </div>
+                <div id="popupGagne" class="popup">
+                   <img src="images/croix.svg" alt="croix">
+                    <p>Bravo, tu as réussis ! Une feuille d'or est apparue dans ton grimoire !</p><br>
+                    <!--<img src="images/feuille1OrUnlock.png" alt="feuille d'or">-->
+                    <a href="grimoire.php">consulter</a><br>
                 </div>
                 <div id="narrateur">
                    <div>
