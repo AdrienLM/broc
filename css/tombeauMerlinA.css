@@ -1,0 +1,23 @@
+.dispatitionAGauche.sortie {
+  animation : sortieBrouillardGauche 1s ease-in;
+}
+.sortieBrouillardDroite.sortie {
+  animation : sortieBrouillardGauche 1s ease-in;
+}
+
+@keyframes sortieBrouillardGauche {
+  0% {
+    transform : translateX(0);
+  }
+  100% {
+    transform : translateX(-100%);
+  }
+}
+@keyframes sortieBrouillardDroite {
+  0% {
+    transform : translateX(0);
+  }
+  100% {
+    transform : translateX(100%);
+  }
+}

@@ -246,19 +246,11 @@
 		}
 	}
 	function validationPersonnalisationChevalier(evt) {
-		/*let divValidation = document.createElement("div");
-		let p = document.createElement("p");
-		p.textContent = "Ce choix vous convient-il ?";
-		let btnOui = document.createElement("button");
-		btnOui.textContent = "Oui";
-		let btnNon = document.createElement("button");
-		btnNon.textContent = "Non";*/
 		btnDivNarrateur.removeEventListener("click", validationPersonnalisationChevalier);
 		btnDivNarrateur.addEventListener("click", paragrapheSuivantEvt);
 		paragrapheSuivant();
 		interfaceChoixChevalier.remove();
 		interrupteurInterfaceNarrateurJeu(0);
-		animationMort();
 	}
 
 	function lancerJeuChoixArme(evt) {
@@ -309,7 +301,6 @@
 			btnDivNarrateur.querySelector("p").textContent = "Valider";
 			divNarrateur.style.right = "50%";
 			divNarrateur.style.top = "50%";
-			divNarrateur.style.transition = "all 1s linear";
 			divNarrateur.style.transform = "translateX(50%) translateY(-50%)";
 
 			switch(numeroJeu) {
@@ -414,7 +405,6 @@
 				case 2 :
 						/* Restyliser #narrateur pour le jeu */
 					divNarrateur.style.width = "50%";
-
 						/* Ajouter l'interface */
 					divNarrateur.insertBefore(interfaceChoixArme, btnDivNarrateur);
 						/* Créer les wrapper des images */
@@ -457,16 +447,13 @@
 			for(let unParagrapheAAfficher of tableauParagraphes[indiceParagrapheCourant - 1]) {
 				let baliseP = document.createElement("p");
 				baliseP.classList.add("histoire");
-				baliseP.appendChild(document.createTextNode(unParagrapheAAfficher));/*.textContent = unParagrapheAAfficher;*/
+				baliseP.appendChild(document.createTextNode(unParagrapheAAfficher));
 				document.getElementById("narrateur").insertBefore(baliseP, document.querySelector("#narrateur>div:nth-of-type(2)"));
 			}
 		}
 		animations();
 	}
 
-	async function animationMort() {
-
-	}
 
 	let booleanAnimationPassee = false;
 	let booleanAnimation2Passee = false;
