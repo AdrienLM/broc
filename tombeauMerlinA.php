@@ -20,6 +20,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <meta name="description" content="">
         <link rel="stylesheet" href="css/styleMenu.css">
         <link rel="stylesheet" href="css/styleAventureV2.css">
+        <link rel="stylesheet" href="css/tombeauMerlinA.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png" />
@@ -100,15 +101,16 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             </div>
             <div id="jeu">
 							<div id="wrapperJeu">
+								<img src="images/brouillardTombeauMerlin.png" class="brouillard niv1"/>
 								<div id="narrateur">
                    <div>
-                        <img src="images/casque.svg" alt="Casque" />
-                        <h3>Narrateur</h3>
+                        <img src="images/console.svg" alt="Casque" />
+                        <h3>Jeu</h3>
                    </div>
                    <p class="histoire">Lance un sort pour dissiper le brouillard.</p>
                    <div>
                        <img src="images/flecheD.svg" alt="Flèche vers la droite" />
-                       <p>Répondre</p>
+                       <p>Dissper</p>
                    </div>
                 </div>
 							</div>

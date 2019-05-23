@@ -13,9 +13,12 @@
 	let playerAudio;
 	let tousLesSons;
 
-
 	let divJeu;
-  let divNarrateur;
+	let divNarrateur;
+	let btnDivNarrateur;
+	let btnDivNarrateurImg;
+
+		/* Variables images */
   let brouillard;
   let vivianeEtMerlin;
 
@@ -47,7 +50,7 @@
 			</div>
 		</div>
 	*/
-		/* Créer les éléments, leurs attribuer un style (dynamique) et une calsse si besoin */
+		/* Lecteur audio : créer les éléments, leurs attribuer un style (dynamique) et une calsse si besoin */
 	let divPlayer = document.createElement("div");
 	divPlayer.classList.add("player");
 	let containerTexte = document.createElement("span");
@@ -69,94 +72,97 @@
 		divPlayer.appendChild(barreTemps);
 		document.getElementById("texte").insertBefore(divPlayer, document.getElementById("texte").querySelector("p"));
 
-
+			/* Enregistrer les éléments du DOM nécessaire à la fonction initialiser */
 		tousLesSons = document.querySelectorAll("audio");
+		btnDivNarrateur = document.querySelector("#narrateur>div:last-child");
+		btnDivNarrateurImg = btnDivNarrateur.querySelector("img");
+
 			/* Ajouter les écouteurs d'événements */
 		document.querySelector("#param>div:nth-child(2)").addEventListener("click", lancementSon);
-		document.querySelector("#narrateur>div:last-child").addEventListener("click", lancerEnigme);
+		//btnDivNarrateur.addEventListener("click", lancerEnigme);
+		btnDivNarrateur.addEventListener("click", lancerJeuBrouillard);
 		//document.querySelector("#narrateur>div:last-child").addEventListener("click", paragrapheSuivantEvt);
 
-		    /* Ecouteur animation début */
-        document.querySelector("#param>div:first-child>img").addEventListener("click", pleinEcran);
-        document.querySelector("#param>div:nth-child(2)").addEventListener("click", transitionDebut);
+	    /* Ecouteur animation début */
+		window.addEventListener("resize", verifierHauteurDivNarrateurRedimension);
+	  document.querySelector("#param>div:first-child>img").addEventListener("click", pleinEcran);
+	  document.querySelector("#param>div:nth-child(2)").addEventListener("click", transitionDebut);
 
-          /* Enregistrer les objets du DOM dans des variables */
-        divJeu = document.getElementById("wrapperJeu");
-        divNarrateur = document.getElementById("narrateur");
-					/* Placer les éléments du début */
-        brouillard = document.createElement("img");
-        brouillard.setAttribute("src", "images/brouillardTombeauMerlin.png");
-        brouillard.setAttribute("alt", "Brouillard épais");
-        brouillard.style.height = "100%";
-        brouillard.style.width = "100%";
-        divJeu.insertBefore(brouillard, divNarrateur);
+	    /* Enregistrer les autres éléments du DOM */
+	  divNarrateur = document.getElementById("narrateur");
+	  divJeu = document.getElementById("wrapperJeu");
+
+			/* Placer les éléments du début */
+		/*brouillard = creerImage("images/brouillardTombeauMerlin.png", "Brouillard épais", {"height" : "100%", "width" : "100%"});
+	  divJeu.insertBefore(brouillard, divNarrateur);*/
 	}
 
-	function paragrapheSuivantEvt(evt) {
-		paragrapheSuivant();
+	let nbNuageBrouillard = 1;
+	async function lancerJeuBrouillard(evt) {
+		btnDivNarrateur.removeEventListener("click", lancerJeuBrouillard);
+		divNarrateur.style.opacity = "1";
+		divNarrateur.style.transition = "all 0.3s linear";
+		divNarrateur.style.opacity = "0";
+		for(let unBrouillard of document.querySelectorAll("#wrapperJeu .brouillard.niv1")) {
+			unBrouillard.addEventListener("click", dissiperBrouillard);
+			unBrouillard.style.cursor = "pointer";
+		}
+		await attendre(300);
+		divNarrateur.style.display = "none";
 	}
-	function paragrapheSuivant() {
-		if(!playerAudio.paused) {
-			playerAudio.pause();
-			window.clearInterval(timerPause);
-			indiceParagrapheCourant++;
+	async function dissiperBrouillard(evt) {
+		$(this).fadeOut(500);
+		await attendre(500);
+		this.remove();
+		nbNuageBrouillard = nbNuageBrouillard - 1;
+		if(nbNuageBrouillard == 0) {
+			btnDivNarrateur.addEventListener("click", paragrapheSuivantEvt);
+			paragrapheSuivant();
+			interrupteurInterfaceNarrateurJeu(0);
+			divNarrateur.style.display = "flex";
+			divNarrateur.style.opacity = "1";
+			await attendre(300);
+			divNarrateur.style.transition = "all 0.8s linear";
 		}
-		let lesParagraphes = document.querySelectorAll("#narrateur>p");
-		for(let unParagrapheAsupprimer of lesParagraphes) {
-			unParagrapheAsupprimer.remove();
-		}
-		/*let baliseP = document.createElement("p");
-			baliseP.classList.add("histoire");
-			baliseP.appendChild(document.createTextNode(tableauParagraphes));
-			document.getElementById("narrateur").insertBefore(baliseP, document.querySelector("#narrateur>div:nth-of-type(2)"));*/
-		if(indiceParagrapheCourant < 4) {
-			for(let unParagrapheAAfficher of tableauParagraphes[indiceParagrapheCourant - 1]) {
-				let baliseP = document.createElement("p");
-				baliseP.classList.add("histoire");
-				baliseP.appendChild(document.createTextNode(unParagrapheAAfficher));/*.textContent = unParagrapheAAfficher;*/
-				document.getElementById("narrateur").insertBefore(baliseP, document.querySelector("#narrateur>div:nth-of-type(2)"));
+	}
+
+
+	function interrupteurInterfaceNarrateurJeu(numeroJeu) {
+		if(divNarrateur.querySelector("h3").textContent == "Jeu") {
+			btnDivNarrateur.addEventListener("click", paragrapheSuivantEvt);
+			divNarrateur.querySelector("img").setAttribute("src", "images/casque.svg");
+			divNarrateur.querySelector("img").setAttribute("alt", "Casque");
+			divNarrateur.querySelector("h3").textContent = "Narrateur";
+			divNarrateur.style.right = "10px";
+			divNarrateur.style.top = "20px";
+			divNarrateur.style.transform = "translate(0)";
+			divNarrateur.style.width = "250px";
+			btnDivNarrateur.querySelector("p").textContent = "Suivant";
+		} else {
+			supprimerParagraphesHistoire();
+				/* Restyliser #narrateur pour le jeu */
+			divNarrateur.querySelector("img").setAttribute("src", "images/console.svg");
+			divNarrateur.querySelector("img").setAttribute("alt", "Manette de jeu");
+			divNarrateur.querySelector("h3").textContent = "Jeu";
+			btnDivNarrateur.querySelector("p").textContent = "Valider";
+			divNarrateur.style.right = "50%";
+			divNarrateur.style.top = "50%";
+			divNarrateur.style.transform = "translateX(50%) translateY(-50%)";
+
+			switch(numeroJeu) {
+				case 1 :
+					break;
+				case 2 :
+					break;
+				default : break;
 			}
 		}
-		animations();
-	}
-
-	async function animations() {
-		switch(indiceParagrapheCourant) {
-			case 1 : vivianeEtMerlin = document.createElement("img");
-        			vivianeEtMerlin.setAttribute("src", "images/merlinViviane.png");
-			        vivianeEtMerlin.setAttribute("alt", "Viviane sur les genous de Merlin");
-			        vivianeEtMerlin.style.position = "absolute";
-			        vivianeEtMerlin.style.height = "80%";
-			        vivianeEtMerlin.style.bottom = "-10%";
-			        vivianeEtMerlin.style.right = "30vw";
-			        divJeu.insertBefore(vivianeEtMerlin, divNarrateur);
-			        $("#jeu>img:first-of-type").fadeOut(1500);
-					await attendre(1500);
-					brouillard.remove();
-			        $("#jeu>img:last-of-type").fadeIn(500);
-					await attendre(500);
-				break;
-			case 3 : $("#jeu>img:last-of-type").fadeOut(500);
-					await attendre(500);
-				break;
-			case 4 : $("#narrateur div:last-child img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
-                    $("#narrateur div:last-child p").text("Terminé");
-                break;
-			default :
-				break;
-		}
-		playerAudio.currentTime = (tempsDeDepart[indiceParagrapheCourant - 1] / 10);
-		tempsPasseDS = tempsDeDepart[indiceParagrapheCourant - 1];
-		playerAudio.play();
-		timerPause = window.setInterval(arretSon, 100);
-		timerAffichage = window.setInterval(affichageTemps, 1000);
 	}
 
 	async function lancerEnigme(evt) {
 		if(!playerAudio.paused) {
 			playerAudio.pause();
 			window.clearInterval(timerPause);
-			indiceParagrapheCourant++;
 		}
 		document.querySelector("#narrateur>div:last-child").removeEventListener("click", lancerEnigme);
 
@@ -169,7 +175,7 @@
 		document.querySelector("#narrateur>div:last-child>p").textContent = "Suivant";
 		let divReponses = document.createElement("div");
 		divReponses.classList.add("divReponsesQuizz");
-		divNarrateur.appendChild(divReponses);
+		divNarrateur.insertBefore(divReponses, btnDivNarrateur);
 		divNarrateur.style.right = "50%";
 		divNarrateur.style.top = "50%";
 		divNarrateur.style.transform = "translateX(50%) translateY(-50%)";
@@ -301,6 +307,37 @@
 	}
 
 
+	async function animations() {
+		switch(indiceParagrapheCourant) {
+			case 1 :
+				vivianeEtMerlin = creerImage("images/merlinViviane.png", "Viviane sur les genoux de Merlin", {"position" : "absolute", "right" : "50%", "bottom" : "-10%", "height" : "80%"});
+        divJeu.insertBefore(vivianeEtMerlin, divNarrateur);
+        $("#jeu>img:first-of-type").fadeOut(1500);
+				await attendre(1500);
+				//brouillard.remove();
+        $("#jeu>img:last-of-type").fadeIn(500);
+				await attendre(500);
+				break;
+			case 3 :
+				$("#jeu>img:last-of-type").fadeOut(500);
+				await attendre(500);
+				break;
+			case 4 :
+				$("#narrateur div:last-child img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
+        $("#narrateur div:last-child p").text("Terminé");
+        break;
+			default : break;
+		}
+		playerAudio.currentTime = (tempsDeDepart[indiceParagrapheCourant - 1] / 10);
+		tempsPasseDS = tempsDeDepart[indiceParagrapheCourant - 1];
+		playerAudio.play();
+		timerPause = window.setInterval(arretSon, 100);
+		timerAffichage = window.setInterval(affichageTemps, 1000);
+	}
+
+
+
+
 /* FONCTIONS GÉNÉRALES */
   function creerImage(src, alt, styles) {
 	    let img = document.createElement("img");
@@ -313,11 +350,41 @@
 			}
 	    return img;
 	  }
+	function attendre(temps) {
+		return new Promise(function(resolve) {
+			setTimeout(function () {
+				resolve()
+			}, temps);
+		})
+	}
+
+	function paragrapheSuivantEvt(evt) {
+		paragrapheSuivant();
+	}
+	function paragrapheSuivant() {
+		if(!playerAudio.paused) {
+			playerAudio.pause();
+			window.clearInterval(timerPause);
+		}
+		indiceParagrapheCourant++;
+		supprimerParagraphesHistoire();
+		if(indiceParagrapheCourant <= tableauParagraphes.length) {
+			for(let unParagrapheAAfficher of tableauParagraphes[indiceParagrapheCourant - 1]) {
+				let baliseP = document.createElement("p");
+				baliseP.classList.add("histoire");
+				baliseP.appendChild(document.createTextNode(unParagrapheAAfficher));
+				document.getElementById("narrateur").insertBefore(baliseP, document.querySelector("#narrateur>div:nth-of-type(2)"));
+			}
+		}
+		verifierHauteurDivNarrateur();
+		animations();
+	}
 	function supprimerParagraphesHistoire() {
 		for(let unParagrapheASupprimer of document.querySelectorAll("#narrateur>p")) {
 			unParagrapheASupprimer.remove();
 		}
 	}
+
   async function transitionDebut(evt) {
     this.removeEventListener("click", transitionDebut);
     let divTexte = document.getElementById("texte");
@@ -335,13 +402,6 @@
     $("#jeu").fadeIn(500);
     divJeu.style.display = "flex";
   }
-	function attendre(temps) {
-			return new Promise(function(resolve) {
-				setTimeout(function () {
-					resolve()
-				}, temps);
-			})
-		}
 
   function affichageTemps() {
 		tempsPasseS = Math.floor(playerAudio.currentTime);
@@ -384,6 +444,22 @@
 			playerAudio.pause();
 			window.clearInterval(timerAffichage);
 			window.clearInterval(timerPause);
+		}
+	}
+
+	function verifierHauteurDivNarrateurRedimension(evt) {
+		verifierHauteurDivNarrateur();
+	}
+	function verifierHauteurDivNarrateur() {
+		let hauteurDivNarrateur = divNarrateur.clientHeight;
+		let hauteurElementsInternes = 0;
+		for(let unElement of divNarrateur.querySelectorAll("div, .histoire")) {
+			hauteurElementsInternes = hauteurElementsInternes + unElement.clientHeight;
+		}
+		if(hauteurElementsInternes > hauteurDivNarrateur) {
+			divNarrateur.style.overflowY = "scroll";
+		} else {
+			divNarrateur.style.overflowY = "hidden";
 		}
 	}
 

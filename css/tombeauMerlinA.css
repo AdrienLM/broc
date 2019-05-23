@@ -1,8 +1,14 @@
+.brouillard {
+  height : 100%;
+  width : 100%;
+
+}
+
 .dispatitionAGauche.sortie {
   animation : sortieBrouillardGauche 1s ease-in;
 }
-.sortieBrouillardDroite.sortie {
-  animation : sortieBrouillardGauche 1s ease-in;
+.dispatitionADroite.sortie {
+  animation : sortieBrouillardDroite 1s ease-in;
 }
 
 @keyframes sortieBrouillardGauche {
