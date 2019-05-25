@@ -53,8 +53,8 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 <h2>Scene 3</h2>
                 <h1>Le tombeau de Merlin</h1>
                 <audio id="playerAudioConteur">
-                    <source src="./sons/aventureTombeauMerlin.mp3" />
-                    <source src="./sons/aventureTombeauMerlin.ogg" />
+                    <source src="./sons/aventureTombeauMerlinV2/aventureTombeauMerlinV2.mp3" />
+                    <source src="./sons/aventureTombeauMerlinV2/aventureTombeauMerlinV2.ogg" />
                 </audio>
 
 								<audio loop>
@@ -62,7 +62,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                     <source src="./sons/ambianceForet.ogg" />
 								</audio>
 
-                <audio id="playerAudioRep0">
+                <!--<audio id="playerAudioRep0">
                     <source src="./sons/reponsesEnigmes/morgane.mp3" />
                     <source src="./sons/reposesEnigmes/morgane.ogg" />
                 </audio>
@@ -77,7 +77,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 <audio id="playerAudioRep3">
                     <source src="./sons/reponsesEnigmes/melusine.mp3" />
                     <source src="./sons/reponsesEnigmes/melusine.ogg" />
-                </audio>
+                </audio>-->
                 <p>Paramètres</p>
 								<div id="param">
 				          <div>

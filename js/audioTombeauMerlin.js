@@ -2,11 +2,11 @@
 	"use strict";
 	window.addEventListener("DOMContentLoaded", initialiser);
 
-	let tempsTotal = 76; /* DONNÉE À MODIFIER */
+	let tempsTotal = 86; /* DONNÉE À MODIFIER */ /* s */
 	let tempsPasseS = 0;
 	let tempsPasseDS = 0;
-	let tempsDePause = new Array(85, 289, 528, 765); /* DONNÉE À MODIFIER */
-	let tempsDeDepart = new Array(97, 301, 528); /* DONNÉE À MODIFIER */
+	let tempsDePause = new Array(39, 168, 370, 539, 749, 840, 859); /* DONNÉE À MODIFIER */ /* ds */
+	let tempsDeDepart = new Array(39, 168, 370, 539, 749, 840); /* DONNÉE À MODIFIER */ /* ds */
 	let indiceParagrapheCourant = 0;
 	let timerAffichage;
 	let timerPause;
@@ -35,11 +35,69 @@
 																		"Des traits plus âgés, plus sages, se cachaient derrière un masque magique. Pour la première fois, Viviane vit le vrai visage de son bien aimé Merlin."));
 	tableauParagraphes.push(new Array("Amant mais également mentor de la fée, Merlin lui révéla tous ses secrets et lui apprit de nombreux sorts. Parmi ceux-ci se trouvait le sortilège permettant de garder un homme pour l’éternité.",
 																		"Utilisant ce savoir, Viviane enferma Merlin dans neuf cercles d’air à l’aide d’un cercle de pierre.",
-																		"Merlin, grand magicien, connaissait le sort qui l’attendait mais ne fit rien pour l’éviter.",
-																		"Viviane a ainsi pu rester auprès de son bien-aimé jusqu’à la fin des temps.",
+																		"Merlin, grand magicien, connaissait le sort qui l’attendait mais ne fit rien pour l’éviter."));
+	tableauParagraphes.push(new Array("Viviane a ainsi pu rester auprès de son bien-aimé jusqu’à la fin des temps.",
 																		"Merlin est toujours en vie aux côtés de Viviane dans la caverne que l’on peut deviner sous nos pieds."));
 	tableauParagraphes.push(new Array("Maintenant, testons ta mémoire."));
 
+	let questionsReponsesQuizz = {
+		"enigmes" : [
+		{"question" : "Quel est le nom de la bien-aimée de Merlin ?",
+			"audioQuestion" : "merlinQ1/questBienAimeMerlin",
+			"reponse1" : "Viviane",
+			"audioRep1" : "merlinQ1/viviane",
+			"reponse2" : "Morgane",
+			"audioRep2" : "merlinQ1/morgane",
+			"reponse3" : "Guenièvre",
+			"audioRep3" : "merlinQ1/guenievre",
+			"reponse4" : "Mélusine",
+			"audioRep4" : "merlinQ1/melusine"
+		},
+		{"question" : "La première fois qu’il a rencontré Viviane, Merlin avait prit l’apparence d’un…",
+			"audioQuestion" : "merlinQ2/questApparence",
+			"reponse1" : "Écuyer",
+			"audioRep1" : "merlinQ2/ecuyer",
+			"reponse2" : "Magicien",
+			"audioRep2" : "merlinQ2/magicien",
+			"reponse3" : "Prince",
+			"audioRep3" : "merlinQ2/prince",
+			"reponse4" : "Chevalier",
+			"audioRep4" : "merlinQ2/chevalier"
+		},
+		{"question" : "Le premier sort qu’a lancé Viviane a fait apparaître…",
+			"audioQuestion" : "merlinQ3/questPremierSort",
+			"reponse1" : "Une rivière",
+			"audioRep1" : "merlinQ3/riviere",
+			"reponse2" : "Une forêt",
+			"audioRep2" : "merlinQ3/foret",
+			"reponse3" : "Un château",
+			"audioRep3" : "merlinQ3/chateau",
+			"reponse4" : "Un tombeau",
+			"audioRep4" : "merlinQ3/tombeau"
+		},
+		{"question" : "Dans combien de cercles d’air Merlin a t-il été enfermé ?",
+			"audioQuestion" : "merlinQ4/questCercleDAir",
+			"reponse1" : "9",
+			"audioRep1" : "merlinQ4/9",
+			"reponse2" : "3",
+			"audioRep2" : "merlinQ4/3",
+			"reponse3" : "12",
+			"audioRep3" : "merlinQ4/12",
+			"reponse4" : "7",
+			"audioRep4" : "merlinQ4/7"
+		},
+		{"question" : "Combien de temps Merlin restera t-il enfermé ?",
+			"audioQuestion" : "merlinQ5/questTemps",
+			"reponse1" : "Jusqu’à la fin des temps",
+			"audioRep1" : "merlinQ5/finDesTemps",
+			"reponse2" : "500 ans",
+			"audioRep2" : "merlinQ5/500Ans",
+			"reponse3" : "1 000 ans",
+			"audioRep3" : "merlinQ5/1000Ans",
+			"reponse4" : "On en sait pas",
+			"audioRep4" : "merlinQ5/saisPas"
+		},
+	]};
 
 	/* Visualisation des éléments dans le DOM :
 		<div nomJS="divPlayer" class="player">
@@ -79,9 +137,7 @@
 
 			/* Ajouter les écouteurs d'événements */
 		document.querySelector("#param>div:nth-child(2)").addEventListener("click", lancementSon);
-		//btnDivNarrateur.addEventListener("click", lancerEnigme);
 		btnDivNarrateur.addEventListener("click", lancerJeuBrouillard);
-		//document.querySelector("#narrateur>div:last-child").addEventListener("click", paragrapheSuivantEvt);
 
 	    /* Ecouteur animation début */
 		window.addEventListener("resize", verifierHauteurDivNarrateurRedimension);
@@ -91,18 +147,19 @@
 	    /* Enregistrer les autres éléments du DOM */
 	  divNarrateur = document.getElementById("narrateur");
 	  divJeu = document.getElementById("wrapperJeu");
-
-			/* Placer les éléments du début */
-		/*brouillard = creerImage("images/brouillardTombeauMerlin.png", "Brouillard épais", {"height" : "100%", "width" : "100%"});
-	  divJeu.insertBefore(brouillard, divNarrateur);*/
 	}
 
 	let nbNuageBrouillard = 1;
 	async function lancerJeuBrouillard(evt) {
+		if(!playerAudio.paused) {
+			playerAudio.pause();
+			window.clearInterval(timerPause);
+		}
 		btnDivNarrateur.removeEventListener("click", lancerJeuBrouillard);
 		divNarrateur.style.opacity = "1";
 		divNarrateur.style.transition = "all 0.3s linear";
 		divNarrateur.style.opacity = "0";
+		//Sélecteur à revoir
 		for(let unBrouillard of document.querySelectorAll("#wrapperJeu .brouillard.niv1")) {
 			unBrouillard.addEventListener("click", dissiperBrouillard);
 			unBrouillard.style.cursor = "pointer";
@@ -111,6 +168,8 @@
 		divNarrateur.style.display = "none";
 	}
 	async function dissiperBrouillard(evt) {
+
+		//temps + actions à revoir (son, etc.)
 		$(this).fadeOut(500);
 		await attendre(500);
 		this.remove();
@@ -123,6 +182,7 @@
 			divNarrateur.style.opacity = "1";
 			await attendre(300);
 			divNarrateur.style.transition = "all 0.8s linear";
+			verifierHauteurDivNarrateur();
 		}
 	}
 
@@ -136,7 +196,7 @@
 			divNarrateur.style.right = "10px";
 			divNarrateur.style.top = "20px";
 			divNarrateur.style.transform = "translate(0)";
-			divNarrateur.style.width = "250px";
+			divNarrateur.style.width = "22%";
 			btnDivNarrateur.querySelector("p").textContent = "Suivant";
 		} else {
 			supprimerParagraphesHistoire();
@@ -144,49 +204,91 @@
 			divNarrateur.querySelector("img").setAttribute("src", "images/console.svg");
 			divNarrateur.querySelector("img").setAttribute("alt", "Manette de jeu");
 			divNarrateur.querySelector("h3").textContent = "Jeu";
-			btnDivNarrateur.querySelector("p").textContent = "Valider";
 			divNarrateur.style.right = "50%";
 			divNarrateur.style.top = "50%";
 			divNarrateur.style.transform = "translateX(50%) translateY(-50%)";
 
-			switch(numeroJeu) {
-				case 1 :
-					break;
-				case 2 :
-					break;
-				default : break;
+			if(numeroJeu == 1) {
+				btnDivNarrateur.style.display = "none";
+				btnDivNarrateur.querySelector("p").textContent = "Recommencer";
+				divNarrateur.style.width = "45%";
+				afficherEnigme();
 			}
 		}
 	}
 
-	async function lancerEnigme(evt) {
+	let numeroEnigme = 0;
+	async function lancerEnigmes(evt) {
 		if(!playerAudio.paused) {
 			playerAudio.pause();
 			window.clearInterval(timerPause);
 		}
-		document.querySelector("#narrateur>div:last-child").removeEventListener("click", lancerEnigme);
-
-		let divNarrateur = document.getElementById("narrateur");
-		document.querySelector("#narrateur>div:first-child>img").setAttribute("src", "images/console.svg");
-		document.querySelector("#narrateur>div:first-child>img").setAttribute("alt", "Manette de jeu");
-		document.querySelector("#narrateur h3").textContent = "Jeu";
-		document.querySelector(".histoire").remove();
-		document.querySelector("#narrateur>div:last-child").style.display = "none";
-		document.querySelector("#narrateur>div:last-child>p").textContent = "Suivant";
+		btnDivNarrateur.removeEventListener("click", lancerEnigmes);
+		divNarrateur.querySelector("h3").textContent = "Narrateur";
+		interrupteurInterfaceNarrateurJeu(1);
+	}
+	function verificationReponse(evt) {
+		if(this.textContent == questionsReponsesQuizz["enigmes"][numeroEnigme]["reponse1"]) {
+			numeroEnigme = numeroEnigme + 1;
+			effacerEnigme();
+		} else {
+			divNarrateur.querySelector(".divReponsesQuizz").remove();
+			let message = document.createElement("p");
+			message.textContent = "Dommage ! "+this.textContent+" n'est pas la bonne réponse. Recommence !";
+			message.classList.add("messageQuizz");
+			divNarrateur.insertBefore(message, btnDivNarrateur);
+			btnDivNarrateur.style.display = "flex";
+			numeroEnigme = 0;
+			btnDivNarrateur.addEventListener("click", lancerEnigmes);
+		}
+	}
+	function effacerEnigme() {
+		for(let unP of document.querySelectorAll("#narrateur>p")) {
+			unP.remove();
+		}
+		divNarrateur.querySelector(".divReponsesQuizz").remove();
+		if(numeroEnigme != questionsReponsesQuizz["enigmes"].length - 1) {
+			afficherEnigme();
+		} else {
+			let message = document.createElement("p");
+			message.textContent = "Bravo ! Tu as terminé le quizz !";
+			message.classList.add("messageQuizz");
+			divNarrateur.insertBefore(message, btnDivNarrateur);
+			$("#narrateur div:last-child img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
+			$("#narrateur div:last-child p").text("Terminé");
+			btnDivNarrateur.style.display = "flex";
+		}
+	}
+	async function afficherEnigme() {
 		let divReponses = document.createElement("div");
 		divReponses.classList.add("divReponsesQuizz");
 		divNarrateur.insertBefore(divReponses, btnDivNarrateur);
-		divNarrateur.style.right = "50%";
-		divNarrateur.style.top = "50%";
-		divNarrateur.style.transform = "translateX(50%) translateY(-50%)";
-		divNarrateur.style.width = "300px";
+
+		let debutCheminSons = "./sons/aventureTombeauMerlinV2/";
+		let extension;
+		if (document.getElementById("playerAudioConteur").canPlayType('audio/mpeg;')) {
+			extension = ".mp3";
+		} else {
+			extension = ".ogg";
+		}
+
+		let affichageNumQuestion = document.createElement("p");
+		affichageNumQuestion.textContent = "Question "+(numeroEnigme + 1)+"/"+questionsReponsesQuizz["enigmes"].length;
+		affichageNumQuestion.classList.add("numeroQuestionQuizz");
+		divNarrateur.insertBefore(affichageNumQuestion, divReponses);
+		let question = document.createElement("p");
+		question.textContent = questionsReponsesQuizz["enigmes"][numeroEnigme]["question"];
+		question.classList.add("questionQuizz");
+		divNarrateur.insertBefore(question, divReponses);
+		let audio = new Audio(debutCheminSons+questionsReponsesQuizz["enigmes"][numeroEnigme]["audioQuestion"]+extension);
+		await lancerAudioEnigme(audio, false);
 
 
+			/* Intégrer les réponses dans un ordre aléatoire */
 		let i=0;
 		let nbChoisis = new Array();
 		nbChoisis.push(4);
 		let booleanEnigme = true;
-		let rep;
 		while(i <= 3) {
 			let nbAleatoire = Math.floor(Math.random() * 4);
 			for(let unNbChoisi of nbChoisis) {
@@ -197,124 +299,69 @@
 			if(booleanEnigme) {
 				nbChoisis.push(nbAleatoire);
 				i = i + 1;
-
-				rep = document.createElement("button");
+				let rep = document.createElement("button");
 				switch(nbAleatoire) {
-					case 0 : rep.textContent = "Morgane";
-							divReponses.appendChild(rep);
-							$(".divReponses>button:last-child").fadeIn(500);
-							document.getElementById("playerAudioRep0").play();
+					case 0 :
+						rep.textContent = questionsReponsesQuizz["enigmes"][numeroEnigme]["reponse1"];
+						divReponses.appendChild(rep);
+						audio = new Audio(debutCheminSons+questionsReponsesQuizz["enigmes"][numeroEnigme]["audioRep1"]+extension);
 						break;
-					case 1 : rep.textContent = "Viviane";
-							divReponses.appendChild(rep);
-							$(".divReponses>button:last-child").fadeIn(500);
-							document.getElementById("playerAudioRep1").play();
+					case 1 :
+						rep.textContent = questionsReponsesQuizz["enigmes"][numeroEnigme]["reponse2"];
+						divReponses.appendChild(rep);
+						audio = new Audio(debutCheminSons+questionsReponsesQuizz["enigmes"][numeroEnigme]["audioRep2"]+extension);
 						break;
-					case 2 : rep.textContent = "Guenièvre";
-							divReponses.appendChild(rep);
-							$(".divReponses>button:last-child").fadeIn(500);
-							document.getElementById("playerAudioRep2").play();
+					case 2 :
+						rep.textContent = questionsReponsesQuizz["enigmes"][numeroEnigme]["reponse3"];
+						divReponses.appendChild(rep);
+						audio = new Audio(debutCheminSons+questionsReponsesQuizz["enigmes"][numeroEnigme]["audioRep3"]+extension);
 						break;
-					case 3 : rep.textContent = "Mélusine";
-							divReponses.appendChild(rep);
-							$(".divReponses>button:last-child").fadeIn(500);
-							document.getElementById("playerAudioRep3").play();
+					case 3 :
+						rep.textContent = questionsReponsesQuizz["enigmes"][numeroEnigme]["reponse4"];
+						divReponses.appendChild(rep);
+						audio = new Audio(debutCheminSons+questionsReponsesQuizz["enigmes"][numeroEnigme]["audioRep4"]+extension);
 						break;
 				}
-				await attendre(1500);
+				$(".divReponses>button:last-child").fadeIn(200);
+				await lancerAudioEnigme(audio, true);
 				rep.addEventListener("click", verificationReponse);
+				verifierHauteurDivNarrateur();
 			}
 			booleanEnigme = true;
 		}
-	}
-	function verificationReponse(evt) {
-		if(this.textContent == "Viviane") {
-			document.querySelector("#narrateur>div:last-child").remove();
-			document.querySelector("#narrateur>div:last-child").addEventListener("click", paragrapheSuivantEvt);
-			document.querySelector("#narrateur>div:last-child").style.display = "flex";
-			document.querySelector("#narrateur>div:first-child>img").setAttribute("src", "images/casque.svg");
-			document.querySelector("#narrateur>div:first-child>img").setAttribute("alt", "Casque");
-			document.querySelector("#narrateur h3").textContent = "Narrateur";
-			document.getElementById("narrateur").style.right = "10px";
-			document.getElementById("narrateur").style.top = "20px";
-			document.getElementById("narrateur").style.transform = "translate(0)";
-			document.getElementById("narrateur").style.width = "250px";
 
-			paragrapheSuivant();
-		} else {
-			let message = document.createElement("p");
-			message.textContent = this.textContent+" n'est pas la bien-aimée de Merlin. Réessaie."
-			let nbAleatoireVerif;
-			let lesReponses = document.querySelectorAll(".divReponses>button");
-			switch(this.textContent) {
-				case "Morgane" : this.remove();
-						nbAleatoireVerif = Math.floor(Math.random() * 2) + 2;
-						if(nbAleatoireVerif == 2) {
-							for(let uneReponse of lesReponses) {
-								if(uneReponse.textContent == "Guenièvre") {
-									uneReponse.remove();
-								}
-							}
-						} else {
-							for(let uneReponse of lesReponses) {
-								if(uneReponse.textContent == "Mélusine") {
-									uneReponse.remove();
-								}
-							}
-						}
-					break;
-				case "Guenièvre" : this.remove();
-						nbAleatoireVerif = Math.floor(Math.random() * 4);
-						while(nbAleatoireVerif == 2 || nbAleatoireVerif == 1) {
-							nbAleatoireVerif = Math.floor(Math.random() * 4);
-						}
-						if(nbAleatoireVerif == 0) {
-							for(let uneReponse of lesReponses) {
-								if(uneReponse.textContent == "Morgane") {
-									uneReponse.remove();
-								}
-							}
-						} else {
-							for(let uneReponse of lesReponses) {
-								if(uneReponse.textContent == "Mélusine") {
-									uneReponse.remove();
-								}
-							}
-						}
-					break;
-				case "Mélusine" : this.remove();
-						nbAleatoireVerif = Math.floor(Math.random() * 3);
-						while(nbAleatoireVerif == 1) {
-							nbAleatoireVerif = Math.floor(Math.random() * 3);
-						}
-						if(nbAleatoireVerif == 0) {
-							for(let uneReponse of lesReponses) {
-								if(uneReponse.textContent == "Morgane") {
-									uneReponse.remove();
-								}
-							}
-						} else {
-							for(let uneReponse of lesReponses) {
-								if(uneReponse.textContent == "Guenièvre") {
-									uneReponse.remove();
-								}
-							}
-						}
-					break;
+	}
+
+	function lancerAudioEnigme(audio, reponse) {
+		return new Promise(async function(resolve) {
+			audio.preload = "metadata";
+			await metadataCharge(audio);
+			audio.play();
+			if(reponse && audio.duration * 1000 <= 200) {
+				await attendre(200);
+			} else {
+				await attendre((audio.duration * 1000) + 20);
 			}
-			document.getElementById("narrateur").insertBefore(message, document.querySelector("#narrateur>div:nth-of-type(2)"));
-		}
+			resolve();
+		})
+	}
+	function metadataCharge(audio) {
+		return new Promise(function(resolve) {
+			audio.onloadedmetadata = function () {
+				resolve()
+			};
+		})
 	}
 
 
 	async function animations() {
+		lancerTimersAnimation();
 		switch(indiceParagrapheCourant) {
 			case 1 :
 				vivianeEtMerlin = creerImage("images/merlinViviane.png", "Viviane sur les genoux de Merlin", {"position" : "absolute", "right" : "50%", "bottom" : "-10%", "height" : "80%"});
         divJeu.insertBefore(vivianeEtMerlin, divNarrateur);
         $("#jeu>img:first-of-type").fadeOut(1500);
 				await attendre(1500);
-				//brouillard.remove();
         $("#jeu>img:last-of-type").fadeIn(500);
 				await attendre(500);
 				break;
@@ -322,12 +369,18 @@
 				$("#jeu>img:last-of-type").fadeOut(500);
 				await attendre(500);
 				break;
-			case 4 :
-				$("#narrateur div:last-child img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
-        $("#narrateur div:last-child p").text("Terminé");
+			case tableauParagraphes.length :
+				btnDivNarrateur.querySelector("p").textContent = "Répondre";
+				btnDivNarrateur.removeEventListener("click", paragrapheSuivantEvt);
+				btnDivNarrateur.addEventListener("click", lancerEnigmes);
+				//-> Fin
+				/*$("#narrateur div:last-child img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
+        $("#narrateur div:last-child p").text("Terminé");*/
         break;
 			default : break;
 		}
+	}
+	function lancerTimersAnimation() {
 		playerAudio.currentTime = (tempsDeDepart[indiceParagrapheCourant - 1] / 10);
 		tempsPasseDS = tempsDeDepart[indiceParagrapheCourant - 1];
 		playerAudio.play();
@@ -373,7 +426,7 @@
 				let baliseP = document.createElement("p");
 				baliseP.classList.add("histoire");
 				baliseP.appendChild(document.createTextNode(unParagrapheAAfficher));
-				document.getElementById("narrateur").insertBefore(baliseP, document.querySelector("#narrateur>div:nth-of-type(2)"));
+				divNarrateur.insertBefore(baliseP, document.querySelector("#narrateur>div:nth-of-type(2)"));
 			}
 		}
 		verifierHauteurDivNarrateur();
@@ -453,7 +506,7 @@
 	function verifierHauteurDivNarrateur() {
 		let hauteurDivNarrateur = divNarrateur.clientHeight;
 		let hauteurElementsInternes = 0;
-		for(let unElement of divNarrateur.querySelectorAll("div, .histoire")) {
+		for(let unElement of divNarrateur.querySelectorAll("div, p")) {
 			hauteurElementsInternes = hauteurElementsInternes + unElement.clientHeight;
 		}
 		if(hauteurElementsInternes > hauteurDivNarrateur) {

@@ -206,7 +206,8 @@ a{
     background-color: #3E3E3E;
     border-bottom: 10px solid white;
     box-shadow: 5px 8px 10px rgba(0,0,0,0.18);
-    width: 250px;
+    min-width: 250px;
+    width : 22%;
     position: absolute;
     right: 10px;
     top: 20px;
@@ -337,7 +338,7 @@ a{
     transition : all 0.1s linear;
 }
 .divReponsesQuizz>button:hover {
-  background-color : #333333;
+  background-color : #444444;
   color : #f2f2f2;
   transform : scale(0.95);
 }

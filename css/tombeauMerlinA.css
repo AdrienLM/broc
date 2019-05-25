@@ -1,7 +1,6 @@
 .brouillard {
   height : 100%;
   width : 100%;
-
 }
 
 .dispatitionAGauche.sortie {
@@ -26,4 +25,18 @@
   100% {
     transform : translateX(100%);
   }
+}
+
+
+
+#narrateur .messageQuizz {
+  margin : auto;
+}
+#narrateur .questionQuizz {
+  text-align : center;
+  font-weight : 500;
+  font-size : 1.1em;
+}
+#narrateur .numeroQuestionQuizz {
+  text-align : center;
 }

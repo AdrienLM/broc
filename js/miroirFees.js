@@ -3,11 +3,11 @@
 	window.addEventListener("DOMContentLoaded", initialiser);
 
 /* ! -> Données à modifier à automatiser */
-	let tempsTotal = 88; /* DONNÉE À MODIFIER */ /* s ? */
+	let tempsTotal = 88; /* DONNÉE À MODIFIER */ /* s */
 	let tempsPasseS = 0;
 	let tempsPasseDS = 0;
-	let tempsDePause = new Array(80, 286, 403, 536, 723, 883); /* DONNÉE À MODIFIER */ /* ds ? */
-	let tempsDeDepart = new Array(81, 286, 403, 536, 723); /* DONNÉE À MODIFIER */
+	let tempsDePause = new Array(80, 286, 403, 536, 723, 883); /* DONNÉE À MODIFIER */ /* ds */
+	let tempsDeDepart = new Array(81, 286, 403, 536, 723); /* DONNÉE À MODIFIER */ /* ds */
 	let indiceParagrapheCourant = 0;
 	let timerAffichage;
 	let timerPause;
@@ -289,8 +289,11 @@
 			divNarrateur.style.right = "10px";
 			divNarrateur.style.top = "20px";
 			divNarrateur.style.transform = "translate(0)";
-			divNarrateur.style.width = "250px";
+			divNarrateur.style.width = "22%";
 			btnDivNarrateur.querySelector("p").textContent = "Suivant";
+			if(numeroJeu == 0) {
+				window.addEventListener("resize", verifierHauteurDivNarrateurRedimension);
+			}
 		} else {
 			supprimerParagraphesHistoire();
 				/* Restyliser #narrateur pour le jeu */
@@ -301,6 +304,7 @@
 			divNarrateur.style.right = "50%";
 			divNarrateur.style.top = "50%";
 			divNarrateur.style.transform = "translateX(50%) translateY(-50%)";
+			window.removeEventListener("resize", verifierHauteurDivNarrateurRedimension);
 
 			switch(numeroJeu) {
 				case 1 :
@@ -442,7 +446,7 @@
 	let reponsePromesse3Obtenue = false;
 	let reponsePromesse5Obtenue = false;
 	async function animations() {
-		lancerTimersAnimation()
+		lancerTimersAnimation();
 		switch(indiceParagrapheCourant) {
 			case 1 :
 				divJeu.querySelector("img").setAttribute("src", "images/aventure/miroirFees/fondSurfaceLac1.jpg");
@@ -640,7 +644,7 @@
 				let baliseP = document.createElement("p");
 				baliseP.classList.add("histoire");
 				baliseP.appendChild(document.createTextNode(unParagrapheAAfficher));
-				document.getElementById("narrateur").insertBefore(baliseP, document.querySelector("#narrateur>div:nth-of-type(2)"));
+				divNarrateur.insertBefore(baliseP, document.querySelector("#narrateur>div:nth-of-type(2)"));
 			}
 		}
 		verifierHauteurDivNarrateur();
@@ -720,7 +724,7 @@
 	function verifierHauteurDivNarrateur() {
 		let hauteurDivNarrateur = divNarrateur.clientHeight;
 		let hauteurElementsInternes = 0;
-		for(let unElement of divNarrateur.querySelectorAll("div, .histoire")) {
+		for(let unElement of divNarrateur.querySelectorAll("div, p")) {
 			hauteurElementsInternes = hauteurElementsInternes + unElement.clientHeight;
 		}
 		if(hauteurElementsInternes > hauteurDivNarrateur) {
