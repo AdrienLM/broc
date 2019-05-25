@@ -1,0 +1,42 @@
+.brouillard {
+  height : 100%;
+  width : 100%;
+}
+
+.dispatitionAGauche.sortie {
+  animation : sortieBrouillardGauche 1s ease-in;
+}
+.dispatitionADroite.sortie {
+  animation : sortieBrouillardDroite 1s ease-in;
+}
+
+@keyframes sortieBrouillardGauche {
+  0% {
+    transform : translateX(0);
+  }
+  100% {
+    transform : translateX(-100%);
+  }
+}
+@keyframes sortieBrouillardDroite {
+  0% {
+    transform : translateX(0);
+  }
+  100% {
+    transform : translateX(100%);
+  }
+}
+
+
+
+#narrateur .messageQuizz {
+  margin : auto;
+}
+#narrateur .questionQuizz {
+  text-align : center;
+  font-weight : 500;
+  font-size : 1.1em;
+}
+#narrateur .numeroQuestionQuizz {
+  text-align : center;
+}

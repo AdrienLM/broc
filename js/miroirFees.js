@@ -3,11 +3,11 @@
 	window.addEventListener("DOMContentLoaded", initialiser);
 
 /* ! -> Données à modifier à automatiser */
-	let tempsTotal = 88; /* DONNÉE À MODIFIER */ /* s ? */
+	let tempsTotal = 88; /* DONNÉE À MODIFIER */ /* s */
 	let tempsPasseS = 0;
 	let tempsPasseDS = 0;
-	let tempsDePause = new Array(80, 286, 403, 536, 723, 883); /* DONNÉE À MODIFIER */ /* ds ? */
-	let tempsDeDepart = new Array(81, 286, 403, 536, 723); /* DONNÉE À MODIFIER */
+	let tempsDePause = new Array(80, 286, 403, 536, 723, 883); /* DONNÉE À MODIFIER */ /* ds */
+	let tempsDeDepart = new Array(81, 286, 403, 536, 723); /* DONNÉE À MODIFIER */ /* ds */
 	let indiceParagrapheCourant = 0;
 	let timerAffichage;
 	let timerPause;
@@ -46,8 +46,6 @@
 
 /* ! -> À automatiser */
 	let tableauParagraphes = new Array();
-	//tableauParagraphes.push(new Array("Au fond d’un lac vivaient sept fées, toutes sœurs.",
-																		//"La plus jeune d’entre elles, romantique, imaginait la nuit le chevalier de ses rêves…"));
 	tableauParagraphes.push(new Array("Par une journée ensoleillée, la benjamine partit se promener aux alentours du lac.",
 																		"Cependant, alors qu’elle s’apprêtait à sortir du lac, son regard fut attiré par une silhouette.",
 																		"Il s’agissait d’un magnifique jeune homme venu se baigner dans la forêt.",
@@ -75,7 +73,7 @@
 			</div>
 		</div>
 	*/
-		/* Créer les éléments, leurs attribuer un style (dynamique) et une calsse si besoin */
+		/* Lecteur audio : créer les éléments, leurs attribuer un style (dynamique) et une calsse si besoin */
 	let divPlayer = document.createElement("div");
 	divPlayer.classList.add("player");
 	let containerTexte = document.createElement("span");
@@ -108,6 +106,7 @@
 		//btnDivNarrateur.addEventListener("click", paragrapheSuivantEvt);
 
 		  /* Ecouteur animation début */
+		window.addEventListener("resize", verifierHauteurDivNarrateurRedimension);
     document.querySelector("#param>div:first-child>img").addEventListener("click", pleinEcran);
     document.querySelector("#param>div:nth-child(2)").addEventListener("click", transitionDebut);
 
@@ -246,19 +245,11 @@
 		}
 	}
 	function validationPersonnalisationChevalier(evt) {
-		/*let divValidation = document.createElement("div");
-		let p = document.createElement("p");
-		p.textContent = "Ce choix vous convient-il ?";
-		let btnOui = document.createElement("button");
-		btnOui.textContent = "Oui";
-		let btnNon = document.createElement("button");
-		btnNon.textContent = "Non";*/
 		btnDivNarrateur.removeEventListener("click", validationPersonnalisationChevalier);
 		btnDivNarrateur.addEventListener("click", paragrapheSuivantEvt);
 		paragrapheSuivant();
 		interfaceChoixChevalier.remove();
 		interrupteurInterfaceNarrateurJeu(0);
-		animationMort();
 	}
 
 	function lancerJeuChoixArme(evt) {
@@ -298,8 +289,11 @@
 			divNarrateur.style.right = "10px";
 			divNarrateur.style.top = "20px";
 			divNarrateur.style.transform = "translate(0)";
-			divNarrateur.style.width = "250px";
+			divNarrateur.style.width = "22%";
 			btnDivNarrateur.querySelector("p").textContent = "Suivant";
+			if(numeroJeu == 0) {
+				window.addEventListener("resize", verifierHauteurDivNarrateurRedimension);
+			}
 		} else {
 			supprimerParagraphesHistoire();
 				/* Restyliser #narrateur pour le jeu */
@@ -309,8 +303,8 @@
 			btnDivNarrateur.querySelector("p").textContent = "Valider";
 			divNarrateur.style.right = "50%";
 			divNarrateur.style.top = "50%";
-			divNarrateur.style.transition = "all 1s linear";
 			divNarrateur.style.transform = "translateX(50%) translateY(-50%)";
+			window.removeEventListener("resize", verifierHauteurDivNarrateurRedimension);
 
 			switch(numeroJeu) {
 				case 1 :
@@ -414,7 +408,6 @@
 				case 2 :
 						/* Restyliser #narrateur pour le jeu */
 					divNarrateur.style.width = "50%";
-
 						/* Ajouter l'interface */
 					divNarrateur.insertBefore(interfaceChoixArme, btnDivNarrateur);
 						/* Créer les wrapper des images */
@@ -443,30 +436,6 @@
 		}
 	}
 
-	function paragrapheSuivantEvt(evt) {
-		paragrapheSuivant();
-	}
-	function paragrapheSuivant() {
-		if(!playerAudio.paused) {
-			playerAudio.pause();
-			window.clearInterval(timerPause);
-		}
-		indiceParagrapheCourant++;
-		supprimerParagraphesHistoire();
-		if(indiceParagrapheCourant <= tableauParagraphes.length) {
-			for(let unParagrapheAAfficher of tableauParagraphes[indiceParagrapheCourant - 1]) {
-				let baliseP = document.createElement("p");
-				baliseP.classList.add("histoire");
-				baliseP.appendChild(document.createTextNode(unParagrapheAAfficher));/*.textContent = unParagrapheAAfficher;*/
-				document.getElementById("narrateur").insertBefore(baliseP, document.querySelector("#narrateur>div:nth-of-type(2)"));
-			}
-		}
-		animations();
-	}
-
-	async function animationMort() {
-
-	}
 
 	let booleanAnimationPassee = false;
 	let booleanAnimation2Passee = false;
@@ -477,7 +446,7 @@
 	let reponsePromesse3Obtenue = false;
 	let reponsePromesse5Obtenue = false;
 	async function animations() {
-		lancerTimersAnimation()
+		lancerTimersAnimation();
 		switch(indiceParagrapheCourant) {
 			case 1 :
 				divJeu.querySelector("img").setAttribute("src", "images/aventure/miroirFees/fondSurfaceLac1.jpg");
@@ -652,11 +621,41 @@
 		}
     return img;
   }
+	function attendre(temps) {
+		return new Promise(function(resolve) {
+			setTimeout(function () {
+				resolve()
+			}, temps);
+		})
+	}
+
+	function paragrapheSuivantEvt(evt) {
+		paragrapheSuivant();
+	}
+	function paragrapheSuivant() {
+		if(!playerAudio.paused) {
+			playerAudio.pause();
+			window.clearInterval(timerPause);
+		}
+		indiceParagrapheCourant++;
+		supprimerParagraphesHistoire();
+		if(indiceParagrapheCourant <= tableauParagraphes.length) {
+			for(let unParagrapheAAfficher of tableauParagraphes[indiceParagrapheCourant - 1]) {
+				let baliseP = document.createElement("p");
+				baliseP.classList.add("histoire");
+				baliseP.appendChild(document.createTextNode(unParagrapheAAfficher));
+				divNarrateur.insertBefore(baliseP, document.querySelector("#narrateur>div:nth-of-type(2)"));
+			}
+		}
+		verifierHauteurDivNarrateur();
+		animations();
+	}
 	function supprimerParagraphesHistoire() {
 		for(let unParagrapheASupprimer of document.querySelectorAll("#narrateur>p")) {
 			unParagrapheASupprimer.remove();
 		}
 	}
+
   async function transitionDebut(evt) {
     this.removeEventListener("click", transitionDebut);
     let divTexte = document.getElementById("texte");
@@ -674,13 +673,6 @@
     $("#jeu").fadeIn(500);
     divJeu.style.display = "flex";
   }
-	function attendre(temps) {
-			return new Promise(function(resolve) {
-				setTimeout(function () {
-					resolve()
-				}, temps);
-			})
-		}
 
   function affichageTemps() {
 		tempsPasseS = Math.floor(playerAudio.currentTime);
@@ -723,6 +715,22 @@
 			playerAudio.pause();
 			window.clearInterval(timerAffichage);
 			window.clearInterval(timerPause);
+		}
+	}
+
+	function verifierHauteurDivNarrateurRedimension(evt) {
+		verifierHauteurDivNarrateur();
+	}
+	function verifierHauteurDivNarrateur() {
+		let hauteurDivNarrateur = divNarrateur.clientHeight;
+		let hauteurElementsInternes = 0;
+		for(let unElement of divNarrateur.querySelectorAll("div, p")) {
+			hauteurElementsInternes = hauteurElementsInternes + unElement.clientHeight;
+		}
+		if(hauteurElementsInternes > hauteurDivNarrateur) {
+			divNarrateur.style.overflowY = "scroll";
+		} else {
+			divNarrateur.style.overflowY = "hidden";
 		}
 	}
 

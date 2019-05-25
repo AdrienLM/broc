@@ -75,7 +75,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
       <div id="carte">
         <h2>Localisation</h2>
         <p>Forêt de Paimpont</p>
-        <img src="images/carteTombeauMerlin.svg" alt="carte de Brocéliande" />
+        <img src="images/carteMiroirFeesA.svg" alt="Carte de Brocéliande" />
       </div>
       <div id="jeu">
         <div id="wrapperJeu">

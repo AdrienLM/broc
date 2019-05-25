@@ -52,14 +52,20 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0) {
 
         <?php require 'header.php';
 				 			require 'initCompteGrimoire.php'; ?>
+<main>
+
 
         <div class="positionementGraphique">
-
+					<div id="wrapperPositionementGraphique">
             <img src="images/avancement.svg" class="boutonAvancerIcon avancementGraphique" alt="icone" />
             <div class="positionTitreAvancement">
                 <h2>MODE</h2>
                 <h1>AVENTURE</h1>
             </div>
+						<a href="miroirFeesA.php"></a>
+						<a href="arbreOrA.php"></a>
+						<a href="tombeauMerlinA.php"></a>
+					</div>
         </div>
 
         <div class="container">
@@ -74,7 +80,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0) {
                 <ul>
                     <a href="miroirFeesA.php"><li>SCÈNE 1 : LE MIROIR AUX FÉES</li></a>
                     <a href="arbreOrA.php"><li>SCÈNE 2 : L’ARBRE D’OR</li></a>
-                    <a href="#"><li>SCÈNE 3 : LE TOMBEAU DE MERLIN</li></a>
+                    <a href="tombeauMerlinA.php"><li>SCÈNE 3 : LE TOMBEAU DE MERLIN</li></a>
                 </ul>
             </div>
             <div class="colonne3">
@@ -87,7 +93,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0) {
                 </ul>
             </div>
         </div>
-
+</main>
         <?php require 'footer.php'; ?>
 
         <script src="js/jquery.js"></script>

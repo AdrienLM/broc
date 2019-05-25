@@ -2,19 +2,15 @@
 session_start();
 require 'connexionBDD.php';
 
-
-
 if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 {
 	$getid = intval($_SESSION['id']);
 	$requser = $pdo->prepare('SELECT * FROM membres WHERE IdUser = ?');
 	$requser->execute(array($getid));
 	$userinfo = $requser->fetch(PDO::FETCH_ASSOC);
-    $_SESSION['val1'] = 0;
-
-
+  $_SESSION['val1'] = 0;
+}
 ?>
-
 
 <!DOCTYPE html>
 <html allowfullscreen>
@@ -24,6 +20,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <meta name="description" content="">
         <link rel="stylesheet" href="css/styleMenu.css">
         <link rel="stylesheet" href="css/styleAventureV2.css">
+        <link rel="stylesheet" href="css/tombeauMerlinA.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png" />
@@ -49,18 +46,23 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 
             $_SESSION['aventureSur'] = 1;
             $_SESSION['antiRep'] = 1;
-            $_SESSION['AventureProv'] = 2;
+            $_SESSION['AventureProv'] = 3;
         ?>
         <main>
             <div id="texte">
-                <h2>Scene 4</h2>
+                <h2>Scene 3</h2>
                 <h1>Le tombeau de Merlin</h1>
                 <audio id="playerAudioConteur">
-                    <source src="./sons/aventureTombeauMerlin.mp3" />
-                    <source src="./sons/aventureTombeauMerlin.ogg" />
+                    <source src="./sons/aventureTombeauMerlinV2/aventureTombeauMerlinV2.mp3" />
+                    <source src="./sons/aventureTombeauMerlinV2/aventureTombeauMerlinV2.ogg" />
                 </audio>
 
-                <audio id="playerAudioRep0">
+								<audio loop>
+                    <source src="./sons/ambianceForet.mp3" />
+                    <source src="./sons/ambianceForet.ogg" />
+								</audio>
+
+                <!--<audio id="playerAudioRep0">
                     <source src="./sons/reponsesEnigmes/morgane.mp3" />
                     <source src="./sons/reposesEnigmes/morgane.ogg" />
                 </audio>
@@ -75,41 +77,43 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                 <audio id="playerAudioRep3">
                     <source src="./sons/reponsesEnigmes/melusine.mp3" />
                     <source src="./sons/reponsesEnigmes/melusine.ogg" />
-                </audio>
+                </audio>-->
                 <p>Paramètres</p>
-                <div id="param">
-                    <div>
-                        <img src="images/pleinEcran.svg" alt="icone plein écran" />
-                        <p>Plein écran</p>
-                    </div>
-                    <div>
-                        <img src="images/flecheD.svg" alt="flèche vers la droite" />
-                        <p>Découvrir</p>
-                    </div>
-                    <div>
-                        <img src="images/croix.svg" alt="croix" />
-                        <p>Passer</p>
-                    </div>
-                </div>
+								<div id="param">
+				          <div>
+				            <img src="images/pleinEcran.svg" alt="icone plein écran" />
+				            <p>Plein écran</p>
+				          </div>
+				          <div>
+				            <img src="images/play.svg" alt="flèche vers la droite" class="decouvrir">
+				            <p>Découvrir</p>
+				          </div>
+				          <div>
+				            <img src="images/croix.svg" alt="croix" />
+				            <p>Passer</p>
+				          </div>
+				        </div>
             </div>
             <div id="carte">
                 <h2>Localisation</h2>
                 <p>Forêt de Paimpont</p>
-                <img src="images/carteTombeauMerlin.svg" alt="carte de Brocéliande" />
+                <img src="images/carteTombeauMerlin.svg" alt="Carte de Brocéliande" />
             </div>
             <div id="jeu">
+							<div id="wrapperJeu">
+								<img src="images/brouillardTombeauMerlin.png" class="brouillard niv1"/>
 								<div id="narrateur">
                    <div>
-                        <img src="images/casque.svg" alt="Casque" />
-                        <h3>Narrateur</h3>
+                        <img src="images/console.svg" alt="Casque" />
+                        <h3>Jeu</h3>
                    </div>
-                   <p class="histoire">Pour acquérir le droit d’arpenter cet endroit, il te faudra répondre à une question...</p>
-                   <p class="histoire">Quelle est la bien aimée de Merlin ?</p>
+                   <p class="histoire">Lance un sort pour dissiper le brouillard.</p>
                    <div>
                        <img src="images/flecheD.svg" alt="Flèche vers la droite" />
-                       <p>Répondre</p>
+                       <p>Dissper</p>
                    </div>
                 </div>
+							</div>
             </div>
             <div id="retour">
                 <p>Retour</p>
@@ -122,12 +126,3 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <script type="text/javascript" src="js/audioTombeauMerlin.js"></script>
     </body>
 </html>
-
-
-
- <?php
-}else{
-    header('Location: connexion.php');
-}
-
-?>

@@ -1,210 +1,232 @@
 @font-face {
-    font-family: "Qurany";
-    src: url("../font/Qurany.ttf");
+  font-family: "Qurany";
+  src: url("../font/Qurany.ttf");
 }
 
 @font-face {
-    font-family: "Qurany-light";
-    src: url("../font/Qurany-light.ttf");
+  font-family: "Qurany-light";
+  src: url("../font/Qurany-light.ttf");
 }
 
 @font-face {
-    font-family: "Qurany-italic";
-    src: url("../font/Qurany-italic.ttf");
+  font-family: "Qurany-italic";
+  src: url("../font/Qurany-italic.ttf");
 }
 
 @font-face {
-    font-family: "Qurany-light-italic";
-    src: url("../font/Qurany-light-italic.ttf");
+  font-family: "Qurany-light-italic";
+  src: url("../font/Qurany-light-italic.ttf");
 }
 
 @font-face {
-    font-family: "Google-sans";
-    src: url("../font/GoogleSans-Medium");
+  font-family: "Google-sans";
+  src: url("../font/GoogleSans-Medium");
 }
 
 @font-face {
-    font-family: "Google-sansBold";
-    src: url("../font/GoogleSans-Bold");
+  font-family: "Google-sansBold";
+  src: url("../font/GoogleSans-Bold");
 }
 
 @font-face {
-    font-family: "Google-sansReg";
-    src: url("../font/GoogleSans-Regular");
+  font-family: "Google-sansReg";
+  src: url("../font/GoogleSans-Regular");
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    color: white;
-    overflow-y: hidden;
-    
+  margin: 0;
+  padding: 0;
+  color: white;
+  overflow-y: hidden;
+
 }
 
 .conteneur {
-    display: grid;
+  display: grid;
   grid-template-columns: 30% 70%;
-    grid-template-rows: 650px 300px;
+  grid-template-rows: 650px 300px;
 }
 
 .partie1 {
   grid-column: 1; grid-row: 1;
-    background-color: #eaeaea;
-    margin: 0 30px 0 85px;
-    border-radius: 8px;
+  background-color: #eaeaea;
+  margin: 0 30px 0 85px;
+  border-radius: 8px;
 }
 .partie2 {
   grid-column: 2; grid-row: 1;
-    background-color: #222;
-    margin: 0 85px 0 20px;
-    border-radius: 8px;
+  background-color: #222;
+  margin: 0 85px 0 20px;
+  border-radius: 8px;
 }
 
 .banniere {
-    height: 230px;
-    background-color: #aaaaaa;
-    border-radius: 8px 8px 0 0;
+  height: 230px;
+  background-color: #aaaaaa;
+  border-radius: 8px 8px 0 0;
 }
 
 .imgBan {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    position: relative;
-    background-color: #a3a3a3;
-     border-radius: 8px 8px 0 0;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  position: relative;
+  background-color: #a3a3a3;
+  border-radius: 8px 8px 0 0;
 }
 
 .imgProfil {
-    width: 120px;
-    position: absolute;
-    z-index: 2;
-    margin: 55px 0 0 38px;
-    border-radius: 80px;
-    border: 3px solid #fff;
-    background-color: #e8e8e8;
+  width: 120px;
+  position: absolute;
+  z-index: 2;
+  margin: 55px 0 0 38px;
+  border-radius: 80px;
+  border: 3px solid #fff;
+  background-color: #e8e8e8;
 }
 
 .nomProfil {
-    font-size: 20px;
-    position: absolute;
-    z-index: 3;
-    font-family: 'Google-sansBold';
-    margin: 33px 0 0 90px;
+  font-size: 20px;
+  position: absolute;
+  z-index: 3;
+  font-family: 'Google-sansBold';
+  margin: 33px 0 0 90px;
 }
 
 .descriptionProfil {
-    position: absolute;
-    z-index: 3;
-    margin: 103px 0 0 180px;
+  position: absolute;
+  z-index: 3;
+  margin: 103px 0 0 180px;
 }
 
 .descriptionProfil p {
-    font-size: 13px;
-    width: 240px;
-    position: absolute;
+  font-size: 13px;
+  width: 240px;
+  position: absolute;
 }
 
 .roleProfil {
-    position: absolute;
-    z-index: 3;
-    font-size: 13px;
-    margin: 93px 0 0 180px;
-    font-family: 'Google-sans';
-
+  position: absolute;
+  z-index: 3;
+  font-size: 13px;
+  margin: 93px 0 0 180px;
+  font-family: 'Google-sans';
 }
 
 .roleProfil img {
-    width: 13px;
+  width: 13px;
 }
 
 
 
 p {
-    font-family: 'Google-sansReg';
+  font-family: 'Google-sansReg';
 }
 
 .soon {
-    font-family: 'Google-sansReg';
-    margin-top: -30px;
+  font-family: 'Google-sansReg';
+  margin-top: -30px;
 }
 
 a {
-    text-decoration: none;
-    color: white;
-    font-family: 'Open Sans';
+  text-decoration: none;
+  color: white;
+  font-family: 'Open Sans';
 }
 
 body{
-    background-image: url(../images/foret2-min.jpg);
-    background-size: cover;
+  background-image: url(../images/foret2-min.jpg);
+  background-size: cover;
 	background-attachment: fixed;
 }
-
 main {
-    margin-left: 87px;
-    margin-top: 180px;
-    margin-bottom: 100px;
+  display : flex;
+  flex-direction : column;
+  width : 100%;
+  align-items : center;
 }
 
 .bientot {
-    color: #a0a0a0;
+  color: #a0a0a0;
+  cursor : text;
 }
 
 .positionementGraphique {
-    height: 50%;
-    top: 45%;
-    margin-top: -25%;
-    position: absolute;
-    width: 90%;
-    left: 50%;
-    margin-left: -45%;
-    z-index: 0;
-
-    
+  height: calc((90vw * 492.5) / 1368);
+  position: fixed;
+  width: 90vw;
+  z-index: 0;
+  top : 50%;
+  transform : translateY(-50%);
+}
+#wrapperPositionementGraphique {
+  position : relative;
+  width : 100%;
+  height : 100%;
+}
+#wrapperPositionementGraphique a {
+  display : inline-block;
+  width : 2.5vw;
+  height : 2.5vw;
+  position : absolute;
+  z-index : 100;
+  transform : translateX(-50%) translateY(-50%);
+}
+#wrapperPositionementGraphique a[href="miroirFeesA.php"] {
+  top : 54%;
+  left : 2.65%;
+}
+#wrapperPositionementGraphique a[href="arbreOrA.php"] {
+  top : 75.55%;
+  left : 13.95%;
+}
+#wrapperPositionementGraphique a[href="tombeauMerlinA.php"] {
+  top : 47.2%;
+  left : 25.6%;
 }
 
 .avancementGraphique {
-    margin: 0;
-    width: 90%;
-    height: 100%;
-    position: fixed;
+  margin: 0;
+  width: 90vw;
+  height: calc((90vw * 515) / 1876);
+  position: absolute;
+  top : 50%;
+  transform : translateY(-50%);
 }
 
 .positionTitreAvancement {
-    position: fixed;
-    height: 100px;
-    top: 45%;
-    margin-top: -50px;
- 
-    width: 400px;
-    left: 47%;
-    margin-left: -200px;
+  position: absolute;
+  height: 100px;
+  top: 45%;
+  margin-top: -50px;
+  width: 400px;
+  left: 47%;
+  margin-left: -200px;
 }
 
 .positionTitreAvancement>h1 {
-    font-family: 'Qurany';
-    font-size: 60pt;
+  font-family: 'Qurany';
+  font-size: 60pt;
 }
 
 
 .positionTitreAvancement>h2 {
-    font-family: 'Qurany-light';
-    font-size: 25pt;
-    margin: 0 0 -45px 0;
+  font-family: 'Qurany-light';
+  font-size: 25pt;
+  margin: 0 0 -45px 0;
 }
 
 .container {
   display: grid;
   grid-template-columns: 3;
-    font-family: 'Google-sansReg';
-    font-size: 20px;
-    position: absolute;
-    bottom: 12%;
-    width: 80%;
-    left: 50%;
-    margin-left: -40%;
+  font-family: 'Google-sansReg';
+  font-size: 20px;
+  position: absolute;
+  bottom: 12%;
+  width: 80%;
+  left: 50%;
+  margin-left: -40%;
 }
 
 .container>div>ul {
@@ -212,75 +234,58 @@ list-style: none;
 }
 
 .colonne1 {
-    grid-column: 1; grid-row: 1;
+  grid-column: 1; grid-row: 1;
 }
 
 .colonne1 {
-    grid-column: 2; grid-row: 1;
+  grid-column: 2; grid-row: 1;
 }
 
 .colonne1 {
-    grid-column: 3; grid-row: 1;
-}
-
-main p {
-    width: 40%;
-    font-size: 17px;
-    margin-bottom: 40px;
-}
-
-main a {
-    border: 2px solid white;
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-transform: uppercase;
-    font-size: 14px;
+  grid-column: 3; grid-row: 1;
 }
 
 footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    bottom: 20px;
-    width: 90%;
-    margin-left: calc(50% - 45%);
-    font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  width: 90%;
+  margin-left: calc(50% - 45%);
+  font-size: 12px;
 }
 
 footer div a {
-    margin: 0 10px;
+margin: 0 10px;
 }
 
-
-
 footer .reseaux a {
-    margin: 0;
+  margin: 0;
 }
 
 
 
 
 #retour{
-    position: absolute;
-    background-color: #393939;
-    z-index: 50;
-    left: 0;
-    bottom: 25vh;
-    width: 5%;
-    color: white;
-    padding-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 0 13px 13px 0;
-    -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
-    -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
-    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+  position: absolute;
+  background-color: #393939;
+  z-index: 50;
+  left: 0;
+  bottom: 25vh;
+  width: 5%;
+  color: white;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0 13px 13px 0;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
 }
 
 #retour img{
-    width: 60%;
-    margin-left: calc(50% - 30%);
+  width: 60%;
+  margin-left: calc(50% - 30%);
 }
-
