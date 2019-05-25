@@ -149,7 +149,7 @@
 	  divJeu = document.getElementById("wrapperJeu");
 	}
 
-	let nbNuageBrouillard = 1;
+	let nbNuageBrouillard = 13;
 	async function lancerJeuBrouillard(evt) {
 		if(!playerAudio.paused) {
 			playerAudio.pause();
@@ -160,7 +160,7 @@
 		divNarrateur.style.transition = "all 0.3s linear";
 		divNarrateur.style.opacity = "0";
 		//Sélecteur à revoir
-		for(let unBrouillard of document.querySelectorAll("#wrapperJeu .brouillard.niv1")) {
+		for(let unBrouillard of document.querySelectorAll("#wrapperJeu .brouillard")) {
 			unBrouillard.addEventListener("click", dissiperBrouillard);
 			unBrouillard.style.cursor = "pointer";
 		}

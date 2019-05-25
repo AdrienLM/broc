@@ -61,23 +61,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                     <source src="./sons/ambianceForet.mp3" />
                     <source src="./sons/ambianceForet.ogg" />
 								</audio>
-
-                <!--<audio id="playerAudioRep0">
-                    <source src="./sons/reponsesEnigmes/morgane.mp3" />
-                    <source src="./sons/reposesEnigmes/morgane.ogg" />
-                </audio>
-                <audio id="playerAudioRep1">
-                    <source src="./sons/reponsesEnigmes/viviane.mp3" />
-                    <source src="./sons/reponsesEnigmes/viviane.ogg" />
-                </audio>
-                <audio id="playerAudioRep2">
-                    <source src="./sons/reponsesEnigmes/guenievre.mp3" />
-                    <source src="./sons/reponsesEnigmes/guenievre.ogg" />
-                </audio>
-                <audio id="playerAudioRep3">
-                    <source src="./sons/reponsesEnigmes/melusine.mp3" />
-                    <source src="./sons/reponsesEnigmes/melusine.ogg" />
-                </audio>-->
                 <p>Paramètres</p>
 								<div id="param">
 				          <div>
@@ -101,7 +84,18 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             </div>
             <div id="jeu">
 							<div id="wrapperJeu">
-								<img src="images/brouillardTombeauMerlin.png" class="brouillard niv1"/>
+								<img src="images/aventure/tombeauMerlin/AVTombeauMerlin.png" alt="Tombeau de Merlin" class="fondJeu" />
+								<img src="images/aventure/tombeauMerlin/brouillard/nuageTurquoise.png" alt="Nuage de brouillard turquoise" class="brouillard"/>
+								<img src="images/aventure/tombeauMerlin/brouillard/nuageBleu.png" alt="Nuage de brouillard bleu" class="brouillard"/>
+								<img src="images/aventure/tombeauMerlin/brouillard/nuageDore2.png" alt="Nuage de brouillard doré" class="brouillard"/>
+								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet.png" alt="Nuage de brouillard violet" class="brouillard un"/>
+								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet.png" alt="Nuage de brouillard violet" class="brouillard deux"/>
+								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet2.png" alt="Nuage de brouillard violet" class="brouillard un"/>
+								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet2.png" alt="Nuage de brouillard violet" class="brouillard deux"/>
+								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet2.png" alt="Nuage de brouillard violet" class="brouillard trois"/>
+								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet2.png" alt="Nuage de brouillard violet" class="brouillard quatre"/>
+								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet3.png" alt="Nuage de brouillard violet" class="brouillard un"/>
+								<img  src="images/aventure/tombeauMerlin/brouillard/nuageViolet3.png" alt="Nuage de brouillard violet" class="brouillard deux"/>
 								<div id="narrateur">
                    <div>
                         <img src="images/console.svg" alt="Casque" />
@@ -110,7 +104,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                    <p class="histoire">Lance un sort pour dissiper le brouillard.</p>
                    <div>
                        <img src="images/flecheD.svg" alt="Flèche vers la droite" />
-                       <p>Dissper</p>
+                       <p>Dissiper</p>
                    </div>
                 </div>
 							</div>
