@@ -165,24 +165,24 @@ $(document).ready(function(){
         //écouteur sur le bouton suivant
         $("#narrateur div:last-child img").click(async function(){
             $("#narrateur div:last-child img").off();
-            $("#arbreOr").css("cursor", "default");
-            $("#arbreOr").off("click");
             $("#narrateur div:last-child").css("display", "none");
             $("#popupArbre").remove();
+            $("#arbreOr").css("cursor", "default");
+            $("#arbreOr").off("click");
             //changement texte
             /*$(".histoire").replaceWith('<p class="histoire">En les utilisant, ils créaient une potion ramenant à la vie les arbres meurtris par les hommes, brûlés ou déracinés par les tempêtes.<br /><br />Leur recette est toujours secrète. Personne ne peut dire le dosage de cette potion miraculeuse.<br><br>Cependant, nous savons qu’ils faisaient fondre les feuilles merveilleuses dans une eau des plus pure dont personne ne connaît l’origine.</p>');*/
-            $("#jeu").css("background-image", "url(images/arbreOr/clairiere.jpg)");
+            $(".fondJeu").attr("src", "images/arbreOr/clairiere.jpg");
             $(".histoire").empty();
             $(".histoire").append(p2);
             $("#arbreOr").attr("src", "images/arbreOr/arbreOrFeuilles2.png");
             await attendre(2000);
-            $("#lutin1").css("display", "block");
-            $("#lutin2").css("display", "block");
+            $("#lutin1").fadeIn(500);
+            $("#lutin2").fadeIn(500);
             await attendre(2000);
             $("#arbreOr").attr("src", "images/arbreOr/arbreDOr.png");
             await attendre (3000);
-            $("#lutin1").css("display", "none");
-            $("#lutin2").css("display", "none");
+            $("#lutin1").fadeOut(500);
+            $("#lutin2").fadeOut(500);
             $("#narrateur").css("display", "none");
             jeuFeuilles();
             /*$("#zoom").zoomple({
@@ -224,9 +224,13 @@ $(document).ready(function(){
                     $(".histoire").empty();
                     $(".histoire").append(p4);
                     await attendre(2000);
-                    $("#fille").css("display", "block");
+                    //$("#fille").css("display", "block");
+                    $("#fille").fadeIn(500);
                     await attendre(8000);
+                    $("#fille").css("opacity", "0");
+                    $("#fille").css("left", "30%");
                     $("#fille").attr("src", "images/arbreOr/petiteFille.png");
+                    $("#fille").css("opacity", "1");
                     await attendre(4000);
                     $("#fille").attr("src", "images/arbreOr/flammes.png");
                     var sonFlammes = document.createElement("audio");
@@ -235,10 +239,24 @@ $(document).ready(function(){
                       sonFlammes.autoPlay = false;
                       sonFlammes.preLoad = true;
                       sonFlammes.controls = true;
-                    sonFlammes.play();
-                    await attendre(4000);
-                    $("#fille").attr("src", "images/arbreOr/tronc1.png");
+                    
+                    $("#fille").attr("src", "images/arbreOr/tronc3-6.png");
+                    await attendre(1000);
+                    $("#fille").css("transition", "none");
                     $("#fille").css("height", "20%");
+                    $("#fille").css("bottom", "5%");
+                    $("#fille").css("left", "35%");
+                    sonFlammes.play();
+                    await attendre(1000);
+                    $("#fille").attr("src", "images/arbreOr/tronc3-5.png");
+                    await attendre(1000);
+                    $("#fille").attr("src", "images/arbreOr/tronc3-4.png");
+                    await attendre(1000);
+                    $("#fille").attr("src", "images/arbreOr/tronc3-3.png");
+                    await attendre(1000);
+                    $("#fille").attr("src", "images/arbreOr/tronc3-2.png");
+                    await attendre(1000);
+                    $("#fille").attr("src", "images/arbreOr/tronc3-1.png");
                     //apparition de la petite fille
                     /*$("#fille").css("display", "block");
                     //apparition des trois autres arbres calcinés
@@ -254,50 +272,100 @@ $(document).ready(function(){
                         /*$("#narrateur .histoire").replaceWith('<p class="histoire">Le lendemain matin, les lutins se rendirent à l’arbre pour leur récolte quotidienne.<br /><br />Ils furent déroutés de ce qu’ils virent : comment étaient apparus ces quatre arbres brûlés ?<br /><br />Malgré leur étonnement, ils ramassèrent les ingrédients nécessaires à leur potion.<br /><br />Soudain, alors que jamais l’arbre n’avait contesté leur présence, il les ensorcela à leur tour.<br /><br />C’est ainsi qu’ils devinrent des pierres et reposèrent aux côtés des quatre enfants et de l’arbre enchanté.</p>');*/
                         $("#fille").css("opacity", "0");
                         $("#arbreOr").css("opacity", "0");
-                        $("#jeu").css("background-image", "url(images/arbreOr/chemin.jpg)");
+                        $(".fondJeu").attr("src", "images/arbreOr/chemin.jpg");
                         $(".histoire").empty();
                         $(".histoire").append(p5);
                         await attendre(3000);
-                        $("#ami1").css("display", "block");
-                        $("#ami2").css("display", "block");
-                        $("#ami3").css("display", "block");
+                        $("#ami1").fadeIn(500);
+                        $("#ami2").fadeIn(500);
+                        $("#ami3").fadeIn(500);
                         await attendre(5000);
-                        $("#jeu").css("background-image", "url(images/arbreOr/clairiere.jpg)");
+                        /*$(".fondJeu").attr("src", "images/arbreOr/clairiere.jpg");
                         $("#ami1").css("left", "40%");
                         $("#ami1").css("bottom", "0");
-                        $("#ami1").css("height", "60%");
+                        $("#ami1").css("height", "45%");
                         $("#ami2").css("left", "50%");
-                        $("#ami2").css("bottom", "0%");
-                        $("#ami2").css("height", "60%");
+                        $("#ami2").css("bottom", "0");
+                        $("#ami2").css("height", "45%");
                         $("#ami3").css("left", "60%");
                         $("#ami3").css("bottom", "0");
-                        $("#ami3").css("height", "60%");
+                        $("#ami3").css("height", "45%");
+                        $("#fille").css("opacity", "1");
+                        $("#arbreOr").css("opacity", "1");*/
+                        $("#ami1").css("opacity", "0");
+                        $("#ami2").css("opacity", "0");
+                        $("#ami3").css("opacity", "0");
+                        $(".fondJeu").attr("src", "images/arbreOr/mains.png");
+                        await attendre(1000);
+                        $(".fondJeu").css("transform", "scale(1.1)");
+                        await attendre(6000);
+                        $(".fondJeu").attr("src", "images/arbreOr/clairiere.jpg");
                         $("#fille").css("opacity", "1");
                         $("#arbreOr").css("opacity", "1");
-                        await attendre(6000);
-                        $("#ami1").attr("src", "images/arbreOr/flammes.png");
+                        await attendre(500);
+                        $("#ami1").css("opacity", "1");
+                        $("#ami2").css("opacity", "1");
+                        $("#ami3").css("opacity", "1");
+                        $("#ami1").css("left", "40%");
+                        $("#ami1").css("bottom", "0");
+                        $("#ami1").css("height", "45%");
+                        $("#ami2").css("left", "50%");
+                        $("#ami2").css("bottom", "0");
+                        $("#ami2").css("height", "45%");
+                        $("#ami3").css("left", "60%");
+                        $("#ami3").css("bottom", "0");
+                        $("#ami3").css("height", "45%");
+                        //$("#ami1").attr("src", "images/arbreOr/flammes.png");
                         var sonFlammes = document.createElement("audio");
                           sonFlammes.src = "sons/arbreOr/feu.wav";
                           sonFlammes.volume = 0.5;
                           sonFlammes.autoPlay = false;
                           sonFlammes.preLoad = true;
                           sonFlammes.controls = true;
-                        sonFlammes.play();
-                        await attendre(2000);
-                        $("#ami1").attr("src", "images/arbreOr/tronc2.png");
-                        $("#ami1").css("height", "20%");
-                        await attendre(500);
-                        $("#ami2").attr("src", "images/arbreOr/flammes.png");
-                        sonFlammes.play();
+                        
+                        $("#ami2").attr("src", "images/arbreOr/tronc2-5.png");
                         await attendre(1000);
-                        $("#ami2").attr("src", "images/arbreOr/tronc3.png");
                         $("#ami2").css("height", "20%");
-                        await attendre(500);
-                        $("#ami3").attr("src", "images/arbreOr/flammes.png");
+                        $("#ami2").css("bottom", "2%");
                         sonFlammes.play();
                         await attendre(1000);
-                        $("#ami3").attr("src", "images/arbreOr/tronc4.png");
+                        $("#ami2").attr("src", "images/arbreOr/tronc2-4.png");
+                        await attendre(1000);
+                        $("#ami2").attr("src", "images/arbreOr/tronc2-3.png");
+                        await attendre(1000);
+                        $("#ami2").attr("src", "images/arbreOr/tronc2-2.png");
+                        await attendre(1000);
+                        $("#ami2").attr("src", "images/arbreOr/tronc2-1.png");
+                        
+                        await attendre(500);
+                        $("#ami1").attr("src", "images/arbreOr/tronc1-5.png");
+                        await attendre(1000);
+                        $("#ami1").css("height", "20%");
+                        $("#ami1").css("bottom", "5%");
+                        sonFlammes.play();
+                        await attendre(1000);
+                        $("#ami1").attr("src", "images/arbreOr/tronc1-4.png");
+                        await attendre(1000);
+                        $("#ami1").attr("src", "images/arbreOr/tronc1-3.png");
+                        await attendre(1000);
+                        $("#ami1").attr("src", "images/arbreOr/tronc1-2.png");
+                        await attendre(1000);
+                        $("#ami1").attr("src", "images/arbreOr/tronc1-1.png");
+                        
+                        await attendre(500);
+                        $("#ami3").attr("src", "images/arbreOr/tronc4-5.png");
+                        await attendre(1000);
                         $("#ami3").css("height", "20%");
+                        $("#ami3").css("bottom", "8%");
+                        sonFlammes.play();
+                        await attendre(1000);
+                        $("#ami3").attr("src", "images/arbreOr/tronc4-4.png");
+                        await attendre(1000);
+                        $("#ami3").attr("src", "images/arbreOr/tronc4-3.png");
+                        await attendre(1000);
+                        $("#ami3").attr("src", "images/arbreOr/tronc4-2.png");
+                        await attendre(1000);
+                        $("#ami3").attr("src", "images/arbreOr/tronc4-1.png");
                         //apparition des pierres
                         /*$(".pierres").css("display", "block");*/
                         //écouteur sur le bouton suivant
@@ -311,8 +379,8 @@ $(document).ready(function(){
                             $(".histoire").append(p6);
                             $("#arbreOr").attr("src", "images/arbreOr/arbreOrFeuilles2.png");
                             await attendre(2000);
-                            $("#lutin1").css("display", "block");
-                            $("#lutin2").css("display", "block");
+                            $("#lutin1").fadeIn(500);
+                            $("#lutin2").fadeIn(500);
                             await attendre(12000);
                             $("#arbreOr").attr("src", "images/arbreOr/arbreOrFeuilles1.png");
                             $("#lutin1").attr("src", "images/arbreOr/lutin1Pierre.png");
@@ -473,7 +541,7 @@ function jeuFeuilles(){
     if($("#popupFeuilles")){
         $("#popupFeuilles").css("display", "block");
         $("#popupFeuilles img").click(function(){
-            $("#jeu").css("background-image", "url(images/arbreOr/clairiereFeuilles.jpg)");
+            $(".fondJeu").attr("src", "images/arbreOr/clairiereFeuilles.jpg");
             $(".feuilles").css("display", "block");
             $("#popupJeu").css("display", "block");
             $("#popupFeuilles").remove();
@@ -489,10 +557,10 @@ function jeuFeuilles(){
                 f1 = false;
                 f2 = false;
                 f3 = false;
-                $("#jeu").css("background-image", "url(images/arbreOr/clairiere.jpg)");
+                $(".fondJeu").attr("src", "images/arbreOr/clairiere.jpg");
             });
             
-            $("#popupJeu div:first-child img").click(loupe);
+            $("#popupJeu div:first-child").click(loupe);
             
             $("#feuille1").click(async function(){
                 f1 = false;
@@ -505,13 +573,18 @@ function jeuFeuilles(){
                 obj.play();
                 $("#feuille1").remove();
                 if(f2 && f3){
-                    $("#jeu").css("background-image", "url(images/arbreOr/clairiereF23.jpg)");
+                    $(".fondJeu").attr("src", "images/arbreOr/clairiereF23.jpg");
+                    $("#zoom img").attr("src", "images/arbreOr/clairiereF23.jpg");
                 }else if(f2 && !f3){
-                    $("#jeu").css("background-image", "url(images/arbreOr/clairiereF2.jpg)");
+                    $(".fondJeu").attr("src", "images/arbreOr/clairiereF2.jpg");
+                    $("#zoom img").attr("src", "images/arbreOr/clairiereF2.jpg");
                 }else if(!f2 && f3){
-                    $("#jeu").css("background-image", "url(images/arbreOr/clairiereF3.jpg)");
+                    $(".fondJeu").attr("src", "images/arbreOr/clairiereF3.jpg");
+                   $("#zoom img").attr("src", "images/arbreOr/clairiereF3.jpg");
                 }else if(!f2 && !f3){
-                    $("#jeu").css("background-image", "url(images/arbreOr/clairiere.jpg)");
+                    $(".fondJeu").attr("src", "images/arbreOr/clairiere.jpg");
+                    $("#zoom img").attr("src", "images/arbreOr/clairiere.jpg");
+                    $("#zoom").css("display", "none");
                     await attendre(2000);
                     var obj = document.createElement("audio");
                       obj.src = "sons/arbreOr/magie.wav";
@@ -539,13 +612,18 @@ function jeuFeuilles(){
                 obj.play();
                 $("#feuille2").remove();
                 if(f1 && f3){
-                    $("#jeu").css("background-image", "url(images/arbreOr/clairiereF13.jpg)");
+                    $(".fondJeu").attr("src", "images/arbreOr/clairiereF13.jpg");
+                    $("#zoom img").attr("src", "images/arbreOr/clairiereF13.jpg");
                 }else if(f1 && !f3){
-                    $("#jeu").css("background-image", "url(images/arbreOr/clairiereF1.jpg)");
+                   $(".fondJeu").attr("src", "images/arbreOr/clairiereF1.jpg");
+                   $("#zoom img").attr("src", "images/arbreOr/clairiereF1.jpg");
                 }else if(!f1 && f3){
-                    $("#jeu").css("background-image", "url(images/arbreOr/clairiereF3.jpg)");
+                    $(".fondJeu").attr("src", "images/arbreOr/clairiereF3.jpg");
+                    $("#zoom img").attr("src", "images/arbreOr/clairiereF3.jpg");
                 }else if(!f1 && !f3){
-                    $("#jeu").css("background-image", "url(images/arbreOr/clairiere.jpg)");
+                    $(".fondJeu").attr("src", "images/arbreOr/clairiere.jpg");
+                    $("#zoom img").attr("src", "images/arbreOr/clairiere.jpg");
+                    $("#zoom").css("display", "none");
                     await attendre(2000);
                     var obj = document.createElement("audio");
                       obj.src = "sons/arbreOr/magie.wav";
@@ -573,13 +651,18 @@ function jeuFeuilles(){
                 obj.play();
                 $("#feuille3").remove();
                 if(f1 && f2){
-                    $("#jeu").css("background-image", "url(images/arbreOr/clairiereF12.jpg)");
+                   $(".fondJeu").attr("src", "images/arbreOr/clairiereF12.jpg");
+                   $("#zoom img").attr("src", "images/arbreOr/clairiereF12.jpg");
                 }else if(f1 && !f2){
-                    $("#jeu").css("background-image", "url(images/arbreOr/clairiereF1.jpg)");
+                   $(".fondJeu").attr("src", "images/arbreOr/clairiereF1.jpg");
+                   $("#zoom img").attr("src", "images/arbreOr/clairiereF1.jpg");
                 }else if(!f1 && f2){
-                    $("#jeu").css("background-image", "url(images/arbreOr/clairiereF2.jpg)");
+                   $(".fondJeu").attr("src", "images/arbreOr/clairiereF2.jpg");
+                   $("#zoom img").attr("src", "images/arbreOr/clairiereF2.jpg");
                 }else if(!f1 && !f2){
-                    $("#jeu").css("background-image", "url(images/arbreOr/clairiere.jpg)");
+                    $(".fondJeu").attr("src", "images/arbreOr/clairiere.jpg");
+                    $("#zoom img").attr("src", "images/arbreOr/clairiere.jpg");
+                    $("#zoom").css("display", "none");
                     await attendre(2000);
                     var obj = document.createElement("audio");
                       obj.src = "sons/arbreOr/magie.wav";
@@ -611,12 +694,13 @@ function loupe(){
         zoomHeight : 250,
         roundedCorners : true
     });
-    $("#popupJeu div:first-child img").off("click");
-    $("#popupJeu div:first-child img").click(pasLoupe);
+    $("#popupJeu div:first-child").off("click");
+    $("#popupJeu div:first-child").click(pasLoupe);
+    $("#popupJeu div:last-child img").click(pasLoupe);
 }
 
 function pasLoupe(){
     $("#zoom").css("display", "none");
-    $("#popupJeu div:first-child img").off("click");
-    $("#popupJeu div:first-child img").click(loupe);
+    $("#popupJeu div:first-child").off("click");
+    $("#popupJeu div:first-child").click(loupe);
 }

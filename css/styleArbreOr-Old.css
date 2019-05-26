@@ -1,0 +1,242 @@
+#jeu{
+    background-image: url("../images/arbreOr/foretNuit.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;
+    position: fixed;
+    right: 0;
+    top: 17.5%;
+    height: 75%;
+    width: 80%;
+    /*border: 1px solid blue;*/
+    display: none;
+}
+
+#jeu #zoom:focus{
+    outline:none;
+} 
+
+#jeu #zoom img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+#jeu #zoom{
+    text-decoration:none;
+    color: rgba(0,0,0,0.7);
+    cursor: default;
+    display: none;
+}
+
+#jeu #arbreOr{
+    height: 60%;
+    margin-top: 10%;
+    margin-left: 50%;
+    display: none;
+    z-index: 100;
+}
+
+.popup{
+    width: 200px;
+    box-sizing: border-box;
+    background-color: #eee;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+    text-align: center;
+    color: #333;
+    display: none;
+}
+
+.popup img:first-child{
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.popup img:nth-child(2){
+    width: 50px;
+}
+
+#popupGagne a{
+    background: url(../images/flecheSuivant.png) no-repeat 90%/10%, rgb(12, 101, 129);
+    width: 35%;
+    padding: 10px 40px 10px 20px;
+    box-shadow: 0 5px 15px rgba(17, 47, 57, 0.67);
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+#popupGagne a:hover{
+    box-shadow: 0 5px 15px rgb(17, 47, 57);
+    background: url(../images/flecheSuivant.png) no-repeat 90%/10%, #145e76;
+    transform: scale(1.03);
+    transition: 0.5s ease-in-out;
+}
+
+#popupJeu{
+    top: 0;
+    left: 10%;
+    background-color: #3E3E3E;
+    border-bottom: 10px solid white;
+    box-shadow: 5px 8px 10px rgba(0,0,0,0.18);
+    color: white
+}
+
+#popupJeu div{
+    display: flex;
+    align-items: center;
+}
+
+#popupJeu img{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-right: 20px;
+}
+
+#lutin1{
+    height: 35%;
+    position: absolute;
+    bottom: 28%;
+    left: 49%;
+    display: none;
+    transition: all 0.2s linear;
+}
+
+#lutin2{
+    height: 20%;
+    position: absolute;
+    bottom: 20%;
+    left: 40%;
+    display: none;
+    transition: all 0.2s linear;
+}
+
+#fille{
+    height: 60%;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    display: none;
+    transition: display 0.2s linear;
+}
+
+#ami1{
+    height: 40%;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    display: none;
+    transition: display 0.2s linear;
+}
+
+#ami2{
+    height: 50%;
+    position: absolute;
+    bottom: 20%;
+    left: 60%;
+    display: none;
+    transition: display 0.2s linear;
+}
+
+#ami3{
+    height: 50%;
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    display: none;
+    transition: display 0.2s linear;
+}
+
+#arbre1{
+    height: 50%;
+    position: absolute;
+    bottom: 10%;
+    left: 35%;
+    display: none;
+    transition: all 0.2s linear;
+}
+
+#arbre2{
+    height: 30%;
+    position: absolute;
+    bottom: 20%;
+    left: 40%;
+    display: none;
+    transition: all 0.2s linear;
+}
+
+#arbre3{
+    height: 40%;
+    position: absolute;
+    bottom: 9%;
+    right: 27%;
+    display: none;
+    transition: all 0.2s linear;
+}
+
+#arbre4{
+    height: 35%;
+    position: absolute;
+    bottom: 15%;
+    right: 17%;
+    display: none;
+    transition: all 0.2s linear;
+}
+
+.feuilles{
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    opacity: 0;
+    position: absolute;
+    display: none;
+    cursor: pointer;
+    z-index: 5000;
+}
+
+#feuille2{
+    bottom: 120px;
+    right: 10px;
+}
+
+#feuille3{
+    top: 10px;
+    right: 100px;
+}
+
+#feuille1{
+    bottom: 40%;
+    right: 60%;
+}
+
+.pierres{
+    position: absolute;
+    height: 10%;
+    display: none;
+    transition: all 0.2s linear;
+}
+
+#pierre1{
+    left: 50%;
+    bottom: 20%;
+}
+
+#pierre2{
+    right: 50%;
+    bottom: 10%;
+}
+
+#pierre3{
+    right: 35%;
+    bottom: 20%;
+    height: 8%;
+}
