@@ -41,7 +41,7 @@ if($debugQWMain == true){
         if($_SESSION['antiRep'] == 1){
 
             if($_SESSION['aventureSur'] == 1){
-                    echo '      dans if aventure sur        ';
+                    //echo '      dans if aventure sur        ';
                     //echo 'debut';
                     //var_dump($debugQWClass) ;
 
