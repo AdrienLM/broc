@@ -89,13 +89,13 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
 								<img src="images/aventure/tombeauMerlin/brouillard/nuageBleu.png" alt="Nuage de brouillard bleu" class="brouillard"/>
 								<img src="images/aventure/tombeauMerlin/brouillard/nuageDore2.png" alt="Nuage de brouillard doré" class="brouillard"/>
 								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet.png" alt="Nuage de brouillard violet" class="brouillard un"/>
-								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet.png" alt="Nuage de brouillard violet" class="brouillard deux"/>
+								<!--<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet.png" alt="Nuage de brouillard violet" class="brouillard deux"/>-->
 								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet2.png" alt="Nuage de brouillard violet" class="brouillard un"/>
-								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet2.png" alt="Nuage de brouillard violet" class="brouillard deux"/>
+								<!--<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet2.png" alt="Nuage de brouillard violet" class="brouillard deux"/>
 								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet2.png" alt="Nuage de brouillard violet" class="brouillard trois"/>
-								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet2.png" alt="Nuage de brouillard violet" class="brouillard quatre"/>
+								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet2.png" alt="Nuage de brouillard violet" class="brouillard quatre"/>-->
 								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet3.png" alt="Nuage de brouillard violet" class="brouillard un"/>
-								<img  src="images/aventure/tombeauMerlin/brouillard/nuageViolet3.png" alt="Nuage de brouillard violet" class="brouillard deux"/>
+								<!--<img  src="images/aventure/tombeauMerlin/brouillard/nuageViolet3.png" alt="Nuage de brouillard violet" class="brouillard deux"/>-->
 								<div id="narrateur">
                    <div>
                         <img src="images/console.svg" alt="Casque" />

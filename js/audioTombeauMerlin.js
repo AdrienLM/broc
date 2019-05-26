@@ -18,9 +18,7 @@
 	let btnDivNarrateur;
 	let btnDivNarrateurImg;
 
-		/* Variables images */
-  let brouillard;
-  let vivianeEtMerlin;
+	let nbNuageBrouillard;
 
 
 	let tableauParagraphes = new Array();
@@ -134,6 +132,7 @@
 		tousLesSons = document.querySelectorAll("audio");
 		btnDivNarrateur = document.querySelector("#narrateur>div:last-child");
 		btnDivNarrateurImg = btnDivNarrateur.querySelector("img");
+		nbNuageBrouillard = document.getElementsByClassName("brouillard").length;
 
 			/* Ajouter les écouteurs d'événements */
 		document.querySelector("#param>div:nth-child(2)").addEventListener("click", lancementSon);
@@ -149,7 +148,6 @@
 	  divJeu = document.getElementById("wrapperJeu");
 	}
 
-	let nbNuageBrouillard = 13;
 	async function lancerJeuBrouillard(evt) {
 		if(!playerAudio.paused) {
 			playerAudio.pause();
@@ -353,21 +351,23 @@
 		})
 	}
 
-
+let vivianeEtMerlin;
 	async function animations() {
 		lancerTimersAnimation();
 		switch(indiceParagrapheCourant) {
 			case 1 :
-				vivianeEtMerlin = creerImage("images/merlinViviane.png", "Viviane sur les genoux de Merlin", {"position" : "absolute", "right" : "50%", "bottom" : "-10%", "height" : "80%"});
+				vivianeEtMerlin = creerImage("images/merlinViviane.png", "Viviane sur les genoux de Merlin", {"position" : "absolute", "right" : "50%", "bottom" : "-10%", "height" : "80%", "animation" : "fonduEntrant 1s linear"});
         divJeu.insertBefore(vivianeEtMerlin, divNarrateur);
-        $("#jeu>img:first-of-type").fadeOut(1500);
-				await attendre(1500);
-        $("#jeu>img:last-of-type").fadeIn(500);
+        //$("#jeu>img:first-of-type").fadeOut(1500);
+				//await attendre(1500);
 				await attendre(500);
 				break;
 			case 3 :
-				$("#jeu>img:last-of-type").fadeOut(500);
-				await attendre(500);
+				$("#wrapperJeu>img:last-of-type").fadeOut(3000);
+				//vivianeEtMerlin.style.animation = "fonduSortant 3s linear";
+				//vivianeEtMerlin.classList.add("fonduSortant");
+				await attendre(3000);
+				vivianeEtMerlin.style.opacity = "0";
 				break;
 			case tableauParagraphes.length :
 				btnDivNarrateur.querySelector("p").textContent = "Répondre";
@@ -387,7 +387,6 @@
 		timerPause = window.setInterval(arretSon, 100);
 		timerAffichage = window.setInterval(affichageTemps, 1000);
 	}
-
 
 
 
