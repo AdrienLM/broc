@@ -1,7 +1,7 @@
 
 <?php
 
-// a avoir en page au dessus pour que la page marche la varible $_SESSION['id'] 
+// a avoir en page au dessus pour que la page marche la varible $_SESSION['id']
 
 
 //query
@@ -74,7 +74,7 @@ if(isset($_SESSION['id']))
             $managerTabResume = new TabResumeManage($pdo);   // creation de la gestion des Resume
             //$managerTabResume->deleteAll();
 
-            // Ajout du nouveau idCompte en tant ligne à la table 
+            // Ajout du nouveau idCompte en tant ligne à la table
             $managerTabBestiaire->add($idCompte);
             $managerTabHerbier->add($idCompte);
             $managerTabResume->add($idCompte);
@@ -83,19 +83,19 @@ if(isset($_SESSION['id']))
             //$EtatstickBestaire[1]='1';
             //$EtatstickHerbier[1]='1';
             //$EtatResume[1]='1';
-                for($i=1;$i<=3;$i++) {
+                for($i=1;$i<=5;$i++) {
                     $EtatstickBestaire[$i]='0';
                     $EtatstickHerbier[$i]='0';
                     $EtatResume[$i]='0';
             }
             //en attendant le mise a jour de plus de trois histoire.
-            for($i=4;$i<=5;$i++) {
+          /*  for($i=4;$i<=5;$i++) {
                     $EtatstickBestaire[$i]='1';
                     $EtatstickHerbier[$i]='1';
                     $EtatResume[$i]='1';
-            }
+            }*/
 
-            // Mise à jour de la ligne idCompte de la table 
+            // Mise à jour de la ligne idCompte de la table
             $managerTabBestiaire->updates($idCompte,$EtatstickBestaire);
             $managerTabHerbier->updates($idCompte,$EtatstickHerbier);
             $managerTabResume->updates($idCompte,$EtatResume);

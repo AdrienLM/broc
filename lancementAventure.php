@@ -50,16 +50,77 @@ if($debugQWMain == true){
                     $avantureProv =  $_SESSION['AventureProv'];
 
                     if($avantureProv == 1){
-                        $_SESSION['addStick1'] = 211;
-                        $_SESSION['addStick2'] = 311;
+												//resumé anecdote
+												$_SESSION['addStick1'] = 111;
+
+
+												//herbier
+											  $_SESSION['addStick2'] = 211;
+												$_SESSION['addStick3'] = 241;
+
+												//bestiaire
+                        $_SESSION['addStick4'] = 311;
+												$_SESSION['addStick5'] = 341;
+
+												$codeGrimoire = $_SESSION['addStick1'];
+												require 'updateAventureGrimoire.php';
+											  $codeGrimoire = $_SESSION['addStick2'];
+												require 'updateAventureGrimoire.php';
+												$codeGrimoire = $_SESSION['addStick3'];
+											 require 'updateAventureGrimoire.php';
+											 $codeGrimoire = $_SESSION['addStick4'];
+											 require 'updateAventureGrimoire.php';
+											 $codeGrimoire = $_SESSION['addStick5'];
+											 require 'updateAventureGrimoire.php';
+
 
                     }else if($avantureProv == 2){
-                        $_SESSION['addStick1'] = 221;
-                        $_SESSION['addStick2'] = 321;
+											//resumé anecdote
+											$_SESSION['addStick1'] = 121;
+
+
+											//herbier
+											$_SESSION['addStick2'] = 221;
+											$_SESSION['addStick3'] = 251;
+
+											//bestiaire
+											$_SESSION['addStick4'] = 321;
+											$_SESSION['addStick5'] = 351;
+
+											$codeGrimoire = $_SESSION['addStick1'];
+											require 'updateAventureGrimoire.php';
+											$codeGrimoire = $_SESSION['addStick2'];
+											require 'updateAventureGrimoire.php';
+											$codeGrimoire = $_SESSION['addStick3'];
+										 require 'updateAventureGrimoire.php';
+										 $codeGrimoire = $_SESSION['addStick4'];
+										 require 'updateAventureGrimoire.php';
+										 $codeGrimoire = $_SESSION['addStick5'];
+										 require 'updateAventureGrimoire.php';
+
 
                     }else if($avantureProv == 3){
-                        $_SESSION['addStick1'] = 231;
-                        $_SESSION['addStick2'] = 331;
+
+
+											//resumé anecdote
+											$_SESSION['addStick1'] = 131;
+
+
+											//herbier
+											$_SESSION['addStick2'] = 231;
+
+
+											//bestiaire
+											$_SESSION['addStick3'] = 331;
+
+
+											$codeGrimoire = $_SESSION['addStick1'];
+											require 'updateAventureGrimoire.php';
+											$codeGrimoire = $_SESSION['addStick2'];
+											require 'updateAventureGrimoire.php';
+											$codeGrimoire = $_SESSION['addStick3'];
+										 require 'updateAventureGrimoire.php';
+
 
                     }
 
@@ -68,10 +129,6 @@ if($debugQWMain == true){
 
 
 
-                    $codeGrimoire = $_SESSION['addStick1'];
-                    require 'updateAventureGrimoire.php';
-                     $codeGrimoire = $_SESSION['addStick2'];
-                    require 'updateAventureGrimoire.php';
 
                     $_SESSION['antiRep'] = 0;
                     $boolAventureUp = true;
