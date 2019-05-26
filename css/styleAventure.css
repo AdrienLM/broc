@@ -172,11 +172,13 @@ main{
     background-color: #3E3E3E;
     border-bottom: 10px solid white;
     box-shadow: 5px 8px 10px rgba(0,0,0,0.18);
-    width: 25%;
-    height: 480px;
+    min-width: 250px;
+    width: 22%;
+    height: calc(100% - 50px);
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 10px;
+    top: 20px;
+    z-index: 20;
 }
 
 #narrateur img{

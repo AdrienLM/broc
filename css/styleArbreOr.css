@@ -147,7 +147,7 @@
     bottom: 0;
     left: 25%;
     display: none;
-    transition: display 0.2s linear;
+    transition: left 0.5s ease-in-out;
 }
 
 #ami1{
