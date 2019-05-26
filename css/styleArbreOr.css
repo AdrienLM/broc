@@ -1,41 +1,58 @@
-#jeu{
-    background-image: url("../images/arbreOr/foretNuit.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top right;
-    position: fixed;
+#jeu {
+    display : none;
+    position: absolute;
+    justify-content : flex-end;
     right: 0;
-    top: 17.5%;
-    height: 75%;
-    width: 80%;
-    /*border: 1px solid blue;*/
-    display: none;
+    top: 0;
+    height: 100%;
+    width : 64vw;
+    height : calc((9 * 64vw) / 16);
+    margin : auto;
+}
+#wrapperJeu {
+  height : 100%;
+  width : 100%;
+  position : relative;
+  overflow : hidden;
+}
+#wrapperJeu>img:not(.fondJeu) {
+  z-index : 12;
+}
+.fondJeu {
+  width : 100%;
+  height : 100%;
+  z-index : 10;
+    transition: all 4s ease-in-out;
+}
+.fondJeu+.fondJeu {
+  z-index : 11;
+  display : block;
 }
 
-#jeu #zoom:focus{
+#wrapperJeu #zoom:focus{
     outline:none;
 } 
 
-#jeu #zoom img{
+#wrapperJeu #zoom img{
     position: absolute;
     top: 0;
     right: 0;
     height: 100%;
 }
 
-#jeu #zoom{
+#wrapperJeu #zoom{
     text-decoration:none;
     color: rgba(0,0,0,0.7);
     cursor: default;
     display: none;
 }
 
-#jeu #arbreOr{
+#arbreOr{
+    position : absolute;
     height: 60%;
-    margin-top: 10%;
-    margin-left: 50%;
+    bottom: 10%;
+    left: 40%;
     display: none;
-    z-index: 100;
 }
 
 .popup{
@@ -49,6 +66,7 @@
     text-align: center;
     color: #333;
     display: none;
+    z-index: 100;
 }
 
 .popup img:first-child{
@@ -82,12 +100,15 @@
 }
 
 #popupJeu{
-    top: 0;
-    left: 10%;
+    bottom: 0;
+    left: 0;
     background-color: #3E3E3E;
     border-bottom: 10px solid white;
     box-shadow: 5px 8px 10px rgba(0,0,0,0.18);
-    color: white
+    color: white;
+    height: 150px;
+    z-index: 999;
+    width: 150px;
 }
 
 #popupJeu div{
@@ -105,8 +126,8 @@
 #lutin1{
     height: 35%;
     position: absolute;
-    bottom: 28%;
-    left: 49%;
+    bottom: 25%;
+    left: 40%;
     display: none;
     transition: all 0.2s linear;
 }
@@ -114,23 +135,23 @@
 #lutin2{
     height: 20%;
     position: absolute;
-    bottom: 20%;
-    left: 40%;
+    bottom: 10%;
+    left: 15%;
     display: none;
     transition: all 0.2s linear;
 }
 
 #fille{
-    height: 60%;
+    height: 35%;
     position: absolute;
     bottom: 0;
-    left: 40%;
+    left: 25%;
     display: none;
     transition: display 0.2s linear;
 }
 
 #ami1{
-    height: 40%;
+    height: 20%;
     position: absolute;
     bottom: 50%;
     left: 50%;
@@ -139,7 +160,7 @@
 }
 
 #ami2{
-    height: 50%;
+    height: 30%;
     position: absolute;
     bottom: 20%;
     left: 60%;
@@ -148,7 +169,7 @@
 }
 
 #ami3{
-    height: 50%;
+    height: 35%;
     position: absolute;
     bottom: 10%;
     left: 20%;
@@ -214,8 +235,8 @@
 }
 
 #feuille1{
-    bottom: 40%;
-    right: 60%;
+    bottom: 38%;
+    left: 20%;
 }
 
 .pierres{
