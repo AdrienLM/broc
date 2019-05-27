@@ -3,6 +3,7 @@
     <nav>
         <a href="index.php">accueil</a>
         <a href="soon.php">guide</a>
+        <a href="choixModes.php">modes</a>
 
 
 
