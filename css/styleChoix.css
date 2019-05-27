@@ -131,11 +131,11 @@ main div div{
     bottom: 5vh; 
 } 
 
-#aventure{ 
+#aventure, #aventureDeco{ 
     background-image: url(../images/fondAventure2.png); 
 } 
  
-#decouverte{ 
+#decouverte, #decouverteDeco{ 
     background-image: url(../images/fondDecouverte2.jpg); 
 } 
  
