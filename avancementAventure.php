@@ -12,10 +12,12 @@
             $ifAvancementUserExist = $pdo->query($requete);
             $AvancementUserExist = $ifAvancementUserExist->fetch(PDO::FETCH_ASSOC);
 
-            $numAvancement = $_SESSION['AventureProv'];
+            //$numAvancement = $_SESSION['AventureProv'];
+            $numAvancement = 1;
         if(isset($_SESSION['AventureProv'])){
 
-            $modifdata = $pdo->prepare('UPDATE avancementaventure SET aventure1 = :numAvance WHERE idCompte= :idCompte');
+            //$modifdata = $pdo->prepare('UPDATE avancementaventure SET aventure1 = :numAvance WHERE idCompte= :idCompte');
+            $modifdata = $pdo->prepare('UPDATE avancementaventure SET aventure'.$avantureProv.' = :numAvance WHERE idCompte= :idCompte');
             if($debugQWMain) var_dump($modifdata) ;
                 try
                 {
