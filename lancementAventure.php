@@ -99,7 +99,7 @@ if($debugQWMain == true){
 										 $codeGrimoire = $_SESSION['addStick5'];
 										 require 'updateAventureGrimoire.php';
 
-
+										 
                     }else if($avantureProv == 3){
 
 
