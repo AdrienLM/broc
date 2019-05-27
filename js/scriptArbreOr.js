@@ -407,7 +407,7 @@ $(document).ready(function(){
                                     $("#narrateur div:last-child p").text("Fin");
                                 $("#narrateur div:last-child").css("display", "flex");
                                 //écouteur sur le bouton suivant
-                                $("#narrateur div:last-child img").click(function(){
+                                /*$("#narrateur div:last-child img").click(function(){
                                     //jeu pour retrouver les feuilles d'or
                                     //changement de la boite de dialogue narrateur
                                     /*$("#narrateur").css("width", "20%");
