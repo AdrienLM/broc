@@ -53,6 +53,10 @@ main>div:nth-child(2){
     height: 65vh;
 } 
 
+#decouverteDeco{
+    height: 65vh;
+}
+
 main>div:nth-child(3){ 
     background-position: right center; 
 } 
