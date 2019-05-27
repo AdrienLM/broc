@@ -20,6 +20,13 @@
 
 	let nbNuageBrouillard;
 
+	let debutCheminSons = "./sons/aventureTombeauMerlinV2/";
+	let extension;
+
+	let mute = false;
+	let lesAudiosJs = new Array();
+
+
 
 	let tableauParagraphes = new Array();
 	tableauParagraphes.push(new Array("Voici l’un des lieux symbolique de l’amour inconditionnel liant Viviane et Merlin.",
@@ -146,6 +153,13 @@
 	    /* Enregistrer les autres éléments du DOM */
 	  divNarrateur = document.getElementById("narrateur");
 	  divJeu = document.getElementById("wrapperJeu");
+
+			/* définir l'extension des fichiers son */
+		if (document.getElementById("playerAudioConteur").canPlayType('audio/mpeg;')) {
+			extension = ".mp3";
+		} else {
+			extension = ".ogg";
+		}
 	}
 
 	async function lancerJeuBrouillard(evt) {
@@ -166,10 +180,16 @@
 		divNarrateur.style.display = "none";
 	}
 	async function dissiperBrouillard(evt) {
-
-		//temps + actions à revoir (son, etc.)
-		$(this).fadeOut(500);
-		await attendre(500);
+		this.classList.add("disparition");
+		lesAudiosJs["jeu"] = new Audio(debutCheminSons+"bruitages/ventBrouillard"+extension);
+		if(mute) {
+			lesAudiosJs["jeu"].volume = 0;
+		} else {
+			lesAudiosJs["jeu"].volume = 0.8;
+		}
+		lesAudiosJs["jeu"].play();
+		this.removeEventListener("click", dissiperBrouillard);
+		await attendre(1200);
 		this.remove();
 		nbNuageBrouillard = nbNuageBrouillard - 1;
 		if(nbNuageBrouillard == 0) {
@@ -262,14 +282,6 @@
 		divReponses.classList.add("divReponsesQuizz");
 		divNarrateur.insertBefore(divReponses, btnDivNarrateur);
 
-		let debutCheminSons = "./sons/aventureTombeauMerlinV2/";
-		let extension;
-		if (document.getElementById("playerAudioConteur").canPlayType('audio/mpeg;')) {
-			extension = ".mp3";
-		} else {
-			extension = ".ogg";
-		}
-
 		let affichageNumQuestion = document.createElement("p");
 		affichageNumQuestion.textContent = "Question "+(numeroEnigme + 1)+"/"+questionsReponsesQuizz["enigmes"].length;
 		affichageNumQuestion.classList.add("numeroQuestionQuizz");
@@ -278,8 +290,11 @@
 		question.textContent = questionsReponsesQuizz["enigmes"][numeroEnigme]["question"];
 		question.classList.add("questionQuizz");
 		divNarrateur.insertBefore(question, divReponses);
-		let audio = new Audio(debutCheminSons+questionsReponsesQuizz["enigmes"][numeroEnigme]["audioQuestion"]+extension);
-		await lancerAudioEnigme(audio, false);
+		lesAudiosJs["jeu"] = new Audio(debutCheminSons+questionsReponsesQuizz["enigmes"][numeroEnigme]["audioQuestion"]+extension);
+		if(mute) {
+			lesAudiosJs["jeu"].volume = 0;
+		}
+		await lancerAudioEnigme(lesAudiosJs["jeu"], false);
 
 
 			/* Intégrer les réponses dans un ordre aléatoire */
@@ -302,26 +317,29 @@
 					case 0 :
 						rep.textContent = questionsReponsesQuizz["enigmes"][numeroEnigme]["reponse1"];
 						divReponses.appendChild(rep);
-						audio = new Audio(debutCheminSons+questionsReponsesQuizz["enigmes"][numeroEnigme]["audioRep1"]+extension);
+						lesAudiosJs["jeu"] = new Audio(debutCheminSons+questionsReponsesQuizz["enigmes"][numeroEnigme]["audioRep1"]+extension);
 						break;
 					case 1 :
 						rep.textContent = questionsReponsesQuizz["enigmes"][numeroEnigme]["reponse2"];
 						divReponses.appendChild(rep);
-						audio = new Audio(debutCheminSons+questionsReponsesQuizz["enigmes"][numeroEnigme]["audioRep2"]+extension);
+						lesAudiosJs["jeu"] = new Audio(debutCheminSons+questionsReponsesQuizz["enigmes"][numeroEnigme]["audioRep2"]+extension);
 						break;
 					case 2 :
 						rep.textContent = questionsReponsesQuizz["enigmes"][numeroEnigme]["reponse3"];
 						divReponses.appendChild(rep);
-						audio = new Audio(debutCheminSons+questionsReponsesQuizz["enigmes"][numeroEnigme]["audioRep3"]+extension);
+						lesAudiosJs["jeu"] = new Audio(debutCheminSons+questionsReponsesQuizz["enigmes"][numeroEnigme]["audioRep3"]+extension);
 						break;
 					case 3 :
 						rep.textContent = questionsReponsesQuizz["enigmes"][numeroEnigme]["reponse4"];
 						divReponses.appendChild(rep);
-						audio = new Audio(debutCheminSons+questionsReponsesQuizz["enigmes"][numeroEnigme]["audioRep4"]+extension);
+						lesAudiosJs["jeu"] = new Audio(debutCheminSons+questionsReponsesQuizz["enigmes"][numeroEnigme]["audioRep4"]+extension);
 						break;
 				}
 				$(".divReponses>button:last-child").fadeIn(200);
-				await lancerAudioEnigme(audio, true);
+				if(mute) {
+					lesAudiosJs["jeu"].volume = 0;
+				}
+				await lancerAudioEnigme(lesAudiosJs["jeu"], true);
 				rep.addEventListener("click", verificationReponse);
 				verifierHauteurDivNarrateur();
 			}
@@ -351,23 +369,83 @@
 		})
 	}
 
-let vivianeEtMerlin;
+
+
+
+
+let debutCheminIllustrations = "images/aventure/tombeauMerlin/illustrations/";
+let vivianeAssise = creerImage(debutCheminIllustrations+"vivianeAssise.png", "Viviane assise", {"position" : "absolute", "right" : "48%", "top" : "20%", "height" : "22%", "display" : "none"});
+let ecuyer = creerImage(debutCheminIllustrations+"ecuyer.png", "Viviane assise", {"position" : "absolute", "left" : "2%", "bottom" : "0", "height" : "65%", "display" : "none"});
+let vivianeSort = creerImage(debutCheminIllustrations+"vivianeSort.png", "Viviane assise", {"position" : "absolute", "right" : "50%", "bottom" : "-10%", "height" : "75%", "display" : "none", "transform" : "rotateY(-180deg)"});
+let merlinDebout = creerImage(debutCheminIllustrations+"merlinDebout.png", "Viviane assise", {"position" : "absolute", "left" : "-1%", "bottom" : "0%", "height" : "72%", "display" : "none"});
+let vivianeEtMerlin = creerImage(debutCheminIllustrations+"merlinViviane.png", "Viviane assise", {"position" : "absolute", "left" : "45%", "bottom" : "25%", "height" : "45%", "display" : "none", "transform" : "translateX(-50%)"});
+let vivianeEnsorcele = creerImage(debutCheminIllustrations+"vivianeEnsorcele.png", "Viviane assise", {"position" : "absolute", "left" : "45%", "bottom" : "0", "height" : "80%", "display" : "none", "transform" : "translateX(-50%)"});
+let merlinEnsorcele = creerImage(debutCheminIllustrations+"merlinEnsorcele.png", "Viviane assise", {"position" : "absolute", "left" : "45%", "bottom" : "0", "height" : "80%", "display" : "none", "transform" : "translateX(-50%) rotateY(180deg)"});
 	async function animations() {
 		lancerTimersAnimation();
 		switch(indiceParagrapheCourant) {
-			case 1 :
-				vivianeEtMerlin = creerImage("images/merlinViviane.png", "Viviane sur les genoux de Merlin", {"position" : "absolute", "right" : "50%", "bottom" : "-10%", "height" : "80%", "animation" : "fonduEntrant 1s linear"});
-        divJeu.insertBefore(vivianeEtMerlin, divNarrateur);
-        //$("#jeu>img:first-of-type").fadeOut(1500);
-				//await attendre(1500);
+			case 2 :
+				document.querySelector(".fondJeu").setAttribute("src", "images/aventure/tombeauMerlin/fonds/AVFontaineBarentonSF.png");
+				document.querySelector(".fondJeu").setAttribute("alt", "Fontaine de Barenton avant l'apparition de celle-ci");
+				divJeu.insertBefore(vivianeAssise, divNarrateur);
+				$("#wrapperJeu>img:last-of-type").fadeIn(100);
+				await attendre(4800);
+				divJeu.insertBefore(ecuyer, divNarrateur);
+				$("#wrapperJeu>img:last-of-type").fadeIn(500);
+				await attendre(5100);
+				$("#wrapperJeu>.fondJeu+img").fadeOut(200);
+				divJeu.insertBefore(vivianeSort, divNarrateur);
+				$("#wrapperJeu>img:last-of-type").fadeIn(200);
+				await attendre(4000);
+				vivianeAssise.remove();
+				document.querySelector(".fondJeu").setAttribute("src", "images/aventure/tombeauMerlin/fonds/AVFontaineBarentonAF.png");
+				document.querySelector(".fondJeu").setAttribute("alt", "Fontaine de Barenton après son apparition");
+				await attendre(5000);
+				$("#wrapperJeu>.fondJeu+img").fadeOut(500);
 				await attendre(500);
+				ecuyer.remove();
 				break;
 			case 3 :
-				$("#wrapperJeu>img:last-of-type").fadeOut(3000);
-				//vivianeEtMerlin.style.animation = "fonduSortant 3s linear";
-				//vivianeEtMerlin.classList.add("fonduSortant");
-				await attendre(3000);
-				vivianeEtMerlin.style.opacity = "0";
+				$("#wrapperJeu>img:last-of-type").fadeOut(100);
+				divJeu.insertBefore(vivianeAssise, divNarrateur);
+				$("#wrapperJeu>img:last-of-type").fadeIn(200);
+				ecuyer.style.left = "4%";
+				divJeu.insertBefore(ecuyer, divNarrateur);
+				$("#wrapperJeu>img:last-of-type").fadeIn(200);
+				await attendre(100);
+				vivianeSort.remove();
+				await attendre(8700);
+				$("#wrapperJeu>img:last-of-type").fadeOut(800);
+				divJeu.insertBefore(merlinDebout, divNarrateur);
+				$("#wrapperJeu>img:last-of-type").fadeIn(800);
+				await attendre(800);
+				ecuyer.remove();
+				break;
+			case 4 :
+				document.querySelector(".fondJeu").setAttribute("src", "images/aventure/tombeauMerlin/fonds/AVTombeauMerlinST.png");
+				document.querySelector(".fondJeu").setAttribute("alt", "Tombeau de Merlin avant l'apparition de celui-ci");
+				$("#wrapperJeu>img:not(.fondJeu)").fadeOut(50);
+				divJeu.insertBefore(vivianeEtMerlin, divNarrateur);
+				$("#wrapperJeu>img:last-of-type").fadeIn(200);
+				await attendre(50);
+				vivianeAssise.remove();
+				merlinDebout.remove();
+				await attendre(11000);
+				$("#wrapperJeu>img:last-of-type").fadeOut(100);
+				divJeu.insertBefore(vivianeEnsorcele, divNarrateur);
+				$("#wrapperJeu>img:last-of-type").fadeIn(500);
+				await attendre(5000);
+				vivianeEtMerlin.remove();
+				$("#wrapperJeu>img:last-of-type").fadeOut(500);
+				divJeu.insertBefore(merlinEnsorcele, document.querySelector("#wrapperJeu>img:last-of-type"));
+				$("#wrapperJeu>img.fondJeu+img").fadeIn(500);
+				await attendre(2000);
+				vivianeEnsorcele.remove();
+				await attendre(2000);
+				$("#wrapperJeu>img:last-of-type").fadeOut(500);
+				await attendre(500);
+				document.querySelector(".fondJeu").setAttribute("src", "images/aventure/tombeauMerlin/fonds/AVTombeauMerlin.png");
+				document.querySelector(".fondJeu").setAttribute("alt", "Tombeau de Merlin après son apparition");
 				break;
 			case tableauParagraphes.length :
 				btnDivNarrateur.querySelector("p").textContent = "Répondre";
@@ -486,6 +564,10 @@ let vivianeEtMerlin;
 			/* Lancer le son */
 		playerAudio = document.getElementById("playerAudioConteur");
 		playerAudio.play();
+		if(document.getElementById("ambiance").paused) {
+			document.getElementById("ambiance").volume = 0.15;
+			document.getElementById("ambiance").play();
+		}
 			/* Lancer les timers */
 		timerAffichage = window.setInterval(affichageTemps, 1000);
 		timerPause = window.setInterval(arretSon, 100);
@@ -547,11 +629,26 @@ let vivianeEtMerlin;
 		    for(let unSon of tousLesSons) {
 		      if(unSon.volume == 1) {
 		        unSon.volume = 0;
-						document.querySelector("#param>div:last-child>img").setAttribute("src", "images/hautParleur.svg");
 		      } else {
-		        unSon.volume = 1;
-						document.querySelector("#param>div:last-child>img").setAttribute("src", "images/hautParleur1.svg");
+						unSon.volume = 1;
 		      }
 		    }
+
+				for(let unSon of lesAudiosJs) {
+					if(unSon.volume == 1) {
+		        unSon.volume = 0;
+		      } else {
+		        unSon.volume = 1;
+		      }
+				}
+				if(document.getElementById("playerAudioConteur").volume == 0) {
+					document.querySelector("#param>div:last-child>img").setAttribute("src", "images/hautParleur.svg");
+					document.getElementById("ambiance").volume = 0;
+					mute = true;
+				} else {
+					document.querySelector("#param>div:last-child>img").setAttribute("src", "images/hautParleur1.svg");
+					document.getElementById("ambiance").volume = 0.15;
+					mute = false;
+				}
 		  }
 }());

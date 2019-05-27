@@ -20,7 +20,6 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         <meta name="description" content="">
         <link rel="stylesheet" href="css/styleMenu.css">
         <link rel="stylesheet" href="css/styleAventureV2.css">
-        <link rel="stylesheet" href="css/tombeauMerlinA.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
         <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png" />
@@ -57,7 +56,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                     <source src="./sons/aventureTombeauMerlinV2/aventureTombeauMerlinV2.ogg" />
                 </audio>
 
-								<audio loop>
+								<audio id="ambiance" loop>
                     <source src="./sons/ambianceForet.mp3" />
                     <source src="./sons/ambianceForet.ogg" />
 								</audio>
@@ -84,18 +83,14 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
             </div>
             <div id="jeu">
 							<div id="wrapperJeu">
-								<img src="images/aventure/tombeauMerlin/AVTombeauMerlin.png" alt="Tombeau de Merlin" class="fondJeu" />
+								<img src="images/aventure/tombeauMerlin/fonds/AVTombeauMerlin.png" alt="Tombeau de Merlin" class="fondJeu" />
 								<img src="images/aventure/tombeauMerlin/brouillard/nuageTurquoise.png" alt="Nuage de brouillard turquoise" class="brouillard"/>
 								<img src="images/aventure/tombeauMerlin/brouillard/nuageBleu.png" alt="Nuage de brouillard bleu" class="brouillard"/>
+								<img src="images/aventure/tombeauMerlin/brouillard/nuageDore.png" alt="Nuage de brouillard doré" class="brouillard"/>
 								<img src="images/aventure/tombeauMerlin/brouillard/nuageDore2.png" alt="Nuage de brouillard doré" class="brouillard"/>
-								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet.png" alt="Nuage de brouillard violet" class="brouillard un"/>
-								<!--<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet.png" alt="Nuage de brouillard violet" class="brouillard deux"/>-->
-								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet2.png" alt="Nuage de brouillard violet" class="brouillard un"/>
-								<!--<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet2.png" alt="Nuage de brouillard violet" class="brouillard deux"/>
-								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet2.png" alt="Nuage de brouillard violet" class="brouillard trois"/>
-								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet2.png" alt="Nuage de brouillard violet" class="brouillard quatre"/>-->
-								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet3.png" alt="Nuage de brouillard violet" class="brouillard un"/>
-								<!--<img  src="images/aventure/tombeauMerlin/brouillard/nuageViolet3.png" alt="Nuage de brouillard violet" class="brouillard deux"/>-->
+								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet.png" alt="Nuage de brouillard violet" class="brouillard"/>
+								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet2.png" alt="Nuage de brouillard violet" class="brouillard"/>
+								<img src="images/aventure/tombeauMerlin/brouillard/nuageViolet3.png" alt="Nuage de brouillard violet" class="brouillard"/>
 								<div id="narrateur">
                    <div>
                         <img src="images/console.svg" alt="Casque" />
