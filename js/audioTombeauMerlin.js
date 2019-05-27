@@ -379,8 +379,8 @@ let ecuyer = creerImage(debutCheminIllustrations+"ecuyer.png", "Viviane assise",
 let vivianeSort = creerImage(debutCheminIllustrations+"vivianeSort.png", "Viviane assise", {"position" : "absolute", "right" : "50%", "bottom" : "-10%", "height" : "75%", "display" : "none", "transform" : "rotateY(-180deg)"});
 let merlinDebout = creerImage(debutCheminIllustrations+"merlinDebout.png", "Viviane assise", {"position" : "absolute", "left" : "-1%", "bottom" : "0%", "height" : "72%", "display" : "none"});
 let vivianeEtMerlin = creerImage(debutCheminIllustrations+"merlinViviane.png", "Viviane assise", {"position" : "absolute", "left" : "45%", "bottom" : "25%", "height" : "45%", "display" : "none", "transform" : "translateX(-50%)"});
-let vivianeEnsorcele = creerImage(debutCheminIllustrations+"vivianeEnsorcele.png", "Viviane assise", {"position" : "absolute", "right" : "50%", "bottom" : "-10%", "height" : "80%", "display" : "none"});
-let merlinEnsorcele = creerImage(debutCheminIllustrations+"merlinEnsorcele.png", "Viviane assise", {"position" : "absolute", "right" : "50%", "bottom" : "-10%", "height" : "80%", "display" : "none"});
+let vivianeEnsorcele = creerImage(debutCheminIllustrations+"vivianeEnsorcele.png", "Viviane assise", {"position" : "absolute", "left" : "45%", "bottom" : "0", "height" : "80%", "display" : "none", "transform" : "translateX(-50%)"});
+let merlinEnsorcele = creerImage(debutCheminIllustrations+"merlinEnsorcele.png", "Viviane assise", {"position" : "absolute", "left" : "45%", "bottom" : "0", "height" : "80%", "display" : "none", "transform" : "translateX(-50%) rotateY(180deg)"});
 	async function animations() {
 		lancerTimersAnimation();
 		switch(indiceParagrapheCourant) {
@@ -414,7 +414,7 @@ let merlinEnsorcele = creerImage(debutCheminIllustrations+"merlinEnsorcele.png",
 				$("#wrapperJeu>img:last-of-type").fadeIn(200);
 				await attendre(100);
 				vivianeSort.remove();
-				await attendre(7500);
+				await attendre(8700);
 				$("#wrapperJeu>img:last-of-type").fadeOut(800);
 				divJeu.insertBefore(merlinDebout, divNarrateur);
 				$("#wrapperJeu>img:last-of-type").fadeIn(800);
@@ -430,16 +430,20 @@ let merlinEnsorcele = creerImage(debutCheminIllustrations+"merlinEnsorcele.png",
 				await attendre(50);
 				vivianeAssise.remove();
 				merlinDebout.remove();
-				await attendre(7000);
-				$("#wrapperJeu>img:last-of-type").fadeOut(200);
-				await attendre(200);
-				vivianeEtMerlin.remove();
+				await attendre(11000);
+				$("#wrapperJeu>img:last-of-type").fadeOut(100);
 				divJeu.insertBefore(vivianeEnsorcele, divNarrateur);
-				divJeu.insertBefore(merlinEnsorcele, divNarrateur);
-				$("#wrapperJeu>img:not(.fondJeu)").fadeIn(200);
+				$("#wrapperJeu>img:last-of-type").fadeIn(500);
+				await attendre(5000);
+				vivianeEtMerlin.remove();
+				$("#wrapperJeu>img:last-of-type").fadeOut(500);
+				divJeu.insertBefore(merlinEnsorcele, document.querySelector("#wrapperJeu>img:last-of-type"));
+				$("#wrapperJeu>img.fondJeu+img").fadeIn(500);
 				await attendre(2000);
-				$("#wrapperJeu>img:not(.fondJeu)").fadeOut(200);
-				await attendre(200);
+				vivianeEnsorcele.remove();
+				await attendre(2000);
+				$("#wrapperJeu>img:last-of-type").fadeOut(500);
+				await attendre(500);
 				document.querySelector(".fondJeu").setAttribute("src", "images/aventure/tombeauMerlin/fonds/AVTombeauMerlin.png");
 				document.querySelector(".fondJeu").setAttribute("alt", "Tombeau de Merlin après son apparition");
 				break;
