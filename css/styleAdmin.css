@@ -313,6 +313,7 @@ h2 {
 
 li {
     font-family: 'OpenSans';
+    list-style-type: none;
 }
 
 .CGU img {
