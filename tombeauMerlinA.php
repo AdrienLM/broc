@@ -56,7 +56,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                     <source src="./sons/aventureTombeauMerlinV2/aventureTombeauMerlinV2.ogg" />
                 </audio>
 
-								<audio loop>
+								<audio id="ambiance" loop>
                     <source src="./sons/ambianceForet.mp3" />
                     <source src="./sons/ambianceForet.ogg" />
 								</audio>

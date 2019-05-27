@@ -564,6 +564,10 @@ let merlinEnsorcele = creerImage(debutCheminIllustrations+"merlinEnsorcele.png",
 			/* Lancer le son */
 		playerAudio = document.getElementById("playerAudioConteur");
 		playerAudio.play();
+		if(document.getElementById("ambiance").paused) {
+			document.getElementById("ambiance").volume = 0.15;
+			document.getElementById("ambiance").play();
+		}
 			/* Lancer les timers */
 		timerAffichage = window.setInterval(affichageTemps, 1000);
 		timerPause = window.setInterval(arretSon, 100);
@@ -626,9 +630,10 @@ let merlinEnsorcele = creerImage(debutCheminIllustrations+"merlinEnsorcele.png",
 		      if(unSon.volume == 1) {
 		        unSon.volume = 0;
 		      } else {
-		        unSon.volume = 1;
+						unSon.volume = 1;
 		      }
 		    }
+
 				for(let unSon of lesAudiosJs) {
 					if(unSon.volume == 1) {
 		        unSon.volume = 0;
@@ -636,11 +641,13 @@ let merlinEnsorcele = creerImage(debutCheminIllustrations+"merlinEnsorcele.png",
 		        unSon.volume = 1;
 		      }
 				}
-				if(tousLesSons[0].volume == 0) {
+				if(document.getElementById("playerAudioConteur").volume == 0) {
 					document.querySelector("#param>div:last-child>img").setAttribute("src", "images/hautParleur.svg");
+					document.getElementById("ambiance").volume = 0;
 					mute = true;
 				} else {
 					document.querySelector("#param>div:last-child>img").setAttribute("src", "images/hautParleur1.svg");
+					document.getElementById("ambiance").volume = 0.15;
 					mute = false;
 				}
 		  }
