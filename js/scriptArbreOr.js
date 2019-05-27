@@ -403,7 +403,7 @@ $(document).ready(function(){
                                 $("#lutin1").attr("src", "images/arbreOr/lutin1Mousse.png").fadeIn(4000);
                                 $("#lutin2").attr("src", "images/arbreOr/lutin2Mousse.png").fadeIn(4000);
                                 $("#arbreOr").attr("src", "images/arbreOr/arbreDOr.png").fadeIn(4000);
-                                $("#narrateur div:last-child img").replaceWith('<a href="cheminAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
+                                $("#narrateur div:last-child img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
                                     $("#narrateur div:last-child p").text("Fin");
                                 $("#narrateur div:last-child").css("display", "flex");
                                 //écouteur sur le bouton suivant
