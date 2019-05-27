@@ -62,7 +62,7 @@ $(document).ready(function(){
         dataType: "xml",
         type: "GET",
         success: function(xml){
-            var scene = $(xml).find("livre").children(":nth-child("+numero+")"); 
+            var scene = $(xml).find("livre").children(":nth-child("+numero+")");
             var titre = scene.children(":first").text();
             $("h1").append(titre);
             var h2 = "scene "+numero;
@@ -107,7 +107,7 @@ $(document).ready(function(){
                 }
             }
         })
-    
+
         $(".decouvrir").click(async function(){
             $("#texte").css("transform", "scale(0.7) translate(-40%, -35%)");
             $("#texte").css("transition", "all 1s linear");
@@ -123,7 +123,7 @@ $(document).ready(function(){
             $("#jeu").css("transition", "all 1s linear");
             $("#playerAudio").css("transform", "scale(1)");
             /*setTimeout(function(){
-                $("#arbreOr").css("opacity", "1");    
+                $("#arbreOr").css("opacity", "1");
             }, 3000);
             setTimeout(function(){
                 $("#arbreOr").attr("src", "images/arbreOr/arbreOrFeuilles1.png");
@@ -161,7 +161,7 @@ $(document).ready(function(){
                 })
             });
         });
-    
+
         //écouteur sur le bouton suivant
         $("#narrateur div:last-child img").click(async function(){
             $("#narrateur div:last-child img").off();
@@ -187,9 +187,9 @@ $(document).ready(function(){
             jeuFeuilles();
             /*$("#zoom").zoomple({
                 offset : {x:10,y:10},
-                bgColor : '#839CA1', 
-                zoomWidth : 250, 
-                showCursor : true, 
+                bgColor : '#839CA1',
+                zoomWidth : 250,
+                showCursor : true,
                 zoomHeight : 250,
                 roundedCorners : true
             });*/
@@ -428,7 +428,7 @@ $(document).ready(function(){
                                    /*var nbFeuilles = 0; $(".feuilles").click(function(){
                                         $(this).remove();
                                        nbFeuilles++;
-                                        
+
                                     })*/
                                     //attendre que les feuilles soient ramassées
                                     /*while(nbFeuilles<3){
@@ -465,7 +465,7 @@ function lancementSon(evt) {
 
     function timerLancementSon() {
             /* Lancer le son */
-        
+
         playerAudio.play();
             /* Lancer les timers */
         timerAffichage = window.setInterval(affichageTemps, 1000);
@@ -548,7 +548,7 @@ function jeuFeuilles(){
             var f1 = true;
             var f2 = true;
             var f3 = true;
-            
+
             $("#popupJeu div:last-child img").click(function(){
                 $("#popupJeu").remove();
                 $("#popupGagne").remove();
@@ -681,16 +681,16 @@ function jeuFeuilles(){
             });
         });
     }
-    
+
 }
 
 function loupe(){
     $("#zoom").css("display", "block");
     $("#zoom").zoomple({
         offset : {x:10,y:10},
-        bgColor : '#839CA1', 
-        zoomWidth : 250, 
-        showCursor : true, 
+        bgColor : '#839CA1',
+        zoomWidth : 250,
+        showCursor : true,
         zoomHeight : 250,
         roundedCorners : true
     });
