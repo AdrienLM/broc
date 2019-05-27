@@ -42,50 +42,50 @@
                 <img src="images/coralie.png">
                 <h2><span>Coralie</span> Bernard</h2>
                 <hr/>
-                <p>Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis.</p>
+                <p>Responsable graphisme</p>
                 <div>
-                    <img src="images/icoRole.svg">
-                    <p>Korrigan</p>
+                    <img src="images/feu.png">
+                    <p>Feu</p>
                 </div>
             </div>
             <div id="adrien">
                 <img src="images/adrien.png">
                 <h2><span>Adrien</span> Le Moal</h2>
                 <hr/>
-                <p>Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis.</p>
+                <p>Responsable développement</p>
                 <div>
-                    <img src="images/icoRole.svg">
-                    <p>Korrigan</p>
+                    <img src="images/elec.png">
+                    <p>Electricité</p>
                 </div>
             </div>
             <div id="emma">
                 <img src="images/emma.png">
                 <h2><span>Emma</span> Colin</h2>
                 <hr/>
-                <p>Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis.</p>
+                <p>Chef de projet</p>
                 <div>
-                    <img src="images/icoRole.svg">
-                    <p>Korrigan</p>
+                    <img src="images/eau.png">
+                    <p>Eau</p>
                 </div>
             </div>
             <div id="celie">
                 <img src="images/celie.png">
                 <h2><span>Célie</span> Pautrel</h2>
                 <hr/>
-                <p>Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis.</p>
+                <p>Responsable des interactions</p>
                 <div>
-                    <img src="images/icoRole.svg">
-                    <p>Korrigan</p>
+                    <img src="images/air.png">
+                    <p>Air</p>
                 </div>
             </div>
             <div id="quentin">
                 <img src="images/quentin.png">
                 <h2><span>Quentin</span> Wascheul</h2>
                 <hr/>
-                <p>Emensis itaque difficultatibus multis et nive obrutis callibus plurimis ubi prope Rauracum ventum est ad supercilia fluminis Rheni, resistente multitudine Alamanna pontem suspendere navium conpage Romani vi nimia vetabantur ritu grandinis undique convolantibus telis.</p>
+                <p>Responsable audiovisuel</p>
                 <div>
-                    <img src="images/icoRole.svg">
-                    <p>Korrigan</p>
+                    <img src="images/terre.png">
+                    <p>Terre</p>
                 </div>
             </div>
         </section>
