@@ -407,7 +407,7 @@ $(document).ready(function(){
                                     $("#narrateur div:last-child p").text("Fin");
                                 $("#narrateur div:last-child").css("display", "flex");
                                 //écouteur sur le bouton suivant
-                                /*$("#narrateur div:last-child img").click(function(){
+                                /*$("#narrateur div:last-child img").click(function(){*/
                                     //jeu pour retrouver les feuilles d'or
                                     //changement de la boite de dialogue narrateur
                                     /*$("#narrateur").css("width", "20%");
@@ -439,7 +439,7 @@ $(document).ready(function(){
                                     //changement du bouton passer en terminé
                                     /*$("#narrateur div:last-child img").replaceWith('<a href="lancementAventure.php"><img src="images/check.svg" alt="icone check" /></a>');
                                     $("#narrateur div:last-child p").text("Terminé");*/
-                                })
+                                /*})*/
                             })
                         })
                     })
