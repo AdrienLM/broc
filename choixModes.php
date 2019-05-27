@@ -64,7 +64,11 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
         </div>
         <?php require 'header.php'; require 'initCompteGrimoire.php'; ?>
         <main>
-           <div id="decouverte">
+            <?php
+            if(isset($_SESSION['id']) AND $userinfo['IdUser'] == $_SESSION['id']) 
+            {
+            ?>
+                <div id="decouverte">
                <a href="carte.php"> 
                    <div id="fondNoir"></div>
                     <h1>Mode<br><span>decouverte</span></h1> 
@@ -96,6 +100,33 @@ if(isset($_SESSION['id']) && $_SESSION['id'] > 0)
                     </div>
                 </a> 
             </div>
+            <?php
+            }else{
+            ?>
+               <div id="decouverteDeco">
+                   <a href="carte.php"> 
+                       <div id="fondNoir"></div>
+                        <h1>Mode<br><span>decouverte</span></h1> 
+                        <p class="desc">Si vous souhaitez avoir des informations concises sur un lieu de votre choix, le mode Découverte est fait pour vous. Idéal lors des balades, vous pourrez découvrir la légende derrière chaque lieu en temps voulu.</p> 
+                        <div> 
+                            <img src="images/flecheDBlanc.svg"> 
+                            <p>Découvrir</p> 
+                        </div> 
+                   </a>
+                </div> 
+                <div id="aventureDeco">
+                   <a href="cheminAventure.php"> 
+                        <h1>Mode<br><span>aventure</span></h1> 
+                        <p class="desc">Que vous soyez passionés par les légendes de Brocéliandes ou de simples curieux, le mode Aventure vous permettra de vivre ces récits de façon immersive et divertissante grâce au conteur.</p> 
+                        <div> 
+                            <img src="images/flecheDBlanc.svg">
+                            <p>Découvrir</p> 
+                        </div> 
+                    </a>
+                </div>
+            <?php
+            }
+            ?>
             <div id="retour">
                 <p>Retour</p>
                 <a href="index.php"><img src="images/flecheG.png" alt="flèche vers la gauche"></a>
