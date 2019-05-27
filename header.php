@@ -92,7 +92,7 @@
 
                                                     <li>
                                                         <!-- <a href="parametres.php"> -->
-                                                        <a href="soon.php">
+                                                        <a href="editionProfil.php">
                            <img src="images/engrenage.svg" alt="engrenage">
                        </a>
                                                         <p>Paramètres</p>
