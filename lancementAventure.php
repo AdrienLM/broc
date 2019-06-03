@@ -99,7 +99,7 @@ if($debugQWMain == true){
 										 $codeGrimoire = $_SESSION['addStick5'];
 										 require 'updateAventureGrimoire.php';
 
-										 
+
                     }else if($avantureProv == 3){
 
 
@@ -145,12 +145,12 @@ if($debugQWMain == true){
                 }
 
             }else{
-                header('Location: CheminAventure.php');
+                header('Location: cheminAventure.php');
                 //redirection page choix mode ou accueil a voir
             }
 
     }else{
-        header('Location: CheminAventure.php');
+        header('Location: cheminAventure.php');
       //  require 'avancementAventure.php';
 
     }
@@ -158,7 +158,7 @@ if($debugQWMain == true){
 
  <?php
 }else{
-    header('Location: CheminAventure.php');
+    header('Location: cheminAventure.php');
 }
 
 ?>
